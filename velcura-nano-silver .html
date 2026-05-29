@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纳米银医用抗菌敷料 | Velcura Medical</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --c-bg: #F5F2ED;
+    --c-bg2: #EDEAE3;
+    --c-ink: #1A1916;
+    --c-ink2: #4A4843;
+    --c-ink3: #8A8780;
+    --c-teal: #2D6E6A;
+    --c-teal2: #4A9490;
+    --c-cream: #FAF8F4;
+    --c-line: rgba(26,25,22,0.12);
+  }
+
+  html, body {
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--c-bg);
+    color: var(--c-ink);
+    overflow: hidden;
+  }
+
+  /* HERO — fills entire iframe */
+  .hero {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    height: 100vh;
+  }
+
+  /* LEFT */
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 2.5rem 3rem 2.5rem 3.5rem;
+    position: relative;
+  }
+  .hero-left::after {
+    content: ''; position: absolute; right: 0; top: 8%; bottom: 8%;
+    width: 0.5px; background: var(--c-line);
+  }
+
+  .hero-tag {
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-teal); font-weight: 500;
+    display: flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .hero-tag::before {
+    content: ''; display: block;
+    width: 1.5rem; height: 1px; background: var(--c-teal);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+    font-weight: 300; line-height: 1.2;
+    letter-spacing: -0.01em; margin-bottom: 1.2rem;
+    white-space: nowrap;
+  }
+  .hero-title em { font-style: italic; color: var(--c-teal); }
+
+  .hero-subtitle {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.9rem; font-weight: 300;
+    color: var(--c-ink2); line-height: 1.9;
+    max-width: 44ch; margin-bottom: 0;
+  }
+
+  #hero-img-box { margin-top: 1rem; }
+  #hero-img-box img { width: auto; max-width: 100%; height: auto; display: block; border: 0.5px solid var(--c-line); }
+  #hero-storage-box { display: none; }
+
+  /* RIGHT */
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    background: var(--c-bg2); position: relative; overflow: hidden;
+  }
+
+  .hero-circle {
+    width: 280px; height: 280px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #E8F5F4, #C8E8E6, #8BBFBC);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .hero-circle-inner {
+    width: 185px; height: 185px; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.9), rgba(255,255,255,0.3));
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.4rem;
+  }
+  .hero-nano-icon { font-size: 2rem; }
+  .hero-circle-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; color: var(--c-teal);
+    letter-spacing: 0.06em; text-align: center;
+  }
+
+  /* ORBS */
+  .hero-orb-btn {
+    position: absolute; border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.35s, box-shadow 0.25s;
+    background: rgba(45,110,106,0.13);
+  }
+  .hero-orb-btn:hover { animation-play-state: paused; transform: scale(1.12); }
+  .hero-orb-btn.active {
+    animation-play-state: paused;
+    background: rgba(45,110,106,0.55);
+    box-shadow: 0 0 0 4px rgba(45,110,106,0.18);
+  }
+  .hero-orb-1 { width: 58px; height: 58px; top: 14%; left: 8%; animation: breathe1 3.8s ease-in-out infinite; }
+  .hero-orb-2 { width: 40px; height: 40px; bottom: 18%; right: 12%; background: rgba(184,151,90,0.18); animation: breathe2 4.4s ease-in-out infinite; }
+  .hero-orb-2.active { background: rgba(184,151,90,0.65); box-shadow: 0 0 0 4px rgba(184,151,90,0.2); }
+  .hero-orb-3 { width: 80px; height: 80px; bottom: 10%; left: 4%; background: rgba(45,110,106,0.07); animation: breathe3 5s ease-in-out infinite; }
+  .hero-orb-4 { width: 48px; height: 48px; top: 42%; right: 6%; background: rgba(79,82,152,0.18); animation: breathe2 4.1s ease-in-out infinite; }
+  .hero-orb-4.active { background: rgba(79,82,152,0.6); box-shadow: 0 0 0 4px rgba(79,82,152,0.2); }
+  .hero-orb-5 { width: 52px; height: 52px; top: 7%; right: 18%; background: rgba(45,110,106,0.18); animation: breathe1 4.7s ease-in-out infinite; }
+  .hero-orb-5.active { background: rgba(45,110,106,0.6); box-shadow: 0 0 0 4px rgba(45,110,106,0.22); }
+
+  @keyframes breathe1 { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+  @keyframes breathe2 { 0%,100%{transform:scale(1);} 50%{transform:scale(1.13);} }
+  @keyframes breathe3 { 0%,100%{transform:scale(1);} 50%{transform:scale(1.07);} }
+
+  .orb-label {
+    font-size: 0.56rem; letter-spacing: 0.08em;
+    color: var(--c-teal); font-weight: 500;
+    text-align: center; pointer-events: none; white-space: nowrap;
+  }
+  .hero-orb-btn.active .orb-label { color: #fff; }
+
+  #hero-title, #hero-subtitle {
+    transition: opacity 0.25s ease;
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">维珂睿医疗科技 · 高端敷料</div>
+    <h1 class="hero-title" id="hero-title">纳米银医用<em>抗菌敷料</em></h1>
+    <p class="hero-subtitle" id="hero-subtitle">融合纳米银离子技术，持续释放广谱抗菌成分，有效抑制细菌滋生，维持伤口湿润愈合环境，加速组织修复进程。</p>
+    <div id="hero-img-box" style="display:none;">
+      <img id="hero-img" src="" alt="产品图片">
+    </div>
+    <div id="hero-storage-box" style="display:none;"></div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-orb-btn hero-orb-1" data-topic="0"><span class="orb-label">抗菌机理</span></div>
+    <div class="hero-orb-btn hero-orb-2" data-topic="1"><span class="orb-label">适应症</span></div>
+    <div class="hero-orb-btn hero-orb-3" data-topic="2"><span class="orb-label">使用方法</span></div>
+    <div class="hero-orb-btn hero-orb-4" data-img="1"><span class="orb-label">我的模样</span></div>
+    <div class="hero-orb-btn hero-orb-5" data-topic="3"><span class="orb-label">储存环境</span></div>
+    <div class="hero-circle">
+      <div class="hero-circle-inner">
+        <span class="hero-nano-icon">✦</span>
+        <div class="hero-circle-label">Nano-Silver<br>Technology</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const topics = [
+    { title: '抗菌<br><em>机理</em>', subtitle: '纳米银粒子通过释放银离子（Ag⁺），作用于细菌细胞膜与酶系统，破坏其代谢功能并阻断DNA复制，从而对革兰氏阳性菌、阴性菌及真菌实现广谱持续的抑菌效果，且不易产生耐药性。' },
+    { title: '临床<br><em>适应症</em>', subtitle: '适用于慢性溃疡（糖尿病足、压疮）、手术切口感染、烧烫伤创面、供皮区创面及放射性皮肤损伤等各类感染高风险或已感染创面，尤其适合需要延长换药间隔的患者。' },
+    { title: '规范<br><em>使用方法</em>', subtitle: '清洁创面后，将敷料覆盖于伤口，边缘超出创缘至少2cm，以二级敷料固定。渗液少时可每5–7天更换一次，渗液多时适当缩短间隔。如创面干燥，可用生理盐水适当湿润后再覆盖。' },
+    { title: '储存<br><em>环境</em>', subtitle: '§img:https://img.velcura.net/nano12.png' }
+  ];
+
+  const defaultTitle = '纳米银医用<em>抗菌敷料</em>';
+  const defaultSubtitle = '融合纳米银离子技术，持续释放广谱抗菌成分，有效抑制细菌滋生，维持伤口湿润愈合环境，加速组织修复进程。';
+
+  const titleEl = document.getElementById('hero-title');
+  const subtitleEl = document.getElementById('hero-subtitle');
+  const imgBox = document.getElementById('hero-img-box');
+  const orbs = document.querySelectorAll('.hero-orb-btn');
+  let activeIndex = -1;
+
+  function showText(html, text) {
+    imgBox.style.display = 'none';
+    titleEl.innerHTML = html;
+    if (text.startsWith('§img:')) {
+      subtitleEl.style.display = 'none';
+      document.getElementById('hero-img').src = text.replace('§img:', '');
+      imgBox.style.display = 'block';
+    } else {
+      subtitleEl.textContent = text;
+      subtitleEl.style.display = 'block';
+    }
+  }
+
+  function showImage() {
+    imgBox.style.display = 'none';
+    subtitleEl.style.display = 'none';
+    titleEl.innerHTML = defaultTitle;
+    document.getElementById('hero-img').src = 'https://img.velcura.net/nano11.png';
+    imgBox.style.display = 'block';
+  }
+
+  function resetAll() {
+    imgBox.style.display = 'none';
+    titleEl.innerHTML = defaultTitle;
+    subtitleEl.textContent = defaultSubtitle;
+    subtitleEl.style.display = 'block';
+  }
+
+  function activateOrb(i) {
+    const orb = orbs[i];
+    const isImg = orb.dataset.img === '1';
+    const topicIndex = orb.dataset.topic !== undefined ? parseInt(orb.dataset.topic) : -1;
+    orbs.forEach(o => o.classList.remove('active'));
+    orb.classList.add('active');
+    activeIndex = i;
+    if (isImg) showImage();
+    else showText(topics[topicIndex].title, topics[topicIndex].subtitle);
+  }
+
+  orbs.forEach((orb, i) => {
+    orb.addEventListener('click', () => {
+      if (activeIndex === i) {
+        orb.classList.remove('active');
+        activeIndex = -1;
+        resetAll();
+      } else {
+        activateOrb(i);
+      }
+      paused = true;
+      clearTimeout(window._resumeTimer);
+      window._resumeTimer = setTimeout(() => { paused = false; }, 5000);
+    });
+  });
+
+  let autoIndex = 0;
+  let paused = false;
+
+  setInterval(() => {
+    if (paused) return;
+    autoIndex = (autoIndex + 1) % orbs.length;
+    activateOrb(autoIndex);
+  }, 8000);
+
+  setTimeout(() => activateOrb(0), 1000);
+</script>
+</body>
+</html>
