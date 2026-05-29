@@ -598,46 +598,16 @@
       </div>
 
       <!-- Product detail panel -->
-      <div id="l2PanelPd" class="l2-pd" style="display:none;">
+      <!-- 产品 iframe 面板 -->
+      <div id="l2PanelPd" style="display:none; height:100%;">
         <button class="l2-pd-goback" onclick="showOv()">← Back to Advanced Wound Dressings</button>
-        <div class="l2-pd-bc">
-          <a onclick="location.href='velcura_homepage.html'">Home</a><span class="l2-pd-bc-sep">›</span>
-          <a onclick="location.href='velcura_homepage.html'">Wound Care</a><span class="l2-pd-bc-sep">›</span>
-          <a onclick="showOv()">Advanced Wound Dressings</a><span class="l2-pd-bc-sep">›</span>
-          <span id="l2PdBcName" style="color:#0c2044;"></span>
+        <div id="l2ProdIframeWrap" style="margin-top:8px; height:calc(100% - 48px);">
+          <iframe id="l2ProdIframe" src="" style="width:100%; height:100%; min-height:80vh; border:none; display:block;"></iframe>
         </div>
-        <div class="l2-pd-hero">
-          <div class="l2-pd-imgbox" id="l2PdImgBox">
-            ✚
-            <div class="l2-pd-imglbl">Product Image</div>
-          </div>
-          <div class="l2-pd-info">
-            <div class="l2-pd-badge" id="l2PdBadge"></div>
-            <div class="l2-pd-name" id="l2PdName"></div>
-            <div class="l2-pd-tagline" id="l2PdTagline"></div>
-            <div class="l2-pd-btns">
-              <button class="l2-btn-p">Inquire Now</button>
-              <button class="l2-btn-s">Download Brochure</button>
-            </div>
-          </div>
-        </div>
-        <div class="l2-pd-cols">
-          <div>
-            <div class="l2-sec-ttl">Product Features</div>
-            <div id="l2PdFeats"></div>
-          </div>
-          <div>
-            <div class="l2-sec-ttl">Technical Specifications</div>
-            <table class="l2-specs" id="l2PdSpecs"></table>
-          </div>
-        </div>
-        <div>
-          <div class="l2-sec-ttl">Indicated For</div>
-          <div class="l2-ind-chips" id="l2PdInds"></div>
-        </div>
-        <div id="l2PdNote" class="l2-pd-note" style="display:none;">
-          <span style="flex-shrink:0;">⚠</span>
-          <span id="l2PdNoteText"></span>
+        <div id="l2ProdComingSoon" style="display:none; padding:60px 40px; text-align:center; color:#94a3b8;">
+          <div style="font-size:48px; margin-bottom:16px;">🔧</div>
+          <div style="font-size:18px; font-weight:300; margin-bottom:8px;">页面建设中</div>
+          <div style="font-size:13px;">此产品详情页面即将上线，请联系我们获取更多信息。</div>
         </div>
       </div>
 
@@ -883,43 +853,34 @@ function showOv() {
   document.getElementById('l2Main').scrollTop = 0;
 }
 
+// 产品对应的三级页面映射
+var PROD_PAGES = {
+  'Nano-Silver Antibacterial': 'velcura-nano-silver.html'
+  // 以后添加更多产品页面
+};
+
 function showProd(name) {
   activeL3Item = name;
-  var p = PRODS[name];
   document.getElementById('l2PanelOv').style.display = 'none';
   var pd = document.getElementById('l2PanelPd');
   pd.style.display = 'block';
-  pd.style.animation = 'none'; void pd.offsetWidth; pd.style.animation = 'l2-fade-up .3s ease';
   document.getElementById('l2BcCur').textContent = name;
-  document.getElementById('l2PdBcName').textContent = name;
-  // product image
-  var imgBox = document.getElementById('l2PdImgBox');
-  if (p && p.img) {
-    imgBox.innerHTML = '<img src="'+p.img+'" alt="'+name+'" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" onerror="this.parentNode.innerHTML=\'<div style=font-size:36px;color:#bae6fd>✚</div><div style=font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase>Product Image</div>\'">';
+
+  var iframe = document.getElementById('l2ProdIframe');
+  var coming = document.getElementById('l2ProdComingSoon');
+  var iframeWrap = document.getElementById('l2ProdIframeWrap');
+
+  var page = PROD_PAGES[name];
+  if (page) {
+    iframe.src = page;
+    iframeWrap.style.display = 'block';
+    coming.style.display = 'none';
   } else {
-    imgBox.innerHTML = '<div style="font-size:36px;color:#bae6fd;">✚</div><div style="font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;">Product Image</div>';
+    iframe.src = '';
+    iframeWrap.style.display = 'none';
+    coming.style.display = 'block';
   }
-  if (p) {
-    badge.textContent = p.badge;
-    badge.style.cssText = 'display:inline-block;padding:3px 12px;border-radius:999px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;' + p.bs;
-    document.getElementById('l2PdName').textContent    = name;
-    document.getElementById('l2PdTagline').textContent = p.tagline;
-    document.getElementById('l2PdFeats').innerHTML = p.features.map(function(f){ return '<div class="l2-feat"><div class="l2-feat-dot"></div><span>'+f+'</span></div>'; }).join('');
-    document.getElementById('l2PdSpecs').innerHTML = p.specs.map(function(s){ return '<tr><td class="sk">'+s[0]+'</td><td class="sv">'+s[1]+'</td></tr>'; }).join('');
-    document.getElementById('l2PdInds').innerHTML  = p.indications.map(function(i){ return '<span class="l2-ind-chip">'+i+'</span>'; }).join('');
-    var n = document.getElementById('l2PdNote');
-    if (p.note) { n.style.display='flex'; document.getElementById('l2PdNoteText').textContent=p.note; }
-    else { n.style.display='none'; }
-  } else {
-    badge.textContent = 'Product';
-    badge.style.cssText = 'display:inline-block;padding:3px 12px;border-radius:999px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;background:#f1f5f9;color:#475569;';
-    document.getElementById('l2PdName').textContent    = name;
-    document.getElementById('l2PdTagline').textContent = 'Full product specifications coming soon. Please contact us to inquire.';
-    document.getElementById('l2PdFeats').innerHTML  = '';
-    document.getElementById('l2PdSpecs').innerHTML  = '';
-    document.getElementById('l2PdInds').innerHTML   = '';
-    document.getElementById('l2PdNote').style.display = 'none';
-  }
+
   openL3(activeL2);
   document.getElementById('l2Main').scrollTop = 0;
 }
