@@ -160,7 +160,7 @@
   @keyframes ping { 0%{transform:scale(1);opacity:0.5;} 70%{transform:scale(1.16);opacity:0;} 100%{transform:scale(1.16);opacity:0;} }
 
   .center-logo-wrap { width:95px; height:95px; margin-bottom:12px; display:flex; align-items:center; justify-content:center; }
-  .center-logo { width:95px; height:95px; object-fit:contain; display:block; mix-blend-mode:multiply; filter:drop-shadow(0 2px 8px rgba(0,80,160,0.20)); }
+  .center-logo { width:95px; height:95px; display:block; }
   .logo-fallback { display:none; width:95px; height:95px; }
 
   .center-title { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:600; letter-spacing:0.14em; color:#0d3a5c; line-height:1; margin-bottom:10px; }
@@ -252,7 +252,8 @@
     .mobile-cats { gap:10px; padding:0 16px 10px; }
     .mobile-cat-name { font-size:11px; }
   }
-</style>
+
+  </style>
 </head>
 <body>
 
@@ -281,13 +282,8 @@
     <div class="center">
       <div class="center-ping"></div>
       <div class="center-logo-wrap">
-        <img id="centerLogoImg" class="center-logo"
-             src="https://img.velcura.net/vel-logo1.png" alt="VELCURA"
-             onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';">
-        <svg id="logoFallback" class="logo-fallback" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 80 C50 80 10 52 10 28 C10 14 20 5 32 5 C40 5 47 10 50 17 C53 10 60 5 68 5 C80 5 90 14 90 28 C90 52 50 80 50 80Z" fill="#0e7ab5" opacity="0.85"/>
-          <path d="M50 70 C50 70 18 47 18 28 C18 18 25 12 33 12 C40 12 46 17 50 25 C54 17 60 12 67 12 C75 12 82 18 82 28 C82 47 50 70 50 70Z" fill="#1a9fd4" opacity="0.55"/>
-        </svg>
+        <img src="https://img.velcura.net/logo1vsg.png" alt="VELCURA"
+             style="width:124px;height:124px;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,80,160,0.20));">
       </div>
       <div class="center-title">VELCURA</div>
       <div class="center-tagline">Professional Wound Care<br>Manufacturer</div>
@@ -298,7 +294,7 @@
   <div class="scene-mobile" id="sceneMobile">
     <div class="mobile-center">
       <div class="mobile-center-ping"></div>
-      <img class="mobile-center-logo" src="https://img.velcura.net/vel-logo1.png" alt="VELCURA" onerror="this.style.display='none'">
+      <img src="https://img.velcura.net/logo1vsg.png" alt="VELCURA" style="width:81px;height:81px;object-fit:contain;display:block;margin-bottom:8px;filter:drop-shadow(0 2px 6px rgba(0,80,160,0.18));">
       <div class="mobile-center-title">VELCURA</div>
       <div class="mobile-center-tagline">Professional Wound Care<br>Manufacturer</div>
     </div>
@@ -342,7 +338,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img class="footer-logo" src="https://img.velcura.net/vel-logo1.png" alt="Velcura Medical" onerror="this.style.display='none'">
+      <img src="https://img.velcura.net/logo1vsg.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
       <div class="footer-company">Velcura Medical</div>
     </div>
     <div class="footer-contacts">
@@ -363,6 +359,25 @@
     <div class="footer-copy">© 2025 Velcura Medical. All rights reserved.</div>
   </div>
 </footer>
+
+<!-- Mobile nav overlay -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <button class="nav-mobile-close" id="menuClose">✕</button>
+  <a href="#" onclick="closeMobileMenu()">产品</a>
+  <a href="#" onclick="closeMobileMenu()">关于我们</a>
+  <a href="#" onclick="closeMobileMenu()">认证资质</a>
+  <a href="#" onclick="closeMobileMenu()">联系我们</a>
+  <button class="nav-mobile-cta" onclick="closeMobileMenu()">获取报价</button>
+</div>
+
+
+<!-- Global submenu (fixed position, click-controlled) -->
+<div class="cat-submenu" id="globalSubmenu">
+  <div class="submenu-header">
+    <span class="submenu-title" id="submenuTitle"></span>
+    <button class="submenu-close" id="submenuClose">✕</button>
+  </div>
+
 
 <script>
 /* ── Particles ── */
@@ -396,6 +411,15 @@ function openSubmenu(catName, subs, wrapperEl) {
     span2.textContent = '›';
     item.appendChild(span1);
     item.appendChild(span2);
+    // ── Wire click: "Advanced Wound Dressings" → transition to L2 ──
+    if (s === '高级伤口敷料' || s === 'Advanced Wound Dressings') {
+      item.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeSubmenu();
+        if (s === '高级伤口敷料') { window.location.href = 'wound-care.html?cat=advanced'; }
+        else if (s === '传统伤口敷料') { window.location.href = 'wound-care.html?cat=traditional'; }
+      });
+    }
     submenuItems.appendChild(item);
   });
 
@@ -514,6 +538,7 @@ cats.forEach((cat, i) => {
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
 function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
 </script>
 </body>
 </html>
