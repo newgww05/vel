@@ -84,8 +84,10 @@
     transition:box-shadow 0.3s; cursor:pointer;
   }
   @keyframes node-spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+  .cat-node-wrapper { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
   .cat-node-wrapper:hover .cat-ring {
-    animation:node-spin 18s linear infinite, jiggle-ring 0.4s ease;
+    box-shadow: 0 8px 28px rgba(125,211,252,0.5);
+  }
     box-shadow:0 0 0 1px rgba(255,255,255,0.50),0 0 36px rgba(125,211,252,0.36),0 6px 24px rgba(14,165,233,0.13);
   }
   @keyframes jiggle-ring {
@@ -149,7 +151,7 @@
     border:2px solid rgba(192,168,120,0.26);
     box-shadow:0 0 0 1px rgba(255,255,255,0.35), 0 16px 70px rgba(14,165,233,0.15), 0 0 40px rgba(125,211,252,0.12);
     display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding:28px;
+    text-align:center; padding:10px;
     animation:pulse-c 7s ease-in-out infinite;
   }
   @keyframes pulse-c {
@@ -159,12 +161,12 @@
   .center-ping { position:absolute; inset:0; border-radius:50%; border:1px solid rgba(125,211,252,0.35); animation:ping 4s cubic-bezier(0,0,.2,1) infinite; pointer-events:none; }
   @keyframes ping { 0%{transform:scale(1);opacity:0.5;} 70%{transform:scale(1.16);opacity:0;} 100%{transform:scale(1.16);opacity:0;} }
 
-  .center-logo-wrap { width:95px; height:95px; margin-bottom:12px; display:flex; align-items:center; justify-content:center; }
+  .center-logo-wrap { width:220px; height:220px; margin-bottom:2px; display:flex; align-items:center; justify-content:center; }
   .center-logo { width:95px; height:95px; display:block; }
   .logo-fallback { display:none; width:95px; height:95px; }
 
   .center-title { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:600; letter-spacing:0.14em; color:#0d3a5c; line-height:1; margin-bottom:10px; }
-  .center-tagline { font-size:9px; letter-spacing:0.20em; text-transform:uppercase; color:#4a7fa0; line-height:2; }
+  .center-tagline { font-size:5.5px; letter-spacing:0.13em; text-transform:uppercase; color:#4a7fa0; line-height:1.7; margin-top:6px; }
 
   .scroll-hint { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); font-size:9px; letter-spacing:0.35em; text-transform:uppercase; color:var(--sky-400); animation:bounce 2s ease-in-out infinite; }
   @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(6px);} }
@@ -282,9 +284,8 @@
       <div class="center-ping"></div>
       <div class="center-logo-wrap">
         <img src="https://img.velcura.net/logo1vsg.png" alt="VELCURA"
-             style="width:124px;height:124px;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,80,160,0.20));">
+             style="width:220px;height:220px;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,80,160,0.20));">
       </div>
-      <div class="center-title">VELCURA</div>
       <div class="center-tagline">Professional Wound Care<br>Manufacturer</div>
     </div>
   </div>
@@ -517,6 +518,14 @@ cats.forEach(cat => {
       window.location.href = cat.link;
     });
   }
+
+  // 浮起微动
+  wrapper.addEventListener('mouseenter', function() {
+    wrapper.style.transform = `translate(calc(${nx}px - 50%), calc(${ny}px - 50% - 6px))`;
+  });
+  wrapper.addEventListener('mouseleave', function() {
+    wrapper.style.transform = `translate(calc(${nx}px - 50%), calc(${ny}px - 50%))`;
+  });
 
   sceneD.appendChild(wrapper);
 });
