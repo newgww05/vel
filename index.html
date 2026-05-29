@@ -417,13 +417,13 @@ function openSubmenu(catName, subs, wrapperEl) {
     item.appendChild(span1);
     item.appendChild(span2);
     // ── Wire click: submenu items → transition to L2 ──
-    if (s === 'Advanced Wound Dressings' || s === 'Traditional Dressings') {
+    if (s === 'Advanced Wound Dressings' || s === 'Traditional Wound Dressings') {
       function goToPage(e) {
         e.stopPropagation();
         e.preventDefault();
         closeSubmenu();
         if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
-        else if (s === 'Traditional Dressings') { window.location.href = 'wound-care.html?cat=traditional'; }
+        else if (s === 'Traditional Wound Dressings') { window.location.href = 'wound-care.html?cat=traditional'; }
         else if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
       }
       item.addEventListener('click', goToPage);
@@ -472,7 +472,7 @@ const cats = [
   { name:'Continence Care',   angle:120, subs:[] },
   { name:'Diabetes Care',   angle:180, subs:[] },
   { name:'Prevention & Protection',   angle:240, subs:[] },
-  { name:'Traditional Dressings', angle:300, subs:[], link:'wound-care.html?cat=traditional' },
+  { name:'Traditional Wound Dressings', angle:300, subs:[], link:'wound-care.html?cat=traditional' },
 ];
 
 /* ── Desktop nodes ── */
@@ -551,7 +551,7 @@ cats.forEach((cat, i) => {
       el.addEventListener('click', function() {
         var sub = el.getAttribute('data-sub');
         if (sub === 'Advanced Wound Dressings') window.location.href = 'wound-care.html?cat=advanced';
-        else if (sub === 'Traditional Dressings') window.location.href = 'wound-care.html?cat=traditional';
+        else if (sub === 'Traditional Wound Dressings') window.location.href = 'wound-care.html?cat=traditional';
       });
     });
   });
