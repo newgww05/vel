@@ -531,9 +531,17 @@ cats.forEach((cat, i) => {
     if (activeIndex === i) { mobileSubPanel.classList.remove('open'); activeIndex = -1; return; }
     activeIndex = i;
     mobileSubPanel.innerHTML = cat.subs.map(s =>
-      `<div class="mobile-sub-item"><span>${s}</span><span class="mobile-sub-arrow">›</span></div>`
+      `<div class="mobile-sub-item" data-sub="${s}"><span>${s}</span><span class="mobile-sub-arrow">›</span></div>`
     ).join('');
     mobileSubPanel.classList.add('open');
+    // 绑定点击跳转
+    mobileSubPanel.querySelectorAll('.mobile-sub-item').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var sub = el.getAttribute('data-sub');
+        if (sub === '高级伤口敷料') window.location.href = 'wound-care.html?cat=advanced';
+        else if (sub === '传统伤口敷料') window.location.href = 'wound-care.html?cat=traditional';
+      });
+    });
   });
   mobileCats.appendChild(node);
 });
