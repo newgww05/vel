@@ -50,8 +50,8 @@
   /* NAV */
   .nav { position:absolute; top:0; left:0; right:0; padding:18px 48px; display:flex; align-items:flex-start; justify-content:space-between; z-index:100; }
   .nav-brand { font-family:'Playfair Display',serif; font-style:italic; font-size:22px; font-weight:400; line-height:1.4; letter-spacing:0.03em; color:var(--slate-700); text-decoration:none; max-width:240px; }
-  .nav-links { display:flex; gap:28px; list-style:none; margin-top:6px; }
-  .nav-links a { font-size:11px; letter-spacing:0.10em; text-transform:uppercase; color:var(--slate-500); text-decoration:none; transition:color 0.2s; }
+  .nav-links { display:flex; gap:28px; list-style:none; margin-top:6px; margin-left: 11em; }
+  .nav-links a { font-size:12.65px; letter-spacing:0.10em; text-transform:uppercase; color:var(--slate-500); text-decoration:none; transition:color 0.2s; }
   .nav-links a:hover { color:var(--sky-600); }
   .nav-cta { padding:7px 18px; border:1px solid var(--sky-200); border-radius:999px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--sky-600); background:transparent; cursor:pointer; transition:background 0.2s,color 0.2s; font-family:'DM Sans',sans-serif; white-space:nowrap; margin-top:4px; }
   .nav-cta:hover { background:var(--sky-600); color:#fff; }
@@ -266,7 +266,6 @@
       <li><a href="#">认证资质</a></li>
       <li><a href="#">联系我们</a></li>
     </ul>
-    <button class="nav-cta">获取报价</button>
     <button class="nav-hamburger" id="hamburger" aria-label="菜单">
       <span></span><span></span><span></span>
     </button>
@@ -322,6 +321,11 @@
     <button class="submenu-close" id="submenuClose">✕</button>
   </div>
   <div id="submenuItems"></div>
+</div>
+
+<!-- 全宽图片栏 -->
+<div style="width:100%; line-height:0; overflow:hidden;">
+  <img src="https://img.velcura.net/nano7.png" alt="banner" id="homeBanner" style="width:100%; height:auto; display:block; object-fit:cover;">
 </div>
 
 <section class="stats">
@@ -452,33 +456,22 @@ submenuClose.addEventListener('click', function(e) {
   closeSubmenu();
 });
 
-// Check mouse position continuously — close only when outside BOTH wrapper and submenu
-document.addEventListener('mousemove', function(e) {
+// Close when clicking outside
+document.addEventListener('click', function(e) {
   if (!globalSubmenu.classList.contains('visible')) return;
-  if (!activeWrapperEl) return;
-
-  var mx = e.clientX, my = e.clientY;
-
-  function inRect(el) {
-    var r = el.getBoundingClientRect();
-    // Add generous padding so gaps don't cause flicker
-    return mx >= r.left - 12 && mx <= r.right  + 12 &&
-           my >= r.top  - 12 && my <= r.bottom + 12;
-  }
-
-  if (!inRect(activeWrapperEl) && !inRect(globalSubmenu)) {
-    closeSubmenu();
-  }
+  if (globalSubmenu.contains(e.target)) return;
+  if (activeWrapperEl && activeWrapperEl.contains(e.target)) return;
+  closeSubmenu();
 });
 
 /* ── Category data ── */
 const cats = [
-  { name:'创伤护理',   angle:0,   subs:['高级伤口敷料','传统伤口敷料'] },
-  { name:'个人护理',   angle:60,  subs:[] },
-  { name:'尿失禁护理', angle:120, subs:[] },
-  { name:'糖尿病护理', angle:180, subs:[] },
-  { name:'门诊护理',   angle:240, subs:[] },
-  { name:'预防与保护', angle:300, subs:[] },
+  { name:'高级伤口敷料', angle:0,   subs:[], link:'wound-care.html?cat=advanced' },
+  { name:'个人护理',     angle:60,  subs:[] },
+  { name:'尿失禁护理',   angle:120, subs:[] },
+  { name:'糖尿病护理',   angle:180, subs:[] },
+  { name:'预防与保护',   angle:240, subs:[] },
+  { name:'传统伤口敷料', angle:300, subs:[], link:'wound-care.html?cat=traditional' },
 ];
 
 /* ── Desktop nodes ── */
@@ -510,8 +503,18 @@ cats.forEach(cat => {
 
   if (cat.subs.length) {
     wrapper.style.cursor = 'pointer';
-    wrapper.addEventListener('mouseenter', function() {
-      openSubmenu(cat.name, cat.subs, wrapper);
+    wrapper.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (activeWrapperEl === wrapper && globalSubmenu.classList.contains('visible')) {
+        closeSubmenu();
+      } else {
+        openSubmenu(cat.name, cat.subs, wrapper);
+      }
+    });
+  } else if (cat.link) {
+    wrapper.style.cursor = 'pointer';
+    wrapper.addEventListener('click', function() {
+      window.location.href = cat.link;
     });
   }
 
@@ -527,6 +530,7 @@ cats.forEach((cat, i) => {
   node.className = 'mobile-cat';
   node.innerHTML = `<div class="mobile-cat-inner"></div><div class="mobile-cat-name">${cat.name}</div>`;
   node.addEventListener('click', () => {
+    if (cat.link) { window.location.href = cat.link; return; }
     if (!cat.subs.length) return;
     if (activeIndex === i) { mobileSubPanel.classList.remove('open'); activeIndex = -1; return; }
     activeIndex = i;
@@ -534,7 +538,6 @@ cats.forEach((cat, i) => {
       `<div class="mobile-sub-item" data-sub="${s}"><span>${s}</span><span class="mobile-sub-arrow">›</span></div>`
     ).join('');
     mobileSubPanel.classList.add('open');
-    // 绑定点击跳转
     mobileSubPanel.querySelectorAll('.mobile-sub-item').forEach(function(el) {
       el.addEventListener('click', function() {
         var sub = el.getAttribute('data-sub');
