@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -263,12 +263,12 @@
   <nav class="nav">
     <a class="nav-brand" href="#">Gentle Healing,<br>Complete Care</a>
     <ul class="nav-links">
-      <li><a href="wound-care.html">产品</a></li>
-      <li><a href="#">关于我们</a></li>
-      <li><a href="#">认证资质</a></li>
-      <li><a href="#">联系我们</a></li>
+      <li><a href="wound-care.html">Products</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Certifications</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="菜单">
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -308,11 +308,11 @@
 <!-- Mobile nav overlay -->
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
-  <a href="wound-care.html" onclick="closeMobileMenu()">产品</a>
-  <a href="#" onclick="closeMobileMenu()">关于我们</a>
-  <a href="#" onclick="closeMobileMenu()">认证资质</a>
-  <a href="#" onclick="closeMobileMenu()">联系我们</a>
-  <button class="nav-mobile-cta" onclick="closeMobileMenu()">获取报价</button>
+  <a href="wound-care.html" onclick="closeMobileMenu()">Products</a>
+  <a href="#" onclick="closeMobileMenu()">About Us</a>
+  <a href="#" onclick="closeMobileMenu()">Certifications</a>
+  <a href="#" onclick="closeMobileMenu()">Contact</a>
+  <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
 </div>
 
 <!-- Global submenu (fixed position, click-controlled) -->
@@ -324,7 +324,7 @@
   <div id="submenuItems"></div>
 </div>
 
-<!-- 全宽图片栏 -->
+<!-- Full-width banner -->
 <div style="width:100%; line-height:0; overflow:hidden;">
   <img src="https://img.velcura.net/home1.png" alt="Velcura Medical" style="width:100%; height:auto; display:block;">
 </div>
@@ -332,11 +332,11 @@
 <section class="stats">
   <div class="stats-bg"></div>
   <div class="stats-card">
-    <div class="stat-item"><div class="stat-icon">🏭</div><div class="stat-value">20,000+</div><div class="stat-label">m² 现代化<br>生产基地</div></div>
-    <div class="stat-item"><div class="stat-icon">🎯</div><div class="stat-value">ISO 13485</div><div class="stat-label">质量管理<br>体系认证</div></div>
-    <div class="stat-item"><div class="stat-icon">✅</div><div class="stat-value">CE / FDA</div><div class="stat-label">国际双重<br>认证资质</div></div>
-    <div class="stat-item"><div class="stat-icon">🔬</div><div class="stat-value">100+</div><div class="stat-label">研发专业<br>技术人员</div></div>
-    <div class="stat-item"><div class="stat-icon">🌍</div><div class="stat-value">100+</div><div class="stat-label">覆盖国家<br>与地区</div></div>
+    <div class="stat-item"><div class="stat-icon">🏭</div><div class="stat-value">20,000+</div><div class="stat-label">m² Modern<br>Production Base</div></div>
+    <div class="stat-item"><div class="stat-icon">🎯</div><div class="stat-value">ISO 13485</div><div class="stat-label">Quality Management<br>System Certified</div></div>
+    <div class="stat-item"><div class="stat-icon">✅</div><div class="stat-value">CE / FDA</div><div class="stat-label">International Dual<br>Certifications</div></div>
+    <div class="stat-item"><div class="stat-icon">🔬</div><div class="stat-value">100+</div><div class="stat-label">R&D Professional<br>Technical Staff</div></div>
+    <div class="stat-item"><div class="stat-icon">🌍</div><div class="stat-value">100+</div><div class="stat-label">Countries &<br>Regions Covered</div></div>
   </div>
 </section>
 
@@ -368,11 +368,11 @@
 <!-- Mobile nav overlay -->
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
-  <a href="wound-care.html" onclick="closeMobileMenu()">产品</a>
-  <a href="#" onclick="closeMobileMenu()">关于我们</a>
-  <a href="#" onclick="closeMobileMenu()">认证资质</a>
-  <a href="#" onclick="closeMobileMenu()">联系我们</a>
-  <button class="nav-mobile-cta" onclick="closeMobileMenu()">获取报价</button>
+  <a href="wound-care.html" onclick="closeMobileMenu()">Products</a>
+  <a href="#" onclick="closeMobileMenu()">About Us</a>
+  <a href="#" onclick="closeMobileMenu()">Certifications</a>
+  <a href="#" onclick="closeMobileMenu()">Contact</a>
+  <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
 </div>
 
 
@@ -417,13 +417,13 @@ function openSubmenu(catName, subs, wrapperEl) {
     item.appendChild(span1);
     item.appendChild(span2);
     // ── Wire click: submenu items → transition to L2 ──
-    if (s === '高级伤口敷料' || s === '传统伤口敷料' || s === 'Advanced Wound Dressings') {
+    if (s === 'Advanced Wound Dressings' || s === 'Traditional Dressings') {
       function goToPage(e) {
         e.stopPropagation();
         e.preventDefault();
         closeSubmenu();
-        if (s === '高级伤口敷料') { window.location.href = 'wound-care.html?cat=advanced'; }
-        else if (s === '传统伤口敷料') { window.location.href = 'wound-care.html?cat=traditional'; }
+        if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
+        else if (s === 'Traditional Dressings') { window.location.href = 'wound-care.html?cat=traditional'; }
         else if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
       }
       item.addEventListener('click', goToPage);
@@ -467,12 +467,12 @@ document.addEventListener('click', function(e) {
 
 /* ── Category data ── */
 const cats = [
-  { name:'高级伤口敷料', angle:0,   subs:[], link:'wound-care.html?cat=advanced' },
-  { name:'个人护理',     angle:60,  subs:[] },
-  { name:'尿失禁护理',   angle:120, subs:[] },
-  { name:'糖尿病护理',   angle:180, subs:[] },
-  { name:'预防与保护',   angle:240, subs:[] },
-  { name:'传统伤口敷料', angle:300, subs:[], link:'wound-care.html?cat=traditional' },
+  { name:'Advanced Wound Dressings', angle:0,   subs:[], link:'wound-care.html?cat=advanced' },
+  { name:'Personal Care',     angle:60,  subs:[] },
+  { name:'Continence Care',   angle:120, subs:[] },
+  { name:'Diabetes Care',   angle:180, subs:[] },
+  { name:'Prevention & Protection',   angle:240, subs:[] },
+  { name:'Traditional Dressings', angle:300, subs:[], link:'wound-care.html?cat=traditional' },
 ];
 
 /* ── Desktop nodes ── */
@@ -519,7 +519,7 @@ cats.forEach(cat => {
     });
   }
 
-  // 浮起微动
+  // Float up on hover
   wrapper.addEventListener('mouseenter', function() {
     wrapper.style.transform = `translate(calc(${nx}px - 50%), calc(${ny}px - 50% - 6px))`;
   });
@@ -550,8 +550,8 @@ cats.forEach((cat, i) => {
     mobileSubPanel.querySelectorAll('.mobile-sub-item').forEach(function(el) {
       el.addEventListener('click', function() {
         var sub = el.getAttribute('data-sub');
-        if (sub === '高级伤口敷料') window.location.href = 'wound-care.html?cat=advanced';
-        else if (sub === '传统伤口敷料') window.location.href = 'wound-care.html?cat=traditional';
+        if (sub === 'Advanced Wound Dressings') window.location.href = 'wound-care.html?cat=advanced';
+        else if (sub === 'Traditional Dressings') window.location.href = 'wound-care.html?cat=traditional';
       });
     });
   });
