@@ -250,27 +250,60 @@
     .footer { padding:48px 20px 36px; }
     .nav-brand { font-size:16px; }
 
-    /* L2 mobile layout */
-    .l2-topnav { padding:10px 14px; }
-    .l2-tn-title { font-size:15px; }
-    .l2-back-btn { font-size:12px; padding:6px 12px; }
-    .l2-body { flex-direction:column; height:auto; overflow:visible; }
-    .l2-sidebar { width:100%; height:auto; overflow:visible; border-right:none; border-bottom:1px solid #e0f2fe; }
-    .l2-cat { padding:11px 16px; font-size:13px; }
-    .l3-panel { width:100%; height:auto; overflow:visible; flex-direction:column; }
-    .l3-panel.open { display:flex; }
-    .l2-main { height:auto; overflow:visible; }
-    .l2-ov { padding:20px 16px; }
-    .l2-ov-h1 { font-size:24px; }
-    .l2-pd { padding:16px; }
-    .l2-pd-hero { flex-direction:column; gap:14px; }
-    .l2-pd-imgbox { width:100%; height:180px; }
-    .l2-pd-cols { grid-template-columns:1fr; gap:16px; }
-    .l2-kpis { flex-wrap:wrap; gap:12px; }
+    /* L2 top nav mobile */
+    .l2-topnav { padding:0 14px; height:52px; position:relative; z-index:10; }
+    .l2-tn-title { font-size:14px; }
+    .l2-tn-sup { display:none; }
+    .l2-back-btn { font-size:11px; padding:6px 12px; }
+    .l2-breadcrumb { padding:6px 14px; font-size:11px; }
 
-    /* 手机端产品iframe改为直接跳转链接 */
+    /* L2 body: single column */
+    .l2-body {
+      flex-direction:column;
+      height:auto !important;
+      overflow:visible !important;
+    }
+
+    /* Sidebar full width, no fixed height */
+    .l2-sidebar {
+      width:100% !important;
+      height:auto !important;
+      overflow:visible !important;
+      border-right:none;
+      border-bottom:1px solid #e0f2fe;
+    }
+
+    /* L3 panel full width */
+    .l3-panel {
+      width:100% !important;
+      height:auto !important;
+      overflow:visible !important;
+      border-right:none;
+      border-bottom:1px solid #e0f2fe;
+    }
+
+    /* Main full width */
+    .l2-main {
+      width:100% !important;
+      height:auto !important;
+      overflow:visible !important;
+    }
+
+    /* Product detail */
+    .l2-pd { padding:16px; }
+    .l2-pd-hero { flex-direction:column; gap:12px; }
+    .l2-pd-imgbox { width:100%; height:160px; }
+    .l2-pd-cols { grid-template-columns:1fr; gap:14px; }
+    .l2-ov { padding:20px 16px; }
+    .l2-ov-h1 { font-size:22px; }
+    .l2-kpis { flex-wrap:wrap; gap:10px; }
+
+    /* iframe → hide, show direct link button instead */
     #l2ProdIframeWrap { display:none !important; }
     #l2MobileLink { display:block !important; }
+
+    /* Panel pd full height auto */
+    #l2PanelPd { height:auto !important; }
   }
   @media (max-width:400px) {
     .mobile-cats { gap:10px; padding:0 16px 10px; }
