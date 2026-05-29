@@ -261,7 +261,7 @@
   <nav class="nav">
     <a class="nav-brand" href="#">Gentle Healing,<br>Complete Care</a>
     <ul class="nav-links">
-      <li><a href="#">产品</a></li>
+      <li><a href="wound-care.html">产品</a></li>
       <li><a href="#">关于我们</a></li>
       <li><a href="#">认证资质</a></li>
       <li><a href="#">联系我们</a></li>
@@ -308,7 +308,7 @@
 <!-- Mobile nav overlay -->
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
-  <a href="#" onclick="closeMobileMenu()">产品</a>
+  <a href="wound-care.html" onclick="closeMobileMenu()">产品</a>
   <a href="#" onclick="closeMobileMenu()">关于我们</a>
   <a href="#" onclick="closeMobileMenu()">认证资质</a>
   <a href="#" onclick="closeMobileMenu()">联系我们</a>
@@ -363,7 +363,7 @@
 <!-- Mobile nav overlay -->
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
-  <a href="#" onclick="closeMobileMenu()">产品</a>
+  <a href="wound-care.html" onclick="closeMobileMenu()">产品</a>
   <a href="#" onclick="closeMobileMenu()">关于我们</a>
   <a href="#" onclick="closeMobileMenu()">认证资质</a>
   <a href="#" onclick="closeMobileMenu()">联系我们</a>
@@ -411,14 +411,18 @@ function openSubmenu(catName, subs, wrapperEl) {
     span2.textContent = '›';
     item.appendChild(span1);
     item.appendChild(span2);
-    // ── Wire click: "Advanced Wound Dressings" → transition to L2 ──
-    if (s === '高级伤口敷料' || s === 'Advanced Wound Dressings') {
-      item.addEventListener('click', function(e) {
+    // ── Wire click: submenu items → transition to L2 ──
+    if (s === '高级伤口敷料' || s === '传统伤口敷料' || s === 'Advanced Wound Dressings') {
+      function goToPage(e) {
         e.stopPropagation();
+        e.preventDefault();
         closeSubmenu();
         if (s === '高级伤口敷料') { window.location.href = 'wound-care.html?cat=advanced'; }
         else if (s === '传统伤口敷料') { window.location.href = 'wound-care.html?cat=traditional'; }
-      });
+        else if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
+      }
+      item.addEventListener('click', goToPage);
+      item.addEventListener('touchend', goToPage);
     }
     submenuItems.appendChild(item);
   });
