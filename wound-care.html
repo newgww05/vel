@@ -408,8 +408,8 @@
   .l2-sb-ttl { font-size:15px; font-weight:500; color:#0c2044; }
   .l2-cat {
     display:flex; align-items:center; justify-content:space-between;
-    padding:13px 18px; font-size:14px; color:#475569;
-    border-left:2px solid transparent; border-bottom:1px solid #f8fafc;
+    padding:18px 18px; font-size:14px; color:#475569;
+    border-left:2px solid transparent; border-bottom:1px solid #f0f4f8;
     cursor:pointer; transition:all .15s;
   }
   .l2-cat:hover { background:#f0f9ff; color:#0284c7; border-left-color:#bae6fd; }
@@ -654,7 +654,7 @@
 
       <!-- Product detail panel -->
       <!-- 产品 iframe 面板 -->
-      <div id="l2PanelPd" style="display:none; height:100%;">
+      <div id="l2PanelPd" class="l2-pd" style="display:none; height:100%;">
         <button class="l2-pd-goback" onclick="showOv()">← Back to Advanced Wound Dressings</button>
         <div id="l2ProdIframeWrap" style="margin-top:8px; height:calc(100% - 48px);">
           <iframe id="l2ProdIframe" src="" style="width:100%; height:100%; min-height:80vh; border:none; display:block;"></iframe>
@@ -668,6 +668,43 @@
           <div style="font-size:48px; margin-bottom:16px;">🔧</div>
           <div style="font-size:18px; font-weight:300; margin-bottom:8px;">页面建设中</div>
           <div style="font-size:13px;">此产品详情页面即将上线，请联系我们获取更多信息。</div>
+        </div>
+
+        <!-- 普通产品详情卡 -->
+        <div id="l2NormalPd" style="display:none;">
+          <div class="l2-pd-hero">
+            <div class="l2-pd-imgbox" id="l2PdImgBox">
+              <div style="font-size:36px;color:#bae6fd;">✚</div>
+              <div style="font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;">Product Image</div>
+            </div>
+            <div class="l2-pd-info">
+              <div class="l2-pd-badge" id="l2PdBadge"></div>
+              <div class="l2-pd-name" id="l2PdName"></div>
+              <div class="l2-pd-tagline" id="l2PdTagline"></div>
+              <div class="l2-pd-btns">
+                <button class="l2-btn-p">Inquire Now</button>
+                <button class="l2-btn-s">Download Brochure</button>
+              </div>
+            </div>
+          </div>
+          <div class="l2-pd-cols">
+            <div>
+              <div class="l2-sec-ttl">Product Features</div>
+              <div id="l2PdFeats"></div>
+            </div>
+            <div>
+              <div class="l2-sec-ttl">Technical Specifications</div>
+              <table class="l2-specs" id="l2PdSpecs"></table>
+            </div>
+          </div>
+          <div>
+            <div class="l2-sec-ttl">Indicated For</div>
+            <div class="l2-ind-chips" id="l2PdInds"></div>
+          </div>
+          <div id="l2PdNote" class="l2-pd-note" style="display:none;">
+            <span style="flex-shrink:0;">⚠</span>
+            <span id="l2PdNoteText"></span>
+          </div>
         </div>
       </div>
 
@@ -901,7 +938,33 @@ var PRODS = {
   'Hydrocolloid Dressing':{badge:'Hydrocolloid',bs:'background:#ede9fe;color:#5b21b6;',tagline:'Thin, flexible dressing with transparent window for wound inspection without removal.',features:['Transparent window allows wound monitoring without dressing removal','Waterproof outer surface protects against contamination','Self-adhesive — no secondary fixation required','Flexible material conforms comfortably to body contours'],specs:[['Absorbency','Low – Moderate'],['Wear time','Up to 5 days'],['Exudate level','Light – Moderate'],['Adhesion','Self-adhesive'],['Variants','6 sizes · thin / standard']],indications:['Pressure ulcers Stage I–II','Minor burns','Donor sites','Superficial wounds'],note:''},
   'Calcium Alginate':{badge:'Calcium Alginate',bs:'background:#dcfce7;color:#166534;',tagline:'Highly absorbent natural alginate that gels on contact with exudate, conforming to wound shape.',features:['Forms protective gel on contact with wound exudate','Very high absorbency locks fluid and reduces maceration risk','Haemostatic properties support minor bleeding control','Biodegradable natural fibres for patient comfort'],specs:[['Absorbency','Very High'],['Wear time','Up to 3 days'],['Exudate level','Moderate – Heavy'],['Gel formation','Yes — on contact with exudate'],['Adhesion','Non-adhesive']],indications:['Cavity wounds','Leg ulcers','Diabetic foot ulcers','Surgical wounds'],note:''},
   'SAP Silicone Border':{badge:'SAP · Silicone Border',bs:'background:#fce7f3;color:#9d174d;',tagline:'Maximum fluid management for heavily exuding wounds with secure silicone border fixation.',features:['Super-absorbent polymer (SAP) core locks in large exudate volumes','Fluid-lock layer prevents strikethrough to outer surface','Silicone border ensures secure and comfortable fixation','Reduces dressing change frequency in high-exudate wounds'],specs:[['Absorbency','Very High (SAP core)'],['Wear time','Up to 7 days'],['Exudate level','Heavy – Very Heavy'],['Adhesion','Silicone adhesive border'],['Strikethrough','Prevented']],indications:['Heavily exuding wounds','Venous leg ulcers','Post-surgical wounds','Oedematous wounds'],note:''},
-  'Collagen Dressing':{badge:'Collagen',bs:'background:#f1f5f9;color:#475569;',tagline:'Bioactive collagen matrix stimulating tissue regeneration and remodelling in chronic, non-healing wounds.',features:['Native collagen matrix provides structural scaffold for new tissue formation','Stimulates fibroblast activity to accelerate wound closure','Absorbs and neutralises wound-damaging matrix metalloproteinases (MMPs)','Maintains a moist, bioactive wound environment'],specs:[['Composition','Purified collagen matrix'],['Wear time','Every 2–3 days or per assessment'],['Exudate level','Low – Moderate'],['Form','Sheet / powder / gel'],['Adhesion','Non-adhesive']],indications:['Chronic non-healing wounds','Diabetic ulcers','Pressure ulcers Stage III–IV','Venous ulcers'],note:''}
+  'Collagen Dressing':{badge:'Collagen',bs:'background:#f1f5f9;color:#475569;',tagline:'Bioactive collagen matrix stimulating tissue regeneration and remodelling in chronic, non-healing wounds.',features:['Native collagen matrix provides structural scaffold for new tissue formation','Stimulates fibroblast activity to accelerate wound closure','Absorbs and neutralises wound-damaging matrix metalloproteinases (MMPs)','Maintains a moist, bioactive wound environment'],specs:[['Composition','Purified collagen matrix'],['Wear time','Every 2–3 days or per assessment'],['Exudate level','Low – Moderate'],['Form','Sheet / powder / gel'],['Adhesion','Non-adhesive']],indications:['Chronic non-healing wounds','Diabetic ulcers','Pressure ulcers Stage III–IV','Venous ulcers'],note:''},
+
+  // TRADITIONAL WOUND DRESSINGS
+  'Surgical Tape':{badge:'Surgical Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Soft, hypoallergenic non-woven surgical tape for secure, breathable fixation of wound dressings — gentle on skin, easy to remove without residue.',features:['Soft, hypoallergenic and gentle on skin — suitable for sensitive and fragile skin','Water-resistant for bathing, showering or exercise without compromising adhesion','Latex-free adhesive reduces risk of allergic reactions','Breathable and vapour-permeable to reduce moisture build-up and infection risk'],specs:[['REF No.','401 001 – 401 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Length','9.14 m per roll'],['Adhesive','Hypoallergenic, latex-free'],['Backing','Non-woven fabric']],indications:['Dressing fixation','Post-operative wound care','Tube and catheter fixation','General wound management'],note:''},
+  'Transparent Surgical Tape':{badge:'Transparent Surgical Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Waterproof transparent PE film tape for secure, discreet dressing fixation — allows wound inspection without removal.',features:['Transparent film allows direct wound inspection without removing the tape','Waterproof and breathable — suitable for use during bathing or showering','Strong adhesion maintains secure fixation throughout daily activities','Easy to tear by hand; smooth, residue-free removal'],specs:[['REF No.','402 001 – 402 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Length','9.14 m per roll'],['Backing','Transparent PE film'],['Waterproof','Yes']],indications:['Dressing fixation','IV catheter fixation','Post-operative care','Tube securements'],note:''},
+  'Silicone Tape':{badge:'Silicone Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Gentle silicone adhesive tape designed for sensitive, fragile, or damaged skin — repositionable, residue-free, and pain-free at removal.',features:['Silicone adhesive is gentle on fragile and sensitive skin — no skin stripping or pain on removal','Repositionable multiple times without losing adhesion strength','Leaves no sticky residue on skin or dressings','Soft, conformable backing adapts to body contours including joints and curved surfaces'],specs:[['REF No.','403 001 – 403 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Adhesive','Medical-grade silicone'],['Repositionable','Yes'],['Residue-free removal','Yes']],indications:['Fragile or sensitive skin','Elderly patients','Post-radiotherapy skin','Paediatric use','Dressing and tube fixation'],note:''},
+  'Kind Removal Silicone Non-woven Tape':{badge:'Kind Removal Silicone Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Silicone-coated non-woven tape combining secure fixation with atraumatic, pain-free removal — ideal for repeated dressing changes.',features:['Silicone adhesive layer enables gentle, atraumatic removal without skin damage','Soft non-woven backing provides comfortable, conformable fixation','Suitable for frequent dressing changes — maintains adhesion through multiple repositioning cycles','Latex-free and hypoallergenic for sensitive skin'],specs:[['Adhesive','Medical-grade silicone'],['Backing','Non-woven fabric'],['Repositionable','Yes'],['Latex-free','Yes'],['Sterility','Non-sterile']],indications:['Sensitive or fragile skin','Repeated dressing changes','Elderly and paediatric patients','Post-surgical wound care'],note:''},
+  'Silk Tape':{badge:'Silk Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Classic rayon silk-like surgical tape offering strong adhesion and easy hand-tearing for everyday wound dressing fixation.',features:['Easy to tear by hand — no scissors required for quick application','Strong, reliable adhesion suitable for most wound dressing types','Flexible and conformable to skin surface and body contours','Available in multiple widths for versatile clinical applications'],specs:[['Backing','Rayon (silk-like) fabric'],['Adhesive','Zinc oxide based'],['Available widths','1.25 / 2.5 / 5 cm'],['Length','9.14 m per roll']],indications:['General wound dressing fixation','Tube and drain fixation','Post-operative care'],note:''},
+  'Paper Tape':{badge:'Paper Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Gentle, breathable paper tape for everyday wound care — soft on skin, easy to tear, and suitable for sensitive skin types.',features:['Gentle paper backing minimises skin irritation and trauma on removal','Highly breathable to reduce moisture build-up under the tape','Easy to tear by hand for fast, convenient application','Hypoallergenic adhesive suitable for sensitive skin'],specs:[['Backing','Microporous paper'],['Adhesive','Hypoallergenic acrylic'],['Available widths','1.25 / 2.5 / 5 cm'],['Length','9.14 m per roll']],indications:['Light wound dressing fixation','Sensitive skin','Post-operative care','Home wound care'],note:''},
+  'Zinc Oxide Tape':{badge:'Zinc Oxide Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Strong zinc oxide adhesive tape for heavy-duty wound dressing fixation and sports strapping — reliable adhesion under demanding conditions.',features:['High-strength zinc oxide adhesive for secure, long-lasting fixation','Rigid cotton backing provides support and immobilisation for joints','Water-resistant — maintains adhesion during physical activity','Suitable for strapping, splinting, and heavy dressing fixation'],specs:[['Backing','Cotton fabric'],['Adhesive','Zinc oxide'],['Available widths','2.5 / 3.75 / 5 / 7.5 cm'],['Length','5 m per roll']],indications:['Sports strapping','Heavy dressing fixation','Joint support','Post-operative care'],note:''},
+  'Non-woven Adhesive Dressing with Pad':{badge:'Non-woven Adhesive Dressing with Pad',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Soft non-woven adhesive wound dressing with absorbent pad — ideal for low to moderate exuding, superficial wounds including cuts, abrasions, and post-operative wounds.',features:['Soft, porous and breathable non-woven border ensures comfort and skin-friendliness','Non-adherent absorbent pad allows fluid drainage while protecting the wound bed','Hypoallergenic adhesive provides secure fixation without irritating surrounding skin','Available in multiple sizes to suit different wound dimensions'],specs:[['REF No.','104 001 – 104 025'],['Available sizes','5×7.5 to 15×15 cm'],['Packaging','25–50 pcs/box'],['Absorbency','Low – Moderate'],['Adhesion','Self-adhesive non-woven border']],indications:['Cuts and lacerations','Abrasions','Post-operative wounds','Minor burns','Superficial wounds'],note:''},
+  'Non-woven Adhesive Dressing Strip':{badge:'Non-woven Dressing Strip',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Continuous non-woven adhesive dressing strip on a roll — cut to the required length for flexible, economical wound dressing fixation.',features:['Continuous roll format allows cutting to any required length — reduces waste','Soft, breathable non-woven backing comfortable for extended wear','Hypoallergenic adhesive suitable for sensitive skin','Absorbent pad layer provides basic wound protection and exudate management'],specs:[['Available widths','2.5 / 5 / 7.5 / 10 cm'],['Roll length','10 m'],['Adhesion','Self-adhesive'],['Absorbency','Low']],indications:['Wound dressing fixation','Minor cuts and abrasions','Post-operative wound protection','Home care'],note:''},
+  'Film Island Dressing':{badge:'Film Island Dressing',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Transparent PU film island dressing with central absorbent pad — waterproof, breathable, and allows wound inspection without removal.',features:['Waterproof transparent PU film border provides a reliable barrier against water and external contamination','Central non-adherent absorbent pad protects the wound and manages low to moderate exudate','Transparent film allows wound monitoring without dressing removal','Breathable membrane allows water vapour transmission to reduce maceration risk'],specs:[['REF No.','105 001 – 105 012'],['Available sizes','6×7 to 15×20 cm'],['Absorbency','Low – Moderate'],['Backing','Waterproof breathable PU film'],['Adhesion','Self-adhesive PU border']],indications:['Post-operative wounds','Minor burns','IV catheter sites','Superficial wounds','Skin donor sites'],note:''},
+  'Transparent Film Strip':{badge:'Transparent Film Strip',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Continuous transparent PU film dressing roll — waterproof, breathable, and ideal for covering IV sites, superficial wounds, and post-operative incisions.',features:['Waterproof transparent PU film provides a reliable barrier while allowing wound inspection','Highly breathable — permits water vapour transmission to reduce maceration','Continuous roll format allows cutting to any required length','Hypoallergenic adhesive for secure, gentle fixation on sensitive skin'],specs:[['Available widths','5 / 10 / 15 / 20 cm'],['Roll length','10 m'],['Backing','Transparent PU film'],['Waterproof','Yes'],['MVTR','High — breathable']],indications:['IV catheter fixation','Post-operative incision coverage','Superficial wound protection','Skin graft donor sites'],note:''},
+  'Frame Style Transparent Film IV Dressing':{badge:'Frame Style IV Dressing',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Frame-style transparent film IV dressing with central cut-out — designed for secure, visible, and easy-change peripheral IV catheter fixation.',features:['Frame-style design with central cut-out enables one-handed catheter fixation and easy application','Transparent window allows continuous visual inspection of the catheter insertion site','Waterproof PU film protects against external contamination and fluid ingress','Gentle adhesive border ensures secure fixation while minimising skin damage at removal'],specs:[['REF No.','107 001 – 107 006'],['Available sizes','5.5×6 to 9×12 cm'],['Design','Frame style with central cut-out'],['Backing','Transparent waterproof PU film'],['Adhesion','Hypoallergenic adhesive border']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Arterial line fixation','Epidural catheter fixation'],note:''},
+  'Non-woven IV Dressing':{badge:'Non-woven IV Dressing',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Non-woven adhesive IV dressing for peripheral catheter fixation — soft, breathable, and comfortable for extended wear.',features:['Soft non-woven backing provides comfortable, breathable fixation for extended periods','Hypoallergenic adhesive suitable for sensitive skin and long-term use','Available in multiple sizes to fit different catheter types and patient anatomy','Opaque design protects insertion site from light exposure'],specs:[['REF No.','108 001 – 108 004'],['Available sizes','5×6 to 9×12 cm'],['Backing','Non-woven fabric'],['Adhesion','Hypoallergenic adhesive'],['Sterility','Individually sterile packaged']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Long-term IV access management'],note:''},
+  'Wound Closure Strips':{badge:'Wound Closure Strips',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Sterile adhesive wound closure strips for approximating wound edges — an alternative to sutures for minor lacerations and post-surgical incisions.',features:['Sterile strips provide secure wound edge approximation without the need for sutures','Porous, breathable material allows gas exchange and reduces infection risk','Gentle, hypoallergenic adhesive minimises skin irritation and trauma','Available in multiple widths and lengths for different wound sizes'],specs:[['Available sizes','3×75 / 6×75 / 12×100 mm'],['Packaging','6 strips/envelope'],['Sterility','Individually sterile packaged'],['Adhesion','Hypoallergenic acrylic']],indications:['Minor lacerations','Post-surgical incisions','Skin tear closure','Reinforcement after suture removal'],note:''},
+
+  // PERSONAL CARE
+  'Hydrocolloid Gel Bandages':{badge:'Hydrocolloid Gel Bandages',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Ultra-thin hydrocolloid gel bandages that create a moist healing environment for minor wounds, blisters, and pressure spots — discreet, waterproof, and long-lasting.',features:['Moist wound healing environment accelerates healing and reduces scarring for minor cuts and blisters','Ultra-thin, flexible design conforms closely to skin for discreet, comfortable wear','Waterproof outer surface protects against water, dirt, and bacteria during daily activities','Long wear time — typically 3–5 days without replacement'],specs:[['Type','Hydrocolloid gel'],['Available sizes','Multiple standard sizes'],['Wear time','3–5 days'],['Waterproof','Yes'],['Transparency','Semi-transparent']],indications:['Blisters','Minor cuts and abrasions','Pressure spots','Superficial skin injuries'],note:''},
+  'PE Woundplast':{badge:'PE Woundplast',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Flexible PE film wound plaster for everyday minor wound protection — waterproof, breathable, and comfortable for all-day wear.',features:['Flexible PE backing conforms to skin movement — comfortable for joints and active areas','Waterproof outer surface protects wounds during handwashing and light water exposure','Breathable design reduces moisture build-up under the plaster','Hypoallergenic adhesive suitable for everyday use on normal and sensitive skin'],specs:[['Backing','PE film'],['Waterproof','Yes'],['Adhesion','Hypoallergenic acrylic'],['Available sizes','Standard strip and spot sizes']],indications:['Minor cuts and scrapes','Blisters','Superficial abrasions','Everyday wound protection'],note:''},
+  'Silicone Scar Sheet':{badge:'Silicone Scar Sheet',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Medical-grade silicone scar sheet for flattening, softening, and fading hypertrophic scars and keloids — clinically proven for post-surgical and burn scars.',features:['Flattens, softens and reduces the appearance of hypertrophic scars and keloids with regular use','Medical-grade silicone creates an optimal moist microclimate to accelerate scar remodelling','Reusable — can be cleaned and reapplied multiple times; cost-effective long-term treatment','Self-adhesive, discreet and flexible — can be worn under clothing during daily activities'],specs:[['Material','Medical-grade silicone'],['Reusable','Yes — washable and reusable'],['Available sizes','3×6 / 4×6 / 5×7.5 cm and custom'],['Wear time','8–24 hours/day recommended'],['Sterility','Non-sterile']],indications:['Post-surgical scars','Burn scars','Hypertrophic scars','Keloids','C-section scars'],note:''},
+  'Non-woven Cohesive Elastic Bandage':{badge:'Cohesive Elastic Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Self-adhesive non-woven elastic bandage that bonds to itself without sticking to skin or hair — ideal for wound dressing retention, support, and compression.',features:['Self-adhesive — bonds to itself only, not to skin, hair, or clothing; no clips or pins required','Latex-free construction suitable for patients with latex sensitivities','Flexible, conformable design ideal for securing dressings on limbs, joints, and irregular body contours','Available in multiple colours for easy patient identification'],specs:[['REF No.','302 001 – 302 006'],['Available widths','2.5 / 5 / 7.5 / 10 / 12.5 / 15 cm'],['Length','4.5 m (stretched)'],['Adhesion','Self-cohesive — bonds to itself only'],['Latex-free','Yes']],indications:['Wound dressing retention','Light compression','Joint support','Sports strapping'],note:''},
+  'Elastic Crepe Bandage':{badge:'Elastic Crepe Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Traditional elastic crepe bandage for compression, support, and wound dressing retention — versatile, reusable, and washable.',features:['Provides light to moderate compression for oedema management and post-injury support','Conformable and stretchable design for comfortable application on limbs and joints','Reusable — can be washed and reused multiple times','Available in multiple widths for different body areas'],specs:[['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Material','Cotton / polyester blend'],['Reusable','Yes — washable']],indications:['Oedema management','Sprain support','Wound dressing retention','Post-operative compression'],note:''},
+  'Neuromuscular Kinesiology Tape':{badge:'Kinesiology Tape',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Elastic kinesiology tape that mimics skin elasticity to support muscles and joints during sport and rehabilitation without restricting movement.',features:['100% cotton elastic backing mimics the elasticity and thickness of human skin for natural movement','Water-resistant acrylic adhesive maintains adhesion during exercise and showering — up to 5 days wear','Supports muscles and joints, reduces pain, and improves circulation without restricting range of motion','Available in multiple colours; latex-free and hypoallergenic for sensitive skin'],specs:[['Material','100% cotton elastic fabric'],['Adhesive','Water-resistant acrylic'],['Width','5 cm'],['Length','5 m per roll'],['Wear time','Up to 5 days']],indications:['Sports injury prevention','Muscle and joint support','Rehabilitation','Pain management','Oedema reduction'],note:''},
+  'PBT Bandage':{badge:'PBT Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Highly elastic PBT conforming bandage for securing wound dressings on complex body contours including fingers, heels, and joints.',features:['High elasticity conforms closely to irregular body surfaces including fingers, heels, and joints','Soft, breathable fabric comfortable for extended wear','Non-adhesive design allows easy, pain-free removal without skin damage','Available in multiple widths for different wound sites and body areas'],specs:[['Material','PBT (polybutylene terephthalate)'],['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Adhesion','Non-adhesive'],['Elasticity','High']],indications:['Wound dressing retention','Post-operative care','Burns management','Digit and limb bandaging'],note:''},
+  'V.A.C. Dressing Kit':{badge:'V.A.C. Dressing Kit',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Complete vacuum-assisted closure (VAC) dressing kit for negative pressure wound therapy — supports healing of complex, deep, and chronic wounds.',features:['Complete all-in-one kit includes foam dressing, transparent film drape, and tubing for vacuum connection','Negative pressure removes excess exudate, reduces oedema, and promotes granulation tissue formation','Open-cell foam conforms to wound shape ensuring even distribution of negative pressure','Compatible with standard negative pressure wound therapy (NPWT) systems'],specs:[['Contents','Foam dressing + drape + tubing + pad'],['Foam type','Open-cell polyurethane (black) or PVA (white)'],['Pressure range','75–125 mmHg (as directed)'],['Application','Single use, sterile']],indications:['Chronic wounds','Diabetic foot ulcers','Post-surgical dehiscence','Traumatic wounds','Pressure ulcers Stage III–IV'],note:'Use only under medical supervision as part of a comprehensive wound management programme.'}
 };
 
 function showOv() {
@@ -921,30 +984,65 @@ var PROD_PAGES = {
 
 function showProd(name) {
   activeL3Item = name;
+  var p = PRODS[name];
   document.getElementById('l2PanelOv').style.display = 'none';
   var pd = document.getElementById('l2PanelPd');
   pd.style.display = 'block';
+  pd.style.animation = 'none'; void pd.offsetWidth; pd.style.animation = 'l2-fade-up .3s ease';
   document.getElementById('l2BcCur').textContent = name;
 
   var iframe = document.getElementById('l2ProdIframe');
   var coming = document.getElementById('l2ProdComingSoon');
   var iframeWrap = document.getElementById('l2ProdIframeWrap');
+  var normalPd = document.getElementById('l2NormalPd');
+  var mobileLink = document.getElementById('l2MobileLink');
+  var mobileLinkBtn = document.getElementById('l2MobileLinkBtn');
 
   var page = PROD_PAGES[name];
   if (page) {
-    iframe.src = page;
+    // 有三级页面：桌面显示iframe，手机显示跳转按钮
     iframeWrap.style.display = 'block';
+    normalPd.style.display = 'none';
     coming.style.display = 'none';
-    // 手机端直接跳转链接
-    var mobileLink = document.getElementById('l2MobileLink');
-    var mobileLinkBtn = document.getElementById('l2MobileLinkBtn');
+    iframe.src = page;
     mobileLinkBtn.href = page;
-    mobileLink.style.display = '';  // CSS media query controls actual visibility
+    mobileLink.style.display = '';
   } else {
-    iframe.src = '';
+    // 无三级页面：显示产品详情卡
     iframeWrap.style.display = 'none';
-    coming.style.display = 'block';
-    document.getElementById('l2MobileLink').style.display = 'none';
+    mobileLink.style.display = 'none';
+    normalPd.style.display = 'block';
+    coming.style.display = 'none';
+
+    // 填充产品详情
+    var badge = document.getElementById('l2PdBadge');
+    var imgBox = document.getElementById('l2PdImgBox');
+    if (p && p.img) {
+      imgBox.innerHTML = '<img src="'+p.img+'" alt="'+name+'" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" onerror="this.parentNode.innerHTML=\'<div style=font-size:36px;color:#bae6fd>✚</div><div style=font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase>Product Image</div>\'">';
+    } else {
+      imgBox.innerHTML = '<div style="font-size:36px;color:#bae6fd;">✚</div><div style="font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;">Product Image</div>';
+    }
+    if (p) {
+      badge.textContent = p.badge;
+      badge.style.cssText = 'display:inline-block;padding:3px 12px;border-radius:999px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;' + p.bs;
+      document.getElementById('l2PdName').textContent    = name;
+      document.getElementById('l2PdTagline').textContent = p.tagline;
+      document.getElementById('l2PdFeats').innerHTML = p.features.map(function(f){ return '<div class="l2-feat"><div class="l2-feat-dot"></div><span>'+f+'</span></div>'; }).join('');
+      document.getElementById('l2PdSpecs').innerHTML = p.specs.map(function(s){ return '<tr><td class="sk">'+s[0]+'</td><td class="sv">'+s[1]+'</td></tr>'; }).join('');
+      document.getElementById('l2PdInds').innerHTML  = p.indications.map(function(i){ return '<span class="l2-ind-chip">'+i+'</span>'; }).join('');
+      var n = document.getElementById('l2PdNote');
+      if (p.note) { n.style.display='flex'; document.getElementById('l2PdNoteText').textContent=p.note; }
+      else { n.style.display='none'; }
+    } else {
+      badge.textContent = 'Product';
+      badge.style.cssText = 'display:inline-block;padding:3px 12px;border-radius:999px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;background:#f1f5f9;color:#475569;';
+      document.getElementById('l2PdName').textContent    = name;
+      document.getElementById('l2PdTagline').textContent = 'Full product specifications coming soon.';
+      document.getElementById('l2PdFeats').innerHTML  = '';
+      document.getElementById('l2PdSpecs').innerHTML  = '';
+      document.getElementById('l2PdInds').innerHTML   = '';
+      document.getElementById('l2PdNote').style.display = 'none';
+    }
   }
 
   openL3(activeL2);
