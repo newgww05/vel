@@ -753,8 +753,15 @@ var L3DATA = {
     {g:'Skin Care', items:['Hydrocolloid Gel Bandages','PE Woundplast','Silicone Scar Sheet']},
     {g:'Therapy',  items:['Neuromuscular Kinesiology Tape','V.A.C. Dressing Kit']}
   ]},
-  continence: { lbl:'Continence Care', ttl:'Coming soon', groups:[{g:'Products', items:['Coming soon']}] },
-  diabetes:   { lbl:'Diabetes Care',   ttl:'Coming soon', groups:[{g:'Products', items:['Coming soon']}] }
+  continence: { lbl:'Continence Care', ttl:'5 products · 1 group', groups:[
+    {g:'Washable Underpads', items:['Washable Bed Pad Standard','Washable Bed Pad Large','Washable Bed Pad King Size','Washable Bed Pad with Tuck-in Sides','Washable Bed Pad for Baby']}
+  ]},
+  diabetes:   { lbl:'Diabetes Care',   ttl:'8 products · 4 groups', groups:[
+    {g:'Grade 0 — Prevention (Low Risk)', items:['YDA Shoe — Daily Activity']},
+    {g:'Grade 1 — Primary Prevention (Intermediate Risk)', items:['MAC1 Shoe — Semi-rigid','TQURA Shoe — Extra Depth']},
+    {g:'Grade 2 — Secondary Prevention (High Risk)', items:['MAC2 Shoe — Rigid Sole','MAC3 Shoe — Maximum Protection','YDA Pro Shoe']},
+    {g:'Grade 3 — Acute Phase / Wound Management (Very High Risk)', items:['SBi Motus Offloading Walker','SBi Frame Offloading Walker']}
+  ]}
 };
 
 var activeL3Item = null;
@@ -964,7 +971,136 @@ var PRODS = {
   'Elastic Crepe Bandage':{badge:'Elastic Crepe Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Traditional elastic crepe bandage for compression, support, and wound dressing retention — versatile, reusable, and washable.',features:['Provides light to moderate compression for oedema management and post-injury support','Conformable and stretchable design for comfortable application on limbs and joints','Reusable — can be washed and reused multiple times','Available in multiple widths for different body areas'],specs:[['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Material','Cotton / polyester blend'],['Reusable','Yes — washable']],indications:['Oedema management','Sprain support','Wound dressing retention','Post-operative compression'],note:''},
   'Neuromuscular Kinesiology Tape':{badge:'Kinesiology Tape',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Elastic kinesiology tape that mimics skin elasticity to support muscles and joints during sport and rehabilitation without restricting movement.',features:['100% cotton elastic backing mimics the elasticity and thickness of human skin for natural movement','Water-resistant acrylic adhesive maintains adhesion during exercise and showering — up to 5 days wear','Supports muscles and joints, reduces pain, and improves circulation without restricting range of motion','Available in multiple colours; latex-free and hypoallergenic for sensitive skin'],specs:[['Material','100% cotton elastic fabric'],['Adhesive','Water-resistant acrylic'],['Width','5 cm'],['Length','5 m per roll'],['Wear time','Up to 5 days']],indications:['Sports injury prevention','Muscle and joint support','Rehabilitation','Pain management','Oedema reduction'],note:''},
   'PBT Bandage':{badge:'PBT Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Highly elastic PBT conforming bandage for securing wound dressings on complex body contours including fingers, heels, and joints.',features:['High elasticity conforms closely to irregular body surfaces including fingers, heels, and joints','Soft, breathable fabric comfortable for extended wear','Non-adhesive design allows easy, pain-free removal without skin damage','Available in multiple widths for different wound sites and body areas'],specs:[['Material','PBT (polybutylene terephthalate)'],['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Adhesion','Non-adhesive'],['Elasticity','High']],indications:['Wound dressing retention','Post-operative care','Burns management','Digit and limb bandaging'],note:''},
-  'V.A.C. Dressing Kit':{badge:'V.A.C. Dressing Kit',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Complete vacuum-assisted closure (VAC) dressing kit for negative pressure wound therapy — supports healing of complex, deep, and chronic wounds.',features:['Complete all-in-one kit includes foam dressing, transparent film drape, and tubing for vacuum connection','Negative pressure removes excess exudate, reduces oedema, and promotes granulation tissue formation','Open-cell foam conforms to wound shape ensuring even distribution of negative pressure','Compatible with standard negative pressure wound therapy (NPWT) systems'],specs:[['Contents','Foam dressing + drape + tubing + pad'],['Foam type','Open-cell polyurethane (black) or PVA (white)'],['Pressure range','75–125 mmHg (as directed)'],['Application','Single use, sterile']],indications:['Chronic wounds','Diabetic foot ulcers','Post-surgical dehiscence','Traumatic wounds','Pressure ulcers Stage III–IV'],note:'Use only under medical supervision as part of a comprehensive wound management programme.'}
+  'V.A.C. Dressing Kit':{badge:'V.A.C. Dressing Kit',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Complete vacuum-assisted closure (VAC) dressing kit for negative pressure wound therapy — supports healing of complex, deep, and chronic wounds.',features:['Complete all-in-one kit includes foam dressing, transparent film drape, and tubing for vacuum connection','Negative pressure removes excess exudate, reduces oedema, and promotes granulation tissue formation','Open-cell foam conforms to wound shape ensuring even distribution of negative pressure','Compatible with standard negative pressure wound therapy (NPWT) systems'],specs:[['Contents','Foam dressing + drape + tubing + pad'],['Foam type','Open-cell polyurethane (black) or PVA (white)'],['Pressure range','75–125 mmHg (as directed)'],['Application','Single use, sterile']],indications:['Chronic wounds','Diabetic foot ulcers','Post-surgical dehiscence','Traumatic wounds','Pressure ulcers Stage III–IV'],note:'Use only under medical supervision as part of a comprehensive wound management programme.'},
+
+  // ── CONTINENCE CARE ──
+  'Washable Bed Pad Standard':{
+    badge:'Washable Bed Pad · Standard',bs:'background:#fff7ed;color:#c2410c;',
+    img:'',
+    tagline:'4-layer quilted washable bed pad for incontinence protection — ultra-absorbent, machine washable up to 300 times, and comfortable for adults, children, and elderly.',
+    features:['Quilted top surface wicks moisture away from skin for dry, comfortable rest','Heavy-absorbency middle layer locks fluid quickly — holds up to 6 cups of liquid','Non-slip waterproof vinyl backing protects mattress and prevents pad from shifting','Machine washable up to 300 times — reusable and environmentally friendly alternative to disposables'],
+    specs:[['Size','34" × 36" (86 × 91 cm)'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Non-slip waterproof vinyl'],['Washability','Up to 300 machine washes']],
+    indications:['Adult incontinence','Post-surgical recovery','Bed rest protection','Elderly care','Paediatric bed-wetting'],
+    note:''
+  },
+  'Washable Bed Pad Large':{
+    badge:'Washable Bed Pad · Large',bs:'background:#fff7ed;color:#c2410c;',
+    img:'',
+    tagline:'Large-format washable incontinence bed pad for full mattress protection — heavy absorbency with non-slip backing for secure positioning throughout the night.',
+    features:['Generous 34" × 52" size provides comprehensive mattress coverage for adults','Heavy-absorbency core locks fluid rapidly, keeping surface dry and comfortable','Non-slip waterproof vinyl backing holds pad securely in place during sleep','Soft quilted surface gentle on sensitive skin; machine washable for convenient reuse'],
+    specs:[['Size','34" × 52" (86 × 132 cm)'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Non-slip waterproof vinyl'],['Washability','Up to 300 machine washes']],
+    indications:['Adult incontinence','Heavy overnight protection','Post-operative care','Elderly care'],
+    note:''
+  },
+  'Washable Bed Pad King Size':{
+    badge:'Washable Bed Pad · King Size',bs:'background:#fff7ed;color:#c2410c;',
+    img:'',
+    tagline:'King-size washable bed pad offering maximum mattress coverage — ideal for king and queen beds where full-width protection is required.',
+    features:['Extra-wide 34" × 76" format provides complete protection across large bed widths','Heavy-absorbency multilayer core for reliable overnight incontinence management','Non-slip waterproof backing prevents movement even on smooth mattress surfaces','Durable construction withstands repeated machine washing without losing absorbency'],
+    specs:[['Size','34" × 76" (86 × 193 cm)'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Non-slip waterproof vinyl'],['Washability','Up to 300 machine washes']],
+    indications:['Adult incontinence','King and queen bed protection','Elderly care','Overnight heavy protection'],
+    note:''
+  },
+  'Washable Bed Pad with Tuck-in Sides':{
+    badge:'Washable Bed Pad · Tuck-in Sides',bs:'background:#fff7ed;color:#c2410c;',
+    img:'',
+    tagline:'Washable incontinence bed pad with tuck-in side flaps for a secure, wrinkle-free fit — stays perfectly in place throughout the night.',
+    features:['Extended tuck-in side flaps secure the pad firmly under the mattress — no slipping or bunching','Soft quilted top layer provides comfortable, skin-friendly contact throughout the night','Heavy-absorbency core manages moderate to heavy incontinence reliably','Machine washable and reusable — significantly reduces cost and waste versus disposable pads'],
+    specs:[['Design','Tuck-in side flaps for secure fit'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Waterproof layer'],['Washability','Up to 300 machine washes']],
+    indications:['Adult incontinence','Night-time use','Post-surgical recovery','Restless sleepers requiring secure positioning'],
+    note:''
+  },
+  'Washable Bed Pad for Baby':{
+    badge:'Washable Bed Pad · Baby',bs:'background:#fff7ed;color:#c2410c;',
+    img:'',
+    tagline:'Compact 4-layer washable bed pad sized for babies and toddlers — soft, breathable, and gentle on delicate skin during nappy training and nighttime protection.',
+    features:['Compact 18" × 24" size designed for cribs, prams, and changing mats','Ultra-soft quilted top surface gentle on delicate baby skin','4-layer construction absorbs and locks away moisture quickly for dry, comfortable rest','Machine washable and reusable — ideal eco-friendly alternative to disposable waterproof liners'],
+    specs:[['Size','18" × 24" (46 × 61 cm)'],['Layers','4-layer construction'],['Top surface','Ultra-soft quilted fabric'],['Backing','Waterproof layer'],['Washability','Up to 300 machine washes']],
+    indications:['Baby and toddler nappy training','Cot and pram protection','Travel use','Changing mat liner'],
+    note:''
+  },
+
+  // ── DIABETES CARE — DIABETIC FOOTWEAR (by Optima Molliter DFA Risk Grade) ──
+
+  // GRADE 0 — Prevention
+  'YDA Shoe — Daily Activity':{
+    badge:'YDA · Grade 0 Prevention',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'YDA (Your Daily Activity) therapeutic footwear for low-risk diabetic patients — designed for everyday prevention of foot complications with extra depth and pressure-distributing sole.',
+    features:['Semi-flexible rocker sole distributes plantar pressure evenly to reduce peak loading at risk areas','Extra-depth design accommodates removable orthotic insoles for personalised offloading','Breathable, seamless upper minimises friction and irritation on neuropathic skin','Suitable for everyday wear — lightweight, aesthetically designed for active daily use'],
+    specs:[['Risk Grade','Grade 0 — Prevention (Low Risk)',''],['Sole','Semi-flexible rocker'],['Fit','Comfortable / Extra depth'],['Closure','Velcro / Lace options'],['Subject','Diabetes, Wellbeing'],['Standard','IWGDF-aligned DFA protocol']],
+    indications:['Type 1 & 2 diabetes with no active foot pathology','Peripheral neuropathy (protective)','Preventive daily wear for at-risk patients'],
+    note:'Prescription by a qualified healthcare professional recommended. Part of Optima Molliter DFA (Diabetic Foot offloading Algorithm).'
+  },
+
+  // GRADE 1 — Primary Prevention
+  'MAC1 Shoe — Semi-rigid':{
+    badge:'MAC1 · Grade 1 Primary Prevention',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'MAC1 medical-grade shoe for intermediate-risk diabetic feet — semi-rigid sole and extra-depth construction for patients with early-stage neuropathy, deformity, or healed ulcers.',
+    features:['Semi-rigid outsole controls forefoot flexion and redistributes plantar pressure away from high-risk areas','Fully removable multilayer insole system allows custom orthotic accommodation','Seamless, stretchable upper protects fragile, sensitive, or neuropathic skin from friction','Available in multiple widths and depths to accommodate foot deformities including bunions and hammertoes'],
+    specs:[['Risk Grade','Grade 1 — Primary Prevention (Intermediate Risk)'],['Sole','Semi-rigid rocker'],['Fit','Extra / Plentiful depth'],['Closure','Velcro closures'],['Subject','Diabetes, Forefoot pathologies'],['Standard','IWGDF-aligned DFA protocol']],
+    indications:['Peripheral neuropathy with mild deformity','Healed plantar ulcer (prevention of recurrence)','Bunion, hammertoe, claw toe','Charcot foot (stable, post-acute)'],
+    note:'Part of Optima Molliter DFA Grade 1 protocol. Custom orthotic insoles recommended.'
+  },
+  'TQURA Shoe — Extra Depth':{
+    badge:'TQURA · Grade 1 Primary Prevention',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'TQURA extra-depth therapeutic shoe for intermediate-risk diabetic patients — exceptional volume capacity accommodates severe deformities, orthoses, and post-operative needs.',
+    features:['Maximum extra-depth design provides generous volume for custom insoles and significant foot deformities','Adjustable Velcro closure system allows fine-tuning for swollen or oedematous feet throughout the day','Stretchable upper conforms to irregular foot shapes without creating pressure points','Rocker sole geometry reduces forefoot loading and promotes a smooth gait cycle'],
+    specs:[['Risk Grade','Grade 1 — Primary Prevention (Intermediate Risk)'],['Sole','Rigid / Semi-rigid rocker'],['Fit','Plentiful (maximum depth)'],['Closure','Wide adjustable Velcro'],['Subject','Diabetes, Forefoot pathologies, Post surgery'],['Standard','IWGDF-aligned DFA protocol']],
+    indications:['Severe foot deformities requiring custom orthoses','Post-surgical rehabilitation','Significant oedema or lymphoedema','Charcot foot (chronic stable phase)'],
+    note:'Part of Optima Molliter DFA Grade 1 protocol. Maximum accommodation for complex orthotic systems.'
+  },
+
+  // GRADE 2 — Secondary Prevention
+  'MAC2 Shoe — Rigid Sole':{
+    badge:'MAC2 · Grade 2 Secondary Prevention',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'MAC2 rigid-sole medical shoe for high-risk diabetic feet — prescribed for patients with active or recently healed plantar ulcers requiring firm pressure redistribution.',
+    features:['Rigid outsole with full-length rocker significantly reduces forefoot and midfoot peak pressures','Custom-moulded multilayer insole system targets offloading at specific ulcer-risk sites','High upper provides additional ankle stability and protects against lateral trauma','Accommodates significant foot deformities and post-amputation residual limbs'],
+    specs:[['Risk Grade','Grade 2 — Secondary Prevention (High Risk)'],['Sole','Rigid full-length rocker'],['Fit','Plentiful extra depth'],['Closure','Velcro multi-strap'],['Subject','Diabetes, Wound management, Post surgery'],['Standard','IWGDF-aligned DFA protocol']],
+    indications:['High-risk diabetic foot with previous ulceration','Active superficial plantar ulcer (Grade IA/IIA)','Post-amputation (toe/ray/transmetatarsal)','Severe Charcot arthropathy (reconstructed foot)'],
+    note:'Part of Optima Molliter DFA Grade 2 protocol. Requires prescription and fitting by a specialist.'
+  },
+  'MAC3 Shoe — Maximum Protection':{
+    badge:'MAC3 · Grade 2 Secondary Prevention',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'MAC3 maximum-protection rigid shoe for the highest-risk non-ulcerated diabetic feet — exceptional offloading capacity with full customisability for complex foot reconstructions.',
+    features:['Maximum-rigidity outsole with pronounced full-length rocker for aggressive pressure redistribution','Highest-capacity depth accommodates complex custom insoles and post-reconstruction foot anatomy','Reinforced toe box and lateral guards protect fragile, insensate tissue from mechanical trauma','Fully adjustable upper adapts to significant volume changes from oedema, bandaging, or wound dressings'],
+    specs:[['Risk Grade','Grade 2 — Secondary Prevention (High Risk, Complex)'],['Sole','Maximum rigid rocker'],['Fit','Maximum plentiful depth'],['Closure','Wide multi-strap Velcro'],['Subject','Diabetes, Wound management'],['Standard','IWGDF-aligned DFA protocol']],
+    indications:['Complex post-surgical foot reconstruction','Major partial foot amputation','Severe Charcot with significant deformity','High-risk foot requiring maximum mechanical protection'],
+    note:'Part of Optima Molliter DFA Grade 2 protocol. Requires specialist assessment and custom insole fabrication.'
+  },
+  'YDA Pro Shoe':{
+    badge:'YDA Pro · Grade 2 Secondary Prevention',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'YDA Pro upgraded therapeutic shoe combining enhanced aesthetics with high-risk diabetic foot protection — semi-rigid sole with extra volume for active high-risk patients.',
+    features:['Semi-rigid rocker sole reduces peak plantar pressure while maintaining a natural gait pattern','Extra-depth design accommodates custom orthotic insoles for targeted pressure relief','Premium breathable upper materials balance clinical protection with everyday aesthetics','Suitable for patients transitioning from acute offloading walkers to long-term preventive footwear'],
+    specs:[['Risk Grade','Grade 2 — Secondary Prevention (High Risk)'],['Sole','Semi-rigid rocker'],['Fit','Extra / Plentiful depth'],['Closure','Velcro and lace options'],['Subject','Diabetes, Forefoot pathologies'],['Standard','IWGDF-aligned DFA protocol']],
+    indications:['High-risk patients requiring long-term daily therapeutic footwear','Transition from offloading walker post-ulcer healing','Neuropathic foot with significant deformity'],
+    note:'Part of Optima Molliter DFA Grade 2 protocol. Combines clinical efficacy with improved wearability for long-term compliance.'
+  },
+
+  // GRADE 3 — Acute Phase / Wound Management
+  'SBi Motus Offloading Walker':{
+    badge:'SBi Motus · Grade 3 Acute Offloading',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'SBi Motus — the world\'s first smart, fully customisable offloading walker for active diabetic foot ulcer management — CES 2019 Innovation Award winner for Wearable Technologies.',
+    features:['Fully customisable 3×3 modular kit allows targeted offloading of any plantar wound area — forefoot, midfoot, or heel','Integrated IoT sensors (Sensoria®) monitor patient compliance 24/7 and transmit data to clinical teams in real time','Rigid external rocker sole with fibre-glass interface eliminates forefoot/midfoot pressure — equivalent to irremovable TCC','Smart technology alerts clinicians to reduced compliance — proven to reduce healing time and amputation risk'],
+    specs:[['Risk Grade','Grade 3 — Acute Phase / Wound Management (Very High Risk)'],['Design','Fully customisable modular offloading walker'],['Smart features','IoT compliance monitoring (Sensoria®)'],['Sole','External rigid rocker'],['Standard','IWGDF Gold Standard Offloading — DFA Grade 3'],['Award','CES 2019 Innovation Award — Wearable Technologies']],
+    indications:['Active diabetic plantar foot ulcer (Wagner Grade 1–3)','Post-operative wound management','Neuroischaemic plantar wounds','Post-amputation wound healing (toe to transmetatarsal)','Malleolar and metatarsal fractures'],
+    note:'Part of Optima Molliter DFA Grade 3 acute protocol. IWGDF Gold Standard equivalent to total contact cast. Smart compliance monitoring available via Sensoria® integration.'
+  },
+  'SBi Frame Offloading Walker':{
+    badge:'SBi Frame · Grade 3 Acute Offloading',bs:'background:#ecfdf5;color:#065f46;',
+    img:'',
+    tagline:'SBi Frame — a rigid customisable offloading walker for acute diabetic foot ulcer healing — high-leg brace with modular insole system for complete wound offloading.',
+    features:['Rigid high-leg brace structure provides maximum stability and complete mechanical offloading of the foot','Modular multilayer insole system targets pressure relief directly at the wound site','Heat-mouldable posterior brace adapts precisely to individual leg anatomy for optimal fit and comfort','Breathable, washable upper maintains hygiene during extended wear through the healing phase'],
+    specs:[['Risk Grade','Grade 3 — Acute Phase / Wound Management (Very High Risk)'],['Design','Rigid high-leg offloading brace'],['Insole','Modular multilayer offloading system'],['Sole','External rigid full-length rocker'],['Standard','IWGDF Gold Standard Offloading — DFA Grade 3'],['Manufacturer','Optima Molliter, Italy (est. 1894)']],
+    indications:['Active diabetic plantar foot ulcer','Post-operative diabetic foot surgery','Charcot foot acute phase','Malleolar and metatarsal fractures','Post-amputation rehabilitation (up to transmetatarsal)'],
+    note:'Part of Optima Molliter DFA Grade 3 acute protocol. Clinically proven in prospective randomised studies published in Diabetes Care (ADA, 2007).'
+  }
 };
 
 function showOv() {
