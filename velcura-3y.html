@@ -2,359 +2,275 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WHY · WHO · WHERE | Velcura Medical</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --c-bg:#F5F2ED;--c-bg2:#EDEAE3;--c-ink:#1A1916;--c-ink2:#4A4843;--c-ink3:#8A8780;
-  --c-gold:#B8975A;--c-teal:#2D6E6A;--c-teal2:#4A9490;--c-cream:#FAF8F4;
-  --c-line:rgba(26,25,22,0.12);
-  --c-blue:#235f80;--c-blue2:#3a7fa8;--c-blue3:#4a8fb8;
-}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--c-bg);color:var(--c-ink);line-height:1.6;overflow-x:hidden;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a1916;overflow-x:hidden;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(245,242,237,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--c-line);}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:0.06em;color:var(--c-ink);text-decoration:none;}
-.nav-logo span{color:var(--c-teal);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2.5rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.08);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;letter-spacing:0.06em;color:#1a1916;text-decoration:none;}
+.nav-logo span{color:#2D6E6A;}
 .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);}
-.nav-links a{font-size:0.8rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-ink2);text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover{color:var(--c-teal);}
-.nav-cta{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-cream);background:var(--c-teal);padding:0.6rem 1.5rem;text-decoration:none;transition:background 0.2s;}
-.nav-cta:hover{background:var(--c-teal2);}
+.nav-links a{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#4a4843;text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:#2D6E6A;}
+.nav-cta{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#2D6E6A;padding:0.55rem 1.4rem;text-decoration:none;border-radius:2px;transition:background 0.2s;}
+.nav-cta:hover{background:#4A9490;}
 
-/* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px;}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px;}
 
-/* LEFT — 内容区 */
+/* ── LEFT ── */
 .hero-left{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:4rem 3.5rem 4rem 4rem;
-  position:relative;
-}
-.hero-left::after{
-  content:'';position:absolute;right:0;top:10%;bottom:10%;
-  width:0.5px;background:var(--c-line);
-}
-.hero-tag{
-  font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--c-blue2);display:flex;align-items:center;gap:0.75rem;
-  margin-bottom:1.5rem;
-}
-.hero-tag::before{content:'';display:block;width:2rem;height:1px;background:var(--c-blue2);}
-
-.hero-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.4rem,4vw,3.6rem);font-weight:300;
-  line-height:1.15;letter-spacing:0.01em;
-  color:var(--c-ink);margin-bottom:1.5rem;
-}
-.hero-title em{font-style:italic;color:var(--c-blue2);}
-
-/* 内容卡片区 */
-.content-cards{display:flex;flex-direction:column;gap:0;margin-top:0.5rem;}
-.content-card{
-  padding:1.4rem 0;
-  border-bottom:0.5px solid var(--c-line);
-  cursor:pointer;
-  transition:all 0.25s;
-  position:relative;
-}
-.content-card:first-child{border-top:0.5px solid var(--c-line);}
-.content-card-header{display:flex;align-items:center;justify-content:space-between;}
-.content-card-label{
-  font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;
-  font-weight:500;
-}
-.content-card-label.why{color:var(--c-blue);}
-.content-card-label.who{color:var(--c-blue2);}
-.content-card-label.where{color:var(--c-blue3);}
-.content-card-arrow{
-  font-size:0.75rem;color:var(--c-ink3);
-  transition:transform 0.25s;
-}
-.content-card.open .content-card-arrow{transform:rotate(90deg);}
-.content-card-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.35rem;font-weight:300;
-  color:var(--c-ink);margin-top:0.3rem;line-height:1.3;
-}
-.content-card-body{
-  max-height:0;overflow:hidden;
-  transition:max-height 0.4s cubic-bezier(0.22,1,0.36,1),opacity 0.3s;
-  opacity:0;
-}
-.content-card.open .content-card-body{max-height:200px;opacity:1;}
-.content-card-text{
-  font-size:0.88rem;line-height:1.8;color:var(--c-ink2);
-  padding-top:0.9rem;
-}
-
-/* 左侧底部小装饰 */
-.hero-footnote{
-  margin-top:2rem;
-  font-size:0.72rem;letter-spacing:0.1em;color:var(--c-ink3);
-  display:flex;align-items:center;gap:0.6rem;
-}
-.hero-footnote::before{content:'';width:1.5rem;height:1px;background:var(--c-ink3);}
-
-/* RIGHT — 圆盘区 */
-.hero-right{
-  display:flex;align-items:center;justify-content:center;
-  background:var(--c-bg);
+  border-right:1px solid rgba(0,0,0,0.08);
   position:relative;overflow:hidden;
 }
 
-/* 圆盘SVG动画 */
-.seg{cursor:pointer;transition:filter 0.25s;}
-.seg:hover{filter:brightness(1.14);}
+/* 默认动态文字 */
+.default-screen{
+  position:absolute;inset:0;
+  overflow:hidden;
+  transition:opacity 0.4s ease, transform 0.5s ease;
+}
+.default-screen.hidden{
+  opacity:0;transform:translateX(-30px);pointer-events:none;
+}
+.ds-tag{
+  font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:#3d8ab8;margin-bottom:1.4rem;
+  opacity:0;animation:fadeUp 0.6s ease 0.1s forwards;
+}
+.ds-line{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;line-height:1.1;color:#1a1916;
+  overflow:hidden;
+}
+.ds-line span{
+  display:block;
+  transform:translateY(100%);
+  animation:slideUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.ds-line:nth-child(2) span{animation-delay:0.15s;}
+.ds-line:nth-child(3) span{animation-delay:0.28s;color:#3d8ab8;font-style:italic;}
+.ds-line:nth-child(4) span{animation-delay:0.40s;}
+
+.ds-size-xl{font-size:clamp(2.8rem,5vw,5rem);}
+.ds-size-lg{font-size:clamp(2rem,3.5vw,3.5rem);}
+
+.ds-sub{
+  font-size:0.82rem;line-height:1.8;color:#8a8780;
+  margin-top:1.8rem;max-width:400px;
+  opacity:0;animation:fadeUp 0.6s ease 0.6s forwards;
+}
+.ds-cue{
+  margin-top:2.5rem;
+  display:flex;align-items:center;gap:0.8rem;
+  opacity:0;animation:fadeUp 0.6s ease 0.85s forwards;
+}
+.ds-cue-dot{
+  width:6px;height:6px;border-radius:50%;background:#3d8ab8;
+  animation:pulse 1.8s ease-in-out 1.2s infinite;
+}
+.ds-cue-text{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#b0c4d0;}
+
+@keyframes slideUp{to{transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+
+/* 内容面板 */
+.panel{
+  position:absolute;inset:0;
+  padding:3.5rem 3.5rem 3rem;
+  display:flex;flex-direction:column;justify-content:center;gap:1.2rem;
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.55s ease, transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  pointer-events:none;
+}
+.panel.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+
+.panel-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;}
+.panel-label.why{color:#3d8ab8;}
+.panel-label.how{color:#5aa5cc;}
+.panel-label.where{color:#72bbd8;}
+.panel-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);font-weight:300;line-height:1.2;color:#1a1916;}
+.panel-text{font-size:0.87rem;line-height:1.85;color:#4a4843;max-width:460px;}
+.panel-img{width:100%;max-width:460px;border-radius:10px;box-shadow:0 6px 28px rgba(61,138,184,0.14);display:block;}
+
+/* ── RIGHT ── */
+.hero-right{display:flex;align-items:center;justify-content:center;background:#fff;}
+.wheel-svg{width:min(88%,460px);height:auto;transform:translateY(-84px);}
+
 @keyframes dash{to{stroke-dashoffset:-40}}
-.animated-dash{animation:dash 3s linear infinite;}
-@keyframes fadeIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
-.wheel-svg{animation:fadeIn 0.8s ease both;width:min(90%,480px);height:auto;}
+.adash{animation:dash 3s linear infinite;}
+.seg{cursor:pointer;}
+.seg path{transition:filter 0.22s;}
+.seg:hover path{filter:brightness(1.15);}
+.seg.active path{filter:brightness(1.22);}
 
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,0.08);background:#f6fafd;}
+.stat{padding:1.6rem 1.5rem;text-align:center;border-right:1px solid rgba(0,0,0,0.08);}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:#3d8ab8;}
+.stat-l{font-size:0.7rem;letter-spacing:0.06em;color:#8a8780;margin-top:0.3rem;}
 
+footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(0,0,0,0.08);font-size:0.73rem;color:#8a8780;}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:#4a4843;letter-spacing:0.1em;}
 
-/* STATS BAR */
-.stats-bar{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:0.5px solid var(--c-line);border-bottom:0.5px solid var(--c-line);
-  background:var(--c-bg2);
-}
-.stat-item{
-  padding:1.8rem 2rem;border-right:0.5px solid var(--c-line);
-  text-align:center;
-}
-.stat-item:last-child{border-right:none;}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--c-blue2);line-height:1;}
-.stat-label{font-size:0.72rem;letter-spacing:0.06em;color:var(--c-ink3);margin-top:0.35rem;}
-
-/* FOOTER */
-footer{
-  padding:2rem 3rem;
-  display:flex;align-items:center;justify-content:space-between;
-  border-top:0.5px solid var(--c-line);
-  font-size:0.75rem;color:var(--c-ink3);letter-spacing:0.06em;
-}
-.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--c-ink2);letter-spacing:0.12em;}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
-  .hero-right{height:60vw;min-height:340px;}
-  .hero-left{padding:2.5rem 1.5rem;}
+  .hero-left{min-height:60vw;}
+  .hero-right{min-height:70vw;}
   nav{padding:1rem 1.5rem;}
   .nav-links{display:none;}
-  footer{padding:1.5rem;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html">Velcura <span>Medical</span></a>
+  <a class="nav-logo" href="https://velcura.net">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li><a href="wound-care.html">产品</a></li>
     <li><a href="#">认证</a></li>
     <li><a href="#contact">联系我们</a></li>
   </ul>
-  <a class="nav-cta" href="index.html">返回首页</a>
+  <a class="nav-cta" href="https://velcura.net">返回首页</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 
-  <!-- LEFT: 内容区 -->
   <div class="hero-left">
-    <div class="hero-tag">Velcura Medical · Core Framework</div>
-    <h1 class="hero-title">Three Questions.<br><em>One Direction.</em></h1>
 
-    <div class="content-cards">
-
-      <div class="content-card open" id="card-why" onclick="toggleCard('why')">
-        <div class="content-card-header">
-          <div>
-            <div class="content-card-label why">WHY</div>
-            <div class="content-card-title">The Purpose Behind Every Dressing</div>
-          </div>
-          <span class="content-card-arrow">›</span>
-        </div>
-        <div class="content-card-body">
-          <p class="content-card-text">Every Velcura product begins with a clinical question: why does this patient need a better outcome? Our answer is precision wound care — engineered to accelerate healing, reduce infection risk, and minimise pain at each dressing change.</p>
-        </div>
-      </div>
-
-      <div class="content-card" id="card-who" onclick="toggleCard('who')">
-        <div class="content-card-header">
-          <div>
-            <div class="content-card-label who">WHO</div>
-            <div class="content-card-title">Clinicians, Distributors &amp; Patients</div>
-          </div>
-          <span class="content-card-arrow">›</span>
-        </div>
-        <div class="content-card-body">
-          <p class="content-card-text">We serve wound care specialists, hospital procurement teams, and international distributors across 100+ countries. Our products are designed for both acute and chronic wound management — from post-surgical sites to complex diabetic ulcers.</p>
-        </div>
-      </div>
-
-      <div class="content-card" id="card-where" onclick="toggleCard('where')">
-        <div class="content-card-header">
-          <div>
-            <div class="content-card-label where">WHERE</div>
-            <div class="content-card-title">Global Reach, Local Compliance</div>
-          </div>
-          <span class="content-card-arrow">›</span>
-        </div>
-        <div class="content-card-body">
-          <p class="content-card-text">Manufactured in our ISO 13485-certified facility, Velcura products carry CE and FDA clearances, enabling direct distribution across Europe, North America, Southeast Asia and beyond. Wherever wounds need care, we are there.</p>
-        </div>
-      </div>
-
+    <!-- 默认图片屏 -->
+    <div class="default-screen" id="default-screen">
+      <img src="https://img.velcura.net/3W-1.webp" alt="Velcura" style="width:90%;height:90%;object-fit:contain;display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
     </div>
 
-    <div class="hero-footnote">ISO 13485 · CE · FDA · 100+ Countries</div>
+    <!-- WHY 面板 -->
+    <div class="panel" id="panel-why">
+      <div class="panel-label why">WHY</div>
+      <img class="panel-img" src="https://img.velcura.net/efficient.webp" alt="Efficient wound care">
+    </div>
+
+    <!-- WHO 面板 -->
+    <div class="panel" id="panel-how">
+      <div class="panel-label how">HOW</div>
+    </div>
+
+    <!-- WHERE 面板 -->
+    <div class="panel" id="panel-where">
+      <div class="panel-label where">WHERE</div>
+    </div>
+
   </div>
 
-  <!-- RIGHT: 圆盘 -->
+  <!-- RIGHT: WHEEL -->
   <div class="hero-right">
-    <svg class="wheel-svg" viewBox="0 0 680 680" role="img">
-      <title>Velcura — WHY / WHO / WHERE</title>
+    <svg class="wheel-svg" viewBox="0 0 680 680" style="pointer-events:all;">
       <defs>
-        <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="2.8" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <filter id="softglow" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <filter id="glow"><feGaussianBlur in="SourceGraphic" stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="sg"><feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <pattern id="ht" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
           <line x1="0" y1="0" x2="0" y2="6" stroke="white" stroke-width="0.3" stroke-opacity="0.07"/>
         </pattern>
+        <clipPath id="cc"><circle cx="340" cy="340" r="70"/></clipPath>
       </defs>
 
-      <!-- WHY 左半圆 -->
-      <g class="seg" onclick="activateSeg('why')">
-        <path d="M340,340 L340,62 A278,278 0 1,0 340,618 Z" fill="#235f80"/>
+      <g class="seg" id="seg-why" onclick="showPanel('why')" style="pointer-events:all;">
+        <path d="M340,340 L340,62 A278,278 0 1,0 340,618 Z" fill="#5b9dc2"/>
       </g>
-      <!-- WHO 右上 -->
-      <g class="seg" onclick="activateSeg('who')">
-        <path d="M340,340 L340,62 A278,278 0 0,1 618,340 Z" fill="#3a7fa8"/>
+      <g class="seg" id="seg-how" onclick="showPanel('how')" style="pointer-events:all;">
+        <path d="M340,340 L340,62 A278,278 0 0,1 618,340 Z" fill="#7db8d4"/>
       </g>
-      <!-- WHERE 右下 -->
-      <g class="seg" onclick="activateSeg('where')">
-        <path d="M340,340 L618,340 A278,278 0 0,1 340,618 Z" fill="#4a8fb8"/>
+      <g class="seg" id="seg-where" onclick="showPanel('where')" style="pointer-events:all;">
+        <path d="M340,340 L618,340 A278,278 0 0,1 340,618 Z" fill="#9ecfe0"/>
       </g>
 
-      <!-- 纹理 -->
-      <circle cx="340" cy="340" r="278" fill="url(#hatch)"/>
-      <!-- 外圆 -->
-      <circle cx="340" cy="340" r="278" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.25"/>
-      <circle cx="340" cy="340" r="275" fill="none" stroke="white" stroke-width="0.3" stroke-opacity="0.12"/>
-
-      <!-- 分隔线层1: 光晕 -->
-      <line x1="340" y1="340" x2="340" y2="62"  stroke="white" stroke-width="6" stroke-opacity="0.06"/>
-      <line x1="340" y1="340" x2="340" y2="618" stroke="white" stroke-width="6" stroke-opacity="0.06"/>
-      <line x1="340" y1="340" x2="618" y2="340" stroke="white" stroke-width="6" stroke-opacity="0.06"/>
-      <!-- 层2: 流动虚线 -->
-      <line x1="340" y1="340" x2="340" y2="62"  stroke="white" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 7" class="animated-dash"/>
-      <line x1="340" y1="340" x2="340" y2="618" stroke="white" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 7" class="animated-dash"/>
-      <line x1="340" y1="340" x2="618" y2="340" stroke="white" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 7" class="animated-dash"/>
-      <!-- 层3: 刀锋 -->
-      <line x1="340" y1="340" x2="340" y2="62"  stroke="white" stroke-width="0.5" stroke-opacity="0.7" filter="url(#softglow)"/>
-      <line x1="340" y1="340" x2="340" y2="618" stroke="white" stroke-width="0.5" stroke-opacity="0.7" filter="url(#softglow)"/>
-      <line x1="340" y1="340" x2="618" y2="340" stroke="white" stroke-width="0.5" stroke-opacity="0.7" filter="url(#softglow)"/>
-      <!-- 层4: 菱形珠 -->
-      <g fill="white" fill-opacity="0.55" filter="url(#softglow)">
-        <polygon points="340,118  344,130  340,142  336,130"/>
-        <polygon points="340,196  344,208  340,220  336,208"/>
-        <polygon points="340,258  343,268  340,278  337,268"/>
-        <polygon points="340,402  344,414  340,426  336,414"/>
-        <polygon points="340,468  344,480  340,492  336,480"/>
-        <polygon points="340,546  344,558  340,570  336,558"/>
-        <polygon points="418,340  430,344  442,340  430,336"/>
-        <polygon points="484,340  496,344  508,340  496,336"/>
-        <polygon points="556,340  568,344  580,340  568,336"/>
+      <g style="pointer-events:none;">
+        <circle cx="340" cy="340" r="278" fill="url(#ht)"/>
+        <circle cx="340" cy="340" r="278" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.25"/>
+        <line x1="340" y1="340" x2="340" y2="62"  stroke="white" stroke-width="6" stroke-opacity="0.06"/>
+        <line x1="340" y1="340" x2="340" y2="618" stroke="white" stroke-width="6" stroke-opacity="0.06"/>
+        <line x1="340" y1="340" x2="618" y2="340" stroke="white" stroke-width="6" stroke-opacity="0.06"/>
+        <line x1="340" y1="340" x2="340" y2="62"  stroke="white" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 7" class="adash"/>
+        <line x1="340" y1="340" x2="340" y2="618" stroke="white" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 7" class="adash"/>
+        <line x1="340" y1="340" x2="618" y2="340" stroke="white" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 7" class="adash"/>
+        <line x1="340" y1="340" x2="340" y2="62"  stroke="white" stroke-width="0.5" stroke-opacity="0.7" filter="url(#sg)"/>
+        <line x1="340" y1="340" x2="340" y2="618" stroke="white" stroke-width="0.5" stroke-opacity="0.7" filter="url(#sg)"/>
+        <line x1="340" y1="340" x2="618" y2="340" stroke="white" stroke-width="0.5" stroke-opacity="0.7" filter="url(#sg)"/>
+        <polygon points="340,118 344,130 340,142 336,130" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="340,196 344,208 340,220 336,208" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="340,258 343,268 340,278 337,268" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="340,402 344,414 340,426 336,414" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="340,468 344,480 340,492 336,480" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="340,546 344,558 340,570 336,558" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="418,340 430,344 442,340 430,336" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="484,340 496,344 508,340 496,336" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <polygon points="556,340 568,344 580,340 568,336" fill="white" fill-opacity="0.55" filter="url(#sg)"/>
+        <circle cx="340" cy="62"  r="4" fill="white" fill-opacity="0.6" filter="url(#sg)"/>
+        <circle cx="340" cy="618" r="4" fill="white" fill-opacity="0.6" filter="url(#sg)"/>
+        <circle cx="618" cy="340" r="4" fill="white" fill-opacity="0.6" filter="url(#sg)"/>
       </g>
-      <!-- 弧端圆点 -->
-      <circle cx="340" cy="62"  r="4" fill="white" fill-opacity="0.6" filter="url(#softglow)"/>
-      <circle cx="340" cy="618" r="4" fill="white" fill-opacity="0.6" filter="url(#softglow)"/>
-      <circle cx="618" cy="340" r="4" fill="white" fill-opacity="0.6" filter="url(#softglow)"/>
 
-      <!-- 文字 -->
-      <text x="201" y="348" font-family="'Cinzel Decorative',serif" font-size="44" font-weight="700"
-        fill="white" fill-opacity="0.95" text-anchor="middle" letter-spacing="7" filter="url(#glow)">WHY</text>
-      <line x1="163" y1="362" x2="239" y2="362" stroke="white" stroke-width="0.6" stroke-opacity="0.45"/>
+      <text x="201" y="348" font-family="'Cinzel Decorative',serif" font-size="44" font-weight="700" fill="white" fill-opacity="0.95" text-anchor="middle" letter-spacing="7" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('why')">WHY</text>
+      <text x="438" y="235" font-family="'Cinzel Decorative',serif" font-size="30" font-weight="700" fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="5" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('how')">HOW</text>
+      <text x="438" y="444" font-family="'Cinzel Decorative',serif" font-size="24" font-weight="700" fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="4" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('where')">WHERE</text>
 
-      <text x="438" y="235" font-family="'Cinzel Decorative',serif" font-size="30" font-weight="700"
-        fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="5" filter="url(#glow)">WHO</text>
-      <line x1="408" y1="248" x2="468" y2="248" stroke="white" stroke-width="0.5" stroke-opacity="0.4"/>
-
-      <text x="438" y="444" font-family="'Cinzel Decorative',serif" font-size="24" font-weight="700"
-        fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="4" filter="url(#glow)">WHERE</text>
-      <line x1="406" y1="456" x2="470" y2="456" stroke="white" stroke-width="0.5" stroke-opacity="0.4"/>
-
-      <!-- 中心圆 -->
-      <circle cx="340" cy="340" r="72" fill="#1a4a62" stroke="white" stroke-width="1" stroke-opacity="0.35"/>
-      <circle cx="340" cy="340" r="65" fill="none" stroke="white" stroke-width="0.4" stroke-opacity="0.2"/>
-      <text x="340" y="333" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300"
-        font-size="18" fill="white" fill-opacity="0.92" text-anchor="middle" letter-spacing="5">velcura</text>
-      <line x1="308" y1="340" x2="372" y2="340" stroke="white" stroke-width="0.4" stroke-opacity="0.4"/>
-      <text x="340" y="353" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="8"
-        fill="white" fill-opacity="0.45" text-anchor="middle" letter-spacing="3">medical</text>
-      <circle cx="340" cy="340" r="3" fill="white" fill-opacity="0.35"/>
+      <circle cx="340" cy="340" r="72" fill="#fff" stroke="#5b9dc2" stroke-width="1" stroke-opacity="0.4" style="pointer-events:none;"/>
+      <image href="https://img.velcura.net/logo1.svg" x="270" y="270" width="140" height="140" clip-path="url(#cc)" preserveAspectRatio="xMidYMid meet" style="pointer-events:none;"/>
     </svg>
   </div>
 
 </section>
 
+<div class="stats">
+  <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Countries &amp; Regions</div></div>
+  <div class="stat"><div class="stat-n">ISO 13485</div><div class="stat-l">Quality Certified</div></div>
+  <div class="stat"><div class="stat-n">CE · FDA</div><div class="stat-l">Dual Certifications</div></div>
+</div>
 
+<!-- 全宽图片栏 -->
+<div style="width:100%;line-height:0;overflow:hidden;">
+  <img src="https://img.velcura.net/4shiqi.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/480;object-fit:cover;">
+</div>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num">100+</div>
-    <div class="stat-label">Countries &amp; Regions</div>
+<!-- 第二栏：logo / 箭头 / 标语 -->
+<div class="stats">
+  <div class="stat">
+    <img src="https://img.velcura.net/logo40.svg" alt="Velcura" style="height:36px;width:auto;display:block;margin:0 auto;">
   </div>
-  <div class="stat-item">
-    <div class="stat-num">ISO 13485</div>
-    <div class="stat-label">Quality Certified</div>
+  <div class="stat">
+    <div style="font-size:1.6rem;color:#3d8ab8;animation:bounce 1.4s ease-in-out infinite;line-height:1;">↓</div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">CE · FDA</div>
-    <div class="stat-label">Dual Certifications</div>
+  <div class="stat">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:#3d8ab8;letter-spacing:0.08em;font-style:italic;">Professional, Patient, Gentle</div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<style>
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+</style>
+
+<!-- 全宽图片栏 2 -->
+<div style="width:100%;line-height:0;overflow:hidden;">
+  <img src="https://img.velcura.net/dimes.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/540;object-fit:cover;">
+</div>
+
 <footer>
   <div class="footer-brand">Velcura Medical</div>
   <div>© 2025 Velcura Medical. All rights reserved.</div>
-  <div>info@velcura.net</div>
+  <div id="contact">info@velcura.net</div>
 </footer>
 
 <script>
-function toggleCard(key) {
-  const all = ['why','who','where'];
-  all.forEach(k => {
-    const el = document.getElementById('card-' + k);
-    if (k === key) { el.classList.toggle('open'); }
-    else { el.classList.remove('open'); }
+function showPanel(key) {
+  ['why','how','where'].forEach(function(k) {
+    document.getElementById('panel-' + k).classList.remove('show');
+    document.getElementById('seg-' + k).classList.remove('active');
   });
-}
-function activateSeg(key) {
-  // 同步打开对应内容卡片
-  const all = ['why','who','where'];
-  all.forEach(k => {
-    const el = document.getElementById('card-' + k);
-    if (k === key) { el.classList.add('open'); el.scrollIntoView({behavior:'smooth',block:'nearest'}); }
-    else { el.classList.remove('open'); }
-  });
+  document.getElementById('panel-' + key).classList.add('show');
+  document.getElementById('seg-' + key).classList.add('active');
+  document.getElementById('default-screen').classList.add('hidden');
 }
 </script>
 </body>
