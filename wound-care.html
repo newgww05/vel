@@ -829,6 +829,7 @@ function openL3(cat) {
   var d = L3DATA[cat];
   document.getElementById('l3PanelLbl').textContent = d.lbl;
   document.getElementById('l3PanelTtl').textContent = d.ttl;
+  document.getElementById('l2BcCur').textContent = d.lbl;
   var html = '';
   d.groups.forEach(function(grp){
     html += '<div class="l3-grp-lbl">' + grp.g + '</div>';
