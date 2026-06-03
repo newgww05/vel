@@ -422,9 +422,9 @@ function openSubmenu(catName, subs, wrapperEl) {
         e.stopPropagation();
         e.preventDefault();
         closeSubmenu();
-        if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
+        if (s === 'Advanced Wound Dressings') { window.location.href = '3nano-silverquan.html'; }
         else if (s === 'Traditional Wound Dressings') { window.location.href = 'wound-care.html?cat=traditional'; }
-        else if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
+        else if (s === 'Advanced Wound Dressings') { window.location.href = '3nano-silverquan.html'; }
       }
       item.addEventListener('click', goToPage);
       item.addEventListener('touchend', goToPage);
@@ -467,7 +467,7 @@ document.addEventListener('click', function(e) {
 
 /* ── Category data ── */
 const cats = [
-  { name:'Advanced Wound Dressings', angle:0,   subs:[], link:'wound-care.html?cat=advanced' },
+  { name:'Advanced Wound Dressings', angle:0,   subs:[], link:'3nano-silverquan.html' },
   { name:'Personal Care',     angle:60,  subs:[] },
   { name:'Continence Care',   angle:120, subs:[] },
   { name:'Diabetes Care',   angle:180, subs:[] },
@@ -550,7 +550,7 @@ cats.forEach((cat, i) => {
     mobileSubPanel.querySelectorAll('.mobile-sub-item').forEach(function(el) {
       el.addEventListener('click', function() {
         var sub = el.getAttribute('data-sub');
-        if (sub === 'Advanced Wound Dressings') window.location.href = 'wound-care.html?cat=advanced';
+        if (sub === 'Advanced Wound Dressings') window.location.href = '3nano-silverquan.html';
         else if (sub === 'Traditional Wound Dressings') window.location.href = 'wound-care.html?cat=traditional';
       });
     });
