@@ -1124,7 +1124,7 @@ var CAT_MEDIA = {
   traditional: { type:'img', src:'https://img.velcura.net/Traditional Wound Dressings1.webp' },
   personal:    { type:'img', src:'https://img.velcura.net/Personal Care1.webp' },
   continence:  { type:'img', src:'https://img.velcura.net/continence Care1.webp' },
-  diabetes:    { type:'img', src:'' }
+  diabetes:    { type:'img', src:'https://img.velcura.net/Diabetes Care1.webp' }
 };
 
 function showOv() {
@@ -1175,6 +1175,21 @@ function showOv() {
         span.style.opacity = '1';
         span.style.transform = 'translateX(0)';
       }, 300 + i * 220);
+    });
+  }
+  if (activeL2 === 'diabetes' && media.src) {
+    var letters = 'Mobility'.split('');
+    overlay.style.display = 'block';
+    letters.forEach(function(l, i) {
+      var span = document.createElement('span');
+      span.textContent = l;
+      span.style.cssText = 'display:inline-block; font-size:clamp(24px,2.8vw,40px); font-weight:800; color:#0c2d6b; letter-spacing:0.06em; font-family:DM Sans,sans-serif; text-shadow:0 2px 12px rgba(255,255,255,0.7); opacity:0; transform:translateX(-100px);';
+      overlay.appendChild(span);
+      setTimeout(function() {
+        span.style.transition = 'opacity 0.35s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1)';
+        span.style.opacity = '1';
+        span.style.transform = 'translateX(0)';
+      }, 200 + i * 80);
     });
   }
 
