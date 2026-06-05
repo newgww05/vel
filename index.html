@@ -140,19 +140,11 @@
   .center {
     position:relative; z-index:20;
     width:300px; height:300px; border-radius:50%;
-    /* same 135deg direction as page, slightly richer tones */
-    background: linear-gradient(135deg,
-      #b2dff2 0%,
-      #c2e8f7 25%,
-      #d2effa 50%,
-      #e0f5fc 75%,
-      #edfafe 100%
-    );
-    border:2px solid rgba(192,168,120,0.26);
-    box-shadow:0 0 0 1px rgba(255,255,255,0.35), 0 16px 70px rgba(14,165,233,0.15), 0 0 40px rgba(125,211,252,0.12);
+    background: transparent;
+    border:none;
+    box-shadow: none;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     text-align:center; padding:10px;
-    animation:pulse-c 7s ease-in-out infinite;
   }
   @keyframes pulse-c {
     0%,100%{ box-shadow:0 0 0 1px rgba(255,255,255,0.35),0 16px 70px rgba(14,165,233,0.15),0 0 40px rgba(125,211,252,0.12); }
@@ -264,9 +256,9 @@
     <a class="nav-brand" href="#">Gentle Healing,<br>Complete Care</a>
     <ul class="nav-links">
       <li><a href="wound-care.html">Products</a></li>
-      <li><a href="velcura-3y.html">About Us</a></li>
+      <li><a href="#">About Us</a></li>
       <li><a href="#">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -283,7 +275,7 @@
     <div class="center">
       <div class="center-ping"></div>
       <div class="center-logo-wrap">
-        <img src="https://img.velcura.net/logo1vsg.png" alt="VELCURA"
+        <img src="https://img.velcura.net/logogpt.png" alt="VELCURA"
              style="width:220px;height:220px;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,80,160,0.20));">
       </div>
       <div class="center-tagline">Professional Wound Care<br>Manufacturer</div>
@@ -294,7 +286,7 @@
   <div class="scene-mobile" id="sceneMobile">
     <div class="mobile-center">
       <div class="mobile-center-ping"></div>
-      <img src="https://img.velcura.net/logo1vsg.png" alt="VELCURA" style="width:81px;height:81px;object-fit:contain;display:block;margin-bottom:8px;filter:drop-shadow(0 2px 6px rgba(0,80,160,0.18));">
+      <img src="https://img.velcura.net/logogpt.png" alt="VELCURA" style="width:81px;height:81px;object-fit:contain;display:block;margin-bottom:8px;filter:drop-shadow(0 2px 6px rgba(0,80,160,0.18));">
       <div class="mobile-center-title">VELCURA</div>
       <div class="mobile-center-tagline">Professional Wound Care<br>Manufacturer</div>
     </div>
@@ -309,9 +301,9 @@
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
   <a href="wound-care.html" onclick="closeMobileMenu()">Products</a>
-  <a href="velcura-3y.html" onclick="closeMobileMenu()">About Us</a>
+  <a href="#" onclick="closeMobileMenu()">About Us</a>
   <a href="#" onclick="closeMobileMenu()">Certifications</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="#" onclick="closeMobileMenu()">Contact</a>
   <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
 </div>
 
@@ -340,10 +332,114 @@
   </div>
 </section>
 
-<footer class="footer" id="contact">
+<!-- Who We Serve Section -->
+<section class="serve-section">
+  <style>
+    .serve-section {
+      width:100%; background:#f0f7ff; padding:60px 0 50px;
+    }
+    .serve-inner { max-width:1200px; margin:0 auto; padding:0 40px; text-align:center; }
+    .serve-eyebrow {
+      font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+      color:#0284c7; font-weight:600; margin-bottom:16px;
+    }
+    .serve-title {
+      font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700;
+      color:#0c2044; margin-bottom:48px; line-height:1.3;
+    }
+    .serve-cards {
+      display:flex; gap:20px; overflow-x:auto;
+      justify-content:center; flex-wrap:wrap;
+      padding-bottom:8px;
+    }
+    .serve-card {
+      flex:0 0 200px; background:#fff;
+      border-radius:16px; overflow:hidden;
+      box-shadow:0 2px 12px rgba(14,165,233,0.08);
+      transition:transform 0.25s, box-shadow 0.25s;
+      cursor:default;
+    }
+    .serve-card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 8px 28px rgba(14,165,233,0.16);
+    }
+    .serve-card-img {
+      width:100%; height:150px; object-fit:cover;
+      display:block; background:#e0f2fe;
+    }
+    .serve-card-img-placeholder {
+      width:100%; height:150px;
+      background:linear-gradient(135deg,#bae6fd,#e0f2fe);
+      display:flex; align-items:center; justify-content:center;
+      font-size:2.5rem;
+    }
+    .serve-card-label {
+      padding:12px 8px 14px;
+      font-size:13px; font-weight:500; color:#0c2044;
+      letter-spacing:0.02em;
+    }
+    .serve-dots {
+      display:flex; justify-content:center; gap:8px; margin-top:28px;
+    }
+    .serve-dot {
+      width:8px; height:8px; border-radius:50%;
+      background:#bae6fd; transition:background 0.2s;
+    }
+    .serve-dot.active { background:#0284c7; }
+    @media(max-width:780px){
+      .serve-section { padding:40px 0 36px; }
+      .serve-inner { padding:0 16px; }
+      .serve-cards { flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; }
+      .serve-card { flex:0 0 160px; }
+      .serve-card-img, .serve-card-img-placeholder { height:120px; }
+    }
+  </style>
+  <div class="serve-inner">
+    <div class="serve-eyebrow">Who We Serve</div>
+    <div class="serve-title">Meeting the needs of the<br>entire continuum of care</div>
+    <div class="serve-cards">
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1765741836929-af2f9e1968e8?w=400&h=300&fit=crop&auto=format" alt="Convenience Stores">
+        <div class="serve-card-label">Convenience Stores</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop&auto=format" alt="Pharmacies">
+        <div class="serve-card-label">Pharmacies</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop&auto=format" alt="Hospitals">
+        <div class="serve-card-label">Hospitals</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop&auto=format" alt="Supermarkets">
+        <div class="serve-card-label">Supermarkets</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=300&fit=crop&auto=format" alt="Care Centres">
+        <div class="serve-card-label">Care Centres</div>
+      </div>
+      <div class="serve-card" style="flex:0 0 580px;">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&h=500&fit=crop&auto=format" alt="Distributors" style="height:290px;">
+        <div class="serve-card-label">Distributors</div>
+      </div>
+    </div>
+    <div class="serve-dots">
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot active"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="https://img.velcura.net/logo1vsg.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
+      <img src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
       <div class="footer-company">Velcura Medical</div>
     </div>
     <div class="footer-contacts">
@@ -369,9 +465,9 @@
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
   <a href="wound-care.html" onclick="closeMobileMenu()">Products</a>
-  <a href="velcura-3y.html" onclick="closeMobileMenu()">About Us</a>
+  <a href="#" onclick="closeMobileMenu()">About Us</a>
   <a href="#" onclick="closeMobileMenu()">Certifications</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="#" onclick="closeMobileMenu()">Contact</a>
   <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
 </div>
 
@@ -422,9 +518,9 @@ function openSubmenu(catName, subs, wrapperEl) {
         e.stopPropagation();
         e.preventDefault();
         closeSubmenu();
-        if (s === 'Advanced Wound Dressings') { window.location.href = '3nano-silverquan.html'; }
+        if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
         else if (s === 'Traditional Wound Dressings') { window.location.href = 'wound-care.html?cat=traditional'; }
-        else if (s === 'Advanced Wound Dressings') { window.location.href = '3nano-silverquan.html'; }
+        else if (s === 'Advanced Wound Dressings') { window.location.href = 'wound-care.html?cat=advanced'; }
       }
       item.addEventListener('click', goToPage);
       item.addEventListener('touchend', goToPage);
@@ -467,7 +563,7 @@ document.addEventListener('click', function(e) {
 
 /* ── Category data ── */
 const cats = [
-  { name:'Advanced Wound Dressings', angle:0,   subs:[], link:'3nano-silverquan.html' },
+  { name:'Advanced Wound Dressings', angle:0,   subs:[], link:'wound-care.html?cat=advanced' },
   { name:'Personal Care',     angle:60,  subs:[] },
   { name:'Continence Care',   angle:120, subs:[] },
   { name:'Diabetes Care',   angle:180, subs:[] },
@@ -550,7 +646,7 @@ cats.forEach((cat, i) => {
     mobileSubPanel.querySelectorAll('.mobile-sub-item').forEach(function(el) {
       el.addEventListener('click', function() {
         var sub = el.getAttribute('data-sub');
-        if (sub === 'Advanced Wound Dressings') window.location.href = '3nano-silverquan.html';
+        if (sub === 'Advanced Wound Dressings') window.location.href = 'wound-care.html?cat=advanced';
         else if (sub === 'Traditional Wound Dressings') window.location.href = 'wound-care.html?cat=traditional';
       });
     });
