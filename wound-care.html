@@ -593,8 +593,9 @@
     <div class="l2-main" id="l2Main">
 
       <!-- Overview panel -->
-      <div id="l2PanelOv" class="l2-ov" style="padding:0; overflow:hidden;">
+      <div id="l2PanelOv" class="l2-ov" style="padding:0; overflow:hidden; position:relative;">
         <img id="l2OvImg" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover;">
+        <div id="l2OvTextOverlay" style="display:none; position:absolute; bottom:18%; left:50%; transform:translateX(-50%); z-index:10; text-align:center; pointer-events:none;"></div>
         <video id="l2OvVideo" src="" controls style="display:none; width:100%; height:100%; object-fit:cover; background:#000;"></video>
         <div id="l2OvPlaceholder" style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#f0f9ff; color:#94a3b8;">
           <div style="font-size:72px; margin-bottom:16px;">🖼</div>
@@ -1120,9 +1121,9 @@ var CAT_OV = {
 // Category media mapping — fill in src when images are ready
 var CAT_MEDIA = {
   advanced:    { type:'img', src:'https://img.velcura.net/Advanced Wound Dressings1.webp' },
-  traditional: { type:'img', src:'' },
-  personal:    { type:'img', src:'' },
-  continence:  { type:'img', src:'' },
+  traditional: { type:'img', src:'https://img.velcura.net/Traditional Wound Dressings1.webp' },
+  personal:    { type:'img', src:'https://img.velcura.net/Personal Care1.webp' },
+  continence:  { type:'img', src:'https://img.velcura.net/continence Care1.webp' },
   diabetes:    { type:'img', src:'' }
 };
 
@@ -1155,6 +1156,26 @@ function showOv() {
       img.style.display = 'block';
       ph.style.display  = 'none';
     }
+  }
+
+  // Fly-in text overlay
+  var overlay = document.getElementById('l2OvTextOverlay');
+  overlay.style.display = 'none';
+  overlay.innerHTML = '';
+  if (activeL2 === 'continence' && media.src) {
+    var words = ['Overnight', 'Peace', 'of', 'Mind'];
+    overlay.style.display = 'block';
+    words.forEach(function(w, i) {
+      var span = document.createElement('span');
+      span.textContent = w + '\u00a0';
+      span.style.cssText = 'display:inline-block; font-size:clamp(20px,2.2vw,32px); font-weight:800; color:#0c2d6b; letter-spacing:0.04em; font-family:DM Sans,sans-serif; text-shadow:0 2px 12px rgba(255,255,255,0.7); opacity:0; transform:translateX(-120px);';
+      overlay.appendChild(span);
+      setTimeout(function() {
+        span.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1)';
+        span.style.opacity = '1';
+        span.style.transform = 'translateX(0)';
+      }, 300 + i * 220);
+    });
   }
 
   if (activeL2) openL3(activeL2);
