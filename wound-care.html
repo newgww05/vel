@@ -483,7 +483,7 @@
   .l2-cat-card:hover .l2-cc-arr { opacity:1; }
 
   /* product detail */
-  .l2-pd { padding:26px 36px 40px; animation:l2-fade-up .3s ease; }
+  .l2-pd { padding:26px 20px 40px; animation:l2-fade-up .3s ease; }
   .l2-pd-goback {
     display:inline-flex; align-items:center; gap:5px;
     font-size:13px; color:#0284c7; cursor:pointer; margin-bottom:14px;
@@ -494,16 +494,17 @@
   .l2-pd-bc a { color:#0284c7; cursor:pointer; text-decoration:none; }
   .l2-pd-bc a:hover { text-decoration:underline; }
   .l2-pd-bc-sep { color:#e2e8f0; }
-  .l2-pd-hero { display:flex; gap:24px; padding-bottom:24px; border-bottom:1px solid #f1f5f9; margin-bottom:24px; }
+  .l2-pd-hero { display:flex; flex-direction:row-reverse; gap:24px; padding-bottom:24px; border-bottom:1px solid #f1f5f9; margin-bottom:24px; align-items:flex-start; }
   .l2-pd-imgbox {
-    width:260px; height:260px; flex-shrink:0; border-radius:14px;
-    background:#f0f9ff; border:1px solid #e0f2fe;
+    width:480px; height:480px; flex-shrink:0; border-radius:14px;
+    background:transparent; border:none;
+    position:relative;
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
     font-size:48px; color:#bae6fd; overflow:hidden;
   }
-  .l2-pd-imgbox img { width:100%; height:100%; object-fit:cover; border-radius:14px; display:block; }
+  .l2-pd-imgbox img { width:100%; height:100%; object-fit:contain; border-radius:14px; display:block; }
   .l2-pd-imglbl { font-size:11px; color:#94a3b8; letter-spacing:1.5px; text-transform:uppercase; }
-  .l2-pd-info { flex:1; padding-left:12px; }
+  .l2-pd-info { flex:1; padding-right:12px; padding-left:0; }
   .l2-pd-badge { display:inline-block; padding:4px 14px; border-radius:999px; font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; }
   .l2-pd-name { font-size:26px; font-weight:300; color:#0c2044; line-height:1.25; margin-bottom:8px; }
   .l2-pd-tagline { font-size:15px; color:#64748b; line-height:1.75; margin-bottom:16px; max-width:480px; }
@@ -577,13 +578,22 @@
       <div class="l2-cat" id="l2cat-diabetes" onmouseenter="openL3('diabetes')" onclick="selectL2('diabetes')">
         Diabetes Care <span class="l2-cat-arr">›</span>
       </div>
+
+      <!-- Search Box -->
+      <div style="margin-top:auto; padding:14px 12px 16px; border-top:1px solid #e0f2fe; position:relative;">
+        <div style="font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#0284c7; margin-bottom:6px;">产品搜索</div>
+        <input id="prodSearchInput" type="text" placeholder="输入产品关键词…"
+          style="width:100%; padding:7px 10px; font-size:12px; border:1px solid #bae6fd; border-radius:6px; outline:none; background:#f0f9ff; color:#0c4a6e; font-family:inherit;"
+          oninput="prodSearch(this.value)" autocomplete="off">
+        <div id="prodSearchResults" style="display:none; position:absolute; left:12px; right:12px; background:#fff; border:1px solid #bae6fd; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.10); z-index:999; max-height:180px; overflow-y:auto; margin-top:4px;"></div>
+      </div>
     </div>
 
     <!-- L3 flyout -->
     <div class="l3-panel" id="l3Panel">
       <div class="l3-panel-head">
-        <div class="l3-panel-lbl" id="l3PanelLbl">Advanced Wound Dressings</div>
-        <div class="l3-panel-ttl" id="l3PanelTtl">28 products</div>
+        <div class="l3-panel-lbl" id="l3PanelLbl" style="display:none;">Advanced Wound Dressings</div>
+        <div class="l3-panel-ttl" id="l3PanelTtl" style="display:none;">28 products</div>
       </div>
 
       <div id="l3Scroll"></div>
@@ -608,7 +618,7 @@
       <!-- Product detail panel -->
       <!-- 产品 iframe 面板 -->
       <div id="l2PanelPd" class="l2-pd" style="display:none; height:100%;">
-        <button class="l2-pd-goback" onclick="showOv()">← Back to Advanced Wound Dressings</button>
+        <button class="l2-pd-goback" onclick="showOv()" style="display:none;">← Back to Advanced Wound Dressings</button>
         <div id="l2ProdIframeWrap" style="margin-top:8px; height:calc(100% - 48px);">
           <iframe id="l2ProdIframe" src="" style="width:100%; height:100%; min-height:80vh; border:none; display:block;"></iframe>
         </div>
@@ -626,7 +636,7 @@
         <!-- 普通产品详情卡 -->
         <div id="l2NormalPd" style="display:none;">
           <div class="l2-pd-hero">
-            <div class="l2-pd-imgbox" id="l2PdImgBox">
+            <div class="l2-pd-imgbox" id="l2PdImgBox" style="position:relative;">
               <div style="font-size:36px;color:#bae6fd;">✚</div>
               <div style="font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;">Product Image</div>
             </div>
@@ -692,7 +702,7 @@ var L3DATA = {
     {g:'Hydrocolloid / Hydrogel', items:['Hydrocolloid Dressing','Hydrocolloid Foam','Hydrogel','Hydrogel Dressing']},
     {g:'Alginate',     items:['Calcium Alginate','Hydrophilic Fiber']},
     {g:'Super Absorbent', items:['SAP Silicone Border','SAP Non-Adhesive']},
-    {g:'Charcoal',    items:['Charcoal Non-Adhesive','Activated Charcoal','Charcoal Hydrogel']},
+    {g:'Charcoal',    items:['Activated Charcoal Dressing Non-Adhesive','Activated Charcoal','Charcoal Hydrogel']},
     {g:'Specialty',   items:['Collagen Dressing','Biocellulose Dressing','Silicone Contact Layer','Vaseline Gauze','Wound Cleanser','Surgical Incision Closure']}
   ]},
   traditional: { lbl:'Traditional Wound Dressings', ttl:'18 products · 4 groups', groups:[
@@ -744,7 +754,7 @@ function closeL3() {
 var PRODS = {
   'Nano-Silver Antibacterial':{
     badge:'Nano-Silver Antibacterial',bs:'background:#fef3c7;color:#92400e;',
-    img:'https://img.velcura.net/纳米银医用抗菌敷料.jpg',
+    imgs:['https://img.velcura.net/纳米银医用抗菌敷料.jpg','https://img.velcura.net/纳米银医用抗菌敷料-03.jpg'],
     tagline:'Nano-silver particles deliver powerful, long-lasting antimicrobial protection to reduce infection risk, maintain a moist healing environment, and support faster recovery in chronic wounds, surgical incisions, and burns.',
     features:[
       'Broad-spectrum antimicrobial action — nano-silver particles (20–100 nm) attached to medical-grade fibres for gradual, sustained release',
@@ -758,7 +768,7 @@ var PRODS = {
   },
   'Silver Alginate':{
     badge:'Silver Alginate',bs:'background:#fef3c7;color:#92400e;',
-    img:'https://img.velcura.net/银离子藻酸盐包装图.png',
+    imgs:['https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E8%97%BB%E9%85%B8%E7%9B%90%E4%BA%A7%E5%93%81.png','https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E8%97%BB%E9%85%B8%E7%9B%90_01.jpg'],
     tagline:'Combines high-absorbency alginate fibres with controlled-release ionic silver to manage moderate to heavy exudate while delivering sustained antimicrobial protection in partial- and full-thickness wounds.',
     features:[
       'Controlled-release ionic silver continuously reduces bacterial growth and lowers infection risk throughout wear period',
@@ -772,7 +782,7 @@ var PRODS = {
   },
   'Silver Foam Non-Adhesive':{
     badge:'Silver Foam · Non-Adhesive',bs:'background:#fef3c7;color:#92400e;',
-    img:'https://img.velcura.net/银离子泡沫敷贴（非粘.png',
+    imgs:['https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E6%B3%A1%E6%B2%AB%E6%95%B7%E8%B4%B4%EF%BC%88%E9%9D%9E%E7%B2%98-01.jpg','https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E6%B3%A1%E6%B2%AB%E6%95%B7%E8%B4%B4%EF%BC%88%E9%9D%9E%E7%B2%98-02.png','https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E6%B3%A1%E6%B2%AB%E6%95%B7%E8%B4%B4%EF%BC%88%E9%9D%9E%E7%B2%98-03.png'],
     tagline:'Combines the antimicrobial properties of ionic silver with the superior absorption of polyurethane foam, designed for moderate to heavy exudating wounds requiring secondary fixation.',
     features:[
       'Ionic silver provides powerful, sustained antimicrobial action to reduce wound infection throughout the wear period',
@@ -786,7 +796,7 @@ var PRODS = {
   },
   'Silver Foam Silicone Border':{
     badge:'Silver Foam · Silicone Border',bs:'background:#fef3c7;color:#92400e;',
-    img:'https://img.velcura.net/银离子硅凝胶泡沫敷贴.jpg',
+    imgs:['https://img.velcura.net/银离子硅凝胶泡沫敷贴产品.png','https://img.velcura.net/银离子硅凝胶泡沫敷贴-01.png','https://img.velcura.net/银离子硅凝胶泡沫敷贴-02.png','https://img.velcura.net/银离子硅凝胶泡沫敷贴-03.png'],
     tagline:'Five-layer advanced construction combines ionic silver antimicrobial protection with a secure silicone adhesive border — a complete all-in-one wound management solution.',
     features:[
       'Five-layer structure: silicone contact layer, absorbent foam, silver antimicrobial layer, super-absorbent core, and waterproof breathable backing',
@@ -800,7 +810,7 @@ var PRODS = {
   },
   'Silver Hydrophilic Fiber':{
     badge:'Silver Hydrophilic Fiber',bs:'background:#fef3c7;color:#92400e;',
-    img:'https://img.velcura.net/银离子藻酸盐产品.png',
+    imgs:['https://img.velcura.net/银离子藻酸盐产品.png','https://img.velcura.net/银离子亲水性纤维敷料产品.png','https://img.velcura.net/银离子亲水性纤维敷料-03.jpg'],
     tagline:'Transforms into a soft, conforming gel on contact with wound fluid, delivering high exudate absorption and sustained ionic silver antimicrobial protection deep into complex wound shapes.',
     features:[
       'Converts to a soft, moist gel on contact with exudate — conforms closely to wound bed including cavities and tunnel wounds',
@@ -814,7 +824,7 @@ var PRODS = {
   },
   'Silver Activated Charcoal':{
     badge:'Silver + Activated Charcoal',bs:'background:#fef3c7;color:#92400e;',
-    img:'https://img.velcura.net/纳米银医用抗菌敷料-03.jpg',
+    imgs:['https://img.velcura.net/纳米银医用抗菌敷料-03.jpg','https://img.velcura.net/银离子活性炭敷贴（非粘）产品.png'],
     tagline:'Dual-action dressing combining the odour-neutralising power of activated charcoal with the antimicrobial protection of ionic silver — designed for chronic, malodorous, and infected wounds.',
     features:[
       'Activated charcoal layer effectively adsorbs and neutralises unpleasant wound odour, improving patient quality of life',
@@ -828,7 +838,7 @@ var PRODS = {
   },
   'Foam Non-Adhesive':{
     badge:'Foam · Non-Adhesive',bs:'background:#e0f2fe;color:#0369a1;',
-    img:'https://img.velcura.net/PU泡沫敷贴.jpg',
+    imgs:['https://img.velcura.net/PU泡沫敷贴.jpg','https://img.velcura.net/亲水性纤维敷料产品.png','https://img.velcura.net/亲水性纤维敷料-01.png','https://img.velcura.net/亲水性纤维敷料-02.png'],
     tagline:'Thin and flexible hydrophilic polyurethane foam dressing designed for moderate to heavy exudating wounds. Conforms to the wound bed, absorbs vertically, and locks in exudate to protect surrounding skin.',
     features:[
       'Made of hydrophilic polyurethane foam with PU coating — highly absorbent, breathable and waterproof',
@@ -842,7 +852,7 @@ var PRODS = {
   },
   'Foam Silicone Border':{
     badge:'Foam · Silicone Border',bs:'background:#e0f2fe;color:#0369a1;',
-    img:'https://img.velcura.net/硅凝胶泡沫敷贴.jpg',
+    imgs:['https://img.velcura.net/硅凝胶泡沫敷贴15x20cm产品-1024x920.png','https://img.velcura.net/硅凝胶泡沫敷贴_01.png','https://img.velcura.net/硅凝胶泡沫敷贴_02.png','https://img.velcura.net/硅凝胶泡沫敷贴_03.png'],
     tagline:'Silicone adhesive border foam dressing providing an optimal moist wound healing environment. Can be lifted and repositioned for skin assessment — ideal for pressure ulcer prevention programmes.',
     features:[
       'Silicone adhesive border creates secure fixation while sealing wound margins to minimise exudate leakage',
@@ -856,7 +866,7 @@ var PRODS = {
   },
   'Silicone Foam Dressing':{
     badge:'Silicone Foam',bs:'background:#e0f2fe;color:#0369a1;',
-    img:'https://img.velcura.net/硅凝胶泡沫敷贴包装图.png',
+    imgs:['https://img.velcura.net/自粘硅泡产品.jpg','https://img.velcura.net/自粘硅泡-02.png','https://img.velcura.net/自粘硅泡-03.png'],
     tagline:'Five-layer highly absorbent silicone foam dressing with soft silicone wound contact layer. Secure self-adhesive borders, pain-free removal, and waterproof backing for confident everyday wear.',
     features:[
       'Five-layer structure quickly absorbs moderate to heavy exudate and locks fluid to reduce maceration risk',
@@ -870,7 +880,7 @@ var PRODS = {
   },
   'Silicone Foam Lite':{
     badge:'Silicone Foam LITE',bs:'background:#e0f2fe;color:#0369a1;',
-    img:'https://img.velcura.net/硅凝胶泡沫敷贴（lite).png',
+    imgs:['https://img.velcura.net/%E7%A1%85%E5%87%9D%E8%83%B6%E6%B3%A1%E6%B2%AB%E6%95%B7%E8%B4%B4%E4%B8%8D%E5%B8%A6PU%E8%86%9C%E4%BA%A7%E5%93%81-1024x1024.png','https://img.velcura.net/硅凝胶泡沫敷贴不带PU膜-01.png','https://img.velcura.net/硅凝胶泡沫敷贴不带PU膜-03.png'],
     tagline:'Thin, PU-free silicone foam dressing designed for light to moderate exudate wounds. The absence of a PU film allows direct observation of exudate levels, reducing unnecessary dressing changes.',
     features:[
       'PU-free design allows direct visual observation of exudate levels without removing the dressing',
@@ -884,7 +894,7 @@ var PRODS = {
   },
   'Silver Foam Silicone Adhesive':{
     badge:'Silver Foam · Silicone Adhesive',bs:'background:#e0f2fe;color:#0369a1;',
-    img:'https://img.velcura.net/银离子硅凝胶泡沫敷贴.jpg',
+    imgs:['https://img.velcura.net/银离子自粘硅凝胶泡沫敷贴-01.png','https://img.velcura.net/银离子自粘硅凝胶泡沫敷贴-02.png','https://img.velcura.net/银离子自粘硅凝胶泡沫敷贴产品.png'],
     tagline:'Combines antimicrobial silver ions with absorbent silicone foam to manage light to heavy exudate wounds. Silver ions reduce infection risk while silicone foam maintains a moist healing environment.',
     features:[
       'Antimicrobial silver ions continuously reduce infection risk and support faster healing throughout the wear period',
@@ -896,41 +906,48 @@ var PRODS = {
     indications:['Infected wounds','Pressure ulcers','Surgical wounds','Diabetic foot ulcers','Burns'],
     note:''
   },
-  'Hydrocolloid Dressing':{badge:'Hydrocolloid',bs:'background:#ede9fe;color:#5b21b6;',tagline:'Thin, flexible dressing with transparent window for wound inspection without removal.',features:['Transparent window allows wound monitoring without dressing removal','Waterproof outer surface protects against contamination','Self-adhesive — no secondary fixation required','Flexible material conforms comfortably to body contours'],specs:[['Absorbency','Low – Moderate'],['Wear time','Up to 5 days'],['Exudate level','Light – Moderate'],['Adhesion','Self-adhesive'],['Variants','6 sizes · thin / standard']],indications:['Pressure ulcers Stage I–II','Minor burns','Donor sites','Superficial wounds'],note:''},
-  'Calcium Alginate':{badge:'Calcium Alginate',bs:'background:#dcfce7;color:#166534;',tagline:'Highly absorbent natural alginate that gels on contact with exudate, conforming to wound shape.',features:['Forms protective gel on contact with wound exudate','Very high absorbency locks fluid and reduces maceration risk','Haemostatic properties support minor bleeding control','Biodegradable natural fibres for patient comfort'],specs:[['Absorbency','Very High'],['Wear time','Up to 3 days'],['Exudate level','Moderate – Heavy'],['Gel formation','Yes — on contact with exudate'],['Adhesion','Non-adhesive']],indications:['Cavity wounds','Leg ulcers','Diabetic foot ulcers','Surgical wounds'],note:''},
-  'SAP Silicone Border':{badge:'SAP · Silicone Border',bs:'background:#fce7f3;color:#9d174d;',tagline:'Maximum fluid management for heavily exuding wounds with secure silicone border fixation.',features:['Super-absorbent polymer (SAP) core locks in large exudate volumes','Fluid-lock layer prevents strikethrough to outer surface','Silicone border ensures secure and comfortable fixation','Reduces dressing change frequency in high-exudate wounds'],specs:[['Absorbency','Very High (SAP core)'],['Wear time','Up to 7 days'],['Exudate level','Heavy – Very Heavy'],['Adhesion','Silicone adhesive border'],['Strikethrough','Prevented']],indications:['Heavily exuding wounds','Venous leg ulcers','Post-surgical wounds','Oedematous wounds'],note:''},
-  'Collagen Dressing':{badge:'Collagen',bs:'background:#f1f5f9;color:#475569;',tagline:'Bioactive collagen matrix stimulating tissue regeneration and remodelling in chronic, non-healing wounds.',features:['Native collagen matrix provides structural scaffold for new tissue formation','Stimulates fibroblast activity to accelerate wound closure','Absorbs and neutralises wound-damaging matrix metalloproteinases (MMPs)','Maintains a moist, bioactive wound environment'],specs:[['Composition','Purified collagen matrix'],['Wear time','Every 2–3 days or per assessment'],['Exudate level','Low – Moderate'],['Form','Sheet / powder / gel'],['Adhesion','Non-adhesive']],indications:['Chronic non-healing wounds','Diabetic ulcers','Pressure ulcers Stage III–IV','Venous ulcers'],note:''},
+  'Hydrocolloid Dressing':{badge:'Hydrocolloid',bs:'background:#ede9fe;color:#5b21b6;',imgs:['https://img.velcura.net/水胶体_02.jpg','https://img.velcura.net/水胶体_03.jpg'],tagline:'Thin, flexible dressing with transparent window for wound inspection without removal.',features:['Transparent window allows wound monitoring without dressing removal','Waterproof outer surface protects against contamination','Self-adhesive — no secondary fixation required','Flexible material conforms comfortably to body contours'],specs:[['Absorbency','Low – Moderate'],['Wear time','Up to 5 days'],['Exudate level','Light – Moderate'],['Adhesion','Self-adhesive'],['Variants','6 sizes · thin / standard']],indications:['Pressure ulcers Stage I–II','Minor burns','Donor sites','Superficial wounds'],note:''},
+  'Hydrocolloid Foam':{badge:'Hydrocolloid Foam',bs:'background:#ede9fe;color:#5b21b6;',imgs:['https://img.velcura.net/水胶体泡沫敷贴产品-1024x1024.png','https://img.velcura.net/水胶体泡沫敷贴-01.png','https://img.velcura.net/水胶体泡沫敷贴-03.png'],tagline:'Hydrocolloid foam dressing combining the absorption of foam with the moisture-retaining properties of hydrocolloid for moderate to heavily exuding wounds.',features:['Dual-layer construction — foam core with hydrocolloid contact layer','Maintains optimal moist wound environment to support healing','Self-adhesive border for secure fixation without additional tape','Waterproof outer layer protects against contamination and allows showering'],specs:[['Absorbency','Moderate – High'],['Wear time','Up to 7 days'],['Exudate level','Moderate – Heavy'],['Adhesion','Self-adhesive border'],['Variants','Multiple sizes']],indications:['Pressure ulcers Stage II–III','Venous leg ulcers','Diabetic foot ulcers','Post-operative wounds'],note:''},
+  'Activated Charcoal Dressing Non-Adhesive':{badge:'Charcoal · Non-Adhesive',bs:'background:#1c1917;color:#e7e5e4;',imgs:['https://img.velcura.net/活性炭敷贴（非粘性）产品.png','https://img.velcura.net/活性炭敷贴（非粘性）-01.png','https://img.velcura.net/活性炭敷贴（非粘性）-02.png','https://img.velcura.net/活性炭敷贴（非粘性）-03.png'],tagline:'Activated charcoal non-adhesive dressing for malodorous, infected wounds — absorbs exudate and neutralises odour without adhering to the wound bed.',features:['Activated carbon core traps and neutralises odour molecules effectively','Non-adherent wound contact layer ensures pain-free removal','Absorbs wound exudate and bacteria simultaneously','Requires secondary dressing — compatible with most fixation methods'],specs:[['Core','Activated charcoal'],['Adhesion','Non-adhesive'],['Exudate level','Moderate – Heavy'],['Wear time','Up to 3 days or per assessment'],['Variants','Multiple sizes']],indications:['Malodorous wounds','Infected chronic ulcers','Fungating wounds','Diabetic foot ulcers'],note:''},
+  'Charcoal Hydrogel':{badge:'Charcoal Hydrogel',bs:'background:#1c1917;color:#e7e5e4;',imgs:['https://img.velcura.net/活性炭水凝胶敷料（非粘性）产品-1024x905.png','https://img.velcura.net/活性炭水凝胶敷贴（非粘性）-01.jpg','https://img.velcura.net/活性炭水凝胶敷贴（非粘性）-02.png','https://img.velcura.net/活性炭水凝胶敷贴（非粘性）-03.png'],tagline:'Activated charcoal hydrogel dressing combining odour-absorbing activated carbon with moisture-donating hydrogel for dry, malodorous wounds.',features:['Activated charcoal core neutralises wound odour and absorbs bacteria','Hydrogel matrix rehydrates dry and necrotic tissue to support autolytic debridement','Non-adherent — removes without trauma or pain','Maintains moist wound environment while controlling infection risk'],specs:[['Core','Activated charcoal + hydrogel'],['Adhesion','Non-adhesive'],['Exudate level','Low – Moderate'],['Wear time','Up to 3 days or per assessment'],['Variants','Multiple sizes']],indications:['Dry malodorous wounds','Necrotic tissue requiring debridement','Infected chronic ulcers','Fungating wounds'],note:''},
+  'Hydrogel':{badge:'Hydrogel',bs:'background:#e0f2fe;color:#0369a1;',imgs:['https://img.velcura.net/水凝胶（管状）产品-1-1024x905.png','https://img.velcura.net/水凝胶（管状）-01.jpg','https://img.velcura.net/水凝胶（管状）-02.jpg','https://img.velcura.net/水凝胶（管状）-03.jpg'],tagline:'Amorphous hydrogel in tube format for efficient, gentle wound cleansing and rehydration of dry, necrotic tissue.',features:['High water content rehydrates dry and necrotic wound tissue','Promotes autolytic debridement without trauma to surrounding skin','Cooling and soothing effect reduces wound pain','Easy to apply directly from tube — no secondary instrument required'],specs:[['Composition','Amorphous hydrogel'],['Form','Tube (30g)'],['Exudate level','Low – Dry'],['Wear time','Daily or per assessment'],['Adhesion','Non-adhesive']],indications:['Dry and necrotic wounds','Pressure ulcers','Leg ulcers','Burns and radiation skin reactions'],note:''},
+  'Hydrogel Dressing':{badge:'Hydrogel Dressing',bs:'background:#e0f2fe;color:#0369a1;',imgs:['https://img.velcura.net/水凝胶敷贴产品-1024x1024.png','https://img.velcura.net/水凝胶敷贴-01-1.jpg','https://img.velcura.net/水凝胶敷贴-02-1.jpg','https://img.velcura.net/水凝胶敷贴-03-1.jpg'],tagline:'Sheet hydrogel dressing providing sustained moisture to rehydrate dry wounds and support autolytic debridement.',features:['High water content gel sheet delivers continuous moisture to wound bed','Promotes autolytic debridement of slough and necrotic tissue','Non-adherent — removes without trauma or pain','Cooling effect soothes wound pain and inflammation'],specs:[['Composition','Hydrogel sheet'],['Exudate level','Low – Dry'],['Wear time','Up to 3 days'],['Adhesion','Non-adhesive'],['Variants','Multiple sizes']],indications:['Dry and sloughy wounds','Pressure ulcers','Radiation skin reactions','Burns and abrasions'],note:''},
+  'Calcium Alginate':{badge:'Calcium Alginate',bs:'background:#dcfce7;color:#166534;',imgs:['https://img.velcura.net/藻酸盐_01.jpg','https://img.velcura.net/藻酸盐_02.jpg'],tagline:'Highly absorbent natural alginate that gels on contact with exudate, conforming to wound shape.',features:['Forms protective gel on contact with wound exudate','Very high absorbency locks fluid and reduces maceration risk','Haemostatic properties support minor bleeding control','Biodegradable natural fibres for patient comfort'],specs:[['Absorbency','Very High'],['Wear time','Up to 3 days'],['Exudate level','Moderate – Heavy'],['Gel formation','Yes — on contact with exudate'],['Adhesion','Non-adhesive']],indications:['Cavity wounds','Leg ulcers','Diabetic foot ulcers','Surgical wounds'],note:''},
+  'SAP Silicone Border':{badge:'SAP · Silicone Border',bs:'background:#fce7f3;color:#9d174d;',imgs:['https://img.velcura.net/velg-Super-Absorbent-Dressing2-570x570.jpg'],tagline:'Maximum fluid management for heavily exuding wounds with secure silicone border fixation.',features:['Super-absorbent polymer (SAP) core locks in large exudate volumes','Fluid-lock layer prevents strikethrough to outer surface','Silicone border ensures secure and comfortable fixation','Reduces dressing change frequency in high-exudate wounds'],specs:[['Absorbency','Very High (SAP core)'],['Wear time','Up to 7 days'],['Exudate level','Heavy – Very Heavy'],['Adhesion','Silicone adhesive border'],['Strikethrough','Prevented']],indications:['Heavily exuding wounds','Venous leg ulcers','Post-surgical wounds','Oedematous wounds'],note:''},
+  'Collagen Dressing':{badge:'Collagen',bs:'background:#f1f5f9;color:#475569;',imgs:['https://img.velcura.net/胶原蛋白敷料产品-1024x1006.png','https://img.velcura.net/胶原蛋白敷料-01.png','https://img.velcura.net/胶原蛋白敷料-02.png','https://img.velcura.net/胶原蛋白敷料-03.png'],tagline:'Bioactive collagen matrix stimulating tissue regeneration and remodelling in chronic, non-healing wounds.',features:['Native collagen matrix provides structural scaffold for new tissue formation','Stimulates fibroblast activity to accelerate wound closure','Absorbs and neutralises wound-damaging matrix metalloproteinases (MMPs)','Maintains a moist, bioactive wound environment'],specs:[['Composition','Purified collagen matrix'],['Wear time','Every 2–3 days or per assessment'],['Exudate level','Low – Moderate'],['Form','Sheet / powder / gel'],['Adhesion','Non-adhesive']],indications:['Chronic non-healing wounds','Diabetic ulcers','Pressure ulcers Stage III–IV','Venous ulcers'],note:''},
+  'Biocellulose Dressing':{badge:'Biocellulose',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/生物纤维素产品.png','https://img.velcura.net/生物纤维素敷料-01.png','https://img.velcura.net/生物纤维素敷料-02.png','https://img.velcura.net/生物纤维素敷料-03.png'],tagline:'Advanced biocellulose dressing derived from bacterial nanocellulose — highly conformable, moisture-retaining, and biocompatible for delicate and hard-to-dress wounds.',features:['Nano-structured cellulose fibres form a dense, conformable network that adapts to wound contours','High water content maintains optimal moist wound healing environment','Transparent structure allows wound monitoring without removal','Biocompatible and non-allergenic — suitable for sensitive and fragile skin'],specs:[['Composition','Bacterial nanocellulose'],['Water content','>90%'],['Adhesion','Non-adhesive'],['Exudate level','Low – Moderate'],['Wear time','Up to 3 days']],indications:['Burns and scalds','Donor sites','Radiation skin reactions','Facial wounds','Paediatric wounds'],note:''},
+  'Silicone Contact Layer':{badge:'Silicone Contact Layer',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/硅凝胶防粘层产品.png','https://img.velcura.net/硅凝胶防粘层-01.png','https://img.velcura.net/硅凝胶防粘层-02.png','https://img.velcura.net/硅凝胶防粘层-03.png'],tagline:'Perforated silicone contact layer providing a non-adherent interface between the wound bed and secondary dressing — ensures pain-free dressing changes.',features:['Perforated silicone layer allows exudate to pass through to secondary dressing','Non-adherent surface prevents wound bed disruption at dressing change','Soft, conformable and comfortable for extended wear','Suitable as primary contact layer under any secondary dressing'],specs:[['Material','Medical-grade silicone'],['Adhesion','Non-adhesive'],['Exudate passage','Perforated — allows free drainage'],['Wear time','Up to 7 days'],['Variants','Multiple sizes']],indications:['Skin grafts and donor sites','Burns','Surgical wounds','Fragile or sensitive wound beds'],note:''},
 
   // TRADITIONAL WOUND DRESSINGS
-  'Surgical Tape':{badge:'Surgical Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Soft, hypoallergenic non-woven surgical tape for secure, breathable fixation of wound dressings — gentle on skin, easy to remove without residue.',features:['Soft, hypoallergenic and gentle on skin — suitable for sensitive and fragile skin','Water-resistant for bathing, showering or exercise without compromising adhesion','Latex-free adhesive reduces risk of allergic reactions','Breathable and vapour-permeable to reduce moisture build-up and infection risk'],specs:[['REF No.','401 001 – 401 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Length','9.14 m per roll'],['Adhesive','Hypoallergenic, latex-free'],['Backing','Non-woven fabric']],indications:['Dressing fixation','Post-operative wound care','Tube and catheter fixation','General wound management'],note:''},
-  'Transparent Surgical Tape':{badge:'Transparent Surgical Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Waterproof transparent PE film tape for secure, discreet dressing fixation — allows wound inspection without removal.',features:['Transparent film allows direct wound inspection without removing the tape','Waterproof and breathable — suitable for use during bathing or showering','Strong adhesion maintains secure fixation throughout daily activities','Easy to tear by hand; smooth, residue-free removal'],specs:[['REF No.','402 001 – 402 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Length','9.14 m per roll'],['Backing','Transparent PE film'],['Waterproof','Yes']],indications:['Dressing fixation','IV catheter fixation','Post-operative care','Tube securements'],note:''},
-  'Silicone Tape':{badge:'Silicone Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Gentle silicone adhesive tape designed for sensitive, fragile, or damaged skin — repositionable, residue-free, and pain-free at removal.',features:['Silicone adhesive is gentle on fragile and sensitive skin — no skin stripping or pain on removal','Repositionable multiple times without losing adhesion strength','Leaves no sticky residue on skin or dressings','Soft, conformable backing adapts to body contours including joints and curved surfaces'],specs:[['REF No.','403 001 – 403 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Adhesive','Medical-grade silicone'],['Repositionable','Yes'],['Residue-free removal','Yes']],indications:['Fragile or sensitive skin','Elderly patients','Post-radiotherapy skin','Paediatric use','Dressing and tube fixation'],note:''},
-  'Kind Removal Silicone Non-woven Tape':{badge:'Kind Removal Silicone Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Silicone-coated non-woven tape combining secure fixation with atraumatic, pain-free removal — ideal for repeated dressing changes.',features:['Silicone adhesive layer enables gentle, atraumatic removal without skin damage','Soft non-woven backing provides comfortable, conformable fixation','Suitable for frequent dressing changes — maintains adhesion through multiple repositioning cycles','Latex-free and hypoallergenic for sensitive skin'],specs:[['Adhesive','Medical-grade silicone'],['Backing','Non-woven fabric'],['Repositionable','Yes'],['Latex-free','Yes'],['Sterility','Non-sterile']],indications:['Sensitive or fragile skin','Repeated dressing changes','Elderly and paediatric patients','Post-surgical wound care'],note:''},
-  'Silk Tape':{badge:'Silk Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Classic rayon silk-like surgical tape offering strong adhesion and easy hand-tearing for everyday wound dressing fixation.',features:['Easy to tear by hand — no scissors required for quick application','Strong, reliable adhesion suitable for most wound dressing types','Flexible and conformable to skin surface and body contours','Available in multiple widths for versatile clinical applications'],specs:[['Backing','Rayon (silk-like) fabric'],['Adhesive','Zinc oxide based'],['Available widths','1.25 / 2.5 / 5 cm'],['Length','9.14 m per roll']],indications:['General wound dressing fixation','Tube and drain fixation','Post-operative care'],note:''},
-  'Paper Tape':{badge:'Paper Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Gentle, breathable paper tape for everyday wound care — soft on skin, easy to tear, and suitable for sensitive skin types.',features:['Gentle paper backing minimises skin irritation and trauma on removal','Highly breathable to reduce moisture build-up under the tape','Easy to tear by hand for fast, convenient application','Hypoallergenic adhesive suitable for sensitive skin'],specs:[['Backing','Microporous paper'],['Adhesive','Hypoallergenic acrylic'],['Available widths','1.25 / 2.5 / 5 cm'],['Length','9.14 m per roll']],indications:['Light wound dressing fixation','Sensitive skin','Post-operative care','Home wound care'],note:''},
-  'Zinc Oxide Tape':{badge:'Zinc Oxide Tape',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Strong zinc oxide adhesive tape for heavy-duty wound dressing fixation and sports strapping — reliable adhesion under demanding conditions.',features:['High-strength zinc oxide adhesive for secure, long-lasting fixation','Rigid cotton backing provides support and immobilisation for joints','Water-resistant — maintains adhesion during physical activity','Suitable for strapping, splinting, and heavy dressing fixation'],specs:[['Backing','Cotton fabric'],['Adhesive','Zinc oxide'],['Available widths','2.5 / 3.75 / 5 / 7.5 cm'],['Length','5 m per roll']],indications:['Sports strapping','Heavy dressing fixation','Joint support','Post-operative care'],note:''},
-  'Non-woven Adhesive Dressing with Pad':{badge:'Non-woven Adhesive Dressing with Pad',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Soft non-woven adhesive wound dressing with absorbent pad — ideal for low to moderate exuding, superficial wounds including cuts, abrasions, and post-operative wounds.',features:['Soft, porous and breathable non-woven border ensures comfort and skin-friendliness','Non-adherent absorbent pad allows fluid drainage while protecting the wound bed','Hypoallergenic adhesive provides secure fixation without irritating surrounding skin','Available in multiple sizes to suit different wound dimensions'],specs:[['REF No.','104 001 – 104 025'],['Available sizes','5×7.5 to 15×15 cm'],['Packaging','25–50 pcs/box'],['Absorbency','Low – Moderate'],['Adhesion','Self-adhesive non-woven border']],indications:['Cuts and lacerations','Abrasions','Post-operative wounds','Minor burns','Superficial wounds'],note:''},
-  'Non-woven Adhesive Dressing Strip':{badge:'Non-woven Dressing Strip',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Continuous non-woven adhesive dressing strip on a roll — cut to the required length for flexible, economical wound dressing fixation.',features:['Continuous roll format allows cutting to any required length — reduces waste','Soft, breathable non-woven backing comfortable for extended wear','Hypoallergenic adhesive suitable for sensitive skin','Absorbent pad layer provides basic wound protection and exudate management'],specs:[['Available widths','2.5 / 5 / 7.5 / 10 cm'],['Roll length','10 m'],['Adhesion','Self-adhesive'],['Absorbency','Low']],indications:['Wound dressing fixation','Minor cuts and abrasions','Post-operative wound protection','Home care'],note:''},
-  'Film Island Dressing':{badge:'Film Island Dressing',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Transparent PU film island dressing with central absorbent pad — waterproof, breathable, and allows wound inspection without removal.',features:['Waterproof transparent PU film border provides a reliable barrier against water and external contamination','Central non-adherent absorbent pad protects the wound and manages low to moderate exudate','Transparent film allows wound monitoring without dressing removal','Breathable membrane allows water vapour transmission to reduce maceration risk'],specs:[['REF No.','105 001 – 105 012'],['Available sizes','6×7 to 15×20 cm'],['Absorbency','Low – Moderate'],['Backing','Waterproof breathable PU film'],['Adhesion','Self-adhesive PU border']],indications:['Post-operative wounds','Minor burns','IV catheter sites','Superficial wounds','Skin donor sites'],note:''},
-  'Transparent Film Strip':{badge:'Transparent Film Strip',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Continuous transparent PU film dressing roll — waterproof, breathable, and ideal for covering IV sites, superficial wounds, and post-operative incisions.',features:['Waterproof transparent PU film provides a reliable barrier while allowing wound inspection','Highly breathable — permits water vapour transmission to reduce maceration','Continuous roll format allows cutting to any required length','Hypoallergenic adhesive for secure, gentle fixation on sensitive skin'],specs:[['Available widths','5 / 10 / 15 / 20 cm'],['Roll length','10 m'],['Backing','Transparent PU film'],['Waterproof','Yes'],['MVTR','High — breathable']],indications:['IV catheter fixation','Post-operative incision coverage','Superficial wound protection','Skin graft donor sites'],note:''},
-  'Frame Style Transparent Film IV Dressing':{badge:'Frame Style IV Dressing',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Frame-style transparent film IV dressing with central cut-out — designed for secure, visible, and easy-change peripheral IV catheter fixation.',features:['Frame-style design with central cut-out enables one-handed catheter fixation and easy application','Transparent window allows continuous visual inspection of the catheter insertion site','Waterproof PU film protects against external contamination and fluid ingress','Gentle adhesive border ensures secure fixation while minimising skin damage at removal'],specs:[['REF No.','107 001 – 107 006'],['Available sizes','5.5×6 to 9×12 cm'],['Design','Frame style with central cut-out'],['Backing','Transparent waterproof PU film'],['Adhesion','Hypoallergenic adhesive border']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Arterial line fixation','Epidural catheter fixation'],note:''},
-  'Non-woven IV Dressing':{badge:'Non-woven IV Dressing',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Non-woven adhesive IV dressing for peripheral catheter fixation — soft, breathable, and comfortable for extended wear.',features:['Soft non-woven backing provides comfortable, breathable fixation for extended periods','Hypoallergenic adhesive suitable for sensitive skin and long-term use','Available in multiple sizes to fit different catheter types and patient anatomy','Opaque design protects insertion site from light exposure'],specs:[['REF No.','108 001 – 108 004'],['Available sizes','5×6 to 9×12 cm'],['Backing','Non-woven fabric'],['Adhesion','Hypoallergenic adhesive'],['Sterility','Individually sterile packaged']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Long-term IV access management'],note:''},
-  'Wound Closure Strips':{badge:'Wound Closure Strips',bs:'background:#f0fdf4;color:#166534;',img:'',tagline:'Sterile adhesive wound closure strips for approximating wound edges — an alternative to sutures for minor lacerations and post-surgical incisions.',features:['Sterile strips provide secure wound edge approximation without the need for sutures','Porous, breathable material allows gas exchange and reduces infection risk','Gentle, hypoallergenic adhesive minimises skin irritation and trauma','Available in multiple widths and lengths for different wound sizes'],specs:[['Available sizes','3×75 / 6×75 / 12×100 mm'],['Packaging','6 strips/envelope'],['Sterility','Individually sterile packaged'],['Adhesion','Hypoallergenic acrylic']],indications:['Minor lacerations','Post-surgical incisions','Skin tear closure','Reinforcement after suture removal'],note:''},
+  'Surgical Tape':{badge:'Surgical Tape',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/Surgical-Tape-Breathable.jpg','https://img.velcura.net/无纺布胶带_01.jpg'],tagline:'Soft, hypoallergenic non-woven surgical tape for secure, breathable fixation of wound dressings — gentle on skin, easy to remove without residue.',features:['Soft, hypoallergenic and gentle on skin — suitable for sensitive and fragile skin','Water-resistant for bathing, showering or exercise without compromising adhesion','Latex-free adhesive reduces risk of allergic reactions','Breathable and vapour-permeable to reduce moisture build-up and infection risk'],specs:[['REF No.','401 001 – 401 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Length','9.14 m per roll'],['Adhesive','Hypoallergenic, latex-free'],['Backing','Non-woven fabric']],indications:['Dressing fixation','Post-operative wound care','Tube and catheter fixation','General wound management'],note:''},
+  'Transparent Surgical Tape':{badge:'Transparent Surgical Tape',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/PU%E9%80%8F%E6%98%8E%E6%95%B7%E8%B4%B4%E5%8D%B7-1024x1024.png'],tagline:'Waterproof transparent PE film tape for secure, discreet dressing fixation — allows wound inspection without removal.',features:['Transparent film allows direct wound inspection without removing the tape','Waterproof and breathable — suitable for use during bathing or showering','Strong adhesion maintains secure fixation throughout daily activities','Easy to tear by hand; smooth, residue-free removal'],specs:[['REF No.','402 001 – 402 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Length','9.14 m per roll'],['Backing','Transparent PE film'],['Waterproof','Yes']],indications:['Dressing fixation','IV catheter fixation','Post-operative care','Tube securements'],note:''},
+  'Silicone Tape':{badge:'Silicone Tape',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/QQ%E6%88%AA%E5%9B%BE20210916114329-570x570.png','https://img.velcura.net/硅凝胶防粘层产品.png','https://img.velcura.net/硅凝胶防粘层-01.jpg','https://img.velcura.net/硅凝胶防粘层-02.jpg','https://img.velcura.net/硅凝胶防粘层-03.jpg'],tagline:'Gentle silicone adhesive tape designed for sensitive, fragile, or damaged skin — repositionable, residue-free, and pain-free at removal.',features:['Silicone adhesive is gentle on fragile and sensitive skin — no skin stripping or pain on removal','Repositionable multiple times without losing adhesion strength','Leaves no sticky residue on skin or dressings','Soft, conformable backing adapts to body contours including joints and curved surfaces'],specs:[['REF No.','403 001 – 403 004'],['Available widths','1.25 / 2.5 / 5 / 7.5 cm'],['Adhesive','Medical-grade silicone'],['Repositionable','Yes'],['Residue-free removal','Yes']],indications:['Fragile or sensitive skin','Elderly patients','Post-radiotherapy skin','Paediatric use','Dressing and tube fixation'],note:''},
+  'Kind Removal Silicone Non-woven Tape':{badge:'Kind Removal Silicone Tape',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/QQ%E6%88%AA%E5%9B%BE20210916114329-570x570.png','https://img.velcura.net/无纺布硅凝胶胶带产品.png','https://img.velcura.net/无纺布硅凝胶胶带-01.jpg','https://img.velcura.net/无纺布硅凝胶胶带-02.jpg','https://img.velcura.net/无纺布硅凝胶胶带-03.jpg'],tagline:'Silicone-coated non-woven tape combining secure fixation with atraumatic, pain-free removal — ideal for repeated dressing changes.',features:['Silicone adhesive layer enables gentle, atraumatic removal without skin damage','Soft non-woven backing provides comfortable, conformable fixation','Suitable for frequent dressing changes — maintains adhesion through multiple repositioning cycles','Latex-free and hypoallergenic for sensitive skin'],specs:[['Adhesive','Medical-grade silicone'],['Backing','Non-woven fabric'],['Repositionable','Yes'],['Latex-free','Yes'],['Sterility','Non-sterile']],indications:['Sensitive or fragile skin','Repeated dressing changes','Elderly and paediatric patients','Post-surgical wound care'],note:''},
+  'Silk Tape':{badge:'Silk Tape',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/Surgical-Tape-Breathable.jpg','https://img.velcura.net/丝绸胶带-01.jpg','https://img.velcura.net/丝绸胶带-02.jpg','https://img.velcura.net/丝绸胶带-03.jpg'],tagline:'Classic rayon silk-like surgical tape offering strong adhesion and easy hand-tearing for everyday wound dressing fixation.',features:['Easy to tear by hand — no scissors required for quick application','Strong, reliable adhesion suitable for most wound dressing types','Flexible and conformable to skin surface and body contours','Available in multiple widths for versatile clinical applications'],specs:[['Backing','Rayon (silk-like) fabric'],['Adhesive','Zinc oxide based'],['Available widths','1.25 / 2.5 / 5 cm'],['Length','9.14 m per roll']],indications:['General wound dressing fixation','Tube and drain fixation','Post-operative care'],note:''},
+  'Paper Tape':{badge:'Paper Tape',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/Surgical-Tape-Breathable.jpg','https://img.velcura.net/纸胶带产品-1024x795.png'],tagline:'Gentle, breathable paper tape for everyday wound care — soft on skin, easy to tear, and suitable for sensitive skin types.',features:['Gentle paper backing minimises skin irritation and trauma on removal','Highly breathable to reduce moisture build-up under the tape','Easy to tear by hand for fast, convenient application','Hypoallergenic adhesive suitable for sensitive skin'],specs:[['Backing','Microporous paper'],['Adhesive','Hypoallergenic acrylic'],['Available widths','1.25 / 2.5 / 5 cm'],['Length','9.14 m per roll']],indications:['Light wound dressing fixation','Sensitive skin','Post-operative care','Home wound care'],note:''},
+  'Zinc Oxide Tape':{badge:'Zinc Oxide Tape',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/Surgical-Tape-Breathable.jpg','https://img.velcura.net/氧化锌橡皮膏产品.png','https://img.velcura.net/棉布胶带-01.jpg','https://img.velcura.net/棉布胶带-02.jpg','https://img.velcura.net/棉布胶带-03.jpg','https://img.velcura.net/氧化锌橡皮膏-01.jpg'],tagline:'Strong zinc oxide adhesive tape for heavy-duty wound dressing fixation and sports strapping — reliable adhesion under demanding conditions.',features:['High-strength zinc oxide adhesive for secure, long-lasting fixation','Rigid cotton backing provides support and immobilisation for joints','Water-resistant — maintains adhesion during physical activity','Suitable for strapping, splinting, and heavy dressing fixation'],specs:[['Backing','Cotton fabric'],['Adhesive','Zinc oxide'],['Available widths','2.5 / 3.75 / 5 / 7.5 cm'],['Length','5 m per roll']],indications:['Sports strapping','Heavy dressing fixation','Joint support','Post-operative care'],note:''},
+  'Non-woven Adhesive Dressing with Pad':{badge:'Non-woven Adhesive Dressing with Pad',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/product-3.jpg','https://img.velcura.net/超吸收纤维敷贴（肤色）产品-1024x1024.png','https://img.velcura.net/超吸收纤维敷贴（肤色）-01.jpg','https://img.velcura.net/超吸收纤维敷贴（肤色）-02.jpg','https://img.velcura.net/超吸收纤维敷贴（肤色）-03.jpg','https://img.velcura.net/无纺布活性炭敷料-带粘产品-1024x1024.png','https://img.velcura.net/无纺布活性炭敷贴-带粘-01.jpg','https://img.velcura.net/无纺布活性炭敷贴-带粘-02.jpg'],tagline:'Soft non-woven adhesive wound dressing with absorbent pad — ideal for low to moderate exuding, superficial wounds including cuts, abrasions, and post-operative wounds.',features:['Soft, porous and breathable non-woven border ensures comfort and skin-friendliness','Non-adherent absorbent pad allows fluid drainage while protecting the wound bed','Hypoallergenic adhesive provides secure fixation without irritating surrounding skin','Available in multiple sizes to suit different wound dimensions'],specs:[['REF No.','104 001 – 104 025'],['Available sizes','5×7.5 to 15×15 cm'],['Packaging','25–50 pcs/box'],['Absorbency','Low – Moderate'],['Adhesion','Self-adhesive non-woven border']],indications:['Cuts and lacerations','Abrasions','Post-operative wounds','Minor burns','Superficial wounds'],note:''},
+  'Non-woven Adhesive Dressing Strip':{badge:'Non-woven Dressing Strip',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/product-3.jpg','https://img.velcura.net/无纺布敷贴卷产品-1024x866.png','https://img.velcura.net/无纺布敷贴_01.png','https://img.velcura.net/无纺布敷贴_02.jpg','https://img.velcura.net/无纺布敷贴_03.jpg'],tagline:'Continuous non-woven adhesive dressing strip on a roll — cut to the required length for flexible, economical wound dressing fixation.',features:['Continuous roll format allows cutting to any required length — reduces waste','Soft, breathable non-woven backing comfortable for extended wear','Hypoallergenic adhesive suitable for sensitive skin','Absorbent pad layer provides basic wound protection and exudate management'],specs:[['Available widths','2.5 / 5 / 7.5 / 10 cm'],['Roll length','10 m'],['Adhesion','Self-adhesive'],['Absorbency','Low']],indications:['Wound dressing fixation','Minor cuts and abrasions','Post-operative wound protection','Home care'],note:''},
+  'Film Island Dressing':{badge:'Film Island Dressing',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/PU%E9%80%8F%E6%98%8E%E6%95%B7%E8%B4%B4%E5%8D%B7-1024x1024.png','https://img.velcura.net/无纺布敷贴-6x7cm产品.png','https://img.velcura.net/无纺布敷贴_01.png','https://img.velcura.net/无纺布敷贴_02.jpg','https://img.velcura.net/无纺布敷贴_03.jpg'],tagline:'Transparent PU film island dressing with central absorbent pad — waterproof, breathable, and allows wound inspection without removal.',features:['Waterproof transparent PU film border provides a reliable barrier against water and external contamination','Central non-adherent absorbent pad protects the wound and manages low to moderate exudate','Transparent film allows wound monitoring without dressing removal','Breathable membrane allows water vapour transmission to reduce maceration risk'],specs:[['REF No.','105 001 – 105 012'],['Available sizes','6×7 to 15×20 cm'],['Absorbency','Low – Moderate'],['Backing','Waterproof breathable PU film'],['Adhesion','Self-adhesive PU border']],indications:['Post-operative wounds','Minor burns','IV catheter sites','Superficial wounds','Skin donor sites'],note:''},
+  'Transparent Film Strip':{badge:'Transparent Film Strip',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/PU%E9%80%8F%E6%98%8E%E6%95%B7%E8%B4%B4%E5%8D%B7-1024x1024.png','https://img.velcura.net/透明敷贴产品-1024x1024.png','https://img.velcura.net/透明敷贴卷_03.jpg'],tagline:'Continuous transparent PU film dressing roll — waterproof, breathable, and ideal for covering IV sites, superficial wounds, and post-operative incisions.',features:['Waterproof transparent PU film provides a reliable barrier while allowing wound inspection','Highly breathable — permits water vapour transmission to reduce maceration','Continuous roll format allows cutting to any required length','Hypoallergenic adhesive for secure, gentle fixation on sensitive skin'],specs:[['Available widths','5 / 10 / 15 / 20 cm'],['Roll length','10 m'],['Backing','Transparent PU film'],['Waterproof','Yes'],['MVTR','High — breathable']],indications:['IV catheter fixation','Post-operative incision coverage','Superficial wound protection','Skin graft donor sites'],note:''},
+  'Frame Style Transparent Film IV Dressing':{badge:'Frame Style IV Dressing',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/Frame-Style-Transparent-Film-I.V.Dressing-preview-qmjobmqoi3iy6omyvb9h9ghe0mott7rgwtfh369l7k.jpg','https://img.velcura.net/纸框型留置针贴带切口产品-1-1024x644.png'],tagline:'Frame-style transparent film IV dressing with central cut-out — designed for secure, visible, and easy-change peripheral IV catheter fixation.',features:['Frame-style design with central cut-out enables one-handed catheter fixation and easy application','Transparent window allows continuous visual inspection of the catheter insertion site','Waterproof PU film protects against external contamination and fluid ingress','Gentle adhesive border ensures secure fixation while minimising skin damage at removal'],specs:[['REF No.','107 001 – 107 006'],['Available sizes','5.5×6 to 9×12 cm'],['Design','Frame style with central cut-out'],['Backing','Transparent waterproof PU film'],['Adhesion','Hypoallergenic adhesive border']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Arterial line fixation','Epidural catheter fixation'],note:''},
+  'Non-woven IV Dressing':{badge:'Non-woven IV Dressing',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/product-3.jpg','https://img.velcura.net/无纺布留置针贴产品-1024x767.png','https://img.velcura.net/留置针贴_03.jpg'],tagline:'Non-woven adhesive IV dressing for peripheral catheter fixation — soft, breathable, and comfortable for extended wear.',features:['Soft non-woven backing provides comfortable, breathable fixation for extended periods','Hypoallergenic adhesive suitable for sensitive skin and long-term use','Available in multiple sizes to fit different catheter types and patient anatomy','Opaque design protects insertion site from light exposure'],specs:[['REF No.','108 001 – 108 004'],['Available sizes','5×6 to 9×12 cm'],['Backing','Non-woven fabric'],['Adhesion','Hypoallergenic adhesive'],['Sterility','Individually sterile packaged']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Long-term IV access management'],note:''},
+  'Wound Closure Strips':{badge:'Wound Closure Strips',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/product-3.jpg','https://img.velcura.net/创口贴产品.png','https://img.velcura.net/伤口免缝贴产品.png'],tagline:'Sterile adhesive wound closure strips for approximating wound edges — an alternative to sutures for minor lacerations and post-surgical incisions.',features:['Sterile strips provide secure wound edge approximation without the need for sutures','Porous, breathable material allows gas exchange and reduces infection risk','Gentle, hypoallergenic adhesive minimises skin irritation and trauma','Available in multiple widths and lengths for different wound sizes'],specs:[['Available sizes','3×75 / 6×75 / 12×100 mm'],['Packaging','6 strips/envelope'],['Sterility','Individually sterile packaged'],['Adhesion','Hypoallergenic acrylic']],indications:['Minor lacerations','Post-surgical incisions','Skin tear closure','Reinforcement after suture removal'],note:''},
 
   // PERSONAL CARE
-  'Hydrocolloid Gel Bandages':{badge:'Hydrocolloid Gel Bandages',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Ultra-thin hydrocolloid gel bandages that create a moist healing environment for minor wounds, blisters, and pressure spots — discreet, waterproof, and long-lasting.',features:['Moist wound healing environment accelerates healing and reduces scarring for minor cuts and blisters','Ultra-thin, flexible design conforms closely to skin for discreet, comfortable wear','Waterproof outer surface protects against water, dirt, and bacteria during daily activities','Long wear time — typically 3–5 days without replacement'],specs:[['Type','Hydrocolloid gel'],['Available sizes','Multiple standard sizes'],['Wear time','3–5 days'],['Waterproof','Yes'],['Transparency','Semi-transparent']],indications:['Blisters','Minor cuts and abrasions','Pressure spots','Superficial skin injuries'],note:''},
-  'PE Woundplast':{badge:'PE Woundplast',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Flexible PE film wound plaster for everyday minor wound protection — waterproof, breathable, and comfortable for all-day wear.',features:['Flexible PE backing conforms to skin movement — comfortable for joints and active areas','Waterproof outer surface protects wounds during handwashing and light water exposure','Breathable design reduces moisture build-up under the plaster','Hypoallergenic adhesive suitable for everyday use on normal and sensitive skin'],specs:[['Backing','PE film'],['Waterproof','Yes'],['Adhesion','Hypoallergenic acrylic'],['Available sizes','Standard strip and spot sizes']],indications:['Minor cuts and scrapes','Blisters','Superficial abrasions','Everyday wound protection'],note:''},
-  'Silicone Scar Sheet':{badge:'Silicone Scar Sheet',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Medical-grade silicone scar sheet for flattening, softening, and fading hypertrophic scars and keloids — clinically proven for post-surgical and burn scars.',features:['Flattens, softens and reduces the appearance of hypertrophic scars and keloids with regular use','Medical-grade silicone creates an optimal moist microclimate to accelerate scar remodelling','Reusable — can be cleaned and reapplied multiple times; cost-effective long-term treatment','Self-adhesive, discreet and flexible — can be worn under clothing during daily activities'],specs:[['Material','Medical-grade silicone'],['Reusable','Yes — washable and reusable'],['Available sizes','3×6 / 4×6 / 5×7.5 cm and custom'],['Wear time','8–24 hours/day recommended'],['Sterility','Non-sterile']],indications:['Post-surgical scars','Burn scars','Hypertrophic scars','Keloids','C-section scars'],note:''},
-  'Non-woven Cohesive Elastic Bandage':{badge:'Cohesive Elastic Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Self-adhesive non-woven elastic bandage that bonds to itself without sticking to skin or hair — ideal for wound dressing retention, support, and compression.',features:['Self-adhesive — bonds to itself only, not to skin, hair, or clothing; no clips or pins required','Latex-free construction suitable for patients with latex sensitivities','Flexible, conformable design ideal for securing dressings on limbs, joints, and irregular body contours','Available in multiple colours for easy patient identification'],specs:[['REF No.','302 001 – 302 006'],['Available widths','2.5 / 5 / 7.5 / 10 / 12.5 / 15 cm'],['Length','4.5 m (stretched)'],['Adhesion','Self-cohesive — bonds to itself only'],['Latex-free','Yes']],indications:['Wound dressing retention','Light compression','Joint support','Sports strapping'],note:''},
-  'Elastic Crepe Bandage':{badge:'Elastic Crepe Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Traditional elastic crepe bandage for compression, support, and wound dressing retention — versatile, reusable, and washable.',features:['Provides light to moderate compression for oedema management and post-injury support','Conformable and stretchable design for comfortable application on limbs and joints','Reusable — can be washed and reused multiple times','Available in multiple widths for different body areas'],specs:[['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Material','Cotton / polyester blend'],['Reusable','Yes — washable']],indications:['Oedema management','Sprain support','Wound dressing retention','Post-operative compression'],note:''},
-  'Neuromuscular Kinesiology Tape':{badge:'Kinesiology Tape',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Elastic kinesiology tape that mimics skin elasticity to support muscles and joints during sport and rehabilitation without restricting movement.',features:['100% cotton elastic backing mimics the elasticity and thickness of human skin for natural movement','Water-resistant acrylic adhesive maintains adhesion during exercise and showering — up to 5 days wear','Supports muscles and joints, reduces pain, and improves circulation without restricting range of motion','Available in multiple colours; latex-free and hypoallergenic for sensitive skin'],specs:[['Material','100% cotton elastic fabric'],['Adhesive','Water-resistant acrylic'],['Width','5 cm'],['Length','5 m per roll'],['Wear time','Up to 5 days']],indications:['Sports injury prevention','Muscle and joint support','Rehabilitation','Pain management','Oedema reduction'],note:''},
-  'PBT Bandage':{badge:'PBT Bandage',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Highly elastic PBT conforming bandage for securing wound dressings on complex body contours including fingers, heels, and joints.',features:['High elasticity conforms closely to irregular body surfaces including fingers, heels, and joints','Soft, breathable fabric comfortable for extended wear','Non-adhesive design allows easy, pain-free removal without skin damage','Available in multiple widths for different wound sites and body areas'],specs:[['Material','PBT (polybutylene terephthalate)'],['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Adhesion','Non-adhesive'],['Elasticity','High']],indications:['Wound dressing retention','Post-operative care','Burns management','Digit and limb bandaging'],note:''},
-  'V.A.C. Dressing Kit':{badge:'V.A.C. Dressing Kit',bs:'background:#fdf4ff;color:#7e22ce;',img:'',tagline:'Complete vacuum-assisted closure (VAC) dressing kit for negative pressure wound therapy — supports healing of complex, deep, and chronic wounds.',features:['Complete all-in-one kit includes foam dressing, transparent film drape, and tubing for vacuum connection','Negative pressure removes excess exudate, reduces oedema, and promotes granulation tissue formation','Open-cell foam conforms to wound shape ensuring even distribution of negative pressure','Compatible with standard negative pressure wound therapy (NPWT) systems'],specs:[['Contents','Foam dressing + drape + tubing + pad'],['Foam type','Open-cell polyurethane (black) or PVA (white)'],['Pressure range','75–125 mmHg (as directed)'],['Application','Single use, sterile']],indications:['Chronic wounds','Diabetic foot ulcers','Post-surgical dehiscence','Traumatic wounds','Pressure ulcers Stage III–IV'],note:'Use only under medical supervision as part of a comprehensive wound management programme.'},
+  'Hydrocolloid Gel Bandages':{badge:'Hydrocolloid Gel Bandages',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/2nd-skin-570x570.jpg','https://img.velcura.net/水胶体创口贴-03.jpg'],tagline:'Ultra-thin hydrocolloid gel bandages that create a moist healing environment for minor wounds, blisters, and pressure spots — discreet, waterproof, and long-lasting.',features:['Moist wound healing environment accelerates healing and reduces scarring for minor cuts and blisters','Ultra-thin, flexible design conforms closely to skin for discreet, comfortable wear','Waterproof outer surface protects against water, dirt, and bacteria during daily activities','Long wear time — typically 3–5 days without replacement'],specs:[['Type','Hydrocolloid gel'],['Available sizes','Multiple standard sizes'],['Wear time','3–5 days'],['Waterproof','Yes'],['Transparency','Semi-transparent']],indications:['Blisters','Minor cuts and abrasions','Pressure spots','Superficial skin injuries'],note:''},
+  'PE Woundplast':{badge:'PE Woundplast',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/PE%E8%83%B6%E5%B8%A6%E4%BA%A7%E5%93%81-1024x659.png','https://img.velcura.net/水胶体创口贴-03.jpg'],tagline:'Flexible PE film wound plaster for everyday minor wound protection — waterproof, breathable, and comfortable for all-day wear.',features:['Flexible PE backing conforms to skin movement — comfortable for joints and active areas','Waterproof outer surface protects wounds during handwashing and light water exposure','Breathable design reduces moisture build-up under the plaster','Hypoallergenic adhesive suitable for everyday use on normal and sensitive skin'],specs:[['Backing','PE film'],['Waterproof','Yes'],['Adhesion','Hypoallergenic acrylic'],['Available sizes','Standard strip and spot sizes']],indications:['Minor cuts and scrapes','Blisters','Superficial abrasions','Everyday wound protection'],note:''},
+  'Silicone Scar Sheet':{badge:'Silicone Scar Sheet',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/tatoo-aftercare-570x570.webp','https://img.velcura.net/疤痕贴_01.png','https://img.velcura.net/疤痕贴_02.jpg','https://img.velcura.net/疤痕贴_03.jpg','https://img.velcura.net/条状疤痕贴产品-1024x841.png'],tagline:'Medical-grade silicone scar sheet for flattening, softening, and fading hypertrophic scars and keloids — clinically proven for post-surgical and burn scars.',features:['Flattens, softens and reduces the appearance of hypertrophic scars and keloids with regular use','Medical-grade silicone creates an optimal moist microclimate to accelerate scar remodelling','Reusable — can be cleaned and reapplied multiple times; cost-effective long-term treatment','Self-adhesive, discreet and flexible — can be worn under clothing during daily activities'],specs:[['Material','Medical-grade silicone'],['Reusable','Yes — washable and reusable'],['Available sizes','3×6 / 4×6 / 5×7.5 cm and custom'],['Wear time','8–24 hours/day recommended'],['Sterility','Non-sterile']],indications:['Post-surgical scars','Burn scars','Hypertrophic scars','Keloids','C-section scars'],note:''},
+  'Non-woven Cohesive Elastic Bandage':{badge:'Cohesive Elastic Bandage',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/QQ%E6%88%AA%E5%9B%BE20210916114329-570x570.png','https://img.velcura.net/无纺布自粘绷带产品5cm-1024x512.png','https://img.velcura.net/自粘绷带_01.png'],tagline:'Self-adhesive non-woven elastic bandage that bonds to itself without sticking to skin or hair — ideal for wound dressing retention, support, and compression.',features:['Self-adhesive — bonds to itself only, not to skin, hair, or clothing; no clips or pins required','Latex-free construction suitable for patients with latex sensitivities','Flexible, conformable design ideal for securing dressings on limbs, joints, and irregular body contours','Available in multiple colours for easy patient identification'],specs:[['REF No.','302 001 – 302 006'],['Available widths','2.5 / 5 / 7.5 / 10 / 12.5 / 15 cm'],['Length','4.5 m (stretched)'],['Adhesion','Self-cohesive — bonds to itself only'],['Latex-free','Yes']],indications:['Wound dressing retention','Light compression','Joint support','Sports strapping'],note:''},
+  'Elastic Crepe Bandage':{badge:'Elastic Crepe Bandage',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/QQ%E6%88%AA%E5%9B%BE20210916114329-570x570.png','https://img.velcura.net/褶皱绷带产品-1024x1024.png','https://img.velcura.net/褶皱绷带-01.jpg','https://img.velcura.net/褶皱绷带-02.jpg','https://img.velcura.net/褶皱绷带-03.jpg'],tagline:'Traditional elastic crepe bandage for compression, support, and wound dressing retention — versatile, reusable, and washable.',features:['Provides light to moderate compression for oedema management and post-injury support','Conformable and stretchable design for comfortable application on limbs and joints','Reusable — can be washed and reused multiple times','Available in multiple widths for different body areas'],specs:[['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Material','Cotton / polyester blend'],['Reusable','Yes — washable']],indications:['Oedema management','Sprain support','Wound dressing retention','Post-operative compression'],note:''},
+  'Neuromuscular Kinesiology Tape':{badge:'Kinesiology Tape',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/QQ%E6%88%AA%E5%9B%BE20210916114329-570x570.png','https://img.velcura.net/肌肉绷带产品-1024x829.png','https://img.velcura.net/肌肉绷带（棉布）-01.jpg','https://img.velcura.net/肌肉绷带（棉布）-02.jpg','https://img.velcura.net/肌肉绷带（棉布）-03.jpg'],tagline:'Elastic kinesiology tape that mimics skin elasticity to support muscles and joints during sport and rehabilitation without restricting movement.',features:['100% cotton elastic backing mimics the elasticity and thickness of human skin for natural movement','Water-resistant acrylic adhesive maintains adhesion during exercise and showering — up to 5 days wear','Supports muscles and joints, reduces pain, and improves circulation without restricting range of motion','Available in multiple colours; latex-free and hypoallergenic for sensitive skin'],specs:[['Material','100% cotton elastic fabric'],['Adhesive','Water-resistant acrylic'],['Width','5 cm'],['Length','5 m per roll'],['Wear time','Up to 5 days']],indications:['Sports injury prevention','Muscle and joint support','Rehabilitation','Pain management','Oedema reduction'],note:''},
+  'PBT Bandage':{badge:'PBT Bandage',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/PBT%E7%BB%B7%E5%B8%A6%E4%BA%A7%E5%93%81-1-1024x1024.png'],tagline:'Highly elastic PBT conforming bandage for securing wound dressings on complex body contours including fingers, heels, and joints.',features:['High elasticity conforms closely to irregular body surfaces including fingers, heels, and joints','Soft, breathable fabric comfortable for extended wear','Non-adhesive design allows easy, pain-free removal without skin damage','Available in multiple widths for different wound sites and body areas'],specs:[['Material','PBT (polybutylene terephthalate)'],['Available widths','5 / 7.5 / 10 / 15 cm'],['Length','4.5 m (stretched)'],['Adhesion','Non-adhesive'],['Elasticity','High']],indications:['Wound dressing retention','Post-operative care','Burns management','Digit and limb bandaging'],note:''},
+  'V.A.C. Dressing Kit':{badge:'V.A.C. Dressing Kit',bs:'background:#fdf4ff;color:#7e22ce;',imgs:['https://img.velcura.net/Negative-Pressure-Wound-Therapy-1-480x285.jpg','https://img.velcura.net/负压引流产品-1024x905.png','https://img.velcura.net/负压引流敷料-01.jpg'],tagline:'Complete vacuum-assisted closure (VAC) dressing kit for negative pressure wound therapy — supports healing of complex, deep, and chronic wounds.',features:['Complete all-in-one kit includes foam dressing, transparent film drape, and tubing for vacuum connection','Negative pressure removes excess exudate, reduces oedema, and promotes granulation tissue formation','Open-cell foam conforms to wound shape ensuring even distribution of negative pressure','Compatible with standard negative pressure wound therapy (NPWT) systems'],specs:[['Contents','Foam dressing + drape + tubing + pad'],['Foam type','Open-cell polyurethane (black) or PVA (white)'],['Pressure range','75–125 mmHg (as directed)'],['Application','Single use, sterile']],indications:['Chronic wounds','Diabetic foot ulcers','Post-surgical dehiscence','Traumatic wounds','Pressure ulcers Stage III–IV'],note:'Use only under medical supervision as part of a comprehensive wound management programme.'},
 
   // ── CONTINENCE CARE ──
   'Washable Bed Pad Standard':{
     badge:'Washable Bed Pad · Standard',bs:'background:#fff7ed;color:#c2410c;',
-    img:'',
+    imgs:['https://img.velcura.net/velg-bedpads-3-570x570.jpg'],
     tagline:'4-layer quilted washable bed pad for incontinence protection — ultra-absorbent, machine washable up to 300 times, and comfortable for adults, children, and elderly.',
     features:['Quilted top surface wicks moisture away from skin for dry, comfortable rest','Heavy-absorbency middle layer locks fluid quickly — holds up to 6 cups of liquid','Non-slip waterproof vinyl backing protects mattress and prevents pad from shifting','Machine washable up to 300 times — reusable and environmentally friendly alternative to disposables'],
     specs:[['Size','34" × 36" (86 × 91 cm)'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Non-slip waterproof vinyl'],['Washability','Up to 300 machine washes']],
@@ -939,7 +956,7 @@ var PRODS = {
   },
   'Washable Bed Pad Large':{
     badge:'Washable Bed Pad · Large',bs:'background:#fff7ed;color:#c2410c;',
-    img:'',
+    imgs:['https://img.velcura.net/velg-bedpads-3-570x570.jpg'],
     tagline:'Large-format washable incontinence bed pad for full mattress protection — heavy absorbency with non-slip backing for secure positioning throughout the night.',
     features:['Generous 34" × 52" size provides comprehensive mattress coverage for adults','Heavy-absorbency core locks fluid rapidly, keeping surface dry and comfortable','Non-slip waterproof vinyl backing holds pad securely in place during sleep','Soft quilted surface gentle on sensitive skin; machine washable for convenient reuse'],
     specs:[['Size','34" × 52" (86 × 132 cm)'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Non-slip waterproof vinyl'],['Washability','Up to 300 machine washes']],
@@ -948,7 +965,7 @@ var PRODS = {
   },
   'Washable Bed Pad King Size':{
     badge:'Washable Bed Pad · King Size',bs:'background:#fff7ed;color:#c2410c;',
-    img:'',
+    imgs:['https://img.velcura.net/velg-bedpads-3-570x570.jpg'],
     tagline:'King-size washable bed pad offering maximum mattress coverage — ideal for king and queen beds where full-width protection is required.',
     features:['Extra-wide 34" × 76" format provides complete protection across large bed widths','Heavy-absorbency multilayer core for reliable overnight incontinence management','Non-slip waterproof backing prevents movement even on smooth mattress surfaces','Durable construction withstands repeated machine washing without losing absorbency'],
     specs:[['Size','34" × 76" (86 × 193 cm)'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Non-slip waterproof vinyl'],['Washability','Up to 300 machine washes']],
@@ -957,7 +974,7 @@ var PRODS = {
   },
   'Washable Bed Pad with Tuck-in Sides':{
     badge:'Washable Bed Pad · Tuck-in Sides',bs:'background:#fff7ed;color:#c2410c;',
-    img:'',
+    imgs:['https://img.velcura.net/velg-bedpads-waterproof-570x570.jpg'],
     tagline:'Washable incontinence bed pad with tuck-in side flaps for a secure, wrinkle-free fit — stays perfectly in place throughout the night.',
     features:['Extended tuck-in side flaps secure the pad firmly under the mattress — no slipping or bunching','Soft quilted top layer provides comfortable, skin-friendly contact throughout the night','Heavy-absorbency core manages moderate to heavy incontinence reliably','Machine washable and reusable — significantly reduces cost and waste versus disposable pads'],
     specs:[['Design','Tuck-in side flaps for secure fit'],['Layers','4-layer construction'],['Top surface','Soft quilted fabric'],['Backing','Waterproof layer'],['Washability','Up to 300 machine washes']],
@@ -966,7 +983,7 @@ var PRODS = {
   },
   'Washable Bed Pad for Baby':{
     badge:'Washable Bed Pad · Baby',bs:'background:#fff7ed;color:#c2410c;',
-    img:'',
+    imgs:['https://img.velcura.net/velg-bedpads-3-570x570.jpg','https://img.velcura.net/超级吸水垫（蓝色）产品.png','https://img.velcura.net/超级吸水垫（蓝色）-01.jpg','https://img.velcura.net/超级吸水垫（蓝色）-02.jpg'],
     tagline:'Compact 4-layer washable bed pad sized for babies and toddlers — soft, breathable, and gentle on delicate skin during nappy training and nighttime protection.',
     features:['Compact 18" × 24" size designed for cribs, prams, and changing mats','Ultra-soft quilted top surface gentle on delicate baby skin','4-layer construction absorbs and locks away moisture quickly for dry, comfortable rest','Machine washable and reusable — ideal eco-friendly alternative to disposable waterproof liners'],
     specs:[['Size','18" × 24" (46 × 61 cm)'],['Layers','4-layer construction'],['Top surface','Ultra-soft quilted fabric'],['Backing','Waterproof layer'],['Washability','Up to 300 machine washes']],
@@ -979,7 +996,7 @@ var PRODS = {
   // GRADE 0 — Prevention
   'YDA Shoe — Daily Activity':{
     badge:'YDA · Grade 0 Prevention',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'YDA (Your Daily Activity) therapeutic footwear for low-risk diabetic patients — designed for everyday prevention of foot complications with extra depth and pressure-distributing sole.',
     features:['Semi-flexible rocker sole distributes plantar pressure evenly to reduce peak loading at risk areas','Extra-depth design accommodates removable orthotic insoles for personalised offloading','Breathable, seamless upper minimises friction and irritation on neuropathic skin','Suitable for everyday wear — lightweight, aesthetically designed for active daily use'],
     specs:[['Risk Grade','Grade 0 — Prevention (Low Risk)',''],['Sole','Semi-flexible rocker'],['Fit','Comfortable / Extra depth'],['Closure','Velcro / Lace options'],['Subject','Diabetes, Wellbeing'],['Standard','IWGDF-aligned DFA protocol']],
@@ -990,7 +1007,7 @@ var PRODS = {
   // GRADE 1 — Primary Prevention
   'MAC1 Shoe — Semi-rigid':{
     badge:'MAC1 · Grade 1 Primary Prevention',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'MAC1 medical-grade shoe for intermediate-risk diabetic feet — semi-rigid sole and extra-depth construction for patients with early-stage neuropathy, deformity, or healed ulcers.',
     features:['Semi-rigid outsole controls forefoot flexion and redistributes plantar pressure away from high-risk areas','Fully removable multilayer insole system allows custom orthotic accommodation','Seamless, stretchable upper protects fragile, sensitive, or neuropathic skin from friction','Available in multiple widths and depths to accommodate foot deformities including bunions and hammertoes'],
     specs:[['Risk Grade','Grade 1 — Primary Prevention (Intermediate Risk)'],['Sole','Semi-rigid rocker'],['Fit','Extra / Plentiful depth'],['Closure','Velcro closures'],['Subject','Diabetes, Forefoot pathologies'],['Standard','IWGDF-aligned DFA protocol']],
@@ -999,7 +1016,7 @@ var PRODS = {
   },
   'TQURA Shoe — Extra Depth':{
     badge:'TQURA · Grade 1 Primary Prevention',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'TQURA extra-depth therapeutic shoe for intermediate-risk diabetic patients — exceptional volume capacity accommodates severe deformities, orthoses, and post-operative needs.',
     features:['Maximum extra-depth design provides generous volume for custom insoles and significant foot deformities','Adjustable Velcro closure system allows fine-tuning for swollen or oedematous feet throughout the day','Stretchable upper conforms to irregular foot shapes without creating pressure points','Rocker sole geometry reduces forefoot loading and promotes a smooth gait cycle'],
     specs:[['Risk Grade','Grade 1 — Primary Prevention (Intermediate Risk)'],['Sole','Rigid / Semi-rigid rocker'],['Fit','Plentiful (maximum depth)'],['Closure','Wide adjustable Velcro'],['Subject','Diabetes, Forefoot pathologies, Post surgery'],['Standard','IWGDF-aligned DFA protocol']],
@@ -1010,7 +1027,7 @@ var PRODS = {
   // GRADE 2 — Secondary Prevention
   'MAC2 Shoe — Rigid Sole':{
     badge:'MAC2 · Grade 2 Secondary Prevention',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'MAC2 rigid-sole medical shoe for high-risk diabetic feet — prescribed for patients with active or recently healed plantar ulcers requiring firm pressure redistribution.',
     features:['Rigid outsole with full-length rocker significantly reduces forefoot and midfoot peak pressures','Custom-moulded multilayer insole system targets offloading at specific ulcer-risk sites','High upper provides additional ankle stability and protects against lateral trauma','Accommodates significant foot deformities and post-amputation residual limbs'],
     specs:[['Risk Grade','Grade 2 — Secondary Prevention (High Risk)'],['Sole','Rigid full-length rocker'],['Fit','Plentiful extra depth'],['Closure','Velcro multi-strap'],['Subject','Diabetes, Wound management, Post surgery'],['Standard','IWGDF-aligned DFA protocol']],
@@ -1019,7 +1036,7 @@ var PRODS = {
   },
   'MAC3 Shoe — Maximum Protection':{
     badge:'MAC3 · Grade 2 Secondary Prevention',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'MAC3 maximum-protection rigid shoe for the highest-risk non-ulcerated diabetic feet — exceptional offloading capacity with full customisability for complex foot reconstructions.',
     features:['Maximum-rigidity outsole with pronounced full-length rocker for aggressive pressure redistribution','Highest-capacity depth accommodates complex custom insoles and post-reconstruction foot anatomy','Reinforced toe box and lateral guards protect fragile, insensate tissue from mechanical trauma','Fully adjustable upper adapts to significant volume changes from oedema, bandaging, or wound dressings'],
     specs:[['Risk Grade','Grade 2 — Secondary Prevention (High Risk, Complex)'],['Sole','Maximum rigid rocker'],['Fit','Maximum plentiful depth'],['Closure','Wide multi-strap Velcro'],['Subject','Diabetes, Wound management'],['Standard','IWGDF-aligned DFA protocol']],
@@ -1028,7 +1045,7 @@ var PRODS = {
   },
   'YDA Pro Shoe':{
     badge:'YDA Pro · Grade 2 Secondary Prevention',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'YDA Pro upgraded therapeutic shoe combining enhanced aesthetics with high-risk diabetic foot protection — semi-rigid sole with extra volume for active high-risk patients.',
     features:['Semi-rigid rocker sole reduces peak plantar pressure while maintaining a natural gait pattern','Extra-depth design accommodates custom orthotic insoles for targeted pressure relief','Premium breathable upper materials balance clinical protection with everyday aesthetics','Suitable for patients transitioning from acute offloading walkers to long-term preventive footwear'],
     specs:[['Risk Grade','Grade 2 — Secondary Prevention (High Risk)'],['Sole','Semi-rigid rocker'],['Fit','Extra / Plentiful depth'],['Closure','Velcro and lace options'],['Subject','Diabetes, Forefoot pathologies'],['Standard','IWGDF-aligned DFA protocol']],
@@ -1039,7 +1056,7 @@ var PRODS = {
   // GRADE 3 — Acute Phase / Wound Management
   'SBi Motus Offloading Walker':{
     badge:'SBi Motus · Grade 3 Acute Offloading',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'SBi Motus — the world\'s first smart, fully customisable offloading walker for active diabetic foot ulcer management — CES 2019 Innovation Award winner for Wearable Technologies.',
     features:['Fully customisable 3×3 modular kit allows targeted offloading of any plantar wound area — forefoot, midfoot, or heel','Integrated IoT sensors (Sensoria®) monitor patient compliance 24/7 and transmit data to clinical teams in real time','Rigid external rocker sole with fibre-glass interface eliminates forefoot/midfoot pressure — equivalent to irremovable TCC','Smart technology alerts clinicians to reduced compliance — proven to reduce healing time and amputation risk'],
     specs:[['Risk Grade','Grade 3 — Acute Phase / Wound Management (Very High Risk)'],['Design','Fully customisable modular offloading walker'],['Smart features','IoT compliance monitoring (Sensoria®)'],['Sole','External rigid rocker'],['Standard','IWGDF Gold Standard Offloading — DFA Grade 3'],['Award','CES 2019 Innovation Award — Wearable Technologies']],
@@ -1048,7 +1065,7 @@ var PRODS = {
   },
   'SBi Frame Offloading Walker':{
     badge:'SBi Frame · Grade 3 Acute Offloading',bs:'background:#ecfdf5;color:#065f46;',
-    img:'',
+    imgs:[],
     tagline:'SBi Frame — a rigid customisable offloading walker for acute diabetic foot ulcer healing — high-leg brace with modular insole system for complete wound offloading.',
     features:['Rigid high-leg brace structure provides maximum stability and complete mechanical offloading of the foot','Modular multilayer insole system targets pressure relief directly at the wound site','Heat-mouldable posterior brace adapts precisely to individual leg anatomy for optimal fit and comfort','Breathable, washable upper maintains hygiene during extended wear through the healing phase'],
     specs:[['Risk Grade','Grade 3 — Acute Phase / Wound Management (Very High Risk)'],['Design','Rigid high-leg offloading brace'],['Insole','Modular multilayer offloading system'],['Sole','External rigid full-length rocker'],['Standard','IWGDF Gold Standard Offloading — DFA Grade 3'],['Manufacturer','Optima Molliter, Italy (est. 1894)']],
@@ -1291,11 +1308,34 @@ function showProd(name) {
     // 填充产品详情
     var badge = document.getElementById('l2PdBadge');
     var imgBox = document.getElementById('l2PdImgBox');
-    if (p && p.img) {
-      imgBox.innerHTML = '<img src="'+p.img+'" alt="'+name+'" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" onerror="this.parentNode.innerHTML=\'<div style=font-size:36px;color:#bae6fd>✚</div><div style=font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase>Product Image</div>\'">';
-    } else {
-      imgBox.innerHTML = '<div style="font-size:36px;color:#bae6fd;">✚</div><div style="font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;">Product Image</div>';
-    }
+    var imgs = p && p.imgs ? p.imgs : (p && p.img ? [p.img] : []);
+    imgBox.style.position = 'relative';
+    window._carousel = { imgs: imgs, idx: 0 };
+    window._renderCarousel = function() {
+      var c = window._carousel;
+      if (!c.imgs.length) {
+        imgBox.innerHTML = '<div style="font-size:36px;color:#bae6fd;">✚</div><div style="font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;">Product Image</div>';
+        return;
+      }
+      var url = c.imgs[c.idx];
+      var isWhiteProduct = (url.indexOf('%E4%BA%A7%E5%93%81') !== -1 || url.indexOf('产品') !== -1)
+        && url.indexOf('%E8%87%AA%E7%B2%98') === -1 && url.indexOf('自粘') === -1;
+      var imgStyle = isWhiteProduct
+        ? 'width:100%;height:100%;object-fit:contain;border-radius:14px;display:block;transform:scale(2.6);transform-origin:center center;'
+        : 'width:100%;height:100%;object-fit:cover;border-radius:14px;display:block;';
+      var html = '<img src="' + url + '" style="' + imgStyle + '">';
+      if (c.imgs.length > 1) {
+        html += '<button onclick="window._carousel.idx=(window._carousel.idx-1+window._carousel.imgs.length)%window._carousel.imgs.length;window._renderCarousel();" style="position:absolute;left:6px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.85);border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:16px;line-height:1;z-index:5;">‹</button>';
+        html += '<button onclick="window._carousel.idx=(window._carousel.idx+1)%window._carousel.imgs.length;window._renderCarousel();" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.85);border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:16px;line-height:1;z-index:5;">›</button>';
+        html += '<div style="position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:4px;">';
+        for (var di=0; di<c.imgs.length; di++) {
+          html += '<span style="width:6px;height:6px;border-radius:50%;background:' + (di===c.idx?'#0284c7':'rgba(255,255,255,0.7)') + ';display:inline-block;"></span>';
+        }
+        html += '</div>';
+      }
+      imgBox.innerHTML = html;
+    };
+    window._renderCarousel();
     if (p) {
       badge.textContent = p.badge;
       badge.style.cssText = 'display:inline-block;padding:3px 12px;border-radius:999px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;' + p.bs;
@@ -1329,6 +1369,51 @@ function showProd(name) {
   var cat = params.get('cat') || 'advanced';
   selectL2(cat);
 })();
+// Product search
+function getAllProducts() {
+  var all = [];
+  Object.keys(L3DATA).forEach(function(cat) {
+    L3DATA[cat].groups.forEach(function(g) {
+      g.items.forEach(function(item) {
+        all.push({ name: item, cat: cat });
+      });
+    });
+  });
+  return all;
+}
+
+function prodSearch(val) {
+  var box = document.getElementById('prodSearchResults');
+  val = val.trim().toLowerCase();
+  if (!val) { box.style.display = 'none'; return; }
+  var all = getAllProducts();
+  var matches = all.filter(function(p) { return p.name.toLowerCase().indexOf(val) !== -1; }).slice(0, 4);
+  if (!matches.length) { box.style.display = 'none'; return; }
+  box.innerHTML = matches.map(function(p) {
+    return '<div onclick="prodSearchSelect(\'' + p.cat + '\',\'' + p.name.replace(/'/g,"\\'") + '\')" ' +
+      'style="padding:8px 12px; font-size:12px; cursor:pointer; color:#0c4a6e; border-bottom:1px solid #f0f9ff;" ' +
+      'onmouseover="this.style.background=\'#f0f9ff\'" onmouseout="this.style.background=\'#fff\'">' +
+      '<span style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#0284c7;margin-right:6px;">' + L3DATA[p.cat].lbl + '</span>' +
+      p.name + '</div>';
+  }).join('');
+  box.style.display = 'block';
+}
+
+function prodSearchSelect(cat, name) {
+  document.getElementById('prodSearchInput').value = name;
+  document.getElementById('prodSearchResults').style.display = 'none';
+  selectL2(cat);
+  setTimeout(function() { showProd(name); }, 150);
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('#prodSearchInput') && !e.target.closest('#prodSearchResults')) {
+    document.getElementById('prodSearchResults').style.display = 'none';
+  }
+});
+
+// 页面初始化
+selectL2('advanced');
 </script>
 </body>
 </html>
