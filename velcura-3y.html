@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WHY · WHO · WHERE | Velcura Medical</title>
+<title>Why Velcura · Who We Serve · Where We Reach | Velcura Medical</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -20,13 +20,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px;}
 
-/* ── LEFT ── */
+/* ── LEFT PANEL ── */
 .hero-left{
   border-right:1px solid rgba(0,0,0,0.08);
   position:relative;overflow:hidden;
 }
 
-/* 默认动态文字 */
+/* Default animated text */
 .default-screen{
   position:absolute;inset:0;
   overflow:hidden;
@@ -77,7 +77,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
 
-/* 内容面板 */
+/* Content panels */
 .panel{
   position:absolute;inset:0;
   padding:3.5rem 3.5rem 3rem;
@@ -96,7 +96,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .panel-text{font-size:0.87rem;line-height:1.85;color:#4a4843;max-width:460px;}
 .panel-img{width:100%;max-width:460px;border-radius:10px;box-shadow:0 6px 28px rgba(61,138,184,0.14);display:block;}
 
-/* ── RIGHT ── */
+/* ── RIGHT WHEEL ── */
 .hero-right{display:flex;align-items:center;justify-content:center;background:#fff;}
 .wheel-svg{width:min(88%,460px);height:auto;transform:translateY(-84px);}
 
@@ -130,36 +130,42 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 <nav>
   <a class="nav-logo" href="https://velcura.net">Velcura <span>Medical</span></a>
   <ul class="nav-links">
-    <li><a href="wound-care.html">产品</a></li>
-    <li><a href="#">认证</a></li>
-    <li><a href="#contact">联系我们</a></li>
+    <li><a href="wound-care.html">Products</a></li>
+    <li><a href="#">Certifications</a></li>
+    <li><a href="#contact">Contact Us</a></li>
   </ul>
-  <a class="nav-cta" href="https://velcura.net">返回首页</a>
+  <a class="nav-cta" href="https://velcura.net">Back to Home</a>
 </nav>
 
 <section class="hero">
 
   <div class="hero-left">
 
-    <!-- 默认图片屏 -->
+    <!-- Default image screen -->
     <div class="default-screen" id="default-screen">
       <img src="https://img.velcura.net/3W-1.webp" alt="Velcura" style="width:90%;height:90%;object-fit:contain;display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
     </div>
 
-    <!-- WHY 面板 -->
+    <!-- WHY panel -->
     <div class="panel" id="panel-why">
-      <div class="panel-label why">WHY</div>
+      <div class="panel-label why">WHY VELCURA</div>
+      <div class="panel-title">Clinical-grade wound care,<br>built for real-world outcomes.</div>
+      <div class="panel-text">Velcura develops advanced wound management solutions that reduce healing time, lower infection risk, and minimise patient discomfort — backed by ISO 13485 quality systems and dual CE / FDA certification.</div>
       <img class="panel-img" src="https://img.velcura.net/efficient.webp" alt="Efficient wound care">
     </div>
 
-    <!-- WHO 面板 -->
+    <!-- HOW panel -->
     <div class="panel" id="panel-how">
-      <div class="panel-label how">HOW</div>
+      <div class="panel-label how">HOW WE WORK</div>
+      <div class="panel-title">From R&amp;D to bedside —<br>a fully integrated supply chain.</div>
+      <div class="panel-text">Our 20,000 m² GMP-certified facility supports end-to-end production: material science, clean-room manufacturing, rigorous QC, and global logistics. Every product leaves our facility tested, certified, and ready for clinical deployment.</div>
     </div>
 
-    <!-- WHERE 面板 -->
+    <!-- WHERE panel -->
     <div class="panel" id="panel-where">
-      <div class="panel-label where">WHERE</div>
+      <div class="panel-label where">WHERE WE REACH</div>
+      <div class="panel-title">Trusted across<br>100+ countries &amp; regions.</div>
+      <div class="panel-text">From hospital procurement teams and specialist clinics to humanitarian aid programmes and retail pharmacy chains — Velcura products are distributed through established networks across Europe, the Middle East, Asia-Pacific, and the Americas.</div>
     </div>
 
   </div>
@@ -229,12 +235,12 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
   <div class="stat"><div class="stat-n">CE · FDA</div><div class="stat-l">Dual Certifications</div></div>
 </div>
 
-<!-- 全宽图片栏 -->
+<!-- Full-width image strip -->
 <div style="width:100%;line-height:0;overflow:hidden;">
   <img src="https://img.velcura.net/4shiqi.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/480;object-fit:cover;">
 </div>
 
-<!-- 第二栏：logo / 箭头 / 标语 -->
+<!-- Secondary bar: logo / arrow / tagline -->
 <div class="stats">
   <div class="stat">
     <img src="https://img.velcura.net/logo40.svg" alt="Velcura" style="height:36px;width:auto;display:block;margin:0 auto;">
@@ -251,7 +257,7 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
 </style>
 
-<!-- 全宽图片栏 2 -->
+<!-- Full-width image strip 2 -->
 <div style="width:100%;line-height:0;overflow:hidden;">
   <img src="https://img.velcura.net/dimes.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/540;object-fit:cover;">
 </div>
