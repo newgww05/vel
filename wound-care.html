@@ -702,12 +702,12 @@ function selectL2(cat) {
 
 /* ── L3 flyout data ── */
 var L3DATA = {
-  advanced: { lbl:'Advanced Wound Dressings', ttl:'42 products · 7 groups', groups:[
-    {g:'Foam Dressings', items:['Foam Non-Adhesive','Foam Silicone Border','Silicone Foam Dressing','Silicone Foam Lite','Silicone Foam Sacral Dressing','Silicone Foam Heel Dressing','Self-Adhesive Silicone Foam Dressing','PU Foam Dressing','PU Foam Elbow Dressing','PU Foam Tracheostomy Dressing','Silver Foam Non-Adhesive','Silver Foam Silicone Border','Silver Foam Silicone Adhesive','Hydrocolloid Foam']},
-    {g:'Silver Dressings', items:['Nano-Silver Antibacterial','Nano-Silver Medical Antibacterial Dressing (Oil-Coated Non-Adherent)','Nano-Silver Antibacterial Non-Adherent Dressing','Nano-Silver Antibacterial Adhesive Dressing','Silver Alginate','Silver Hydrophilic Fiber','Silver Activated Charcoal']},
-    {g:'Hydrocolloid Dressings', items:['Hydrocolloid Dressing','Hydrocolloid Dressing with Border','Hydrocolloid Sacral Dressing']},
+  advanced: { lbl:'Advanced Wound Dressings', ttl:'33 products · 7 groups', groups:[
+    {g:'Foam Dressings', items:['Foam Non-Adhesive','Foam Silicone Border','Silicone Foam Dressing','Silicone Foam Lite','Silver Foam Non-Adhesive','Silver Foam Silicone Border','Silver Foam Silicone Adhesive','Hydrocolloid Foam Dressing']},
+    {g:'Silver Dressings', items:['Nano-Silver Antibacterial','Silver Alginate','Silver Hydrophilic Fiber','Silver Activated Charcoal']},
+    {g:'Hydrocolloid Dressings', items:['Hydrocolloid Dressing']},
     {g:'Alginate Dressings', items:['Calcium Alginate']},
-    {g:'Hydrogel Dressings', items:['Hydrogel','Hydrogel Dressing','Charcoal Hydrogel']},
+    {g:'Hydrogel Dressings', items:['Hydrogel','Hydrogel Dressing','Hydrogel Dressing (Tube)','Charcoal Hydrogel']},
     {g:'Super Absorbent Dressings', items:['SAP Silicone Border','SAP Non-Adhesive']},
     {g:'Specialty Dressings', items:['Hydrophilic Fiber','Activated Charcoal Dressing Non-Adhesive','Activated Charcoal','Collagen Dressing','Biocellulose Dressing','Silicone Contact Layer','Vaseline Gauze','Wound Cleanser','Surgical Incision Closure']}
   ]},
@@ -913,7 +913,7 @@ var PRODS = {
     note:''
   },
   'Hydrocolloid Dressing':{badge:'Hydrocolloid',bs:'background:#ede9fe;color:#5b21b6;',imgs:['https://img.velcura.net/水胶体_02.jpg','https://img.velcura.net/水胶体_03.jpg'],tagline:'Thin, flexible dressing with transparent window for wound inspection without removal.',features:['Transparent window allows wound monitoring without dressing removal','Waterproof outer surface protects against contamination','Self-adhesive — no secondary fixation required','Flexible material conforms comfortably to body contours'],specs:[['Absorbency','Low – Moderate'],['Wear time','Up to 5 days'],['Exudate level','Light – Moderate'],['Adhesion','Self-adhesive'],['Variants','6 sizes · thin / standard']],indications:['Pressure ulcers Stage I–II','Minor burns','Donor sites','Superficial wounds'],note:''},
-  'Hydrocolloid Foam':{badge:'Hydrocolloid Foam',bs:'background:#ede9fe;color:#5b21b6;',imgs:['https://img.velcura.net/水胶体泡沫敷贴产品-1024x1024.png','https://img.velcura.net/水胶体泡沫敷贴-01.png','https://img.velcura.net/水胶体泡沫敷贴-03.png'],tagline:'Hydrocolloid foam dressing combining the absorption of foam with the moisture-retaining properties of hydrocolloid for moderate to heavily exuding wounds.',features:['Dual-layer construction — foam core with hydrocolloid contact layer','Maintains optimal moist wound environment to support healing','Self-adhesive border for secure fixation without additional tape','Waterproof outer layer protects against contamination and allows showering'],specs:[['Absorbency','Moderate – High'],['Wear time','Up to 7 days'],['Exudate level','Moderate – Heavy'],['Adhesion','Self-adhesive border'],['Variants','Multiple sizes']],indications:['Pressure ulcers Stage II–III','Venous leg ulcers','Diabetic foot ulcers','Post-operative wounds'],note:''},
+  'Hydrocolloid Foam Dressing':{badge:'Hydrocolloid Foam',bs:'background:#ede9fe;color:#5b21b6;',imgs:['https://img.velcura.net/水胶体泡沫敷贴产品-1024x1024.png','https://img.velcura.net/水胶体泡沫敷贴-01.png','https://img.velcura.net/水胶体泡沫敷贴-03.png'],tagline:'Hydrocolloid foam dressing combining the absorption of foam with the moisture-retaining properties of hydrocolloid for moderate to heavily exuding wounds.',features:['Dual-layer construction — foam core with hydrocolloid contact layer','Maintains optimal moist wound environment to support healing','Self-adhesive border for secure fixation without additional tape','Waterproof outer layer protects against contamination and allows showering'],specs:[['Absorbency','Moderate – High'],['Wear time','Up to 7 days'],['Exudate level','Moderate – Heavy'],['Adhesion','Self-adhesive border'],['Variants','Multiple sizes']],indications:['Pressure ulcers Stage II–III','Venous leg ulcers','Diabetic foot ulcers','Post-operative wounds'],note:''},
   'Activated Charcoal Dressing Non-Adhesive':{badge:'Charcoal · Non-Adhesive',bs:'background:#1c1917;color:#e7e5e4;',imgs:['https://img.velcura.net/活性炭敷贴（非粘性）产品.png','https://img.velcura.net/活性炭敷贴（非粘性）-01.png','https://img.velcura.net/活性炭敷贴（非粘性）-02.png','https://img.velcura.net/活性炭敷贴（非粘性）-03.png'],tagline:'Activated charcoal non-adhesive dressing for malodorous, infected wounds — absorbs exudate and neutralises odour without adhering to the wound bed.',features:['Activated carbon core traps and neutralises odour molecules effectively','Non-adherent wound contact layer ensures pain-free removal','Absorbs wound exudate and bacteria simultaneously','Requires secondary dressing — compatible with most fixation methods'],specs:[['Core','Activated charcoal'],['Adhesion','Non-adhesive'],['Exudate level','Moderate – Heavy'],['Wear time','Up to 3 days or per assessment'],['Variants','Multiple sizes']],indications:['Malodorous wounds','Infected chronic ulcers','Fungating wounds','Diabetic foot ulcers'],note:''},
   'Activated Charcoal':{badge:'Activated Charcoal',bs:'background:#1c1917;color:#e7e5e4;',
     imgs:['https://img.velcura.net/%E6%97%A0%E7%BA%BA%E5%B8%83%E6%B4%BB%E6%80%A7%E7%82%AD%E6%95%B7%E6%96%99-%E5%B8%A6%E7%B2%98%E4%BA%A7%E5%93%81-1024x1024.png','https://img.velcura.net/%E6%97%A0%E7%BA%BA%E5%B8%83%E6%B4%BB%E6%80%A7%E7%82%AD%E6%95%B7%E8%B4%B4-%E5%B8%A6%E7%B2%98-01.jpg','https://img.velcura.net/%E6%97%A0%E7%BA%BA%E5%B8%83%E6%B4%BB%E6%80%A7%E7%82%AD%E6%95%B7%E8%B4%B4-%E5%B8%A6%E7%B2%98-02.jpg','https://img.velcura.net/%E6%97%A0%E7%BA%BA%E5%B8%83%E6%B4%BB%E6%80%A7%E7%82%AD%E6%95%B7%E8%B4%B4-%E5%B8%A6%E7%B2%98-03.jpg'],
@@ -939,126 +939,9 @@ var PRODS = {
     specs:[['Absorbency','Very High (SAP core)'],['Wear time','Up to 7 days'],['Exudate level','Heavy – Very Heavy'],['Adhesion','None (secondary fixation required)'],['Strikethrough','Prevented']],
     indications:['Heavily exuding wounds','Venous leg ulcers','Post-surgical wounds','Fragile periwound skin'],note:''},
   'Collagen Dressing':{badge:'Collagen',bs:'background:#f1f5f9;color:#475569;',imgs:['https://img.velcura.net/胶原蛋白敷料产品-1024x1006.png','https://img.velcura.net/胶原蛋白敷料-01.png','https://img.velcura.net/胶原蛋白敷料-02.png','https://img.velcura.net/胶原蛋白敷料-03.png'],tagline:'Bioactive collagen matrix stimulating tissue regeneration and remodelling in chronic, non-healing wounds.',features:['Native collagen matrix provides structural scaffold for new tissue formation','Stimulates fibroblast activity to accelerate wound closure','Absorbs and neutralises wound-damaging matrix metalloproteinases (MMPs)','Maintains a moist, bioactive wound environment'],specs:[['Composition','Purified collagen matrix'],['Wear time','Every 2–3 days or per assessment'],['Exudate level','Low – Moderate'],['Form','Sheet / powder / gel'],['Adhesion','Non-adhesive']],indications:['Chronic non-healing wounds','Diabetic ulcers','Pressure ulcers Stage III–IV','Venous ulcers'],note:''},
-  'Silicone Foam Sacral Dressing':{badge:'Sacral Foam',bs:'background:#fff7ed;color:#9a3412;',imgs:['https://img.velcura.net/velg-硅泡沫产品.png'],
-    tagline:'Anatomically heart-shaped five-layer silicone foam dressing engineered for the sacral and coccyx region — providing superior exudate management, pressure redistribution, and pain-free dressing changes at the most challenging wound site for pressure injury prevention.',
-    features:[
-      'Heart/sacral shape with notched border design seals close to the anal opening, resisting contamination from incontinence',
-      'Five-layer construction: waterproof PU film / superabsorbent core / one-way wicking layer / foam layer / silicone contact layer',
-      'Gentle repositionable silicone adhesive border allows wound inspection without replacing the dressing',
-      'Waterproof breathable backing enables showering while protecting the wound from external contamination'
-    ],
-    specs:[['Shape','Sacral / heart-shaped'],['Structure','5-layer'],['Adhesion','Silicone adhesive border'],['Exudate level','Moderate – Heavy'],['Wear time','Up to 7 days'],['Waterproof','Yes']],
-    indications:['Sacral and coccyx pressure injuries (Stage II–IV)','Hospital-acquired pressure injury prevention','Post-operative sacral wounds','Venous leg ulcers (sacral region)'],note:''},
+  'Hydrogel Dressing (Tube)':{badge:'Hydrogel Tube',bs:'background:#ecfdf5;color:#065f46;',imgs:['https://img.velcura.net/velg-水凝胶产品.png'],tagline:'Amorphous hydrogel in tube format providing targeted rehydration and autolytic debridement for dry, sloughy, or necrotic wounds — easy to apply directly into cavity wounds, sinuses, and tunnelled wound tracks.',features:['Amorphous gel format allows precise application into deep wounds, cavities, sinuses, and tunnels','High water content (≥ 80%) rehydrates wound bed, softens eschar, and facilitates autolytic debridement','Cooling effect provides immediate pain relief — particularly beneficial in burn wounds and radiation skin reactions','Compatible with all secondary dressings including foam, film, and alginate overlays'],specs:[['Format','Amorphous gel (tube)'],['Water content','≥ 80%'],['Application','Direct to wound / cavity'],['Change frequency','Daily to every 3 days'],['Secondary dressing','Required']],indications:['Dry and sloughy wounds','Necrotic tissue / eschar','Cavity and tunnelled wounds','Radiation skin reactions','Minor burns'],note:''},
 
-  'Silicone Foam Heel Dressing':{badge:'Heel Foam',bs:'background:#fff7ed;color:#9a3412;',imgs:['https://img.velcura.net/velg-硅泡沫产品.png'],
-    tagline:'Anatomically contoured five-layer silicone foam dressing shaped for the heel — combining cushioning pressure relief, high-capacity exudate absorption, and secure silicone adhesion to protect one of the highest-risk sites for pressure injury in immobile and diabetic patients.',
-    features:[
-      'Wrap-around heel shape maintains full coverage during ambulation and repositioning, preventing edge lift and exposure',
-      'Superabsorbent core with one-way wicking layer absorbs moderate to heavy exudate and locks fluid under compression',
-      'Perforated silicone wound contact layer prevents adhesion to granulating tissue — pain-free, atraumatic removal',
-      'Can be used as part of a formal pressure injury prevention protocol for high-risk patients'
-    ],
-    specs:[['Shape','Anatomical heel design'],['Structure','5-layer'],['Adhesion','Silicone adhesive border'],['Exudate level','Moderate – Heavy'],['Wear time','Up to 7 days'],['Compression compatible','Yes']],
-    indications:['Heel pressure injuries','Diabetic foot ulcers (heel)','Post-operative heel wounds','Pressure injury prevention in at-risk patients'],note:''},
-
-  'Self-Adhesive Silicone Foam Dressing':{badge:'Self-Adhesive Foam',bs:'background:#fff7ed;color:#9a3412;',imgs:['https://img.velcura.net/velg-硅泡沫产品.png'],
-    tagline:'Bordered five-layer silicone foam dressing with integrated self-adhesive silicone border — an all-in-one advanced wound dressing combining maximum exudate absorption, moist wound healing, and gentle repositionable adhesion without secondary fixation.',
-    features:[
-      'Soft hypoallergenic silicone adhesive border seals wound margins to minimise maceration and provides secure all-round fixation',
-      'High-absorbency multilayer foam core locks exudate away from wound surface, reducing dressing change frequency',
-      'Perforated silicone wound contact layer does not stick to wound bed — ensures atraumatic, pain-reduced changes',
-      'Breathable waterproof PU film backing maintains optimal moisture vapour transmission while sealing against bacteria and contaminants'
-    ],
-    specs:[['Structure','5-layer bordered'],['Adhesion','Silicone self-adhesive border'],['Exudate level','Moderate – Heavy'],['Wear time','Up to 7 days'],['Secondary dressing','Not required'],['Latex free','Yes']],
-    indications:['Pressure injuries (Stage II–III)','Venous and diabetic leg ulcers','Post-surgical wounds','Skin tears and traumatic wounds'],note:''},
-
-  'PU Foam Dressing':{badge:'PU Foam',bs:'background:#fef3c7;color:#92400e;',imgs:['https://img.velcura.net/velg-硅泡沫产品.png'],
-    tagline:'Non-adhesive polyurethane foam dressing providing highly absorbent, breathable wound coverage — a versatile primary or secondary dressing for moderate to heavily exuding wounds that supports autolytic debridement and maintains optimal moist wound healing conditions.',
-    features:[
-      'Hydrophilic polyurethane foam rapidly absorbs and retains exudate, maintaining a consistently moist wound environment',
-      'Waterproof PU film backing prevents strikethrough and protects against external contamination while allowing moisture vapour transmission',
-      'Non-adhesive design enables easy, atraumatic removal and can be cut to size for irregularly shaped or cavity wounds',
-      'Supports autolytic debridement of sloughy and necrotic tissue when used as a primary dressing'
-    ],
-    specs:[['Type','Non-adhesive PU foam'],['Exudate level','Moderate – Heavy'],['Wear time','1–3 days'],['Secondary fixation','Required'],['Cuttable','Yes'],['Latex free','Yes']],
-    indications:['Moderate to heavily exuding chronic wounds','Post-operative wounds','Pressure injuries','Cavity and tunnelled wounds (as packing)'],note:''},
-
-  'PU Foam Elbow Dressing':{badge:'Elbow Foam',bs:'background:#fef3c7;color:#92400e;',imgs:['https://img.velcura.net/velg-硅泡沫产品.png'],
-    tagline:'Anatomically shaped polyurethane foam dressing contoured for the elbow joint — engineered to maintain full wound coverage through flexion and extension, providing reliable cushioning, exudate management, and protection at a high-mobility anatomical site.',
-    features:[
-      'Elbow-specific anatomical shape prevents edge lifting and ensures complete wound coverage during joint movement',
-      'Absorbent foam core wicks exudate away from the wound surface to reduce maceration risk in a high-friction area',
-      'Waterproof PU film backing enables showering and protects against soiling during rehabilitation and daily activities',
-      'Suitable for use under light compression or tubular bandaging to maintain positioning over the elbow joint'
-    ],
-    specs:[['Shape','Anatomical elbow design'],['Type','PU foam'],['Exudate level','Moderate – Heavy'],['Wear time','Up to 3–5 days'],['Movement compatible','Yes'],['Waterproof','Yes']],
-    indications:['Elbow pressure injuries','Post-surgical elbow wounds','Traumatic wounds over elbow joint','Burns at elbow location'],note:''},
-
-  'PU Foam Tracheostomy Dressing':{badge:'Tracheostomy Foam',bs:'background:#fef3c7;color:#92400e;',imgs:['https://img.velcura.net/velg-硅泡沫产品.png'],
-    tagline:'Pre-cut polyurethane foam dressing with keyhole aperture designed for tracheostomy tube and drain sites — absorbing peristomal secretions, cushioning the stoma, and protecting surrounding skin from maceration and pressure injury.',
-    features:[
-      'Keyhole / Y-cut aperture fits neatly around tracheostomy cannula and drain tubes for gap-free, reliable coverage',
-      'Highly absorbent foam core manages peristomal secretions and reduces skin maceration at the stoma site',
-      'Waterproof PU film outer layer protects against external contamination and soiling between changes',
-      'Non-adhesive construction allows frequent dressing changes without skin stripping — changed when 75% saturated or up to 7 days'
-    ],
-    specs:[['Design','Keyhole / Y-cut aperture'],['Type','Non-adhesive PU foam'],['Exudate level','Light – Moderate'],['Change frequency','When 75% saturated or ≤7 days'],['Latex free','Yes'],['Sterile','Yes']],
-    indications:['Tracheostomy stoma care','Central line and drain exit sites','Post-laryngectomy wound care','Gastrostomy peristomal skin protection'],note:''},
-
-  'Nano-Silver Medical Antibacterial Dressing (Oil-Coated Non-Adherent)':{badge:'Nano-Ag Oil N-A',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/velg-纳米银抗菌敷料产品.png'],
-    tagline:'Oil-coated non-adherent nano-silver dressing combining sustained broad-spectrum antibacterial activity with a paraffin-oil impregnated contact surface — preventing wound bed adherence while delivering continuous antimicrobial protection for fragile, newly granulating wounds.',
-    features:[
-      'Oil-coated non-adherent contact layer prevents dressing from bonding to granulating wound tissue, enabling pain-free, atraumatic dressing changes',
-      'Nano-silver particles (10–100 nm) deliver sustained broad-spectrum antibacterial activity against MRSA, Pseudomonas aeruginosa, and other resistant pathogens',
-      'Oil impregnation maintains wound moisture balance and reduces pain and trauma at each dressing change',
-      'Ideal for donor sites, partial-thickness burns, and other wounds where preserving the integrity of new tissue is critical'
-    ],
-    specs:[['Silver type','Nano-silver (10–100 nm)'],['Contact layer','Oil-coated non-adherent'],['Antibacterial spectrum','Broad (MRSA, Pseudomonas, E. coli)'],['Wear time','Up to 7 days'],['Secondary dressing','Required']],
-    indications:['Fragile granulating wounds','Partial-thickness burns and scalds','Skin graft donor sites','Infected wounds requiring atraumatic management'],note:''},
-
-  'Nano-Silver Antibacterial Non-Adherent Dressing':{badge:'Nano-Ag Non-Adherent',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/velg-纳米银抗菌敷料产品.png'],
-    tagline:'Non-adherent nano-silver antibacterial dressing providing reliable infection control without adhering to the wound bed — enabling effective sustained antimicrobial management while protecting fragile wound tissue during removal and supporting undisturbed healing.',
-    features:[
-      'Non-adherent wound contact surface slides cleanly from wound bed without disrupting newly formed granulation tissue or epithelium',
-      'Sustained nano-silver ion release provides continuous broad-spectrum antibacterial activity for up to 7 days',
-      'Highly conformable — adapts to complex wound geometries including cavity wounds, undermining, and sinuses',
-      'Compatible with negative pressure wound therapy (NPWT) and compression bandaging systems'
-    ],
-    specs:[['Silver type','Nano-silver'],['Adherence','Non-adherent'],['Antibacterial duration','Up to 7 days'],['NPWT compatible','Yes'],['Secondary dressing','Required'],['Exudate level','Moderate – Heavy']],
-    indications:['Infected chronic wounds','Burns and partial-thickness scalds','Post-surgical wound infections','Skin graft donor and recipient sites'],note:''},
-
-  'Nano-Silver Antibacterial Adhesive Dressing':{badge:'Nano-Ag Adhesive',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/velg-纳米银抗菌敷料产品.png'],
-    tagline:'Self-adhesive nano-silver antibacterial dressing combining sustained antimicrobial protection with an integrated waterproof adhesive border — an all-in-one solution for infected or infection-risk wounds in community and home care settings requiring no secondary fixation.',
-    features:[
-      'Integrated adhesive border provides secure all-in-one coverage — no secondary dressing or tape required',
-      'Nano-silver technology delivers continuous broad-spectrum antimicrobial activity for up to 7 days between changes',
-      'Gentle adhesive is safe for periwound and fragile skin — minimises trauma and pain at dressing change',
-      'Waterproof backing protects wound from external contamination including body fluids and incontinence'
-    ],
-    specs:[['Silver type','Nano-silver'],['Adhesion','Self-adhesive waterproof border'],['Antibacterial duration','Up to 7 days'],['Waterproof','Yes'],['Secondary dressing','Not required'],['Exudate level','Low – Moderate']],
-    indications:['Infected or at-risk chronic wounds','Surgical wound infection prophylaxis','Pressure injuries with infection risk','Community and home care wound management'],note:''},
-
-  'Hydrocolloid Dressing with Border':{badge:'Hydrocolloid Border',bs:'background:#eff6ff;color:#1e40af;',imgs:['https://img.velcura.net/velg-水胶体产品.png'],
-    tagline:'Bordered hydrocolloid wound dressing combining an absorbent hydrocolloid wafer with a secure adhesive film border — providing extended wear, reliable all-round fixation, and easy one-piece application for low to moderately exuding wounds.',
-    features:[
-      'Hydrocolloid matrix gels on contact with wound exudate, creating and maintaining an optimal moist wound healing environment',
-      'Adhesive film border provides secure circumferential fixation — no separate tape, bandage, or secondary dressing required',
-      'Tapered border edges reduce edge roll-up and shear at the dressing margins during normal patient movement',
-      'Waterproof and bacteria-resistant outer film allows showering and protects wound from external contamination'
-    ],
-    specs:[['Type','Hydrocolloid wafer with film border'],['Exudate level','Low – Moderate'],['Wear time','Up to 7 days'],['Waterproof','Yes'],['Secondary dressing','Not required'],['Autolytic debridement','Yes']],
-    indications:['Pressure injuries (Stage I–II)','Superficial venous ulcers','Abrasions and minor skin tears','Post-operative low-exudate wounds'],note:''},
-
-  'Hydrocolloid Sacral Dressing':{badge:'Sacral Hydrocolloid',bs:'background:#eff6ff;color:#1e40af;',imgs:['https://img.velcura.net/velg-水胶体产品.png'],
-    tagline:'Heart-shaped hydrocolloid dressing specifically contoured for the sacral and coccyx region — featuring a notched border that seals against the gluteal cleft to resist incontinence contamination while maintaining effective moist wound healing for sacral pressure injuries.',
-    features:[
-      'Sacral/heart shape with notched border area designed to seal close to the anal opening — resists contamination from faecal and urinary incontinence',
-      'Flexible, highly conformable hydrocolloid matrix adapts to sacral contours including the gluteal cleft for gap-free coverage',
-      'Tapered adhesive border prevents roll-up and maintains secure dressing contact during patient repositioning and transfer',
-      'Low-friction film backing reduces shear forces and dressing catches during care activities'
-    ],
-    specs:[['Shape','Sacral / heart-shaped'],['Type','Hydrocolloid with film border'],['Exudate level','Low – Moderate'],['Wear time','Up to 7 days'],['Incontinence resistant','Yes'],['Waterproof','Yes']],
-    indications:['Sacral pressure injuries (Stage I–II)','Pressure ulcer prevention in at-risk patients','Post-operative sacral wounds','Coccyx wound management'],note:''},
+  'Hydrocolloid Foam Dressing':{badge:'Hydrocolloid Foam',bs:'background:#eff6ff;color:#1e40af;',imgs:['https://img.velcura.net/velg-水胶体产品.png'],tagline:'Combined hydrocolloid and foam dressing delivering the moist healing properties of a hydrocolloid matrix with the enhanced exudate capacity of a foam layer — bridging the gap between standard hydrocolloid and foam dressings for moderate exudate wounds.',features:['Dual-layer construction: hydrocolloid wound contact layer gels on contact with exudate while foam overlay provides additional absorption','Hydrocolloid matrix supports autolytic debridement of sloughy and necrotic tissue','Foam outer layer manages moderate exudate levels beyond the capacity of standard hydrocolloid alone','Waterproof film backing provides occlusive wound environment and protects against external contamination'],specs:[['Type','Hydrocolloid + foam combination'],['Exudate level','Low – Moderate'],['Wear time','Up to 7 days'],['Waterproof','Yes'],['Autolytic debridement','Yes']],indications:['Pressure injuries (Stage II–III)','Venous leg ulcers with moderate exudate','Post-surgical wounds','Wounds transitioning from heavy to moderate exudate'],note:''},
 
   'Biocellulose Dressing':{badge:'Biocellulose',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/生物纤维素产品.png','https://img.velcura.net/生物纤维素敷料-01.png','https://img.velcura.net/生物纤维素敷料-02.png','https://img.velcura.net/生物纤维素敷料-03.png'],tagline:'Advanced biocellulose dressing derived from bacterial nanocellulose — highly conformable, moisture-retaining, and biocompatible for delicate and hard-to-dress wounds.',features:['Nano-structured cellulose fibres form a dense, conformable network that adapts to wound contours','High water content maintains optimal moist wound healing environment','Transparent structure allows wound monitoring without removal','Biocompatible and non-allergenic — suitable for sensitive and fragile skin'],specs:[['Composition','Bacterial nanocellulose'],['Water content','>90%'],['Adhesion','Non-adhesive'],['Exudate level','Low – Moderate'],['Wear time','Up to 3 days']],indications:['Burns and scalds','Donor sites','Radiation skin reactions','Facial wounds','Paediatric wounds'],note:''},
   'Silicone Contact Layer':{badge:'Silicone Contact Layer',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/硅凝胶防粘层产品.png','https://img.velcura.net/硅凝胶防粘层-01.png','https://img.velcura.net/硅凝胶防粘层-02.png','https://img.velcura.net/硅凝胶防粘层-03.png'],tagline:'Perforated silicone contact layer providing a non-adherent interface between the wound bed and secondary dressing — ensures pain-free dressing changes.',features:['Perforated silicone layer allows exudate to pass through to secondary dressing','Non-adherent surface prevents wound bed disruption at dressing change','Soft, conformable and comfortable for extended wear','Suitable as primary contact layer under any secondary dressing'],specs:[['Material','Medical-grade silicone'],['Adhesion','Non-adhesive'],['Exudate passage','Perforated — allows free drainage'],['Wear time','Up to 7 days'],['Variants','Multiple sizes']],indications:['Skin grafts and donor sites','Burns','Surgical wounds','Fragile or sensitive wound beds'],note:''},
