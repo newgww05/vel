@@ -76,6 +76,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @keyframes slideUp{to{transform:translateY(0);}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+@keyframes ticker{0%{transform:translateX(100%);}100%{transform:translateX(-50%);}}
 
 /* Content panels */
 .panel{
@@ -143,7 +144,24 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 
     <!-- Default image screen -->
     <div class="default-screen" id="default-screen">
-      <img src="https://img.velcura.net/3W-1.webp" alt="Velcura" style="width:90%;height:90%;object-fit:contain;display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:90%;text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.6vw,2.4rem);font-weight:400;color:#1a1916;line-height:1.3;margin-bottom:0.6rem;">
+          Advanced Trauma Care Solutions<br>— Tailored for Global Clinicians
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:500;color:#1a1916;margin-bottom:2.5rem;">
+          Precision &amp; Accuracy
+        </div>
+        <div style="text-align:left;padding-left:10%;line-height:0.85;">
+          <div style="font-family:'Cinzel Decorative',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:700;color:#1a3a5c;display:block;">W</div>
+          <div style="font-family:'Cinzel Decorative',serif;font-size:clamp(2.4rem,4.2vw,3.8rem);font-weight:700;color:#9a7c2e;display:block;margin-left:8%;">W</div>
+          <div style="font-family:'Cinzel Decorative',serif;font-size:clamp(2rem,3.6vw,3.2rem);font-weight:700;color:#2D6E6A;display:block;margin-left:2%;">W</div>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:2.5rem;left:0;right:0;overflow:hidden;white-space:nowrap;">
+        <span style="display:inline-block;animation:ticker 16s linear infinite;font-size:1.15rem;font-weight:500;letter-spacing:0.04em;color:#0e3a5c;">
+          From Low MOQ to Scalable Manufacturing. Supporting Your Growth at Every Stage. &nbsp;&nbsp; From Low MOQ to Scalable Manufacturing. Supporting Your Growth at Every Stage.
+        </span>
+      </div>
     </div>
 
     <!-- WHY panel -->
@@ -151,7 +169,24 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
       <div class="panel-label why">WHY VELCURA</div>
       <div class="panel-title">Clinical-grade wound care,<br>built for real-world outcomes.</div>
       <div class="panel-text">Velcura develops advanced wound management solutions that reduce healing time, lower infection risk, and minimise patient discomfort — backed by ISO 13485 quality systems and dual CE / FDA certification.</div>
-      <img class="panel-img" src="https://img.velcura.net/efficient.webp" alt="Efficient wound care">
+      <div style="text-align:left;padding:0.4rem 0 0;line-height:1.7;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.4vw,2.2rem);font-weight:600;color:#2D6E6A;margin-bottom:0.3rem;">Velcura</div>
+        <div style="font-size:1.17rem;color:#2a2a2a;max-width:420px;text-align:center;margin-left:auto;margin-right:0;">
+          leverages <strong style="color:#2D6E6A;letter-spacing:0.06em;">EFFICIENT</strong> response<br>
+          and flexible manufacturing capabilities<br>
+          to quickly align with your needs,
+        </div>
+        <div style="font-size:1.17rem;color:#2a2a2a;max-width:420px;text-align:center;margin-left:auto;margin-right:0;margin-top:0.5rem;">
+          supporting both small-batch customization<br>
+          and large-scale, reliable supply.
+        </div>
+        <div style="font-size:1.17rem;color:#2a2a2a;max-width:420px;text-align:center;margin-left:auto;margin-right:0;margin-top:0.5rem;">
+          While ensuring quality and compliance,<br>
+          we deliver more competitive and<br>
+          cost-effective solutions for our<br>
+          global partners.
+        </div>
+      </div>
     </div>
 
     <!-- HOW panel -->
@@ -172,7 +207,7 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 
   <!-- RIGHT: WHEEL -->
   <div class="hero-right">
-    <svg class="wheel-svg" viewBox="0 0 680 680" style="pointer-events:all;">
+    <svg class="wheel-svg" viewBox="0 0 680 680" translate="no" style="pointer-events:all;">
       <defs>
         <filter id="glow"><feGaussianBlur in="SourceGraphic" stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         <filter id="sg"><feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -218,12 +253,12 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
         <circle cx="618" cy="340" r="4" fill="white" fill-opacity="0.6" filter="url(#sg)"/>
       </g>
 
-      <text x="201" y="348" font-family="'Cinzel Decorative',serif" font-size="44" font-weight="700" fill="white" fill-opacity="0.95" text-anchor="middle" letter-spacing="7" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('why')">WHY</text>
-      <text x="438" y="235" font-family="'Cinzel Decorative',serif" font-size="30" font-weight="700" fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="5" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('how')">HOW</text>
-      <text x="438" y="444" font-family="'Cinzel Decorative',serif" font-size="24" font-weight="700" fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="4" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('where')">WHERE</text>
+      <text x="165" y="348" font-family="'Cinzel Decorative',serif" font-size="32" font-weight="700" fill="white" fill-opacity="0.95" text-anchor="middle" letter-spacing="5" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('why')">WHY</text>
+      <text x="464" y="224" font-family="'Cinzel Decorative',serif" font-size="32" font-weight="700" fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="5" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('how')">HOW</text>
+      <text x="464" y="464" font-family="'Cinzel Decorative',serif" font-size="32" font-weight="700" fill="white" fill-opacity="0.93" text-anchor="middle" letter-spacing="5" filter="url(#glow)" style="cursor:pointer;" onclick="showPanel('where')">WHERE</text>
 
       <circle cx="340" cy="340" r="72" fill="#fff" stroke="#5b9dc2" stroke-width="1" stroke-opacity="0.4" style="pointer-events:none;"/>
-      <image href="https://img.velcura.net/logo1.svg" x="270" y="270" width="140" height="140" clip-path="url(#cc)" preserveAspectRatio="xMidYMid meet" style="pointer-events:none;"/>
+      <image href="https://img.velcura.net/logogpt40.png" x="288" y="288" width="104" height="104" clip-path="url(#cc)" preserveAspectRatio="xMidYMid meet" style="pointer-events:none;"/>
     </svg>
   </div>
 
@@ -237,7 +272,7 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 
 <!-- Full-width image strip -->
 <div style="width:100%;line-height:0;overflow:hidden;">
-  <img src="https://img.velcura.net/4shiqi.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/480;object-fit:cover;">
+  <img src="https://img.velcura.net/%E7%82%8E%E7%97%87%E7%9A%84%E5%91%A8%E6%9C%9F.webp" alt="Comprehensive Wound Care Journey" style="width:100%;height:auto;display:block;">
 </div>
 
 <!-- Secondary bar: logo / arrow / tagline -->
@@ -262,6 +297,110 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
   <img src="https://img.velcura.net/dimes.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/540;object-fit:cover;">
 </div>
 
+
+<section class="serve-section">
+  <style>
+    .serve-section {
+      width:100%; background:#f0f7ff; padding:60px 0 50px;
+    }
+    .serve-inner { max-width:1200px; margin:0 auto; padding:0 40px; text-align:center; }
+    .serve-eyebrow {
+      font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+      color:#0284c7; font-weight:600; margin-bottom:16px;
+    }
+    .serve-title {
+      font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700;
+      color:#0c2044; margin-bottom:48px; line-height:1.3;
+    }
+    .serve-cards {
+      display:flex; gap:20px; overflow-x:auto;
+      justify-content:center; flex-wrap:wrap;
+      padding-bottom:8px;
+    }
+    .serve-card {
+      flex:0 0 200px; background:#fff;
+      border-radius:16px; overflow:hidden;
+      box-shadow:0 2px 12px rgba(14,165,233,0.08);
+      transition:transform 0.25s, box-shadow 0.25s;
+      cursor:default;
+    }
+    .serve-card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 8px 28px rgba(14,165,233,0.16);
+    }
+    .serve-card-img {
+      width:100%; height:150px; object-fit:cover;
+      display:block; background:#e0f2fe;
+    }
+    .serve-card-img-placeholder {
+      width:100%; height:150px;
+      background:linear-gradient(135deg,#bae6fd,#e0f2fe);
+      display:flex; align-items:center; justify-content:center;
+      font-size:2.5rem;
+    }
+    .serve-card-label {
+      padding:12px 8px 14px;
+      font-size:13px; font-weight:500; color:#0c2044;
+      letter-spacing:0.02em;
+    }
+    .serve-dots {
+      display:flex; justify-content:center; gap:8px; margin-top:28px;
+    }
+    .serve-dot {
+      width:8px; height:8px; border-radius:50%;
+      background:#bae6fd; transition:background 0.2s;
+    }
+    .serve-dot.active { background:#0284c7; }
+    @media(max-width:780px){
+      .serve-section { padding:40px 0 36px; }
+      .serve-inner { padding:0 16px; }
+      .serve-cards { flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; }
+      .serve-card { flex:0 0 160px; }
+      .serve-card-img, .serve-card-img-placeholder { height:120px; }
+    }
+  </style>
+  <div class="serve-inner">
+    <div class="serve-eyebrow">Who We Serve</div>
+    <div class="serve-title">Meeting the needs of the<br>entire continuum of care</div>
+    <div class="serve-cards">
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1765741836929-af2f9e1968e8?w=400&h=300&fit=crop&auto=format" alt="Convenience Stores">
+        <div class="serve-card-label">Convenience Stores</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop&auto=format" alt="Pharmacies">
+        <div class="serve-card-label">Pharmacies</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop&auto=format" alt="Hospitals">
+        <div class="serve-card-label">Hospitals</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop&auto=format" alt="Supermarkets">
+        <div class="serve-card-label">Supermarkets</div>
+      </div>
+      <div class="serve-card">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=300&fit=crop&auto=format" alt="Care Centres">
+        <div class="serve-card-label">Care Centres</div>
+      </div>
+      <div class="serve-card" style="flex:0 0 580px;">
+        <img class="serve-card-img" src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&h=500&fit=crop&auto=format" alt="Distributors" style="height:290px;">
+        <div class="serve-card-label">Distributors</div>
+      </div>
+    </div>
+    <div class="serve-dots">
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot"></div>
+      <div class="serve-dot active"></div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-brand">Velcura Medical</div>
   <div>© 2025 Velcura Medical. All rights reserved.</div>
@@ -277,6 +416,12 @@ function showPanel(key) {
   document.getElementById('panel-' + key).classList.add('show');
   document.getElementById('seg-' + key).classList.add('active');
   document.getElementById('default-screen').classList.add('hidden');
+  if (key === 'where') {
+    setTimeout(function() {
+      var target = document.querySelector('.serve-section');
+      if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 300);
+  }
 }
 </script>
 </body>
