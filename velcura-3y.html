@@ -334,13 +334,13 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 
 <!-- Full-width image strip -->
 <div style="width:100%;line-height:0;overflow:hidden;">
-  <img src="https://img.velcura.net/%E7%82%8E%E7%97%87%E7%9A%84%E5%91%A8%E6%9C%9F.webp" alt="Comprehensive Wound Care Journey" style="width:100%;height:auto;display:block;">
+  <img data-src="https://img.velcura.net/%E7%82%8E%E7%97%87%E7%9A%84%E5%91%A8%E6%9C%9F.webp" alt="Comprehensive Wound Care Journey" style="width:100%;height:auto;display:block;">
 </div>
 
 <!-- Secondary bar: logo / arrow / tagline -->
 <div class="stats">
   <div class="stat">
-    <img src="https://img.velcura.net/logogpt40.png" alt="Velcura" style="height:44px;width:auto;display:block;margin:0 auto;">
+    <img data-src="https://img.velcura.net/logogpt40.png" alt="Velcura" style="height:44px;width:auto;display:block;margin:0 auto;">
   </div>
   <div class="stat">
     <div style="font-size:1.6rem;color:#3d8ab8;animation:bounce 1.4s ease-in-out infinite;line-height:1;">↓</div>
@@ -356,7 +356,7 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 
 <!-- Full-width image strip 2 -->
 <div style="width:100%;line-height:0;overflow:hidden;">
-  <img src="https://img.velcura.net/dimes.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/540;object-fit:cover;">
+  <img data-src="https://img.velcura.net/dimes.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/540;object-fit:cover;">
 </div>
 
 
@@ -426,27 +426,27 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
     <div class="serve-title">Meeting the needs of the<br>entire continuum of care</div>
     <div class="serve-cards">
       <div class="serve-card">
-        <img class="serve-card-img" src="https://img.velcura.net/3Y%20(1).webp" alt="Hospitals">
+        <img class="serve-card-img" data-src="https://img.velcura.net/3Y%20(1).webp" alt="Hospitals">
         <div class="serve-card-label">Hospitals</div>
       </div>
       <div class="serve-card">
-        <img class="serve-card-img" src="https://img.velcura.net/3Y%20(2).webp" alt="Outdoor">
+        <img class="serve-card-img" data-src="https://img.velcura.net/3Y%20(2).webp" alt="Outdoor">
         <div class="serve-card-label">Outdoor</div>
       </div>
       <div class="serve-card">
-        <img class="serve-card-img" src="https://img.velcura.net/3Y%20(3).webp" alt="Campus">
+        <img class="serve-card-img" data-src="https://img.velcura.net/3Y%20(3).webp" alt="Campus">
         <div class="serve-card-label">Campus</div>
       </div>
       <div class="serve-card">
-        <img class="serve-card-img" src="https://img.velcura.net/3Y%20(4).webp" alt="Care Centres">
+        <img class="serve-card-img" data-src="https://img.velcura.net/3Y%20(4).webp" alt="Care Centres">
         <div class="serve-card-label">Care Centres</div>
       </div>
       <div class="serve-card">
-        <img class="serve-card-img" src="https://img.velcura.net/3Y%20(5).webp" alt="Workshops">
+        <img class="serve-card-img" data-src="https://img.velcura.net/3Y%20(5).webp" alt="Workshops">
         <div class="serve-card-label">Workshops</div>
       </div>
       <div class="serve-card" style="flex:0 0 580px;">
-        <img class="serve-card-img" src="https://img.velcura.net/3Y%20(6).webp" alt="Pharmacies" style="height:290px;">
+        <img class="serve-card-img" data-src="https://img.velcura.net/3Y%20(6).webp" alt="Pharmacies" style="height:290px;">
         <div class="serve-card-label">Pharmacies</div>
       </div>
     </div>
@@ -480,7 +480,7 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 <footer class="footer" id="contact">
   <div class="footer-inner">
     <div class="footer-brand-wrap">
-      <img src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
+      <img data-src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
       <div class="footer-company">Velcura Medical</div>
     </div>
     <div class="footer-contacts">
@@ -519,6 +519,14 @@ document.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger) {
 document.addEventListener('click', function() {
   document.querySelectorAll('.nav-dropdown-menu').forEach(function(m){ m.classList.remove('open'); });
 });
+
+// Deferred image loading — load below-fold images after 2 seconds
+setTimeout(function() {
+  document.querySelectorAll('img[data-src]').forEach(function(img) {
+    img.src = img.getAttribute('data-src');
+    img.removeAttribute('data-src');
+  });
+}, 2000);
 
 function showPanel(key) {
   ['why','how','where'].forEach(function(k) {
