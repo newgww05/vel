@@ -4,8 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VELCURA - Professional Wound Care Manufacturer</title>
+
+<!-- 提前与图床、字体服务器建立连接,缩短首图等待 -->
+<link rel="preconnect" href="https://img.velcura.net" crossorigin>
+<link rel="dns-prefetch" href="https://img.velcura.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 预加载首屏 logo,让它尽早开始下载 -->
+<link rel="preload" as="image" href="https://img.velcura.net/logogpt40.png">
+<!-- 字体改用 link 加载(比 CSS @import 更快,不阻塞样式解析) -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500&family=Cormorant+Garamond:wght@300;400;600&family=Playfair+Display:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500&family=Cormorant+Garamond:wght@300;400;600&family=Playfair+Display:ital,wght@1,300;1,400&display=swap');
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   :root {
     --sky-200:#bae6fd; --sky-500:#0ea5e9; --sky-600:#0284c7; --sky-700:#0369a1;
@@ -275,7 +284,7 @@
     <div class="center">
       <div class="center-ping"></div>
       <div class="center-logo-wrap">
-        <img src="https://img.velcura.net/logogpt.png" alt="VELCURA"
+        <img src="https://img.velcura.net/logogpt40.png" alt="VELCURA" width="220" height="220" fetchpriority="high"
              style="width:220px;height:220px;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,80,160,0.20));">
       </div>
       <div class="center-tagline">Professional Wound Care<br>Manufacturer</div>
@@ -286,7 +295,7 @@
   <div class="scene-mobile" id="sceneMobile">
     <div class="mobile-center">
       <div class="mobile-center-ping"></div>
-      <img src="https://img.velcura.net/logogpt.png" alt="VELCURA" style="width:81px;height:81px;object-fit:contain;display:block;margin-bottom:8px;filter:drop-shadow(0 2px 6px rgba(0,80,160,0.18));">
+      <img src="https://img.velcura.net/logogpt40.png" alt="VELCURA" width="81" height="81" style="width:81px;height:81px;object-fit:contain;display:block;margin-bottom:8px;filter:drop-shadow(0 2px 6px rgba(0,80,160,0.18));">
       <div class="mobile-center-title">VELCURA</div>
       <div class="mobile-center-tagline">Professional Wound Care<br>Manufacturer</div>
     </div>
@@ -338,7 +347,7 @@
 <footer class="footer" id="contact">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img data-src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
+      <img data-src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" width="58" height="58" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
       <div class="footer-company">Velcura Medical</div>
     </div>
     <div class="footer-contacts">
@@ -469,7 +478,7 @@ const cats = [
   { name:'Advanced Wound Dressings', angle:0,   subs:[], link:'wound-care.html?cat=advanced' },
   { name:'Personal Care',     angle:60,  subs:[], link:'wound-care.html?cat=personal' },
   { name:'Continence Care',   angle:120, subs:[], link:'wound-care.html?cat=continence' },
-  { name:'Diabetes Care',   angle:180, subs:[], link:'wound-care.html?cat=diabetes' },
+  { name:'Diabetes Care',   angle:180, subs:[], link:'EduInst-tjb.html' },
   { name:'EduInst',   angle:240, subs:[], link:'EduInst.html' },
   { name:'Traditional Wound Dressings', angle:300, subs:[], link:'wound-care.html?cat=traditional' },
 ];
@@ -558,13 +567,28 @@ cats.forEach((cat, i) => {
 });
 
 /* ── Nav ── */
-// Deferred image loading — load below-fold images after 2 seconds
-setTimeout(function() {
-  document.querySelectorAll('img[data-src]').forEach(function(img) {
+/* ── 图片懒加载:滚动到接近视口时才加载(替代原先固定等待2秒) ── */
+(function() {
+  var lazyImgs = document.querySelectorAll('img[data-src]');
+  function loadImg(img) {
     img.src = img.getAttribute('data-src');
     img.removeAttribute('data-src');
-  });
-}, 2000);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          loadImg(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px' }); // 提前200px开始加载,滚动到时已就绪
+    lazyImgs.forEach(function(img) { io.observe(img); });
+  } else {
+    // 老浏览器兜底:直接加载,不再空等
+    lazyImgs.forEach(loadImg);
+  }
+})();
 
 </script>
 </body>
