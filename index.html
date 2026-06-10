@@ -318,7 +318,7 @@
 
 <!-- Full-width banner -->
 <div style="width:100%; line-height:0; overflow:hidden;">
-  <img src="https://img.velcura.net/home1.png" alt="Velcura Medical" style="width:100%; height:auto; display:block;">
+  <img data-src="https://img.velcura.net/home1.png" alt="Velcura Medical" style="width:100%; height:auto; display:block;">
 </div>
 
 <section class="stats">
@@ -338,7 +338,7 @@
 <footer class="footer" id="contact">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
+      <img data-src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" style="width:58px;height:58px;object-fit:contain;display:block;margin-bottom:12px;filter:drop-shadow(0 0 8px rgba(14,165,233,0.15));">
       <div class="footer-company">Velcura Medical</div>
     </div>
     <div class="footer-contacts">
@@ -558,9 +558,13 @@ cats.forEach((cat, i) => {
 });
 
 /* ── Nav ── */
-document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
-document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
-function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+// Deferred image loading — load below-fold images after 2 seconds
+setTimeout(function() {
+  document.querySelectorAll('img[data-src]').forEach(function(img) {
+    img.src = img.getAttribute('data-src');
+    img.removeAttribute('data-src');
+  });
+}, 2000);
 
 </script>
 </body>
