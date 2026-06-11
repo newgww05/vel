@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硅凝胶泡沫敷贴 ConkoSil | Velcura Medical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --c-bg: #ffffff;
+    --c-bg2: #ffffff;
+    --c-ink: #1A1916;
+    --c-ink2: #4A4843;
+    --c-ink3: #8A8780;
+    --c-gold: #B8975A;
+    --c-gold2: #D4B07A;
+    --c-teal: #2D6E6A;
+    --c-teal2: #4A9490;
+    --c-blue: #2E7FBE;
+    --c-blue2: #1F5F94;
+    --c-node: #6DA5D2;
+    --c-node2: #628FB4;
+    --c-purple: #545395;
+    --c-purple2: #444383;
+    --c-cream: #ffffff;
+    --c-line: rgba(26,25,22,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--c-bg);
+    color: var(--c-ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(245,242,237,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--c-line);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--c-ink); text-decoration: none;
+  }
+  .nav-logo span { color: var(--c-teal); }
+  /* 修复：改用 left:50% + transform 居中，避免在不同屏宽下偏移 */
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+    position: absolute; left: 50%; transform: translateX(-50%);
+  }
+  .nav-links a {
+    font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--c-ink2); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--c-teal); }
+  .nav-cta {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--c-cream);
+    background: var(--c-teal); padding: 0.6rem 1.5rem;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--c-teal2); }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 2rem 4rem 2rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute; right: 0; top: 10%; bottom: 10%;
+    width: 0.5px; background: var(--c-line);
+  }
+  .hero-tag {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-teal); font-weight: 500;
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1rem; margin-top: 1rem;
+  }
+  .hero-tag::before {
+    content: ''; display: block; width: 2rem; height: 1px; background: var(--c-teal);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300; line-height: 1.12;
+    letter-spacing: -0.01em; margin-bottom: 1.5rem;
+  }
+  .hero-title em { font-style: italic; color: var(--c-teal); }
+  .hero-subtitle {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1rem; font-weight: 300;
+    color: var(--c-ink2); line-height: 1.8;
+    max-width: 38ch; margin-bottom: 1.5rem;
+  }
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    background: #ffffff; position: relative; overflow: hidden;
+  }
+  .hero-visual {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    padding: 2rem;
+  }
+  .hero-circle {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #C8E8E6, #A3D4D1, #5E9E9A);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .hero-circle-inner {
+    width: 67%; height: 67%; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.95), rgba(220,240,238,0.6));
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0;
+    padding-bottom: 4.1rem;
+  }
+  .hero-nano-icon { font-size: 3.65rem; line-height: 1; margin-bottom: 1em; color: #0066CC; animation: starSpin 5s linear infinite; display: block; }
+  @keyframes starSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .hero-circle-label {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center; line-height: 1.3;
+  }
+  .hero-circle-label .label-top {
+    display: block;
+    font-size: 1.5rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-ink);
+  }
+  .hero-circle-label .label-main {
+    display: block;
+    font-size: 1.15rem; font-weight: 400; font-style: normal;
+    text-transform: uppercase;
+    color: #2B3A8F; letter-spacing: 0.22em;
+  }
+  /* .hero-orb 静态装饰球（原始保留，不影响交互orb） */
+  .hero-orb {
+    position: absolute; border-radius: 50%;
+    background: rgba(45,110,106,0.1);
+  }
+  .hero-orb-1 { width: 80px; height: 80px; top: 15%; left: 10%; }
+  .hero-orb-2 { width: 50px; height: 50px; bottom: 20%; right: 15%; background: rgba(184,151,90,0.15); }
+  .hero-orb-3 { width: 120px; height: 120px; bottom: 10%; left: 5%; background: rgba(45,110,106,0.06); }
+  .hero-badge {
+    position: absolute; top: 2rem; right: 2rem;
+    background: var(--c-cream); border: 0.5px solid var(--c-line);
+    padding: 1rem 1.2rem; text-align: center;
+  }
+  .hero-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 600; color: var(--c-teal); line-height: 1;
+  }
+  .hero-badge-text {
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--c-ink3); margin-top: 0.3rem;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: #4F5298;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-item {
+    padding: 2rem; border-right: 0.5px solid rgba(255,255,255,0.15);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 300; color: #FFE9A0;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); margin-top: 0.5rem;
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+  .section-tag {
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-teal); font-weight: 500;
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+  }
+  .section-tag::before {
+    content: ''; width: 2.4rem; height: 1px; background: var(--c-teal);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem;
+  }
+
+  /* FEATURES */
+  .features-section { background: var(--c-cream); }
+  .features-grid {
+    display: grid; grid-template-columns: 1fr 1.6fr;
+    gap: 5rem; align-items: start;
+  }
+  .features-intro p {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.95rem; color: var(--c-ink2);
+    line-height: 1.9; font-weight: 300;
+  }
+  .feature-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .feature-card {
+    background: var(--c-bg); padding: 1.8rem;
+    border: 0.5px solid var(--c-line);
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .feature-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--c-teal); transform: scaleX(0);
+    transform-origin: left; transition: transform 0.3s;
+  }
+  .feature-card:hover::before { transform: scaleX(1); }
+  .feature-card:hover { border-color: var(--c-teal2); transform: translateY(-2px); }
+  .feature-icon {
+    font-size: 1.6rem; margin-bottom: 1rem; display: block;
+  }
+  .feature-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    margin-bottom: 0.6rem; color: var(--c-ink);
+  }
+  .feature-card p {
+    font-size: 0.82rem; color: var(--c-ink3); line-height: 1.7;
+  }
+
+  /* SPECS */
+  .specs-section { background: var(--c-bg); }
+  .specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table tr { border-bottom: 0.5px solid var(--c-line); }
+  .spec-table tr:last-child { border-bottom: none; }
+  .spec-table td {
+    padding: 1rem 0; font-size: 0.88rem; vertical-align: top;
+  }
+  .spec-table td:first-child {
+    color: var(--c-ink3); width: 40%;
+    font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase;
+    padding-right: 1.5rem;
+  }
+  .spec-table td:last-child { color: var(--c-ink); font-weight: 500; }
+  .spec-highlight {
+    background: var(--c-teal); color: var(--c-cream);
+    padding: 2rem; margin-top: 2rem;
+  }
+  .spec-highlight h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 300; margin-bottom: 0.5rem;
+  }
+  .spec-highlight p { font-size: 0.82rem; opacity: 0.8; line-height: 1.7; }
+  .application-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .app-tag {
+    border: 0.5px solid var(--c-line); padding: 0.5rem 1rem;
+    font-size: 0.75rem; color: var(--c-ink2); letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .app-tag:hover { border-color: var(--c-teal); color: var(--c-teal); }
+
+  /* BANNER IMAGE */
+  .banner-image {
+    width: 100%; height: 480px;
+    position: relative; overflow: hidden;
+    background: var(--c-bg2);
+  }
+  .banner-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
+  }
+  .banner-image img[src=""] { display: none; }
+  .banner-placeholder {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px dashed var(--c-line);
+  }
+  .banner-image img[src=""]+.banner-placeholder { display: flex; }
+  .banner-image img:not([src=""])+.banner-placeholder { display: none; }
+  .banner-placeholder span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: var(--c-ink3); letter-spacing: 0.2em;
+  }
+
+  /* CONTACT */
+  .contact-section { background: #4F5298; color: var(--c-cream); padding: 4rem 0 3rem; }
+  .contact-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300; letter-spacing: 0.12em;
+    color: #fff; margin-bottom: 2.2rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .contact-heading::before {
+    content: ''; display: block;
+    width: 2.4rem; height: 2px; background: #FFE9A0; flex-shrink: 0;
+  }
+  .contact-section .section-title { color: #fff; }
+  /* 左右列等高，右列用flex撑满高度 */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: stretch;
+  }
+  .contact-left {
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 1.6rem; }
+  .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .contact-item-icon {
+    width: 2.4rem; height: 2.4rem; min-width: 2.4rem;
+    border: 0.5px solid rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: #FFE9A0;
+  }
+  .contact-item-label {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); margin-bottom: 0.3rem;
+  }
+  .contact-item-value {
+    font-size: 0.9rem; color: #fff; line-height: 1.6; font-weight: 400;
+  }
+  .contact-form {
+    display: flex; flex-direction: column;
+    gap: 0.75rem; height: 100%; justify-content: space-between;
+  }
+  .contact-form-fields { display: flex; flex-direction: column; gap: 0.75rem; flex: 1; }
+  .contact-form input,
+  .contact-form textarea {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.7) !important;
+    color: #fff !important;
+    padding: 0.85rem 1.1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    outline: none; transition: border-color 0.2s;
+    resize: none; width: 100%;
+    -webkit-appearance: none;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: rgba(255,255,255,0.55) !important; }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #FFE9A0 !important;
+  }
+  .contact-form textarea { height: 100px; }
+  .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .contact-form-bottom {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-top: 0.5rem;
+  }
+  .btn-gold {
+    background: var(--c-gold); color: var(--c-ink);
+    padding: 0.85rem 2rem; font-size: 0.78rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; border: none; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-gold:hover { background: var(--c-gold2); }
+  .contact-site-link {
+    font-size: 0.72rem; color: rgba(255,255,255,0.55);
+    text-decoration: none; letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .contact-site-link:hover { color: #FFE9A0; }
+
+  /* FOOTER */
+  footer {
+    background: #3A3D7A; padding: 2.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 0.5px solid rgba(255,255,255,0.15);
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: #fff; letter-spacing: 0.06em;
+  }
+  .footer-logo span { color: #FFE9A0; }
+  .footer-copy {
+    font-size: 0.75rem; color: rgba(255,255,255,0.9); letter-spacing: 0.05em;
+  }
+  .footer-link {
+    font-size: 0.75rem; color: #fff;
+    text-decoration: none; letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: #FFE9A0; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp 0.7s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.35s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.5s; }
+
+  @keyframes floatIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .hero-circle { animation: none; }
+
+  /* ORB 交互按钮 */
+  .hero-orb-btn {
+    position: absolute; border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.35s, transform 0.25s, box-shadow 0.25s;
+    background: rgba(45,110,106,0.13);
+  }
+  .hero-orb-btn:hover { animation-play-state: paused; transform: scale(1.12); }
+  .hero-orb-btn.active {
+    animation-play-state: paused;
+    background: rgba(45,110,106,0.55);
+    box-shadow: 0 0 0 4px rgba(45,110,106,0.18);
+  }
+  /* 修复：原文件中 .hero-orb-1~5 在两个 <style> 块中各定义了一次，
+     第一次无 animation（静态装饰用），第二次才有 animation + 交互样式，
+     导致类名重复冲突。现统一合并到此处，只保留交互版本。 */
+  .hero-orb-1 { width: 72px; height: 72px; animation: breathe1 3.8s ease-in-out infinite; }
+  .hero-orb-2 { width: 50px; height: 50px; background: rgba(184,151,90,0.18); animation: breathe2 4.4s ease-in-out infinite; }
+  .hero-orb-2.active { background: rgba(184,151,90,0.65); box-shadow: 0 0 0 4px rgba(184,151,90,0.2); }
+  .hero-orb-3 { width: 90px; height: 90px; background: rgba(45,110,106,0.12); animation: breathe3 5s ease-in-out infinite; }
+  .hero-orb-4 { width: 72px; height: 72px; background: rgba(79,82,152,0.18); animation: breathe2 4.1s ease-in-out infinite; }
+  .hero-orb-4.active { background: rgba(79,82,152,0.6); box-shadow: 0 0 0 4px rgba(79,82,152,0.2); }
+  .hero-orb-5 { width: 90px; height: 90px; background: rgba(45,110,106,0.18); animation: breathe1 4.7s ease-in-out infinite; }
+  .hero-orb-5.active { background: rgba(45,110,106,0.6); box-shadow: 0 0 0 4px rgba(45,110,106,0.22); }
+
+  /* 大圆居中定位，四小圆JS等距排列，M单独在大圆正下方 */
+  .hero-visual {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem;
+  }
+  .hero-visual-inner {
+    position: relative;
+    width: min(280px, 48vw, 46vh);
+    height: min(280px, 48vw, 46vh);
+    margin-top: -8%;
+  }
+  .hero-circle {
+    width: 100%; height: 100%;
+  }
+  .hero-orbs-row { display: contents; }
+  .hero-orb-btn {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: background 0.35s, box-shadow 0.25s;
+    background: rgba(45,110,106,0.26);
+  }
+  .hero-orb-btn:hover { filter: brightness(1.18); }
+  .hero-orb-btn.active {
+    background: rgba(45,110,106,0.70);
+    box-shadow: 0 0 0 4px rgba(45,110,106,0.25);
+  }
+  .hero-orb-1 { width: 56px; height: 56px; }
+  .hero-orb-3 { width: 56px; height: 56px; background: rgba(45,110,106,0.26); }
+  .hero-orb-4 { width: 56px; height: 56px; background: rgba(79,82,152,0.34); }
+  .hero-orb-4.active { background: rgba(79,82,152,0.75); box-shadow: 0 0 0 4px rgba(79,82,152,0.28); }
+  .hero-orb-5 { width: 56px; height: 56px; background: rgba(45,110,106,0.32); }
+  .hero-orb-5.active { background: rgba(45,110,106,0.72); box-shadow: 0 0 0 4px rgba(45,110,106,0.30); }
+  .hero-orb-m {
+    width: 100px; height: 100px;
+    background: rgba(45,110,106,0.38);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600; color: var(--c-teal);
+    gap: 2px;
+  }
+  .hero-orb-m .orb-label { font-size: 0.55rem; }
+  .hero-orb-m.active { background: rgba(184,151,90,0.80); box-shadow: 0 0 0 4px rgba(184,151,90,0.28); color: #fff; }
+  .hero-orb-m.active .orb-label { color: #fff; }
+
+  @keyframes breathe1 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  @keyframes breathe2 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.13); }
+  }
+  @keyframes breathe3 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+  }
+
+  .orb-label {
+    font-size: 0.62rem; letter-spacing: 0.08em;
+    color: var(--c-teal); font-weight: 500;
+    transition: color 0.2s; text-align: center; pointer-events: none;
+    white-space: nowrap;
+  }
+  .hero-orb-btn.active .orb-label { color: #fff; }
+
+  #hero-title, #hero-subtitle {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  #hero-title.switching, #hero-subtitle.switching {
+    opacity: 0; transform: translateY(10px);
+  }
+
+  .storage-card {
+    background: var(--c-teal); color: var(--c-cream);
+    padding: 2rem 2.2rem; max-width: 420px;
+  }
+  .storage-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 300; margin-bottom: 0.8rem;
+  }
+  .storage-card-text {
+    font-size: 0.88rem; line-height: 1.85; opacity: 0.88;
+  }
+  @keyframes flyIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .fly-in {
+    animation: flyIn 0.45s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 50vh; }
+    .hero-left { padding: 4rem 2rem; }
+    .features-grid, .specs-layout, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .container { padding: 0 1.5rem; }
+    /* 修复：移动端 footer 不使用固定 padding-left，改为均匀 */
+    footer { padding: 2rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
+    .contact-form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ===== 复制自 EduInst-tjb 的页首/页脚/联系表单样式(覆盖层) ===== */
+  nav { position: fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; background:rgba(245,242,237,0.92); backdrop-filter:blur(12px); border-bottom:0.5px solid var(--c-line); }
+  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; letter-spacing:0.06em; color:var(--c-ink); text-decoration:none; display:flex; align-items:center; gap:0.6rem; }
+  .nav-logo span { color: var(--c-teal); }
+  .nav-links { display:flex; gap:2rem; list-style:none; position:absolute; left:50%; transform:translateX(-50%); }
+  .nav-links a { font-size:0.8rem; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-ink2); text-decoration:none; transition:color 0.2s; }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--c-teal); }
+  .nav-actions { display:flex; align-items:center; gap:0.7rem; }
+  .nav-cta { font-size:0.75rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-cream); background:var(--c-purple); padding:0.6rem 1.6rem; border-radius:999px; text-decoration:none; transition:background 0.2s, transform 0.2s; white-space:nowrap; }
+  .nav-cta:hover, .nav-cta:focus-visible { background:var(--c-purple2); transform:translateY(-1px); }
+
+  .contact-section { padding:3.5rem 0 4rem; background:#545395; border-top:none; color:#fff; }
+  .contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:center; }
+  .contact-grid > div:last-child { margin-left:1.6rem; }
+  .contact-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.4vw,2.8rem); font-weight:300; margin-bottom:2rem; color:#fff; }
+  .contact-section .section-title { color:#fff; }
+  .contact-item { display:flex; gap:1.3rem; margin-bottom:1.5rem; align-items:flex-start; }
+  .contact-item-icon { width:38px; height:38px; border:0.5px solid rgba(255,255,255,0.55); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; }
+  .contact-item-label { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:0.2rem; }
+  .contact-item-value { font-size:1.1rem; color:#fff; line-height:1.6; }
+  .contact-form { border:1px solid rgba(255,255,255,0.28); padding:2.5rem; border-radius:4px; background:rgba(255,255,255,0.06); }
+  .contact-form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .contact-form input, .contact-form textarea { width:100%; padding:0.95rem 1.1rem; margin-bottom:1rem; font-family:'DM Sans',sans-serif; font-size:1.1rem; border:1px solid rgba(255,255,255,0.4); background:transparent; color:#fff; outline:none; transition:border-color 0.2s, background 0.2s; }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color:#fff !important; opacity:1; }
+  .contact-form input:focus, .contact-form textarea:focus { border-color:#fff; background:rgba(255,255,255,0.08); }
+  .contact-form textarea { min-height:120px; height:auto; resize:vertical; }
+  .btn-gold { font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#545395; background:#fff; border:none; padding:0.9rem 2.4rem; border-radius:999px; cursor:pointer; transition:background 0.2s, color 0.2s; }
+  .btn-gold:hover { background:rgba(255,255,255,0.85); }
+  .contact-form input.invalid, .contact-form textarea.invalid { border-color:#ff9a8f; }
+  .form-msg { font-size:0.8rem; margin-top:0.9rem; min-height:1.1rem; }
+  .form-msg.error { color:#ffc9c2; }
+  .form-msg.success { color:#d7f5e6; }
+
+  footer { display:flex; align-items:center; justify-content:space-between; padding:1.33rem 3rem; background:#545395; border-top:none; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:#fff; }
+  .footer-logo span { color:#fff; }
+  .footer-copy, .footer-link { font-size:0.74rem; color:#fff; }
+  .footer-link { text-decoration:none; }
+  .footer-link:hover { color:#fff; opacity:0.8; }
+
+  @media (max-width:900px){
+    nav { padding:1rem 1.5rem; }
+    .nav-links { display:none; }
+    footer { padding:1.33rem 1.5rem; flex-wrap:wrap; gap:0.8rem; background:#545395; }
+    .contact-form-row { grid-template-columns:1fr; }
+    .contact-grid { grid-template-columns:1fr; gap:3rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">常用产品</a></li>
+    <li><a href="scar-management.html">疤痕管理</a></li>
+    <li><a href="#diabetes">糖尿病伤口管理</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a class="nav-cta" href="index.html">HOME</a>
+    <a class="nav-cta" href="#contact">联系我们</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">维珂睿医疗科技 · 创面管理</div>
+    <div style="display:flex; flex-direction:column; gap:2rem; margin-top:1.5rem; flex:1; justify-content:center;">
+
+      <div style="display:flex; align-items:flex-start; gap:1.4rem;">
+        <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.4rem;">
+          <span style="font-family:'Cormorant Garamond',serif; font-size:0.72rem; color:var(--c-teal); letter-spacing:0.12em;">01</span>
+          <div style="width:1px; height:3.5rem; background:var(--c-teal); margin-top:0.4rem; opacity:0.35;"></div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.2rem); font-weight:300; line-height:1; color:var(--c-ink); letter-spacing:0.04em;">清创</div>
+          <div style="font-size:0.78rem; color:var(--c-ink3); margin-top:0.5rem; letter-spacing:0.06em;">Debridement</div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:1.4rem;">
+        <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.4rem;">
+          <span style="font-family:'Cormorant Garamond',serif; font-size:0.72rem; color:var(--c-teal); letter-spacing:0.12em;">02</span>
+          <div style="width:1px; height:3.5rem; background:var(--c-teal); margin-top:0.4rem; opacity:0.35;"></div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.2rem); font-weight:300; line-height:1; color:var(--c-ink); letter-spacing:0.04em;">消炎</div>
+          <div style="font-size:0.78rem; color:var(--c-ink3); margin-top:0.5rem; letter-spacing:0.06em;">Anti-inflammation</div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:1.4rem;">
+        <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.4rem;">
+          <span style="font-family:'Cormorant Garamond',serif; font-size:0.72rem; color:var(--c-teal); letter-spacing:0.12em;">03</span>
+          <div style="width:1px; height:3.5rem; background:var(--c-teal); margin-top:0.4rem; opacity:0.35;"></div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:300; line-height:1.15; color:var(--c-ink); letter-spacing:0.04em;">保持水分<br>平衡</div>
+          <div style="font-size:0.78rem; color:var(--c-ink3); margin-top:0.5rem; letter-spacing:0.06em;">Moisture Balance</div>
+        </div>
+      </div>
+
+    </div>
+    <div id="hero-img-box" style="display:none; margin-top:1rem; transition: opacity 0.3s ease; width:100%; max-width:100%; overflow:hidden; border: 0.5px solid var(--c-line);">
+      <img data-src="https://img.velcura.net/Silicone Adhesive.png" alt="硅凝胶泡沫敷贴" style="width:100%; height:auto; display:block; object-fit:contain;">
+    </div>
+    <div id="hero-storage-box" style="display:none; margin-top:1rem;">
+      <div class="storage-card">
+        <h4 class="storage-card-title">储存条件</h4>
+        <p class="storage-card-text">请置于阴凉干燥处，避免直射阳光。温度 10–30°C，相对湿度 ≤80%。开封后请立即使用，勿重复使用。</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-visual-inner">
+        <div class="hero-circle">
+          <div class="hero-circle-inner">
+            <span class="hero-nano-icon">✦</span>
+            <div class="hero-circle-label">
+              <span class="label-top">Wound</span>
+              <span class="label-main">Care</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-orbs-row">
+          <div class="hero-orb-btn hero-orb-1" data-topic="0" title="D">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--c-teal);line-height:1;pointer-events:none;">D</span>
+          </div>
+          <div class="hero-orb-btn hero-orb-3" data-topic="2" title="I">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--c-teal);line-height:1;pointer-events:none;">I</span>
+          </div>
+          <div class="hero-orb-btn hero-orb-m" data-topic="1" title="M">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:inherit;line-height:1;pointer-events:none;">M</span>
+          </div>
+          <div class="hero-orb-btn hero-orb-5" data-topic="3" title="E">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--c-teal);line-height:1;pointer-events:none;">E</span>
+          </div>
+          <div class="hero-orb-btn hero-orb-4" data-img="1" title="S">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--c-teal);line-height:1;pointer-events:none;">S</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR — 修复：从 <script> 后面移到 Hero 紧接位置，确保文档流正确 -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">15×</div>
+    <div class="stat-label">泡沫吸液倍率</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">7天</div>
+    <div class="stat-label">最长换药周期</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">9尺寸</div>
+    <div class="stat-label">规格全覆盖</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">NMPA</div>
+    <div class="stat-label">国家药监局认证</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="features-intro">
+        <div class="section-tag">核心优势</div>
+        <h2 class="section-title">专为中重度<br>渗出创面设计</h2>
+        <p>
+          ConkoSil 硅凝胶泡沫敷贴采用多层复合结构，硅凝胶接触层温和贴合创面而不粘附，聚氨酯泡沫芯层高效锁定渗出液，防水透气外膜隔绝细菌，为各类慢性及急性创面提供全面防护。
+        </p>
+        <p style="margin-top: 1.2rem;">
+          适用于压疮、糖尿病足、烧烫伤、手术切口及外伤性创面，尤其适合皮肤脆弱患者及换药疼痛敏感人群。
+        </p>
+      </div>
+      <div class="feature-cards">
+        <div class="feature-card">
+          <span class="feature-icon">⬡</span>
+          <h3>硅凝胶无创接触层</h3>
+          <p>医用级硅凝胶不粘附湿润创面，紧贴周围完整皮肤，换药时无痛揭除，避免二次损伤与表皮撕脱。</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">◈</span>
+          <h3>超高吸收锁液泡沫芯</h3>
+          <p>亲水聚氨酯泡沫可吸收自身重量15倍的渗出液，SAF锁液层将渗液锁于芯层，防止创面浸渍。</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">◇</span>
+          <h3>防水透气外膜</h3>
+          <p>半透性聚氨酯薄膜有效阻隔细菌、液体及病毒入侵，同时允许水蒸气与氧气自由交换，促进自然愈合。</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">○</span>
+          <h3>粘性边框自固定</h3>
+          <p>硅凝胶粘性边框无需额外固定胶带，密封创缘防止渗漏，可与压力绷带联合使用，适配多部位创面。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER IMAGE -->
+<div class="banner-image">
+  <img data-src="https://img.velcura.net/nanojiangtai.webp" alt="ConkoSil 硅凝胶泡沫敷贴" id="banner-img">
+  <div class="banner-placeholder">
+    <span>1540 × 480</span>
+  </div>
+</div>
+
+<!-- SPECS -->
+<section class="specs-section" id="specs">
+  <div class="container">
+    <div class="specs-layout">
+      <div>
+        <div class="section-tag">产品规格</div>
+        <h2 class="section-title">技术参数</h2>
+        <table class="spec-table">
+          <tr><td>产品名称</td><td>ConkoSil 硅凝胶泡沫敷贴</td></tr>
+          <tr><td>产品结构</td><td>四层复合：硅凝胶接触层 / 泡沫吸收层 / SAF锁液层 / PU防水透气膜</td></tr>
+          <tr><td>规格尺寸</td><td>5×5 / 7.5×7.5 / 10×10 / 12.5×12.5 / 15×15 / 5×12.5 / 10×15 / 10×20 / 10×30 / 15×20 cm</td></tr>
+          <tr><td>包装规格</td><td>10片/盒，10盒/箱</td></tr>
+          <tr><td>吸液能力</td><td>≥ 15× 自身重量</td></tr>
+          <tr><td>灭菌方式</td><td>环氧乙烷灭菌</td></tr>
+          <tr><td>有效期</td><td>3年</td></tr>
+          <tr><td>注册分类</td><td>Ⅲ类医疗器械</td></tr>
+          <tr><td>产地</td><td>中国</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-tag">适应范围</div>
+        <h2 class="section-title">临床应用</h2>
+        <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
+          适用于中至重度渗出性慢性及急性创面管理，尤其适合皮肤脆弱、换药疼痛敏感及需延长换药间隔的患者。
+        </p>
+        <div class="application-tags">
+          <span class="app-tag">压力性损伤</span>
+          <span class="app-tag">糖尿病足溃疡</span>
+          <span class="app-tag">静脉性腿部溃疡</span>
+          <span class="app-tag">一至二度烧烫伤</span>
+          <span class="app-tag">手术切口创面</span>
+          <span class="app-tag">供皮区创面</span>
+          <span class="app-tag">皮肤撕裂伤</span>
+          <span class="app-tag">外伤性创面</span>
+        </div>
+        <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">注意事项</div>
+          <ul style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9; padding-left:1.2rem;">
+            <li>对聚氨酯或硅凝胶成分过敏者慎用</li>
+            <li>不适用于干燥结痂或坏死组织覆盖创面</li>
+            <li>三度烧伤创面请遵医嘱使用</li>
+            <li>若创面出现异常反应请立即停用并就医</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCAR MANAGEMENT -->
+<section id="scar" style="background:#ffffff; padding:6rem 0;">
+  <div class="container">
+    <div class="section-tag">疤痕管理</div>
+    <h2 class="section-title">疤痕预防与修复方案</h2>
+    <p style="font-family:'Noto Serif SC',serif; font-size:0.95rem; color:var(--c-ink2); line-height:1.9; max-width:680px; margin-bottom:3rem;">
+      针对手术切口、烧烫伤、外伤等各类疤痕，Velcura 提供从急性期到康复期的全程管理方案，覆盖硅凝胶疤痕贴、加压护理及功能康复辅助产品。
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
+      <div class="feature-card">
+        <span class="feature-icon">◈</span>
+        <h3>硅凝胶疤痕贴</h3>
+        <p>持续加压软化疤痕组织，抑制胶原蛋白异常增生，适用于增生性疤痕及瘢痕疙瘩的预防与改善。</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◇</span>
+        <h3>加压疤痕护理</h3>
+        <p>配合弹性压力绷带或压力衣，提供持续均匀压力，减少疤痕隆起，改善外观与功能。</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">○</span>
+        <h3>康复期创面护理</h3>
+        <p>促进上皮化、保持创面湿润愈合环境，减少色素沉着，加速疤痕成熟与软化进程。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIABETES WOUND MANAGEMENT -->
+<section id="diabetes" style="background:#ffffff; padding:6rem 0;">
+  <div class="container">
+    <div class="section-tag">糖尿病伤口管理</div>
+    <h2 class="section-title">糖尿病足及慢性创面解决方案</h2>
+    <p style="font-family:'Noto Serif SC',serif; font-size:0.95rem; color:var(--c-ink2); line-height:1.9; max-width:680px; margin-bottom:3rem;">
+      糖尿病患者创面愈合能力低下，感染风险高。Velcura 提供针对性的银离子抗菌、吸收高渗出、减压卸载一体化方案，助力临床实现更快愈合与更低截肢风险。
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
+      <div class="feature-card">
+        <span class="feature-icon">⬡</span>
+        <h3>银离子抗菌敷料</h3>
+        <p>持续释放银离子，广谱抑菌，有效控制生物膜，降低糖尿病足溃疡感染风险，加速创面床准备。</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◈</span>
+        <h3>高吸收泡沫敷料</h3>
+        <p>管理中至重度渗出，锁液防浸渍，维持湿性愈合环境，延长换药间隔，减轻患者换药负担。</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◇</span>
+        <h3>减压卸载辅助</h3>
+        <p>配合减压鞋垫及泡沫卸载材料，有效分散足底压力，消除创面机械性刺激，是糖尿病足管理的关键环节。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-heading">Contact Us</div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✆</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">+852 98567973</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">@</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">info@velcura.net</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⌖</div>
+          <div>
+            <div class="contact-item-label">Address</div>
+            <div class="contact-item-value">
+              Room 2134, 2nd Floor, Building 3, Block 30 (Wenzhengxin Building),<br>
+              No. 2 Kefa Road, Science and Technology Park Community,<br>
+              Yuehai Street, Nanshan District, Shenzhen
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <form id="inquiry-form" novalidate>
+            <div class="contact-form-row">
+              <input type="text" name="name" placeholder="Name *" required>
+              <input type="text" name="company" placeholder="Company">
+            </div>
+            <input type="email" name="email" placeholder="Email *" required>
+            <input type="tel" name="phone" placeholder="Phone *" required>
+            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <button type="submit" class="btn-gold">Send Inquiry</button>
+            <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Velcura <span>Medical</span></div>
+  <div class="footer-copy" id="footer-copy"></div>
+  <a class="footer-link" href="https://velcura.net">velcura.net ↗</a>
+</footer>
+
+<script>
+  // 五个小圆统一由JS定位，圆心到大圆圆心等距
+  function positionOrbs() {
+    const circle = document.querySelector('.hero-circle');
+    if (!circle) return;
+    const r = circle.offsetWidth / 2;   // 大圆半径
+    const gap = 20;                      // 小圆圆心超出大圆边缘的距离
+
+    const allOrbs = [
+      { el: document.querySelector('.hero-orb-1'), deg: 210 }, // D
+      { el: document.querySelector('.hero-orb-3'), deg: 240 }, // I
+      { el: document.querySelector('.hero-orb-m'), deg: 270 }, // M 正下
+      { el: document.querySelector('.hero-orb-5'), deg: 300 }, // E
+      { el: document.querySelector('.hero-orb-4'), deg: 330 }, // S
+    ];
+
+    allOrbs.forEach(({ el, deg }) => {
+      if (!el) return;
+      const orbR = el.offsetWidth / 2;
+      const dist = r + orbR + gap;           // 大圆圆心 → 小圆圆心
+      const rad = (deg - 90) * Math.PI / 180;
+      const cx = r + Math.cos(rad) * dist;
+      const cy = r + Math.sin(rad) * dist;
+      el.style.left = (cx - orbR) + 'px';
+      el.style.top  = (cy - orbR) + 'px';
+      el.style.transform = 'none';
+    });
+  }
+
+  window.addEventListener('load', positionOrbs);
+  window.addEventListener('resize', positionOrbs);
+
+  const topics = [
+    {
+      title: '吸收<em>原理</em>',
+      subtitle: '亲水聚氨酯泡沫芯层迅速吸收渗出液，SAF超吸收层将渗液永久锁定于芯层内，防止渗液回流刺激创面。硅凝胶接触层开孔允许渗液单向通过，保持创面适度湿润，有效防止浸渍与肉芽过度增生。'
+    },
+    {
+      title: '临床<br><em>适应症</em>',
+      subtitle: '适用于中至重度渗出性创面：压力性损伤（Ⅱ–Ⅳ期）、糖尿病足溃疡、静脉性腿部溃疡、一至二度烧烫伤、手术切口、皮肤撕裂伤及外伤性创面。尤适合皮肤脆弱、疼痛敏感患者，可于压力绷带下使用。'
+    },
+    {
+      title: '规范<br><em>使用方法</em>',
+      subtitle: '清洁创面并确保创周皮肤干燥。撕去背衬，将硅凝胶面轻贴创面，边框平整粘附周围皮肤，勿拉伸。渗液量少时可每5–7天更换；渗液量多时适当缩短至2–3天。更换时沿皮肤纹路方向缓慢揭除，减少牵拉。'
+    },
+    {
+      title: '储存<em>环境</em>',
+      subtitle: '§img:https://img.velcura.net/nano12.png'
+    }
+  ];
+
+  const defaultTitle = '硅凝胶泡沫<em>敷贴</em>';
+  const defaultSubtitle = '多层聚氨酯泡沫复合结构，硅凝胶接触层无创贴合创面，高效吸收中重度渗出液，维持湿性愈合环境，换药无痛无损。';
+
+  const titleEl = document.getElementById('hero-title');
+  const subtitleEl = document.getElementById('hero-subtitle');
+  const imgBox = document.getElementById('hero-img-box');
+  const storageBox = document.getElementById('hero-storage-box');
+  const orbs = document.querySelectorAll('.hero-orb-btn');
+  let activeIndex = -1;
+
+  function hideExtras() {
+    imgBox.style.opacity = '0';
+    setTimeout(() => { imgBox.style.display = 'none'; }, 300);
+    storageBox.style.display = 'none';
+    subtitleEl.style.display = 'block';
+  }
+
+  function showText(html, text) {
+    imgBox.style.display = 'none';
+    storageBox.style.display = 'none';
+    titleEl.innerHTML = html;
+    if (text.startsWith('§img:')) {
+      const url = text.replace('§img:', '');
+      subtitleEl.style.display = 'none';
+      imgBox.querySelector('img').src = url;
+      imgBox.style.display = 'block';
+      imgBox.style.opacity = '1';
+    } else {
+      subtitleEl.textContent = text;
+      subtitleEl.style.display = 'block';
+      subtitleEl.style.fontSize = '1.15rem';
+    }
+  }
+
+  function showImage() {
+    titleEl.classList.add('switching');
+    subtitleEl.classList.add('switching');
+    setTimeout(() => {
+      titleEl.innerHTML = defaultTitle;
+      subtitleEl.style.display = 'none';
+      titleEl.classList.remove('switching');
+      subtitleEl.classList.remove('switching');
+      imgBox.querySelector('img').src = 'https://img.velcura.net/Silicone Adhesive.png';
+      imgBox.style.display = 'block';
+      imgBox.style.opacity = '0';
+      setTimeout(() => { imgBox.style.opacity = '1'; }, 10);
+    }, 300);
+  }
+
+  function resetAll() {
+    imgBox.style.display = 'none';
+    storageBox.style.display = 'none';
+    titleEl.innerHTML = defaultTitle;
+    subtitleEl.textContent = defaultSubtitle;
+    subtitleEl.style.display = 'block';
+    subtitleEl.style.fontSize = '';
+  }
+
+  orbs.forEach((orb, i) => {
+    orb.addEventListener('click', () => {
+      const isImg = orb.dataset.img === '1';
+      const topicIndex = orb.dataset.topic !== undefined ? parseInt(orb.dataset.topic) : -1;
+      if (activeIndex === i) {
+        orb.classList.remove('active');
+        activeIndex = -1;
+        resetAll();
+      } else {
+        orbs.forEach(o => o.classList.remove('active'));
+        orb.classList.add('active');
+        activeIndex = i;
+        if (isImg) {
+          showImage();
+        } else {
+          showText(topics[topicIndex].title, topics[topicIndex].subtitle);
+        }
+      }
+    });
+  });
+
+  // 自动轮播
+  let autoIndex = 0;
+  let autoTimer = null;
+  let paused = false;
+
+  function activateOrb(i) {
+    const orb = orbs[i];
+    const isImg = orb.dataset.img === '1';
+    const topicIndex = orb.dataset.topic !== undefined ? parseInt(orb.dataset.topic) : -1;
+    orbs.forEach(o => o.classList.remove('active'));
+    orb.classList.add('active');
+    activeIndex = i;
+    if (isImg) {
+      showImage();
+    } else {
+      showText(topics[topicIndex].title, topics[topicIndex].subtitle);
+    }
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(() => {
+      if (paused) return;
+      autoIndex = (autoIndex + 1) % orbs.length;
+      activateOrb(autoIndex);
+    }, 3500);
+  }
+
+  // 点击时暂停5秒后继续
+  orbs.forEach(orb => {
+    orb.addEventListener('click', () => {
+      paused = true;
+      clearTimeout(window._resumeTimer);
+      window._resumeTimer = setTimeout(() => { paused = false; }, 5000);
+    });
+  });
+
+  // 页面加载后1秒启动
+  setTimeout(() => {
+    activateOrb(0);
+    startAuto();
+  }, 1000);
+
+  // 版权年份动态生成
+  document.getElementById('footer-copy').textContent =
+    '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
+
+  // 延迟加载非首屏图片（2秒后）
+  setTimeout(function() {
+    document.querySelectorAll('img[data-src]').forEach(function(img) {
+      if (!img.src || img.src === window.location.href) {
+        img.src = img.getAttribute('data-src');
+      }
+      img.removeAttribute('data-src');
+    });
+  }, 2000);
+
+  // ===== 表单必填校验(复制自 EduInst-tjb) =====
+  (function () {
+    const form = document.getElementById('inquiry-form');
+    if (!form) return;
+    const msg = document.getElementById('form-msg');
+    const required = form.querySelectorAll('[required]');
+    const emailField = form.querySelector('input[type="email"]');
+    function clearInvalid(el){ el.classList.remove('invalid'); }
+    required.forEach(el => el.addEventListener('input', () => clearInvalid(el)));
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      let firstInvalid = null;
+      required.forEach(el => {
+        const empty = !el.value.trim();
+        const badEmail = el === emailField && el.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (empty || badEmail){ el.classList.add('invalid'); if(!firstInvalid) firstInvalid = el; }
+        else { el.classList.remove('invalid'); }
+      });
+      if (firstInvalid){
+        msg.className = 'form-msg error';
+        msg.textContent = firstInvalid === emailField && emailField.value.trim()
+          ? 'Please enter a valid email address.'
+          : 'Please complete all required fields (*) before submitting.';
+        firstInvalid.focus(); return;
+      }
+      msg.className = 'form-msg success';
+      msg.textContent = 'Thank you. Your inquiry has been submitted.';
+      form.reset();
+    });
+  })();
+
+</script>
+
+</body>
+</html>
