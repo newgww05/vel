@@ -191,6 +191,76 @@
     .faq-q-toggle { width:28px; height:28px; font-size:18px; }
     .faq-a { font-size:14px; }
   }
+
+  /* AD/TD/SC 字号增大 */
+  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* ===== Featured Products 下拉菜单 ===== */
+  .nav-links .has-dropdown { position: relative; }
+  .nav-links .dropdown-trigger { cursor: pointer; }
+  .fp-menu {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
+    min-width: 360px; padding: 0.8rem 0;
+    max-height: 70vh; overflow-y: auto; overscroll-behavior: contain;
+    background: #fff; border: 0.5px solid var(--c-line);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-links .has-dropdown:hover .fp-menu,
+  .nav-links .has-dropdown:focus-within .fp-menu {
+    opacity: 1; visibility: visible; pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-links .fp-menu .fp-item {
+    display: block;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.02em; text-transform: none;
+    color: var(--c-ink2); text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-links .fp-menu .fp-item:hover, .nav-links .fp-menu .fp-item:focus-visible {
+    background: rgba(84,83,149,0.06); color: var(--c-purple);
+  }
+  @media (max-width: 900px) {
+    .fp-menu { position: static; transform: none; min-width: 0; box-shadow: none; opacity: 1; visibility: visible; pointer-events: auto; padding: 0; border: none; }
+    .fp-item { padding: 0.4rem 0; }
+  }
+
+
+  .nav-links .fp-menu .fp-item-disabled {
+    cursor: default; color: var(--c-ink2);
+  }
+  .nav-links .fp-menu .fp-item-disabled:hover {
+    background: transparent; color: var(--c-ink2);
+  }
+
+
+  .nav-links .fp-menu .fp-item-current {
+    color: var(--c-purple);
+    font-weight: 500;
+    cursor: default;
+    background: rgba(84,83,149,0.06);
+    border-left: 2px solid var(--c-purple);
+    padding-left: calc(1.4rem - 2px);
+  }
+  .nav-links .fp-menu .fp-item-current:hover {
+    background: rgba(84,83,149,0.06);
+    color: var(--c-purple);
+  }
+  /* Products 占位(不可点,视觉与其他导航项一致) */
+  .nav-products-disabled {
+    font-size: 16.45px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--slate-800); cursor: default;
+  }
+  /* AD/TD/SC 触发器(克隆首页排版) */
+  .nav-links .has-dropdown .dropdown-trigger {
+    font-size: 16.45px !important; font-weight: 500; letter-spacing: 0.10em;
+  }
+  /* AD/TD/SC 整体下移,使 AD 顶端与 Products 底端齐平 */
+  .nav-links .has-dropdown { margin-top: 20px; }
+
 </style>
 </head>
 <body>
@@ -199,8 +269,52 @@
 <nav class="nav">
   <a class="nav-brand" href="index.html">Gentle Healing,<br><span style="display:inline-block; margin-left:2.5em;">Complete Care</span></a>
   <ul class="nav-links">
-    <li><a href="wound-care.html">Products</a></li>
-    <li><a href="velcura-3y.html">About Us</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><span class="nav-products-disabled">Products</span></li>
+    <li class="has-dropdown">
+      <a href="#" class="dropdown-trigger">AD ▾</a>
+      <div class="fp-menu">
+        <a href="hydrocolloid-super-thin-AD-HD01.html" class="fp-item">Hydrocolloid Dressing (Super Thin)</a>
+        <span class="fp-item fp-item-disabled">Hydrocolloid Dressing (With Border)</span>
+        <span class="fp-item fp-item-disabled">Hydrocolloid Dressing (Sacrum)</span>
+        <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
+        <span class="fp-item fp-item-disabled">Silver Alginate Dressing</span>
+        <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
+        <span class="fp-item fp-item-disabled">Foam Dressing Silicone Adhesive Border (Sacrum)</span>
+        <span class="fp-item fp-item-disabled">Foam Dressing Silicone Adhesive Border (Heel)</span>
+        <span class="fp-item fp-item-disabled">Silicone Foam Dressing</span>
+        <a href="foam-non-adhesive-AD12.html" class="fp-item">Foam Dressing Non-Adhesive</a>
+        <span class="fp-item fp-item-disabled">Foam Dressing Non-Adhesive (Elbow)</span>
+        <span class="fp-item fp-item-disabled">Foam Dressing Non-Adhesive (Tracheostomy Tubes)</span>
+        <span class="fp-item fp-item-disabled">Silver Foam Dressing Non-Adhesive</span>
+        <span class="fp-item fp-item-disabled">Silver Hydrophilic Fiber Dressing</span>
+        <a href="nano-silver-antibacterial-AD47.html" class="fp-item">Nano-Silver Medical Antibacterial Dressing</a>
+        <span class="fp-item fp-item-disabled">Silver Activated Charcoal Dressing</span>
+        <a href="activated-charcoal-non-adhesive-AD24.html" class="fp-item">Activated Charcoal Dressing Non-Adhesive</a>
+        <span class="fp-item fp-item-disabled">Silicone Contact Layer</span>
+        <span class="fp-item fp-item-disabled">Vaseline Gauze</span>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#" class="dropdown-trigger">TD ▾</a>
+      <div class="fp-menu">
+        <span class="fp-item fp-item-disabled">Wound Closure Strips</span>
+        <span class="fp-item fp-item-disabled">Transparent Film I.V. Dressing</span>
+        <span class="fp-item fp-item-disabled">Transparent Film I.V. Dressing with Notch</span>
+        <span class="fp-item fp-item-disabled">Non-woven Surgical Tape</span>
+        <span class="fp-item fp-item-disabled">Paper Tape</span>
+        <span class="fp-item fp-item-disabled">Film Island Dressing</span>
+        <span class="fp-item fp-item-disabled">Non-woven Adhesive Wound Dressing with Pad</span>
+        <span class="fp-item fp-item-disabled">Non-woven Adhesive Wound Dressing Strip</span>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#" class="dropdown-trigger">SC ▾</a>
+      <div class="fp-menu">
+        <span class="fp-item fp-item-disabled">Incise Drape</span>
+        <span class="fp-item fp-item-disabled">Iodine Incise Drape</span>
+      </div>
+    </li>
     <li><a href="faq.html" class="active">FAQ</a></li>
     <li><a href="index.html#contact">Contact Us</a></li>
   </ul>
