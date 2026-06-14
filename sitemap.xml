@@ -101,6 +101,12 @@
 
   <!-- 教育/疾病管理页 -->
   <url>
+    <loc>https://velcura.net/pressure-injury-care.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://velcura.net/scar-management.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
