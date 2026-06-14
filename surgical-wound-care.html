@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Wound Care | Post-Operative Dressing Strategy &amp; SSI Prevention | Velcura Medical</title>
+<meta name="description" content="A clinical guide to surgical wound care — primary, secondary and tertiary intention healing, CDC contamination classes (Clean / Clean-Contaminated / Contaminated / Dirty), surgical site infection (SSI) prevention, and the matching post-operative dressing strategy. Aligned with WHO and NICE guidelines. For hospital procurement, ambulatory surgery centres and distributors.">
+<meta name="keywords" content="surgical wound care, surgical wound dressing, post-operative dressing, surgical site infection prevention, SSI prevention, primary intention healing dressing, secondary intention wound, CDC wound classification, C-section dressing, abdominal incision dressing, post-op silicone foam, antimicrobial post-surgical dressing, ambulatory surgery dressing, orthopaedic incision care, OEM surgical dressing manufacturer, Velcura Medical">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Velcura Medical">
+<link rel="canonical" href="https://velcura.net/surgical-wound-care.html">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Surgical Wound Care | Post-Operative Dressing &amp; SSI Prevention | Velcura Medical">
+<meta property="og:description" content="Post-operative dressing strategy by healing intention and CDC class, aligned with WHO and NICE SSI-prevention guidelines.">
+<meta property="og:image" content="https://img.velcura.net/og-share.png">
+<meta property="og:url" content="https://velcura.net/surgical-wound-care.html">
+<meta property="og:site_name" content="Velcura Medical">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Surgical Wound Care | Post-Operative Dressing &amp; SSI Prevention">
+<meta name="twitter:description" content="Post-operative dressing strategy aligned with WHO and NICE SSI-prevention guidelines.">
+<meta name="twitter:image" content="https://img.velcura.net/og-share.png">
+
+<!-- Structured Data JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Surgical Wound Care — Post-Operative Dressing Strategy & SSI Prevention",
+  "headline": "Surgical Wound Care | Post-Operative Dressing Strategy & SSI Prevention",
+  "description": "A clinical guide to surgical wound management covering primary, secondary and tertiary intention healing, CDC contamination classes (Clean / Clean-Contaminated / Contaminated / Dirty), surgical site infection (SSI) prevention, and the matching post-operative dressing strategy aligned with WHO and NICE guidelines.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Velcura Medical",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img.velcura.net/logogpt40.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "MedicalCondition",
+      "name": "Surgical Wound",
+      "alternateName": ["Surgical Incision", "Post-Operative Wound"],
+      "code": {"@type": "MedicalCode", "code": "T81.3", "codingSystem": "ICD-10"}
+    },
+    {
+      "@type": "MedicalCondition",
+      "name": "Surgical Site Infection",
+      "alternateName": ["SSI", "Wound Infection Post-Operative"],
+      "code": {"@type": "MedicalCode", "code": "T81.4", "codingSystem": "ICD-10"}
+    }
+  ],
+  "audience": {
+    "@type": "MedicalAudience",
+    "audienceType": ["Clinician", "Surgeon", "Nurse", "Procurement", "Distributor"]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Bodoni+Moda:ital,wght@1,500;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --c-bg: #ffffff;
+    --c-ink: #1A1916;
+    --c-ink2: #4A4843;
+    --c-ink3: #8A8780;
+    --c-gold: #B8975A;
+    --c-gold2: #D4B07A;
+    --c-teal: #2D6E6A;
+    --c-teal2: #4A9490;
+    --c-blue: #2E7FBE;
+    --c-blue2: #1F5F94;
+    --c-node: #6DA5D2;
+    --c-node2: #628FB4;
+    --c-purple: #545395;
+    --c-purple2: #444383;
+    --c-cream: #ffffff;
+    --c-line: rgba(26,25,22,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--c-bg);
+    color: var(--c-ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(245,242,237,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--c-line);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--c-ink); text-decoration: none;
+    display:flex; align-items:center; gap:0.6rem;
+  }
+  .nav-logo span { color: var(--c-teal); }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+    position: absolute; left: 50%; transform: translateX(-50%);
+  }
+  .nav-links a {
+    font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--c-ink2); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--c-teal); }
+  .nav-actions { display: flex; align-items: center; gap: 0.7rem; }
+  .nav-cta {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--c-cream);
+    background: var(--c-purple); padding: 0.6rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none; transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover, .nav-cta:focus-visible { background: var(--c-purple2); transform: translateY(-1px); }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 3rem 4rem 3rem 5rem;
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute; right: 0; top: 10%; bottom: 10%;
+    width: 0.5px; background: var(--c-line);
+  }
+  .hero-tag {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-teal); font-weight: 500;
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .hero-tag::before {
+    content: ''; width: 2.2rem; height: 1px; background: var(--c-teal);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 4.6vw, 4rem);
+    font-weight: 300; line-height: 1.08; letter-spacing: 0.02em;
+    margin-bottom: 1.4rem;
+  }
+  .hero-title em {
+    font-style: normal; color: var(--c-teal);
+  }
+  .hero-sub {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.95rem; color: var(--c-ink2); line-height: 1.9;
+    max-width: 480px; margin-bottom: 2.5rem;
+  }
+  .hero-causes { display: flex; flex-direction: column; gap: 1.6rem; }
+  .cause-row { display: flex; align-items: flex-start; gap: 1.4rem; }
+  .cause-marker { display: flex; flex-direction: column; align-items: center; padding-top: 0.3rem; }
+  .cause-marker span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem; color: var(--c-teal); letter-spacing: 0.12em;
+  }
+  .cause-marker i {
+    width: 1px; height: 2.6rem; background: var(--c-teal);
+    margin-top: 0.4rem; opacity: 0.35;
+  }
+  .cause-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 300;
+    line-height: 1.1; letter-spacing: 0.04em;
+  }
+  .cause-en {
+    font-size: 0.76rem; color: var(--c-ink3);
+    margin-top: 0.35rem; letter-spacing: 0.06em;
+  }
+
+  /* ---- 右侧:疤痕分型轮盘 ---- */
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    padding: 3rem 2rem;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 45%, rgba(122,184,180,0.16), transparent 70%);
+  }
+  .wagner-wrap { position: relative; width: min(440px, 80vw); }
+  .wagner-circle {
+    position: relative;
+    width: 100%; aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    display: flex; align-items: center; justify-content: center;
+    /* 青绿渐变球体:左上高光 → 边缘深青绿 */
+    background:
+      radial-gradient(circle at 34% 30%, #c9e3e0 0%, #a9d2ce 32%, #79b3ad 68%, #5fa099 100%);
+    box-shadow: inset -8px -10px 26px rgba(60,130,124,0.25),
+                inset 6px 8px 22px rgba(255,255,255,0.55),
+                0 10px 40px rgba(95,160,153,0.22);
+  }
+  /* 浅色内圈 */
+  .wagner-circle::before {
+    content: '';
+    position: absolute; inset: 13%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 42% 38%, #ffffff 0%, #f3faf9 55%, #e6f3f1 100%);
+    box-shadow: inset 0 0 18px rgba(120,180,175,0.18);
+  }
+  /* 蓝色四角星 */
+  .wagner-star {
+    position: absolute;
+    top: 17%; left: calc(50% - 17px);
+    width: 34px; height: 34px;
+    z-index: 3; pointer-events: none;
+    transform-origin: 50% 50%;
+    animation: starSpin 14s linear infinite;
+  }
+  @keyframes starSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .wagner-core {
+    width: 64%; text-align: center; padding: 0 0.5rem;
+    position: relative; z-index: 2;
+  }
+  .wagner-core-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--c-gold); margin-bottom: 0.6rem;
+  }
+  .wagner-core-grade {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 300;
+    line-height: 1.15; color: var(--c-ink);
+    transition: opacity 0.25s;
+  }
+  .wagner-core-grade em { font-style: normal; color: var(--c-blue); }
+  .wagner-core-desc {
+    font-size: 0.78rem; color: var(--c-ink2); line-height: 1.7;
+    margin-top: 0.8rem; transition: opacity 0.25s;
+  }
+  .wagner-core.switching .wagner-core-grade,
+  .wagner-core.switching .wagner-core-desc { opacity: 0; }
+
+  .wagner-node {
+    position: absolute;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--c-node);
+    border: none;
+    box-shadow: 0 2px 10px rgba(80,130,175,0.25);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-family: 'Bodoni Moda', serif; font-style: italic;
+    font-size: 1.55rem; font-weight: 600; color: #ffffff;
+    transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+    user-select: none;
+  }
+  /* 0 → 5 由淡蓝到中深蓝 */
+  .wagner-node:nth-of-type(1) { background: #BAD6EC; color: #2C6396; }
+  .wagner-node:nth-of-type(2) { background: #97C0E2; color: #245A88; }
+  .wagner-node:nth-of-type(3) { background: #6FA6D2; color: #ffffff; }
+  .wagner-node:nth-of-type(4) { background: #4E8BC1; color: #ffffff; }
+  .wagner-node:nth-of-type(5) { background: #3A75AE; color: #ffffff; }
+  .wagner-node:nth-of-type(6) { background: #2C6396; color: #ffffff; }
+  .wagner-node:hover, .wagner-node:focus-visible {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(60,110,160,0.4);
+  }
+  .wagner-node.active {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 3px #fff, 0 4px 18px rgba(40,90,140,0.45);
+  }
+  .wagner-hint {
+    text-align: center; margin-top: 2.8rem;
+    font-size: 1.08rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--c-ink3);
+  }
+
+  /* ============ STATS BAR ============ */
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: #F3F0F7;
+    border-top: 0.5px solid var(--c-line);
+    border-bottom: 0.5px solid var(--c-line);
+  }
+  .stat-item {
+    padding: 2.5rem 2rem; text-align: center;
+    border-right: 0.5px solid var(--c-line);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300;
+    color: var(--c-teal); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem; letter-spacing: 0.1em; color: var(--c-ink3);
+    margin-top: 0.7rem;
+  }
+  .stats-note {
+    text-align: center; font-size: 0.68rem; color: var(--c-ink3);
+    padding: 0.8rem 1.5rem;
+    background: #F3F0F7;
+    border-bottom: 0.5px solid var(--c-line);
+  }
+
+  /* ============ 横幅图 ============ */
+  .banner-image {
+    width: 100%;
+    aspect-ratio: 1500 / 600;
+    overflow: hidden;
+    background: #eef3f2;
+    position: relative;
+  }
+  .banner-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  /* 左侧浅色蒙版,保证青绿文字可读 */
+  .banner-image::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(90deg,
+      rgba(255,255,255,0.94) 0%,
+      rgba(255,255,255,0.86) 32%,
+      rgba(255,255,255,0.45) 52%,
+      rgba(255,255,255,0) 66%);
+  }
+  .banner-overlay {
+    position: absolute; z-index: 2;
+    top: 50%; left: 0; transform: translateY(-50%);
+    max-width: 48%;
+    padding: 0 3rem 0 5rem;
+  }
+  .banner-overlay h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; line-height: 1.12; letter-spacing: 0.01em;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    color: var(--c-teal);
+    margin-bottom: 1.2rem;
+  }
+  .banner-overlay h2 em {
+    font-style: italic; font-weight: 400;
+  }
+  .banner-overlay p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.82rem, 1.1vw, 0.95rem); font-weight: 400;
+    line-height: 1.8; color: var(--c-teal);
+    max-width: 30rem;
+  }
+
+  /* ============ 通用版式 ============ */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 3rem; }
+  .section-tag {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-gold); font-weight: 500; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-tag::before {
+    content: ''; width: 2.2rem; height: 1px; background: var(--c-gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300;
+    line-height: 1.2; margin-bottom: 1.5rem;
+  }
+  .section-lead {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.95rem; color: var(--c-ink2); line-height: 1.9;
+    max-width: 680px; margin-bottom: 3rem;
+  }
+
+  .feature-card {
+    border: 0.5px solid var(--c-line);
+    padding: 2.2rem 1.8rem;
+    transition: border-color 0.25s, transform 0.25s;
+    background: #fff;
+  }
+  .feature-card:hover { border-color: var(--c-teal); transform: translateY(-3px); }
+  .feature-icon {
+    display: inline-block; font-size: 1.4rem; color: var(--c-teal);
+    margin-bottom: 1.1rem;
+  }
+  .feature-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.05rem; font-weight: 400; margin-bottom: 0.7rem;
+  }
+  .feature-card p { font-size: 0.85rem; color: var(--c-ink2); line-height: 1.8; }
+
+  /* ============ 病理机制 ============ */
+  .patho-section { padding: 6rem 0; }
+  .patho-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+
+  /* ============ 疤痕分型表 + 管理要素 ============ */
+  .grading-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
+  .grading-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 4rem; }
+  .grade-table { width: 100%; border-collapse: collapse; }
+  .grade-table td {
+    padding: 0.95rem 1rem; font-size: 0.85rem;
+    border-bottom: 0.5px solid var(--c-line); vertical-align: top;
+  }
+  .grade-table td:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600; color: var(--c-teal);
+    white-space: nowrap; width: 4.5rem;
+  }
+  .grade-table td:last-child { color: var(--c-ink2); line-height: 1.7; }
+
+  .dimes-list { display: flex; flex-direction: column; }
+  .dimes-item {
+    display: flex; gap: 1.4rem; align-items: flex-start;
+    padding: 1.15rem 0; border-bottom: 0.5px solid var(--c-line);
+  }
+  .dimes-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem; font-weight: 600; color: var(--c-teal);
+    width: 2.2rem; flex-shrink: 0; line-height: 1.2;
+  }
+  .dimes-item h4 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.95rem; font-weight: 400; margin-bottom: 0.25rem;
+  }
+  .dimes-item p { font-size: 0.82rem; color: var(--c-ink2); line-height: 1.7; }
+
+  /* ============ 解决方案 ============ */
+  .solutions-section { padding: 6rem 0; }
+  .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .solution-link {
+    display: inline-block; margin-top: 1rem;
+    font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--c-gold); text-decoration: none;
+  }
+  .solution-link:hover { color: var(--c-gold2); }
+
+  /* ============ 护理路径 ============ */
+  .pathway-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
+  .pathway-track {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    position: relative; margin-top: 3.5rem;
+  }
+  .pathway-track::before {
+    content: '';
+    position: absolute; top: 14px; left: 8%; right: 8%;
+    height: 1px; background: var(--c-line);
+  }
+  .path-step { text-align: center; padding: 0 0.6rem; position: relative; }
+  .path-dot {
+    width: 29px; height: 29px; border-radius: 50%;
+    background: #fbfaf8; border: 1px solid var(--c-teal);
+    color: var(--c-teal);
+    font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.1rem;
+  }
+  .path-step h4 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.92rem; font-weight: 400; margin-bottom: 0.45rem;
+  }
+  .path-step p { font-size: 0.76rem; color: var(--c-ink2); line-height: 1.7; }
+
+  /* ============ 居家预防 ============ */
+  .prevent-section { padding: 6rem 0; }
+  .prevent-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+  .check-list { list-style: none; }
+  .check-list li {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 0.85rem 0; border-bottom: 0.5px solid var(--c-line);
+    font-size: 0.88rem; color: var(--c-ink2); line-height: 1.7;
+  }
+  .check-list li::before {
+    content: '✦'; color: var(--c-gold); font-size: 0.8rem;
+    padding-top: 0.15rem; flex-shrink: 0;
+  }
+  .warn-card {
+    border: 0.5px solid var(--c-line); padding: 2rem; margin-top: 2.5rem;
+  }
+  .warn-card-tag {
+    font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--c-ink3); margin-bottom: 1rem;
+  }
+  .warn-card ul { font-size: 0.82rem; color: var(--c-ink2); line-height: 1.9; padding-left: 1.2rem; }
+
+  /* ============ CONTACT ============ */
+  .contact-section { padding: 3.5rem 0 4rem; background: #545395; border-top: none; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
+  .contact-grid > div:last-child { margin-left: 1.6rem; }
+  .contact-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 300; margin-bottom: 2rem;
+    color: #ffffff;
+  }
+  .contact-item { display: flex; gap: 1.3rem; margin-bottom: 1.5rem; }
+  .contact-item-icon {
+    width: 38px; height: 38px; border: 0.5px solid rgba(255,255,255,0.55); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #ffffff; flex-shrink: 0;
+  }
+  .contact-item-label {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); margin-bottom: 0.2rem;
+  }
+  .contact-item-value { font-size: 1.1rem; color: #ffffff; line-height: 1.6; }
+  .contact-form {
+    border: 1px solid rgba(255,255,255,0.28);
+    padding: 2.5rem; border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+  }
+  .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form input, .contact-form textarea {
+    width: 100%; padding: 0.95rem 1.1rem; margin-bottom: 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 1.1rem;
+    border: 1px solid rgba(255,255,255,0.4); background: transparent;
+    color: #ffffff; outline: none; transition: border-color 0.2s, background 0.2s;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #ffffff; opacity: 1;
+  }
+  .contact-form input:focus, .contact-form textarea:focus {
+    border-color: #ffffff; background: rgba(255,255,255,0.08);
+  }
+  .contact-form textarea { min-height: 120px; resize: vertical; }
+  .btn-gold {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #545395; background: #ffffff; border: none;
+    padding: 0.9rem 2.4rem; border-radius: 999px;
+    cursor: pointer; transition: background 0.2s, color 0.2s;
+  }
+  .btn-gold:hover { background: rgba(255,255,255,0.85); }
+  .contact-form input.invalid, .contact-form textarea.invalid {
+    border-color: #ff9a8f;
+  }
+  .form-msg {
+    font-size: 0.8rem; margin-top: 0.9rem; min-height: 1.1rem;
+  }
+  .form-msg.error { color: #ffc9c2; }
+  .form-msg.success { color: #d7f5e6; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.33rem 3rem;
+    background: #545395;
+    border-top: none;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600; color: #ffffff;
+  }
+  .footer-logo span { color: #ffffff; }
+  .footer-copy, .footer-link { font-size: 0.74rem; color: #ffffff; }
+  .footer-link { text-decoration: none; }
+  .footer-link:hover { color: #ffffff; opacity: 0.8; }
+
+  .disclaimer {
+    text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.8);
+    padding: 1.2rem 2rem; border-top: 0.5px solid rgba(255,255,255,0.18);
+    background: #545395;
+    line-height: 1.8;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 3.5rem 1.5rem 2.5rem; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 2rem 1rem 3.5rem; }
+    .patho-grid, .solutions-grid { grid-template-columns: 1fr; }
+    .grading-layout, .prevent-layout, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(-n+2) { border-bottom: 0.5px solid var(--c-line); }
+    .pathway-track { grid-template-columns: 1fr 1fr 1fr; row-gap: 2.5rem; }
+    .pathway-track::before { display: none; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .container { padding: 0 1.5rem; }
+    footer { padding: 1.33rem 1.5rem; flex-wrap: wrap; gap: 0.8rem; background: #545395; }
+    .contact-form-row { grid-template-columns: 1fr; }
+    .banner-image { aspect-ratio: auto; min-height: 440px; }
+    .banner-image::before {
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,255,255,0.88) 55%,
+        rgba(255,255,255,0.55) 100%);
+    }
+    .banner-overlay { max-width: 100%; padding: 0 1.5rem; }
+    .banner-overlay p { max-width: 100%; }
+  }
+  @media (max-width: 560px) {
+    .pathway-track { grid-template-columns: 1fr 1fr; }
+    .wagner-node { width: 44px; height: 44px; font-size: 1.15rem; }
+  }
+
+  /* ============ 创新区段 CSS ============ */
+  /* 金字塔 */
+  .pyramid-section { padding: 6rem 0; background: #ffffff; }
+  .pyramid-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem; }
+  .pyramid-svg { width: 100%; height: auto; max-width: 560px; margin: 0 auto; display: block; }
+  .pyramid-legend { display: flex; flex-direction: column; gap: 1.25rem; }
+  .pyramid-row { display: flex; gap: 0.9rem; align-items: flex-start; padding: 0.85rem 1rem; border-radius: 8px; background: #fbfaf8; border-left: 3px solid; font-size: 0.92rem; line-height: 1.7; color: var(--c-ink2); }
+  .pyramid-row strong { color: var(--c-ink); font-weight: 600; }
+  .pyramid-row-iv { border-left-color: #2c6396; }
+  .pyramid-row-iii { border-left-color: #3a75ae; }
+  .pyramid-row-ii { border-left-color: #6fa6d2; }
+  .pyramid-row-i { border-left-color: #97c0e2; }
+  .pyramid-row-base { border-left-color: #bad6ec; background: #f0f9ff; }
+  .pyramid-bullet { width: 12px; height: 12px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .pyramid-row em { font-style: italic; color: var(--c-purple); }
+
+  /* 解剖部位 */
+  .anatomy-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
+  .anatomy-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; margin-top: 3rem; align-items: start; }
+  .anatomy-figure { background: #fff; padding: 2rem; border-radius: 14px; border: 0.5px solid var(--c-line); }
+  .anatomy-figure svg { width: 100%; height: auto; max-width: 480px; margin: 0 auto; display: block; }
+  .anatomy-info { display: flex; flex-direction: column; gap: 1.25rem; }
+  .anatomy-card { display: flex; gap: 1.25rem; padding: 1.25rem 1.5rem; background: #fff; border-radius: 10px; border: 0.5px solid var(--c-line); }
+  .anatomy-card-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--c-blue); line-height: 1; flex-shrink: 0; }
+  .anatomy-card h4 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; color: var(--c-ink); margin-bottom: 0.4rem; letter-spacing: 0.01em; }
+  .anatomy-card p { font-size: 0.88rem; color: var(--c-ink2); line-height: 1.7; }
+
+  /* 决策树 */
+  .decision-section { padding: 6rem 0; background: #ffffff; }
+  .decision-tree { margin-top: 3rem; display: flex; flex-direction: column; gap: 2rem; }
+  .decision-step { display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; padding: 1.5rem; border-radius: 12px; background: #fbfaf8; border: 0.5px solid var(--c-line); }
+  .decision-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--c-blue); line-height: 1; }
+  .decision-body h4 { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 1.35rem; color: var(--c-ink); margin-bottom: 1rem; line-height: 1.3; }
+  .decision-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .decision-option { padding: 1rem 1.25rem; border-radius: 8px; border-left: 3px solid; font-size: 0.88rem; line-height: 1.7; color: var(--c-ink2); }
+  .decision-option strong { display: block; color: var(--c-ink); font-weight: 600; margin-bottom: 0.4rem; }
+  .decision-option-yes { background: #f0f9ff; border-left-color: #0ea5e9; }
+  .decision-option-next { background: #ffffff; border-left-color: #94a3b8; }
+  .decision-option-warn { background: #fef3c7; border-left-color: #d97706; }
+  .decision-step-final .decision-options { grid-template-columns: 1fr; }
+  .decision-exudate-table { margin-top: 0.5rem; }
+  .exudate-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .exudate-table th, .exudate-table td { padding: 0.7rem 0.9rem; text-align: left; border-bottom: 1px solid var(--c-line); }
+  .exudate-table thead { background: #f0f9ff; }
+  .exudate-table th { font-weight: 600; color: var(--c-ink); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .exudate-table tbody tr:hover { background: #fbfaf8; }
+  .exudate-table tbody td { color: var(--c-ink2); }
+
+  /* Braden 评分 */
+  .braden-box { margin-top: 4rem; padding: 2.5rem 2rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 14px; }
+  .braden-title { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 1.5rem; color: var(--c-ink); margin-bottom: 0.5rem; }
+  .braden-intro { font-size: 0.92rem; color: var(--c-ink2); line-height: 1.7; margin-bottom: 1.75rem; }
+  .braden-grid { display: flex; flex-direction: column; gap: 0.65rem; }
+  .braden-row { display: grid; grid-template-columns: 70px 140px 1fr; gap: 1rem; align-items: center; padding: 0.85rem 1rem; background: rgba(255,255,255,0.7); border-radius: 8px; font-size: 0.88rem; }
+  .braden-score { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; text-align: center; padding: 0.3rem 0.5rem; border-radius: 6px; color: #fff; }
+  .braden-very-high { background: #b91c1c; }
+  .braden-high { background: #dc2626; }
+  .braden-mod { background: #ea580c; }
+  .braden-low { background: #ca8a04; }
+  .braden-none { background: #16a34a; }
+  .braden-level { font-weight: 600; color: var(--c-ink); }
+  .braden-action { color: var(--c-ink2); line-height: 1.6; }
+
+  /* 特殊人群 */
+  .special-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
+  .special-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .special-card { padding: 1.75rem 1.5rem; background: #fff; border-radius: 12px; border: 0.5px solid var(--c-line); transition: transform 0.3s, box-shadow 0.3s; }
+  .special-card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(14,165,233,0.10); }
+  .special-icon { font-size: 1.6rem; color: var(--c-blue); margin-bottom: 0.8rem; display: block; }
+  .special-card h4 { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 1.25rem; color: var(--c-ink); margin-bottom: 0.6rem; }
+  .special-card p { font-size: 0.87rem; color: var(--c-ink2); line-height: 1.75; }
+
+  /* 移动端 */
+  @media (max-width: 880px) {
+    .pyramid-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .anatomy-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .decision-step { grid-template-columns: 1fr; gap: 0.8rem; padding: 1.25rem; }
+    .decision-options { grid-template-columns: 1fr; }
+    .braden-row { grid-template-columns: 60px 1fr; }
+    .braden-row .braden-action { grid-column: 1 / -1; padding-left: 0; font-size: 0.82rem; }
+    .special-grid { grid-template-columns: 1fr; }
+    .exudate-table { font-size: 0.78rem; }
+    .exudate-table th, .exudate-table td { padding: 0.5rem 0.6rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
+  <ul class="nav-links">
+    <li><a href="#patho">Healing Phases</a></li>
+    <li><a href="#grading">CDC Classes &amp; Intentions</a></li>
+    <li><a href="#solutions">Dressing Range</a></li>
+    <li><a href="#pathway">Post-Op Pathway</a></li>
+    <li><a href="#prevent">SSI Prevention</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a class="nav-cta" href="index.html">HOME</a>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Velcura Medical · Surgical &amp; Post-Operative Care</div>
+    <h1 class="hero-title">Surgical Wound Care<br><em>Post-Op Dressing Strategy</em></h1>
+    <p class="hero-sub">
+      Every surgical incision is a controlled wound — but how it heals depends on how it closes, how clean the operative field was, and what covers it for the critical 48 hours afterwards. Surgical site infection (SSI) remains the second most common healthcare-associated infection in high-income countries, with colorectal procedures showing rates near 9.5%. This guide aligns the CDC contamination classes and the three healing intentions (primary, secondary, tertiary) with the matching post-operative dressing strategy — built around WHO and NICE evidence-based recommendations.
+    </p>
+    <div class="hero-causes">
+      <div class="cause-row">
+        <div class="cause-marker"><span>01</span><i></i></div>
+        <div>
+          <div class="cause-name">Closure Method</div>
+          <div class="cause-en">Sutures, staples or glue — determines healing intention &amp; dressing window</div>
+        </div>
+      </div>
+      <div class="cause-row">
+        <div class="cause-marker"><span>02</span><i></i></div>
+        <div>
+          <div class="cause-name">Contamination Class</div>
+          <div class="cause-en">CDC Class I–IV — predicts SSI risk from &lt;2% to &gt;27%</div>
+        </div>
+      </div>
+      <div class="cause-row">
+        <div class="cause-marker"><span>03</span><i></i></div>
+        <div>
+          <div class="cause-name">Patient Risk Factors</div>
+          <div class="cause-en">Diabetes, obesity, immunosuppression, smoking — modify dressing choice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="wagner-wrap">
+      <div class="wagner-circle" id="wagner-circle">
+        <svg class="wagner-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M50 0 C50.5 43 57 49.5 100 50 C57 50.5 50.5 57 50 100 C49.5 57 43 50.5 0 50 C43 49.5 49.5 43 50 0 Z" fill="#1A5FD0"/>
+        </svg>
+        <div class="wagner-core" id="wagner-core">
+          <div class="wagner-core-eyebrow">Surgical Specialties</div>
+          <div class="wagner-core-grade" id="wagner-grade">Six <em>Surgical Domains</em></div>
+          <div class="wagner-core-desc" id="wagner-desc">Tap the outer nodes to explore dressing priorities by surgical specialty — from abdominal to orthopaedic to obstetric.</div>
+        </div>
+        <button class="wagner-node" data-grade="0" aria-label="Abdominal &amp; GI">A</button>
+        <button class="wagner-node" data-grade="1" aria-label="Obstetric &amp; Gynaecological">O</button>
+        <button class="wagner-node" data-grade="2" aria-label="Orthopaedic">R</button>
+        <button class="wagner-node" data-grade="3" aria-label="Cardiac &amp; Vascular">C</button>
+        <button class="wagner-node" data-grade="4" aria-label="Day Surgery">D</button>
+        <button class="wagner-node" data-grade="5" aria-label="Plastic &amp; Reconstructive">P</button>
+      </div>
+      <div class="wagner-hint">Six surgical specialties · Tap to view</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">~2nd</div>
+    <div class="stat-label">Most common healthcare-associated infection globally (WHO)</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">9.7 days</div>
+    <div class="stat-label">Additional length of stay attributable to SSI</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">48 hrs</div>
+    <div class="stat-label">Minimum interval to leave a primary dressing undisturbed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">2×</div>
+    <div class="stat-label">Mortality risk multiplier when SSI develops post-operatively</div>
+  </div>
+</div>
+<div class="stats-note">* Figures reflect commonly recommended ranges from international clinical scar-management guidelines and published literature; individual clinical assessment applies.</div>
+
+<!-- 横幅图 1500×600 -->
+<div class="banner-image">
+  <img src="https://img.velcura.net/tjb1.webp" alt="Surgical wound care and post-operative dressing strategy" width="1500" height="600" loading="lazy">
+  <div class="banner-overlay">
+    <h2>Every Incision Heals<br>in Four <em>Predictable Phases</em></h2>
+    <p>Surgical wound healing follows a tightly orchestrated biological sequence: haemostasis, inflammation, proliferation, and remodelling. A well-chosen dressing supports each phase — protecting against contamination during the vulnerable inflammatory window, absorbing fluid during proliferation, and minimising scarring through remodelling. Get the dressing wrong, and any phase can stall or reverse.</p>
+  </div>
+</div>
+
+<!-- How Surgical Wounds Heal -->
+<section class="patho-section" id="patho">
+  <div class="container">
+    <div class="section-tag">The Four Phases of Surgical Wound Healing</div>
+    <div class="patho-grid">
+      <div class="feature-card">
+        <span class="feature-icon">⬡</span>
+        <h3>Haemostasis &amp; Inflammation · 0–72 Hours</h3>
+        <p>Immediately after closure, platelets aggregate and a fibrin clot seals the incision. Neutrophils flood the site within hours; macrophages dominate by day 2–3. This is the most vulnerable phase for surgical site infection — bacteria have a narrow window to colonise before host defences and an intact barrier dressing seal the wound. WHO and NICE guidelines specifically recommend leaving the primary dressing undisturbed for a minimum of 48 hours unless leakage or clinical deterioration demands otherwise.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◈</span>
+        <h3>Proliferation · Day 3 to Day 21</h3>
+        <p>Fibroblasts produce collagen, new capillaries form, and granulation tissue fills any defect. Epithelial cells migrate across the closed surface — in primary closure this is largely complete within 4–7 days; in secondary intention, it can take weeks. Dressings during this phase must balance moisture (too dry desiccates new tissue; too wet macerates the peri-wound skin) and protect mechanically fragile granulation tissue from disruption at every change.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◇</span>
+        <h3>Remodelling · 3 Weeks to 2 Years</h3>
+        <p>Type III collagen is progressively replaced by stronger Type I collagen; the scar contracts and matures. Final tensile strength reaches only 80% of unwounded skin. Patient factors — diabetes, smoking, malnutrition, corticosteroid use — slow every preceding phase and reduce final tensile strength. This is why surgical wound care extends well beyond the operating room: how the wound is dressed in the first 14 days strongly predicts the cosmetic and functional outcome two years later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CDC 污染分级 + 愈合意图 + 决策维度 -->
+<section class="grading-section" id="grading">
+  <div class="container">
+    <div class="grading-layout">
+      <div>
+        <div class="section-tag">CDC Wound Classification &amp; Healing Intention</div>
+        <h2 class="section-title">Two Dimensions That<br>Define Every Surgical Wound</h2>
+        <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
+          Surgical wounds are classified along two intersecting axes: the CDC contamination class (predicts infection risk) and the closure / healing intention (determines dressing strategy). Procurement and ward-level dressing protocols flow from this matrix.
+        </p>
+        <h3 style="font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:600; color:var(--c-ink); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.8rem;">CDC Contamination Classes</h3>
+        <table class="grade-table">
+          <tr><td>Class I</td><td><strong>Clean.</strong> Elective, atraumatic, no inflammation. No entry into respiratory, alimentary, genital or urinary tracts. SSI rate &lt;2%. <em>Examples: knee replacement, breast biopsy, thyroidectomy.</em></td></tr>
+          <tr><td>Class II</td><td><strong>Clean-Contaminated.</strong> Controlled entry into respiratory, alimentary, genital or urinary tract without unusual contamination. SSI rate ~3–8%. <em>Examples: elective colorectal, cholecystectomy, hysterectomy, C-section.</em></td></tr>
+          <tr><td>Class III</td><td><strong>Contaminated.</strong> Open fresh accidental wounds, major breaks in sterile technique, or gross spillage from GI tract; acute non-purulent inflammation. SSI rate ~10–17%. <em>Examples: penetrating trauma, open fractures.</em></td></tr>
+          <tr><td>Class IV</td><td><strong>Dirty / Infected.</strong> Old traumatic wounds with retained devitalised tissue, existing clinical infection or perforated viscera. SSI rate &gt;27%. <em>Examples: faecal peritonitis, drained abscess.</em></td></tr>
+        </table>
+        <h3 style="font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:600; color:var(--c-ink); letter-spacing:0.08em; text-transform:uppercase; margin:1.8rem 0 0.8rem;">Three Healing Intentions</h3>
+        <table class="grade-table">
+          <tr><td>Primary</td><td><strong>Edges approximated.</strong> Sutures, staples, glue or strips bring clean edges together; minimal tissue loss, predictable healing in 5–14 days. The dominant pattern for elective surgery.</td></tr>
+          <tr><td>Secondary</td><td><strong>Open, granulating from base.</strong> Cannot be closed primarily due to tissue loss, contamination or tension. Heals from the wound bed upward through granulation, contraction and re-epithelialisation. Weeks to months.</td></tr>
+          <tr><td>Tertiary</td><td><strong>Delayed primary closure.</strong> Wound left open initially (typically 3–7 days) to manage contamination or oedema, then closed surgically once clean. Combines features of both above.</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-tag">Decision Dimensions</div>
+        <h2 class="section-title">Five Variables That<br>Drive Dressing Choice</h2>
+        <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:1.5rem;">
+          A structured framework procurement teams and surgical wards can use to standardise dressing selection. Every decision moves through these five questions in sequence.
+        </p>
+        <div class="dimes-list">
+          <div class="dimes-item">
+            <div class="dimes-letter">C</div>
+            <div><h4>Closure Method &amp; Intention</h4><p>Primary closure → low-adhesive interactive dressing for 48 hours minimum, then reassess. Secondary → moisture-balanced active dressing matched to exudate. Tertiary → contamination control until closure.</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">E</div>
+            <div><h4>Exudate Volume</h4><p>Dry / minimal → hydrocolloid or transparent film. Low–moderate → silicone-bordered foam. Moderate–heavy → silicone foam with high absorbency. Heavy with cavity → alginate primary + foam secondary.</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">I</div>
+            <div><h4>Infection Risk &amp; Status</h4><p>High SSI risk (CDC II–IV, BMI &gt;40, diabetes, immunosuppression) → silver-impregnated dressing prophylactically. Established infection → nano-silver antimicrobial; review every 7 days for de-escalation.</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">S</div>
+            <div><h4>Skin Sensitivity at Site</h4><p>Fragile peri-wound skin, elderly, oncology patients on corticosteroids → soft silicone contact layer or fully non-adhesive foam. Avoid acrylic adhesives that strip the stratum corneum on removal (MARSI risk).</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">L</div>
+            <div><h4>Location &amp; Movement</h4><p>High-flexion areas (joints, abdomen) → flexible silicone foam with bordered edges. Visible cosmetic sites (face, neck) → ultra-thin hydrocolloid or transparent film for discreet, low-profile cover. Dependent areas → waterproof outer film.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions -->
+<section class="solutions-section" id="solutions">
+  <div class="container">
+    <div class="section-tag">Velcura Surgical Dressing Range</div>
+    <h2 class="section-title">Matching the Dressing<br>to the Operative Reality</h2>
+    <p class="section-lead">
+      Velcura's surgical wound care portfolio covers the full post-operative journey — from prophylactic protection of a primary-closure incision through to active management of a dehisced or contaminated wound healing by secondary intention. Below is the operational map: each dressing is paired with the surgical scenario where the clinical evidence is strongest.
+    </p>
+    <div class="solutions-grid">
+      <div class="feature-card">
+        <span class="feature-icon">⬡</span>
+        <h3>Silicone Foam with Silver — Post-Op Workhorse</h3>
+        <p>The mainstay for clean and clean-contaminated primary-closure incisions. Soft silicone contact protects fragile peri-incisional skin; the hydrophilic foam handles serosanguinous drainage in the first 5–7 days; ionic silver provides prophylactic antimicrobial cover. <strong>Clinical evidence in C-section, colorectal, and joint replacement settings; particularly indicated in high-BMI patients where SSI risk is elevated.</strong></p>
+        <a class="solution-link" href="silicone-foam-border-AD44.html">View product →</a>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◈</span>
+        <h3>Foam (Non-Adhesive) — Fragile-Skin &amp; Dehiscence</h3>
+        <p>For patients on long-term corticosteroids, immunosuppression or chemotherapy where any adhesive risks medical adhesive-related skin injury (MARSI). Also the right choice for dehisced surgical wounds healing by secondary intention — pure foam absorbency without peeling forces at change. <strong>Pair with simple gauze fixation or compression wrap as the operative anatomy demands.</strong></p>
+        <a class="solution-link" href="foam-non-adhesive-AD12.html">View product →</a>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◇</span>
+        <h3>Hydrocolloid (Super Thin) — Day-Surgery &amp; Cosmetic</h3>
+        <p>For low-exudate primary-closure incisions on visible anatomy — facial procedures, hand surgery, day-case excisions, paediatric wounds. The discreet ultra-thin profile is barely visible under clothing; the occlusive layer accelerates epithelialisation. Up to 5-day wear time supports outpatient and home-recovery workflows.</p>
+        <a class="solution-link" href="hydrocolloid-super-thin-AD-HD01.html">View product →</a>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⬢</span>
+        <h3>Calcium Alginate — Cavity &amp; Heavy Exudate</h3>
+        <p>For dehisced or secondary-intention surgical wounds with cavity, undermining, or heavy exudate beyond foam capacity. The fibrous matrix conforms to irregular wound geometry and gels on contact; rope format reaches sinus tracts. Mild haemostatic effect is useful in capillary-bed surgical wounds. <strong>Always combined with a secondary cover dressing.</strong></p>
+        <a class="solution-link" href="calcium-alginate-AD006.html">View product →</a>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◆</span>
+        <h3>Nano-Silver Antibacterial — Established SSI</h3>
+        <p>When SSI develops — superficial, deep incisional or organ/space — the dressing strategy shifts from prophylaxis to active antimicrobial management. Sustained Ag⁺ release covers Gram-positive (including MRSA), Gram-negative (including Pseudomonas) and the polymicrobial biofilms typical of post-operative infection. Review at 7 days; de-escalate once clinical signs resolve.</p>
+        <a class="solution-link" href="nano-silver-antibacterial-AD47.html">View product →</a>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◇</span>
+        <h3>Activated Charcoal — Malodour &amp; Necrotic Wounds</h3>
+        <p>For surgical wounds complicated by necrotic tissue, fistula or polymicrobial colonisation that generates significant odour — fungating oncological wounds, chronic dehiscence, abdominal wall reconstruction failures. The microporous carbon physically adsorbs volatile odour molecules at source, addressing what dressings rarely solve: patient dignity and caregiver tolerance.</p>
+        <a class="solution-link" href="activated-charcoal-non-adhesive-AD24.html">View product →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 术后愈合时间线 -->
+<section class="pathway-section" id="pathway">
+  <div class="container">
+    <div class="section-tag">Post-Operative Timeline</div>
+    <h2 class="section-title">From Operating Theatre<br>to Final Closure</h2>
+    <p style="font-size:0.92rem; color:var(--c-ink2); text-align:center; max-width:740px; margin:0 auto 3rem; line-height:1.75;">
+      The dressing strategy evolves as the wound matures. Below is the standard post-operative timeline for a primary-closure incision — annotated with the dressing action at each transition. Wounds healing by secondary intention follow a parallel but extended trajectory.
+    </p>
+    <div class="pathway-track">
+      <div class="path-step">
+        <div class="path-dot">1</div>
+        <h4>Theatre · Initial Cover</h4>
+        <p>Sterile, low-adhesive interactive dressing applied at end of procedure. WHO and NICE recommend an advanced dressing for higher-risk patients (CDC Class II+, obese, diabetic). The primary dressing is selected to remain in place for 48 hours minimum unless leakage or clinical deterioration demands removal.</p>
+      </div>
+      <div class="path-step">
+        <div class="path-dot">2</div>
+        <h4>0–48 Hours · Undisturbed</h4>
+        <p>Inflammatory phase is at its peak. Do not disturb the primary dressing unless strike-through, lifting or clinical concern. Modern bordered silicone foam dressings provide waterproof protection — patients may shower from 48 hours in most protocols.</p>
+      </div>
+      <div class="path-step">
+        <div class="path-dot">3</div>
+        <h4>Day 2–5 · First Inspection</h4>
+        <p>Remove primary dressing carefully (silicone borders &gt; acrylic for atraumatic removal). Inspect for SSI signs: erythema beyond wound edge, warmth, induration, discharge, dehiscence. Replace with same category if healing on track; escalate to antimicrobial if early SSI signs.</p>
+      </div>
+      <div class="path-step">
+        <div class="path-dot">4</div>
+        <h4>Day 5–14 · Proliferation</h4>
+        <p>Granulation and re-epithelialisation dominate. For primary closure, the wound is largely sealed by day 7; for secondary intention, granulation tissue fills the defect. Match dressing to exudate: foam for moderate, alginate for heavy or cavity, hydrocolloid for low. Sutures or staples typically removed at days 7–14 depending on site.</p>
+      </div>
+      <div class="path-step">
+        <div class="path-dot">5</div>
+        <h4>Week 3+ · Remodelling</h4>
+        <p>Surface healing complete in primary closure; secondary-intention wounds still progressing. Scar maturation begins — soft, supportive dressings or silicone scar therapy can be introduced (see <a href="scar-management.html" style="color:var(--c-blue); border-bottom:1px solid currentColor;">Scar Management</a>). Patient discharged to home care or outpatient follow-up.</p>
+      </div>
+      <div class="path-step">
+        <div class="path-dot">!</div>
+        <h4>Complication Pathway</h4>
+        <p>If SSI develops or wound dehisces: aggressive intervention required. Wound culture, debridement, antimicrobial dressing (nano-silver), and possible escalation to negative-pressure wound therapy for large defects. Documentation triggers infection-control review and surgical site infection surveillance reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SSI 预防 -->
+<section class="prevent-section" id="prevent">
+  <div class="container">
+    <div class="prevent-layout">
+      <div>
+        <div class="section-tag">SSI Prevention · Evidence-Based Bundle</div>
+        <h2 class="section-title">The Care Bundle<br>That Prevents SSI</h2>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--c-ink2); line-height:1.9;">
+          Surgical site infection is largely preventable through a structured perioperative bundle. The 2018 WHO Global Guidelines and the 2024 NICE NG125 update converge on the same protocol: standardise the prep, choose the right closure technique, cover with an appropriate dressing, and resist disturbing it for 48 hours. Below is the operational version. Velcura's role sits at one specific layer of this bundle — the right post-operative dressing — but procurement decisions are best made with the full context in view.
+        </p>
+        <div class="warn-card">
+          <div class="warn-card-tag">Escalate clinically when</div>
+          <ul>
+            <li>Erythema spreading more than 5 mm beyond the wound edge — early superficial SSI suspected</li>
+            <li>Increasing localised pain, warmth, induration or purulent discharge — established SSI</li>
+            <li>Wound dehiscence (partial or complete separation of edges) — surgical review required</li>
+            <li>Systemic signs: fever &gt;38°C, raised WBC or CRP, tachycardia — possible deep incisional or organ/space SSI</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <ul class="check-list">
+          <li><strong>Pre-operative skin preparation</strong> — chlorhexidine-alcohol &gt; aqueous povidone-iodine for most surgeries (WHO strong recommendation, NICE concurs).</li>
+          <li><strong>Surgical antibiotic prophylaxis</strong> — single dose within 60 minutes of incision; re-dose during long procedures or major blood loss. Avoid extending post-operatively without indication.</li>
+          <li><strong>Maintain perioperative normothermia, normoglycaemia and tissue oxygenation</strong> — three modifiable factors with strong evidence in major surgery.</li>
+          <li><strong>Choose the closure method by tissue plane</strong> — sutures, staples or skin glue each have specific indications; triclosan-coated sutures are recommended by WHO for reduction of SSI.</li>
+          <li><strong>Cover with an interactive dressing matched to risk</strong> — silicone-bordered foam (with silver for higher-risk patients) for primary closure; advanced moisture-balanced dressings for secondary intention.</li>
+          <li><strong>Leave the primary dressing undisturbed for at least 48 hours</strong> unless leakage, lifting or clinical deterioration. Post-operative care bundles consistently recommend this.</li>
+          <li><strong>Educate the patient before discharge</strong> — when to shower, what SSI signs warrant urgent review, expected dressing change cadence. Patient self-monitoring is now part of best practice in same-day and short-stay surgery.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创新区段 1:SSI 风险金字塔 ============ -->
+<section class="pyramid-section" id="pyramid">
+  <div class="container">
+    <div class="section-tag">SSI Risk × CDC Class</div>
+    <h2 class="section-title">The Surgical Wound<br>Dressing Pyramid</h2>
+    <p class="section-lead">
+      Dressing strategy scales with infection risk. This pyramid maps the CDC contamination class to the appropriate dressing intensity — from the universal foundation of any post-operative dressing, up to active antimicrobial intervention for the dirtiest wounds and established SSI.
+    </p>
+
+    <div class="pyramid-wrap">
+      <svg class="pyramid-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Surgical wound dressing pyramid by CDC class">
+        <polygon points="400,40 460,135 340,135" fill="#2c6396" opacity="0.95"/>
+        <text x="400" y="95" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">CDC CLASS IV</text>
+        <text x="400" y="115" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="10" opacity="0.9">Dirty · Established SSI</text>
+
+        <polygon points="340,135 460,135 520,235 280,235" fill="#3a75ae" opacity="0.95"/>
+        <text x="400" y="180" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em">CDC CLASS III</text>
+        <text x="400" y="205" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="11" opacity="0.95">Contaminated Wound</text>
+        <text x="400" y="222" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="10" opacity="0.85">Nano-Silver · Alginate Cavity Pack</text>
+
+        <polygon points="280,235 520,235 580,335 220,335" fill="#6fa6d2" opacity="0.95"/>
+        <text x="400" y="280" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em">CDC CLASS II</text>
+        <text x="400" y="305" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="11" opacity="0.95">Clean-Contaminated</text>
+        <text x="400" y="322" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="10" opacity="0.85">Silicone Foam + Silver (Prophylactic)</text>
+
+        <polygon points="220,335 580,335 640,435 160,435" fill="#97c0e2" opacity="0.95"/>
+        <text x="400" y="380" text-anchor="middle" fill="#1e293b" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em">CDC CLASS I</text>
+        <text x="400" y="405" text-anchor="middle" fill="#1e293b" font-family="DM Sans, sans-serif" font-size="11" opacity="0.9">Clean Elective Surgery</text>
+        <text x="400" y="422" text-anchor="middle" fill="#1e293b" font-family="DM Sans, sans-serif" font-size="10" opacity="0.8">Silicone Foam · Hydrocolloid · Film</text>
+
+        <polygon points="160,435 640,435 720,560 80,560" fill="#bad6ec" opacity="0.95"/>
+        <text x="400" y="475" text-anchor="middle" fill="#1e293b" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em">UNIVERSAL SURGICAL BUNDLE</text>
+        <text x="400" y="502" text-anchor="middle" fill="#1e293b" font-family="DM Sans, sans-serif" font-size="11" opacity="0.85">Skin Prep · Antibiotic Prophylaxis · Normothermia · Closure</text>
+        <text x="400" y="520" text-anchor="middle" fill="#1e293b" font-family="DM Sans, sans-serif" font-size="10" opacity="0.75">Chlorhexidine-Alcohol · 48-Hour Undisturbed Dressing</text>
+        <text x="400" y="542" text-anchor="middle" fill="#1e293b" font-family="Playfair Display, serif" font-style="italic" font-size="11" opacity="0.6">— Every surgery. Every patient. —</text>
+      </svg>
+
+      <div class="pyramid-legend">
+        <div class="pyramid-row pyramid-row-iv">
+          <span class="pyramid-bullet" style="background:#2c6396;"></span>
+          <div>
+            <strong>Class IV — Dirty / Established SSI</strong> — SSI rate &gt;27%. Active antimicrobial wound care: nano-silver primary dressing, alginate for cavity, activated charcoal for malodour. Wound culture, possible debridement, NPWT for large defects. Surveillance reporting triggered.
+          </div>
+        </div>
+        <div class="pyramid-row pyramid-row-iii">
+          <span class="pyramid-bullet" style="background:#3a75ae;"></span>
+          <div>
+            <strong>Class III — Contaminated</strong> — SSI rate ~10–17%. Open trauma, gross GI spillage. Silver-impregnated dressing as primary; alginate for any cavity; daily inspection. Lower threshold to escalate to active SSI management.
+          </div>
+        </div>
+        <div class="pyramid-row pyramid-row-ii">
+          <span class="pyramid-bullet" style="background:#6fa6d2;"></span>
+          <div>
+            <strong>Class II — Clean-Contaminated</strong> — SSI rate ~3–8%. Elective colorectal, C-section, hysterectomy, cholecystectomy. Silicone foam with silver as the prophylactic post-operative dressing has the strongest clinical evidence in this group.
+          </div>
+        </div>
+        <div class="pyramid-row pyramid-row-i">
+          <span class="pyramid-bullet" style="background:#97c0e2;"></span>
+          <div>
+            <strong>Class I — Clean</strong> — SSI rate &lt;2%. Joint replacement, breast, thyroid, hernia. Silicone-bordered foam, hydrocolloid or interactive film all acceptable; choose by exudate level and cosmetic priority. Silver layer optional for higher-risk patient subgroups.
+          </div>
+        </div>
+        <div class="pyramid-row pyramid-row-base">
+          <span class="pyramid-bullet" style="background:#bad6ec;"></span>
+          <div>
+            <strong>Universal Surgical Bundle</strong> — applies to every patient regardless of CDC class. Skin prep, antibiotic prophylaxis, normothermia, normoglycaemia, proper closure technique, primary dressing left undisturbed 48 hours. <em>No dressing compensates for skipping the bundle.</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创新区段 2:常见手术部位 ============ -->
+<section class="anatomy-section" id="anatomy">
+  <div class="container">
+    <div class="section-tag">High-Volume Surgical Sites</div>
+    <h2 class="section-title">Where Most Surgical<br>Wounds Are Placed</h2>
+    <p class="section-lead">
+      A small number of incision sites account for the majority of surgical volume globally. Each anatomical location carries its own dressing requirements — movement, moisture, cosmetic visibility, infection risk, and patient activity all vary by site.
+    </p>
+
+    <div class="anatomy-layout">
+      <div class="anatomy-figure">
+        <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomical map of common surgical incision sites">
+          <!-- 身体轮廓(正面) -->
+          <ellipse cx="200" cy="60" rx="42" ry="50" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
+          <rect x="180" y="100" width="40" height="20" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
+          <path d="M 145 120 L 255 120 L 270 280 L 250 380 L 150 380 L 130 280 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
+          <path d="M 145 130 L 100 140 L 90 240 L 100 260 L 115 250 L 125 150 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
+          <path d="M 255 130 L 300 140 L 310 240 L 300 260 L 285 250 L 275 150 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
+          <path d="M 155 380 L 145 530 L 165 560 L 185 555 L 200 400 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
+          <path d="M 245 380 L 255 530 L 235 560 L 215 555 L 200 400 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
+
+          <!-- 切口标识线 (实际切口位置) -->
+          <!-- 1. 胸骨切开 sternotomy -->
+          <line x1="200" y1="140" x2="200" y2="240" stroke="#dc2626" stroke-width="2"/>
+          <circle cx="200" cy="160" r="10" fill="#b91c1c" stroke="#fff" stroke-width="2"/>
+          <text x="200" y="164" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#fff" font-weight="700">1</text>
+          <line x1="211" y1="160" x2="320" y2="155" stroke="#b91c1c" stroke-width="1.5"/>
+          <text x="325" y="153" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="700">Sternotomy</text>
+          <text x="325" y="167" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(Cardiac surgery)</text>
+
+          <!-- 2. 上腹中线/胆囊 -->
+          <line x1="175" y1="250" x2="225" y2="250" stroke="#dc2626" stroke-width="2"/>
+          <circle cx="200" cy="250" r="10" fill="#b91c1c" stroke="#fff" stroke-width="2"/>
+          <text x="200" y="254" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#fff" font-weight="700">2</text>
+          <line x1="211" y1="250" x2="320" y2="240" stroke="#b91c1c" stroke-width="1.5"/>
+          <text x="325" y="238" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="700">Upper Abdomen</text>
+          <text x="325" y="252" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(Cholecystectomy)</text>
+
+          <!-- 3. 下腹横切/剖宫产 -->
+          <line x1="160" y1="345" x2="240" y2="345" stroke="#dc2626" stroke-width="2.5"/>
+          <circle cx="200" cy="345" r="11" fill="#b91c1c" stroke="#fff" stroke-width="2"/>
+          <text x="200" y="349" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#fff" font-weight="700">3</text>
+          <line x1="211" y1="345" x2="320" y2="345" stroke="#b91c1c" stroke-width="1.5"/>
+          <text x="325" y="343" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="700">Pfannenstiel</text>
+          <text x="325" y="357" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(C-section / hyst.)</text>
+
+          <!-- 4. 髋/膝关节 -->
+          <line x1="140" y1="420" x2="155" y2="450" stroke="#dc2626" stroke-width="2"/>
+          <circle cx="148" cy="435" r="9" fill="#b91c1c" stroke="#fff" stroke-width="2"/>
+          <text x="148" y="439" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#fff" font-weight="700">4</text>
+          <line x1="139" y1="435" x2="60" y2="430" stroke="#dc2626" stroke-width="1"/>
+          <text x="0" y="428" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Hip / Joint</text>
+          <text x="0" y="442" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(Replacement)</text>
+
+          <!-- 5. 膝盖 knee -->
+          <circle cx="165" cy="480" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
+          <line x1="157" y1="480" x2="60" y2="495" stroke="#dc2626" stroke-width="1"/>
+          <text x="0" y="493" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Knee</text>
+
+          <!-- 6. 腹股沟endovascular -->
+          <circle cx="225" cy="385" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
+          <line x1="233" y1="385" x2="320" y2="395" stroke="#dc2626" stroke-width="1"/>
+          <text x="325" y="393" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Groin Access</text>
+          <text x="325" y="406" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(Endovascular)</text>
+
+          <!-- 7. 颈部 -->
+          <circle cx="200" cy="105" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
+          <line x1="208" y1="105" x2="320" y2="90" stroke="#dc2626" stroke-width="1"/>
+          <text x="325" y="88" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Neck</text>
+          <text x="325" y="101" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(Thyroid / carotid)</text>
+
+          <text x="200" y="590" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="11" fill="#64748b">Common surgical incision sites</text>
+        </svg>
+      </div>
+
+      <div class="anatomy-info">
+        <div class="anatomy-card">
+          <div class="anatomy-card-num">01</div>
+          <div>
+            <h4>Sternotomy &amp; Cardiac</h4>
+            <p>Long midline incision with significant tension from respiration. Dehiscence carries up to 25% mortality. Requires a dressing that conforms to chest movement, manages serosanguinous drainage in the first 5–7 days, and remains in place across multiple inspections. Silicone foam with silver is standard of care in many cardiothoracic units.</p>
+          </div>
+        </div>
+        <div class="anatomy-card">
+          <div class="anatomy-card-num">02</div>
+          <div>
+            <h4>Upper Abdomen</h4>
+            <p>Subcostal or midline incisions for cholecystectomy, gastric and hepatobiliary surgery. CDC Class II in most cases. The site moves with respiration and abdominal binding — silicone-bordered foam provides atraumatic edge adherence while accommodating motion. Watch for early SSI signs in obese patients.</p>
+          </div>
+        </div>
+        <div class="anatomy-card">
+          <div class="anatomy-card-num">03</div>
+          <div>
+            <h4>Lower Abdomen (Pfannenstiel)</h4>
+            <p>The classic C-section and gynaecological incision. Sits in a high-moisture, friction-prone area, often beneath an overhanging panniculus in higher-BMI patients. Silicone foam with silver shows clinical evidence in maintaining low SSI rates in this population; thin profile is comfortable under clothing during infant care.</p>
+          </div>
+        </div>
+        <div class="anatomy-card">
+          <div class="anatomy-card-num">04</div>
+          <div>
+            <h4>Hip &amp; Knee Joint Replacement</h4>
+            <p>CDC Class I, but SSI consequences catastrophic — prosthesis loss, multi-month antibiotic courses, revision surgery. Patient is mobile and undergoing physiotherapy from day one. The dressing must handle large surgical incisions, tolerate movement, and ideally remain in place for 5–7 days to minimise disturbance.</p>
+          </div>
+        </div>
+        <div class="anatomy-card">
+          <div class="anatomy-card-num">05</div>
+          <div>
+            <h4>Vascular Access Sites</h4>
+            <p>Groin (femoral), wrist (radial) and other catheter access sites. Risk of haematoma, pseudoaneurysm and local infection. Patients are often elderly, on antiplatelet therapy. Compact, conformable, possibly antimicrobial dressing required; foam or thin hydrocolloid depending on exudate.</p>
+          </div>
+        </div>
+        <div class="anatomy-card">
+          <div class="anatomy-card-num">06</div>
+          <div>
+            <h4>Cosmetic-Visible Sites</h4>
+            <p>Face, neck, breast, hand. Patient and surgeon priorities include final scar appearance. Ultra-thin hydrocolloid for low-exudate, low-profile, near-invisible cover; transition to silicone scar therapy at the appropriate stage (see <a href="scar-management.html" style="color:var(--c-blue);">Scar Management</a>).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创新区段 3:决策树(手术版) ============ -->
+<section class="decision-section" id="decision">
+  <div class="container">
+    <div class="section-tag">Dressing Decision Algorithm</div>
+    <h2 class="section-title">Which Dressing,<br>For This Surgery?</h2>
+    <p class="section-lead">
+      A four-step structured algorithm — the operational version of the CEISL framework above. Useful for procurement teams designing standardised post-operative protocols and for ward nurses making real-time decisions.
+    </p>
+
+    <div class="decision-tree">
+      <div class="decision-step">
+        <div class="decision-num">Q1</div>
+        <div class="decision-body">
+          <h4>Is the wound closed primarily, or healing by secondary intention?</h4>
+          <div class="decision-options">
+            <div class="decision-option decision-option-yes">
+              <strong>Primary closure</strong>
+              <p>Standard post-operative dressing. Proceed to Q2 to determine specific product based on patient and CDC class.</p>
+            </div>
+            <div class="decision-option decision-option-warn">
+              <strong>Open / dehisced / secondary intention</strong>
+              <p>Active wound management required. Match dressing to exudate and cavity (see Q4 exudate table). Re-evaluate at every change for granulation progress and infection.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-num">Q2</div>
+        <div class="decision-body">
+          <h4>What is the CDC contamination class?</h4>
+          <div class="decision-options">
+            <div class="decision-option decision-option-yes">
+              <strong>Class I — Clean</strong>
+              <p>Silicone-bordered foam, hydrocolloid or interactive film. Silver layer optional. Patient and cosmetic factors guide choice.</p>
+            </div>
+            <div class="decision-option decision-option-warn">
+              <strong>Class II–IV — Higher Risk</strong>
+              <p>Silver-impregnated silicone foam recommended. Antimicrobial cover is prophylactic, not optional, in clean-contaminated and beyond.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-num">Q3</div>
+        <div class="decision-body">
+          <h4>Are there patient risk factors that modify dressing choice?</h4>
+          <div class="decision-options">
+            <div class="decision-option decision-option-warn">
+              <strong>Yes — obesity, diabetes, immunosuppression, anticoagulation, prior SSI</strong>
+              <p>Escalate to silver-impregnated dressing regardless of CDC class. Consider extending wear time to reduce dressing change frequency. Patient education on SSI signs is critical.</p>
+            </div>
+            <div class="decision-option decision-option-next">
+              <strong>No — standard-risk patient →</strong>
+              <p>Standard dressing per Q2 selection. Proceed to Q4 for specific product confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-step decision-step-final">
+        <div class="decision-num">Q4</div>
+        <div class="decision-body">
+          <h4>How heavy is the exudate, and is there a cavity?</h4>
+          <div class="decision-exudate-table">
+            <table class="exudate-table">
+              <thead>
+                <tr><th>Exudate &amp; geometry</th><th>Clinical context</th><th>Primary dressing</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Minimal / Dry</td><td>Day 5+ primary closure · cosmetic site</td><td>Hydrocolloid (super-thin) · transparent film</td></tr>
+                <tr><td>Low–Moderate</td><td>Standard post-op primary closure</td><td>Silicone-bordered foam</td></tr>
+                <tr><td>Moderate–Heavy</td><td>Class II+ post-op · large incision · day 0–5</td><td>Silicone foam with silver (workhorse)</td></tr>
+                <tr><td>Heavy</td><td>Secondary intention · large surgical defect</td><td>Calcium alginate primary + foam secondary</td></tr>
+                <tr><td>Heavy with cavity</td><td>Dehisced wound · sinus or tunnel</td><td>Calcium alginate rope primary + foam secondary</td></tr>
+                <tr><td>Any level with infection</td><td>Established SSI · positive culture</td><td>Nano-silver antibacterial · review at 7 days</td></tr>
+                <tr><td>Malodour prominent</td><td>Necrotic dehiscence · fungating site</td><td>Activated charcoal layer + appropriate secondary</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SSI 风险快查 -->
+    <div class="braden-box">
+      <h3 class="braden-title">SSI Risk Quick Reference</h3>
+      <p class="braden-intro">A streamlined view of the CDC contamination classes and the corresponding dressing intensity. Procurement teams use this to standardise post-operative dressing protocols across surgical specialties.</p>
+      <div class="braden-grid">
+        <div class="braden-row"><span class="braden-score braden-none">I</span><span class="braden-level">Clean (&lt;2% SSI)</span><span class="braden-action">Silicone foam, hydrocolloid or film · Silver optional for high-risk patient subgroups</span></div>
+        <div class="braden-row"><span class="braden-score braden-low">II</span><span class="braden-level">Clean-Contaminated (~3–8% SSI)</span><span class="braden-action">Silicone foam with silver prophylactically · Particularly C-section, colorectal, hysterectomy</span></div>
+        <div class="braden-row"><span class="braden-score braden-mod">III</span><span class="braden-level">Contaminated (~10–17% SSI)</span><span class="braden-action">Silver-impregnated dressing · Alginate for cavity · Daily inspection</span></div>
+        <div class="braden-row"><span class="braden-score braden-high">IV</span><span class="braden-level">Dirty / Infected (&gt;27% SSI)</span><span class="braden-action">Active antimicrobial wound management · Wound culture · Surveillance reporting</span></div>
+        <div class="braden-row"><span class="braden-score braden-very-high">SSI</span><span class="braden-level">Established Post-Op SSI</span><span class="braden-action">Nano-silver primary · Possible debridement · Infection-control consultation · NPWT for large defects</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创新区段 4:特殊外科人群 ============ -->
+<section class="special-section" id="special">
+  <div class="container">
+    <div class="section-tag">Special Surgical Populations</div>
+    <h2 class="section-title">Adjusting Dressing Choice<br>by Patient Profile</h2>
+    <p class="section-lead">
+      Two patients having the same operation may need different dressings — because risk factors, anatomy and post-discharge environment differ. These six populations cover most of the variation procurement teams need to plan for.
+    </p>
+
+    <div class="special-grid">
+      <div class="special-card">
+        <div class="special-icon">◐</div>
+        <h4>High-BMI Patients</h4>
+        <p>SSI rates double in obese patients undergoing abdominal surgery. Subcutaneous fat impairs perfusion at the incision; skin folds trap moisture above the wound. <strong>Silver-impregnated silicone foam with extended wear time</strong> is the evidence-supported choice. Specifically validated in high-BMI C-section cohorts.</p>
+      </div>
+      <div class="special-card">
+        <div class="special-icon">◑</div>
+        <h4>Diabetic Patients</h4>
+        <p>Impaired wound healing + immune compromise + microvascular disease. Glycaemic control during the perioperative period is the single most important modifiable factor. <strong>Antimicrobial dressing prophylactically</strong>; monitor closely for delayed SSI presentation, which is common in this group.</p>
+      </div>
+      <div class="special-card">
+        <div class="special-icon">◒</div>
+        <h4>Immunosuppressed / Oncology</h4>
+        <p>Chemotherapy, biologics, transplant immunosuppression, corticosteroid use — all delay healing and elevate infection risk. <strong>Soft silicone contact layer or fully non-adhesive foam</strong> to avoid medical adhesive-related skin injury (MARSI) on fragile skin. Lower threshold for antimicrobial escalation.</p>
+      </div>
+      <div class="special-card">
+        <div class="special-icon">◓</div>
+        <h4>Day-Case / Ambulatory Surgery</h4>
+        <p>Patient is discharged within hours and self-monitors at home. Dressing must be waterproof, comfortable, low-profile and remain in place for the full healing window without intervention. <strong>Silicone foam with extended wear time</strong> or <strong>ultra-thin hydrocolloid</strong> for low-exudate wounds. Patient education on SSI signs is essential.</p>
+      </div>
+      <div class="special-card">
+        <div class="special-icon">◔</div>
+        <h4>Paediatric Surgical Patients</h4>
+        <p>Smaller incisions, thinner skin barrier, higher cosmetic priority for parents. <strong>Atraumatic silicone contact essential</strong> — avoid any adhesive that strips epidermis on removal. Hydrocolloid for low-exudate wounds; soft silicone foam for larger or higher-exudate sites.</p>
+      </div>
+      <div class="special-card">
+        <div class="special-icon">◕</div>
+        <h4>Elderly &amp; Frail</h4>
+        <p>Multiple comorbidities, fragile skin, possible cognitive impairment affecting self-care. Often discharged to nursing homes or home with family caregivers. <strong>Easy-to-apply, comfortable dressings with long wear time</strong> reduce burden on community nurses. Watch for overlap with pressure injury risk in immobile post-op patients (see <a href="pressure-injury-care.html" style="color:var(--c-blue);">Pressure Injury Care</a>).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-heading">Contact Us</div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✆</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">+852 98567973</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">@</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">info@velcura.net</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⌖</div>
+          <div>
+            <div class="contact-item-label">Address</div>
+            <div class="contact-item-value">
+              Room 2134, 2nd Floor, Building 3, Block 30 (Wenzhengxin Building),<br>
+              No. 2 Kefa Road, Science and Technology Park Community,<br>
+              Yuehai Street, Nanshan District, Shenzhen
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <form id="inquiry-form" novalidate>
+            <div class="contact-form-row">
+              <input type="text" name="name" placeholder="Name *" required>
+              <input type="text" name="company" placeholder="Company">
+            </div>
+            <input type="email" name="email" placeholder="Email *" required>
+            <input type="tel" name="phone" placeholder="Phone *" required>
+            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <button type="submit" class="btn-gold">Send Inquiry</button>
+            <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  This page is intended for clinical education and product information purposes; it does not constitute medical advice or a substitute for individualised clinical judgement. Surgical wound assessment, CDC classification, SSI risk stratification and post-operative dressing selection should be performed by qualified surgical and nursing professionals in accordance with current WHO Global Guidelines for the Prevention of Surgical Site Infection, NICE NG125 and local infection-control protocols. Velcura Medical is a manufacturer of wound care dressings; specific product registrations and indications may vary by country.
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Velcura <span>Medical</span></div>
+  <div class="footer-copy" id="footer-copy"></div>
+  <a class="footer-link" href="https://velcura.net">velcura.net ↗</a>
+</footer>
+
+<script>
+  // ===== Surgical Specialties Wheel =====
+  const grades = [
+    { title: 'Abdominal &amp; GI <em>· High SSI Risk</em>', desc: 'Colorectal, cholecystectomy, gastric, hernia repair. CDC Class II–IV depending on bowel entry and contamination. SSI rates highest in colorectal surgery (~9.5%). Bordered silicone foam with silver is the evidence-supported choice; alginate available for any drain site or dehiscence. Patients are often older, diabetic, or obese — all SSI multipliers.' },
+    { title: 'Obstetric &amp; Gynaecological <em>· C-section &amp; Hysterectomy</em>', desc: 'C-section is the most common abdominal surgery globally. Pfannenstiel incision sits in a moisture-prone area with significant patient movement during infant care. High-BMI cohorts show meaningfully higher SSI rates. Silicone foam with silver shown in trials to maintain low SSI rates in both standard and high-risk C-section populations; thin profile minimises clothing friction.' },
+    { title: 'Orthopaedic <em>· Joint Replacement &amp; Trauma</em>', desc: 'Total hip and knee arthroplasty — CDC Class I, but consequences of SSI catastrophic (revision surgery, prosthesis loss, multi-month treatment courses). Trauma incisions are CDC Class II–IV. The dressing must handle exudate from large incisions, tolerate physiotherapy-related movement, and ideally not require change for 5–7 days. Silicone foam with silver fits all three needs.' },
+    { title: 'Cardiac &amp; Vascular <em>· Sternotomy &amp; Endovascular</em>', desc: 'Sternotomy heals slowly and dehiscence carries 25% mortality. Endovascular access sites in the groin are prone to haematoma and infection. Both populations are elderly, multi-morbid, often diabetic. Prophylactic silicone foam with silver across the closed sternal incision; access-site cover with foam or hydrocolloid depending on exudate.' },
+    { title: 'Day Surgery <em>· Outpatient &amp; Ambulatory</em>', desc: 'Hand surgery, minor excisions, paediatric procedures, cosmetic. Patient is mobile and home-discharged within hours. Dressing must be waterproof, low-profile, comfortable, easy for the patient to inspect, and remain in place for 5–7 days minimum. Ultra-thin hydrocolloid excels here; silicone-bordered foam if exudate is anticipated.' },
+    { title: 'Plastic &amp; Reconstructive <em>· Flap &amp; Cosmetic Sites</em>', desc: 'Cosmetic outcome matters as much as healing. Visible facial, neck and breast incisions need atraumatic removal at every change (silicone over acrylic) to protect epithelialisation. Flap viability monitoring requires either transparent film over donor sites or careful periodic inspection. Patient expectations for the final scar shape early dressing choices.' }
+  ];
+  const defaultTitle = 'Six <em>Surgical Domains</em>';
+  const defaultDesc = 'Tap the outer nodes to explore dressing priorities by surgical specialty — from abdominal to orthopaedic to obstetric.';
+
+  const core = document.getElementById('wagner-core');
+  const gradeEl = document.getElementById('wagner-grade');
+  const descEl = document.getElementById('wagner-desc');
+  const nodes = document.querySelectorAll('.wagner-node');
+  const circle = document.getElementById('wagner-circle');
+  let activeIdx = -1;
+
+  // 六个节点沿圆周均布(从正上方开始)
+  function positionNodes() {
+    const r = circle.offsetWidth / 2;
+    nodes.forEach((node, i) => {
+      const orbR = node.offsetWidth / 2;
+      const deg = -90 + i * 60;
+      const rad = deg * Math.PI / 180;
+      const cx = r + Math.cos(rad) * r;
+      const cy = r + Math.sin(rad) * r;
+      node.style.left = (cx - orbR) + 'px';
+      node.style.top  = (cy - orbR) + 'px';
+    });
+  }
+  window.addEventListener('load', positionNodes);
+  window.addEventListener('resize', positionNodes);
+  positionNodes();
+
+  function showGrade(i) {
+    core.classList.add('switching');
+    setTimeout(() => {
+      if (i === -1) {
+        gradeEl.innerHTML = defaultTitle;
+        descEl.textContent = defaultDesc;
+      } else {
+        gradeEl.innerHTML = grades[i].title;
+        descEl.textContent = grades[i].desc;
+      }
+      core.classList.remove('switching');
+    }, 250);
+  }
+
+  nodes.forEach((node, i) => {
+    node.addEventListener('click', () => {
+      paused = true;
+      clearTimeout(window._resumeTimer);
+      window._resumeTimer = setTimeout(() => { paused = false; }, 6000);
+      if (activeIdx === i) {
+        node.classList.remove('active');
+        activeIdx = -1;
+        showGrade(-1);
+      } else {
+        nodes.forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+        activeIdx = i;
+        showGrade(i);
+      }
+    });
+  });
+
+  // 自动轮播(尊重 reduced motion)
+  let autoIdx = -1;
+  let paused = false;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    setTimeout(() => {
+      setInterval(() => {
+        if (paused) return;
+        autoIdx = (autoIdx + 1) % nodes.length;
+        nodes.forEach(n => n.classList.remove('active'));
+        nodes[autoIdx].classList.add('active');
+        activeIdx = autoIdx;
+        showGrade(autoIdx);
+      }, 3500);
+    }, 1500);
+  }
+
+  // 版权年份
+  document.getElementById('footer-copy').textContent =
+    '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
+
+  // ===== 表单必填校验:缺项不可提交 =====
+  (function () {
+    const form = document.getElementById('inquiry-form');
+    if (!form) return;
+    const msg = document.getElementById('form-msg');
+    const required = form.querySelectorAll('[required]');
+    const emailField = form.querySelector('input[type="email"]');
+
+    function clearInvalid(el) { el.classList.remove('invalid'); }
+    required.forEach(el => el.addEventListener('input', () => clearInvalid(el)));
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let firstInvalid = null;
+      required.forEach(el => {
+        const empty = !el.value.trim();
+        const badEmail = el === emailField && el.value.trim() &&
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (empty || badEmail) {
+          el.classList.add('invalid');
+          if (!firstInvalid) firstInvalid = el;
+        } else {
+          el.classList.remove('invalid');
+        }
+      });
+
+      if (firstInvalid) {
+        msg.className = 'form-msg error';
+        msg.textContent = firstInvalid === emailField && emailField.value.trim()
+          ? 'Please enter a valid email address.'
+          : 'Please complete all required fields (*) before submitting.';
+        firstInvalid.focus();
+        return;
+      }
+
+      msg.className = 'form-msg success';
+      msg.textContent = 'Thank you. Your inquiry has been submitted.';
+      form.reset();
+    });
+  })();
+</script>
+
+</body>
+</html>
