@@ -9,6 +9,28 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- FAQ -->
+  <url>
+    <loc>https://velcura.net/faq.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 博客 -->
+  <url>
+    <loc>https://velcura.net/blog.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://velcura.net/foam-vs-hydrocolloid-dressing.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- 关于我们 -->
   <url>
     <loc>https://velcura.net/velcura-3y.html</loc>
@@ -41,37 +63,37 @@
 
   <!-- 具体产品页 -->
   <url>
-    <loc>https://velcura.net/AD44-v2.html</loc>
+    <loc>https://velcura.net/silicone-foam-border-AD44.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://velcura.net/AD12-V2.html</loc>
+    <loc>https://velcura.net/foam-non-adhesive-AD12.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://velcura.net/AD24-02.html</loc>
+    <loc>https://velcura.net/activated-charcoal-non-adhesive-AD24.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://velcura.net/AD-HD02.html</loc>
+    <loc>https://velcura.net/hydrocolloid-super-thin-AD-HD01.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://velcura.net/AD006-V1.html</loc>
+    <loc>https://velcura.net/calcium-alginate-AD006.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://velcura.net/AD47-V1.html</loc>
+    <loc>https://velcura.net/nano-silver-antibacterial-AD47.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -91,7 +113,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://velcura.net/EduInst-tjb.html</loc>
+    <loc>https://velcura.net/EduInst-diabetic.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
