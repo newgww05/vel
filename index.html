@@ -168,26 +168,53 @@
   .cat-node-wrapper { position:absolute; top:50%; left:50%; z-index:10; }
 
   .cat-ring {
-    width:148px; height:148px; border-radius:50%;
-    /* translucent so the page gradient shows through */
-    background:rgba(255,255,255,0.52);
-    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-    border:2px solid rgba(192,168,120,0.31);
+    width:128px; height:128px; border-radius:50%;
+    /* 青蓝绿玻璃球 — 与中心蓝色 logo 形成色相错位,不争夺视觉焦点 */
+    background:
+      /* 顶部强白高光 */
+      radial-gradient(circle at 30% 22%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 15%, rgba(255,255,255,0) 38%),
+      /* 中部青绿色环境光 */
+      radial-gradient(circle at 72% 75%, rgba(130,210,205,0.55) 0%, rgba(110,195,195,0.28) 35%, rgba(110,195,195,0) 65%),
+      /* 底部深青绿,加强立体 */
+      radial-gradient(circle at 50% 92%, rgba(80,170,165,0.55) 0%, rgba(110,195,195,0.28) 45%, rgba(150,220,215,0) 75%),
+      /* 透明水晶基底 — 青绿色调 */
+      radial-gradient(ellipse at 50% 50%, rgba(245,255,253,0.32) 0%, rgba(210,245,240,0.32) 60%, rgba(170,230,222,0.42) 100%);
+    backdrop-filter:blur(12px) saturate(1.4); -webkit-backdrop-filter:blur(12px) saturate(1.4);
+    border:1px solid rgba(255,255,255,1);
     box-shadow:
-      inset 0 1px 1px rgba(255,240,200,0.55),
-      inset 0 -1px 2px rgba(140,110,60,0.20),
-      0 0 0 1px rgba(255,255,255,0.40),
-      0 0 24px rgba(125,211,252,0.18),
-      0 4px 14px rgba(14,165,233,0.07);
+      inset 0 4px 14px rgba(255,255,255,1),
+      inset 0 -10px 22px rgba(50,150,140,0.50),
+      inset 10px 14px 26px rgba(255,255,255,0.85),
+      inset -10px -14px 26px rgba(50,150,140,0.42),
+      inset 0 0 0 1.5px rgba(255,255,255,0.55),
+      inset 0 0 32px rgba(130,210,200,0.30);
     display:flex; align-items:center; justify-content:center;
     position:relative; overflow:visible;
-    animation:node-spin 18s linear infinite;
-    transition:box-shadow 0.3s; cursor:pointer;
+    transition:transform 0.3s, filter 0.3s; cursor:pointer;
   }
-  @keyframes node-spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+  .cat-ring::before {
+    content:""; position:absolute;
+    top:9px; left:18px;
+    width:54px; height:36px;
+    background:radial-gradient(ellipse, rgba(255,255,255,1) 0%, rgba(255,255,255,0.75) 25%, rgba(255,255,255,0.30) 55%, rgba(255,255,255,0) 82%);
+    border-radius:50%;
+    pointer-events:none;
+    transform:rotate(-18deg);
+    filter:blur(0.5px);
+  }
+  .cat-ring::after {
+    content:""; position:absolute;
+    bottom:13px; right:20px;
+    width:36px; height:14px;
+    background:radial-gradient(ellipse, rgba(220,250,245,0.95) 0%, rgba(180,235,225,0.50) 40%, rgba(140,220,210,0) 80%);
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(1px);
+  }
   .cat-node-wrapper { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
   .cat-node-wrapper:hover .cat-ring {
-    box-shadow: 0 8px 28px rgba(125,211,252,0.5);
+    transform: translateY(-4px) scale(1.06);
+    filter:brightness(1.08) saturate(1.15);
   }
     box-shadow:0 0 0 1px rgba(255,255,255,0.50),0 0 36px rgba(125,211,252,0.36),0 6px 24px rgba(14,165,233,0.13);
   }
@@ -199,10 +226,9 @@
     80% { transform:rotate(0.4deg) scale(1.005); }
     100%{ transform:rotate(0deg) scale(1); }
   }
-  .cat-inner-ring { position:absolute; inset:6px; border-radius:50%; border:1px solid rgba(192,168,120,0.21); box-shadow:inset 0 0 0 0.5px rgba(255,240,200,0.30); pointer-events:none; }
-  .cat-text { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; animation:counter-spin 18s linear infinite; pointer-events:none; }
-  @keyframes counter-spin { from{transform:rotate(0deg);} to{transform:rotate(-360deg);} }
-  .cat-name { font-size:16px; font-weight:400; color:#1a3a52; text-align:center; letter-spacing:0.03em; line-height:1.3; padding:0 12px; pointer-events:auto; cursor:pointer; }
+  .cat-inner-ring { position:absolute; inset:8px; border-radius:50%; border:1px solid rgba(255,255,255,0.35); pointer-events:none; }
+  .cat-text { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+  .cat-name { font-size:13px; font-weight:500; color:#1e4f4a; text-align:center; letter-spacing:0.06em; line-height:1.35; padding:0 14px; pointer-events:auto; cursor:pointer; text-transform:uppercase; }
 
   /* ── Submenu: CLICK-to-open, stays until click elsewhere or close btn ── */
   .cat-submenu {
@@ -320,8 +346,8 @@
   .footer-contact-item { display:flex; align-items:center; gap:12px; font-size:15px; color:rgba(255,255,255,0.85); text-decoration:none; transition:color 0.2s; }
   .footer-contact-item:hover { color:#ffffff; }
   .footer-contact-icon { width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; border:1px solid rgba(255,255,255,0.45); background:rgba(255,255,255,0.12); }
-  .wa-btn { display:flex; align-items:center; gap:9px; padding:10px 22px; border-radius:999px; background:#25d366; color:#fff; font-size:13px; font-weight:400; letter-spacing:0.04em; text-decoration:none; border:none; cursor:pointer; transition:background 0.2s,transform 0.2s; box-shadow:0 6px 24px rgba(37,211,102,0.28); font-family:'DM Sans',sans-serif; }
-  .wa-btn:hover { background:#1fb857; transform:scale(1.04); }
+  .wa-btn { display:flex; align-items:center; gap:9px; padding:10px 22px; border-radius:999px; background:rgba(255,255,255,0.15); color:#fff; font-size:13px; font-weight:400; letter-spacing:0.04em; text-decoration:none; border:1px solid rgba(255,255,255,0.45); cursor:pointer; transition:background 0.2s,transform 0.2s; backdrop-filter:blur(8px); font-family:'DM Sans',sans-serif; }
+  .wa-btn:hover { background:rgba(255,255,255,0.25); transform:scale(1.04); }
   .wa-icon { display:flex; align-items:center; }
   .footer-divider { width:100%; max-width:400px; border:none; border-top:1px solid rgba(255,255,255,0.25); margin-bottom:24px; }
   .footer-copy { font-size:11px; color:rgba(255,255,255,0.7); letter-spacing:0.06em; text-align:center; }
@@ -418,8 +444,7 @@
   .nav-links .has-dropdown .dropdown-trigger {
     font-size: 16.45px !important; font-weight: 500; letter-spacing: 0.10em;
   }
-  /* AD/TD/SC 整体下移,使 AD 顶端与 Products 底端齐平 */
-  .nav-links .has-dropdown { margin-top: 20px; }
+
 
 
   /* 临床场景圆圈:占位状态(视觉与正常一致,但点击无反应) */
@@ -433,7 +458,6 @@
 <nav class="nav">
   <a class="nav-brand" href="#">Gentle Healing,<br><span style="display:inline-block; margin-left:2.5em;">Complete Care</span></a>
   <ul class="nav-links">
-    <li><span class="nav-products-disabled">Products</span></li>
     <li class="has-dropdown">
       <a href="#" class="dropdown-trigger">AD ▾</a>
       <div class="fp-menu">
@@ -480,7 +504,7 @@
     </li>
     <li><a href="velcura-3y.html">About Us</a></li>
     <li><a href="faq.html">FAQ</a></li>
-    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="blog.html">Blog</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -488,8 +512,8 @@
 </nav>
 
 <!-- Full-width banner -->
-<div style="width:100%; line-height:0; overflow:hidden; aspect-ratio:1540/560; background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 50%,#bae6fd 100%);">
-  <img src="https://img.velcura.net/home1.webp" alt="Velcura Medical" fetchpriority="high" decoding="async" style="width:100%; height:100%; display:block; object-fit:cover;">
+<div style="width:100%; line-height:0; overflow:hidden; aspect-ratio:1500/560; background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 50%,#bae6fd 100%);">
+  <img src="https://img.velcura.net/home1.webp" alt="Velcura Medical" width="1500" height="560" fetchpriority="high" decoding="async" style="width:100%; height:auto; display:block;">
 </div>
 
 <section class="hero">
@@ -527,10 +551,9 @@
 <!-- Mobile nav overlay -->
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
-  <a href="wound-care.html" onclick="closeMobileMenu()">Products</a>
   <a href="velcura-3y.html" onclick="closeMobileMenu()">About Us</a>
   <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
+  <a href="blog.html" onclick="closeMobileMenu()">Blog</a>
   <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
 </div>
 
@@ -589,10 +612,9 @@
 <!-- Mobile nav overlay -->
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" id="menuClose">✕</button>
-  <a href="wound-care.html" onclick="closeMobileMenu()">Products</a>
   <a href="velcura-3y.html" onclick="closeMobileMenu()">About Us</a>
   <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
+  <a href="blog.html" onclick="closeMobileMenu()">Blog</a>
   <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
 </div>
 
