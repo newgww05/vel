@@ -126,11 +126,6 @@
     padding: 2rem 4rem 2rem 5rem;
     position: relative; overflow: hidden;
   }
-  .hero-left::after {
-    content: '';
-    position: absolute; right: 0; top: 10%; bottom: 10%;
-    width: 0.5px; background: var(--c-line);
-  }
   .hero-tag {
     font-size: 0.576rem; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--c-teal); font-weight: 500;
@@ -228,13 +223,25 @@
   }
   .stat-item:last-child { border-right: none; }
   .stat-num {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Noto Serif SC', serif;
     font-size: 2.2rem; font-weight: 300; color: #FFE9A0;
     line-height: 1;
   }
   .stat-label {
     font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: rgba(255,255,255,0.75); margin-top: 0.5rem;
+  }
+  /* 绿色全宽通栏（蓝栏下方；无分区线；略高于蓝栏）*/
+  .green-band {
+    background: #049395; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 1.3rem 24px; min-height: 4.1rem;
+  }
+  .green-band h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #fff; font-weight: 400; margin: 0;
+    font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+    line-height: 1.25; letter-spacing: 0.02em;
   }
 
   /* SECTION BASE */
@@ -265,31 +272,32 @@
     font-size: 0.95rem; color: var(--c-ink2);
     line-height: 1.9; font-weight: 300;
   }
-  .feature-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  /* 四卡：无边框，内部细十字线连成一体，hover 整块染色 + 变字色 */
+  .feature-cards {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--c-line);
+  }
   .feature-card {
-    background: var(--c-bg); padding: 1.8rem;
-    border: 0.5px solid var(--c-line);
-    transition: border-color 0.3s, transform 0.3s;
-    position: relative; overflow: hidden;
+    background: var(--c-bg); padding: 2rem 1.9rem;
+    transition: background 0.35s ease;
   }
-  .feature-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 2px;
-    background: var(--c-teal); transform: scaleX(0);
-    transform-origin: left; transition: transform 0.3s;
-  }
-  .feature-card:hover::before { transform: scaleX(1); }
-  .feature-card:hover { border-color: var(--c-teal2); transform: translateY(-2px); }
+  .feature-card:hover { background: var(--c-teal); }
+  .feature-card:hover .feature-icon,
+  .feature-card:hover h3 { color: #fff; }
+  .feature-card:hover p { color: rgba(255,255,255,0.82); }
   .feature-icon {
     font-size: 1.6rem; margin-bottom: 1rem; display: block;
+    color: var(--c-ink); transition: color 0.35s ease;
   }
   .feature-card h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.1rem; font-weight: 600;
     margin-bottom: 0.6rem; color: var(--c-ink);
+    transition: color 0.35s ease;
   }
   .feature-card p {
     font-size: 0.82rem; color: var(--c-ink3); line-height: 1.7;
+    transition: color 0.35s ease;
   }
 
   /* SPECS */
@@ -347,6 +355,9 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem; color: var(--c-ink3); letter-spacing: 0.2em;
   }
+  /* 全宽图片 top1（specs 与 contact 之间；按 1500x530 比例完整显示）*/
+  .topband-image { width: 100%; aspect-ratio: 1500/265; overflow: hidden; line-height: 0; background: var(--c-bg2); }
+  .topband-image img { width: 100%; height: auto; display: block; }
 
   /* CONTACT */
   .contact-section { background: #4F5298; color: var(--c-cream); padding: 4rem 0 3rem; }
@@ -847,9 +858,9 @@
   </div>
   <div class="hero-right">
     <div id="hero-carousel" style="position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; border:0.5px solid var(--c-line); background:#fff;">
-      <img class="hc-slide" src="https://img.velcura.net/水胶体_02.jpg" fetchpriority="high" alt="Hydrocolloid Dressing Super Thin 01" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; transition:opacity 0.6s ease;">
+      <img class="hc-slide" src="https://img.velcura.net/ad01-01.png" fetchpriority="high" alt="Hydrocolloid Dressing Super Thin product" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; transition:opacity 0.6s ease;">
+      <img class="hc-slide" data-src="https://img.velcura.net/水胶体_02.jpg" alt="Hydrocolloid Dressing Super Thin 01" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 0.6s ease;">
       <img class="hc-slide" data-src="https://img.velcura.net/水胶体_03.jpg" alt="Hydrocolloid Dressing Super Thin 02" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 0.6s ease;">
-      <div class="hc-slide" style="position:absolute; inset:0; background:#ebebeb; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.8rem; letter-spacing:0.08em; opacity:0; transition:opacity 0.6s ease;">Image 3 (placeholder)</div>
       <div id="hc-dots" style="position:absolute; bottom:0.9rem; left:50%; transform:translateX(-50%); display:flex; gap:0.5rem; z-index:2;">
         <span class="hc-dot" data-i="0" style="width:8px; height:8px; border-radius:50%; background:#fff; opacity:1; cursor:pointer; transition:opacity 0.3s;"></span>
         <span class="hc-dot" data-i="1" style="width:8px; height:8px; border-radius:50%; background:#fff; opacity:0.45; cursor:pointer; transition:opacity 0.3s;"></span>
@@ -879,13 +890,16 @@
   </div>
 </div>
 
+<!-- GREEN FULL-WIDTH BAND -->
+<div class="green-band">
+  <h2>A Second Skin for Superficial Wound Healing</h2>
+</div>
+
 <!-- FEATURES -->
 <section class="features-section" id="features">
   <div class="container">
     <div class="features-grid">
       <div class="features-intro">
-        <div class="section-tag">Core Advantages</div>
-        <h2 class="section-title">A Second Skin for<br>Superficial Wound Healing</h2>
         <p>
           Hydrocolloid Dressing (Super Thin) is engineered as an ultra-thin, near-invisible second skin for superficial wounds with light exudate. On contact with wound fluid, the hydrocolloid matrix (containing carboxymethylcellulose and other gel-forming particles) absorbs and gels — creating a sealed, moist micro-environment that accelerates epithelialisation, supports autolytic debridement of fibrinous tissue, and protects the wound from external contamination, water and friction. The thin, flexible film conforms to body contours so closely it disappears under clothing or on visible skin.
         </p>
@@ -973,6 +987,11 @@
     </div>
   </div>
 </section>
+
+<!-- FULL-WIDTH IMAGE (top1) -->
+<div class="topband-image">
+  <img src="https://img.velcura.net/top1-2.webp" alt="Velcura Hydrocolloid Dressing" width="1500" height="265" loading="lazy" decoding="async">
+</div>
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
