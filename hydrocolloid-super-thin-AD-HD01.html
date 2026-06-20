@@ -8,6 +8,7 @@
 <meta name="keywords" content="hydrocolloid dressing, super thin hydrocolloid, ultra-thin wound dressing, waterproof wound dressing, autolytic debridement dressing, pressure ulcer dressing, blister dressing, acne pimple patch, Velcura">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical">
+<meta name="theme-color" content="#2D6E6A">
 <link rel="canonical" href="https://velcura.net/hydrocolloid-super-thin-AD-HD01.html">
 
 <!-- Open Graph -->
@@ -15,6 +16,7 @@
 <meta property="og:title" content="Hydrocolloid Dressing (Super Thin) | Velcura Medical">
 <meta property="og:description" content="Ultra-thin self-adhesive hydrocolloid dressing — a discreet second skin for superficial wounds. CMC matrix supports moist healing and autolytic debridement.">
 <meta property="og:image" content="https://img.velcura.net/水胶体_02.jpg">
+<meta property="og:image:alt" content="Velcura Hydrocolloid Dressing (Super Thin)">
 <meta property="og:url" content="https://velcura.net/hydrocolloid-super-thin-AD-HD01.html">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
@@ -22,6 +24,7 @@
 <meta name="twitter:title" content="Hydrocolloid Dressing (Super Thin) | Velcura Medical">
 <meta name="twitter:description" content="Ultra-thin self-adhesive hydrocolloid dressing — a discreet second skin for superficial wounds. CMC matrix supports moist healing and autolytic debridement.">
 <meta name="twitter:image" content="https://img.velcura.net/水胶体_02.jpg">
+<meta name="twitter:image:alt" content="Velcura Hydrocolloid Dressing (Super Thin)">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -95,7 +98,7 @@
     color: var(--c-ink); text-decoration: none;
   }
   .nav-logo span { color: var(--c-teal); }
-  /* 修复：改用 left:50% + transform 居中，避免在不同屏宽下偏移 */
+  /* Fix: center via left:50% + transform to avoid offset across screen widths */
   .nav-links {
     display: flex; gap: 2rem; list-style: none;
     position: absolute; left: 50%; transform: translateX(-50%);
@@ -131,6 +134,8 @@
     color: var(--c-teal); font-weight: 500;
     display: flex; align-items: center; gap: 0.75rem;
     margin-bottom: 1rem; margin-top: 1rem;
+    margin-left: max(0px, calc(50vw - 470px));
+    white-space: nowrap;
   }
   .hero-tag::before {
     content: ''; display: block; width: 2rem; height: 1px; background: var(--c-teal);
@@ -189,7 +194,7 @@
     text-transform: uppercase;
     color: #2B3A8F; letter-spacing: 0.22em;
   }
-  /* .hero-orb 静态装饰球（原始保留，不影响交互orb） */
+  /* .hero-orb static decorative circles (kept; do not affect the interactive orb) */
   .hero-orb {
     position: absolute; border-radius: 50%;
     background: rgba(45,110,106,0.1);
@@ -231,7 +236,7 @@
     font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: rgba(255,255,255,0.75); margin-top: 0.5rem;
   }
-  /* 绿色全宽通栏（蓝栏下方；无分区线；略高于蓝栏）*/
+  /* Full-width green band (below blue bar; no divider; slightly taller than blue bar)*/
   .green-band {
     background: #049395; width: 100%;
     display: flex; align-items: center; justify-content: center;
@@ -272,7 +277,7 @@
     font-size: 0.95rem; color: var(--c-ink2);
     line-height: 1.9; font-weight: 300;
   }
-  /* 四卡：无边框，内部细十字线连成一体，hover 整块染色 + 变字色 */
+  /* Feature cards: borderless, joined by thin internal grid lines; hover fills the block + changes text color */
   .feature-cards {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 1px; background: var(--c-line);
@@ -282,13 +287,38 @@
     transition: background 0.35s ease;
   }
   .feature-card:hover { background: var(--c-teal); }
-  .feature-card:hover .feature-icon,
   .feature-card:hover h3 { color: #fff; }
+  .feature-card:hover .feature-icon {
+    scale: 1.08;
+    box-shadow: 0 9px 22px rgba(0,0,0,0.20), inset 0 1px 3px rgba(255,255,255,1), inset 0 -4px 8px rgba(45,110,106,0.14);
+  }
   .feature-card:hover p { color: rgba(255,255,255,0.82); }
   .feature-icon {
-    font-size: 1.6rem; margin-bottom: 1rem; display: block;
-    color: var(--c-ink); transition: color 0.35s ease;
+    width: 54px; height: 54px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.1rem; position: relative;
+    background: radial-gradient(130% 130% at 32% 26%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.55) 33%, rgba(173,196,196,0.35) 64%, rgba(45,110,106,0.18) 100%);
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow: 0 5px 14px rgba(45,110,106,0.14), inset 0 1px 3px rgba(255,255,255,0.95), inset 0 -4px 8px rgba(45,110,106,0.10);
+    animation: orbFloat 6s ease-in-out infinite;
+    transition: scale 0.35s ease, box-shadow 0.35s ease;
   }
+  .feature-icon::after {
+    content: ''; position: absolute; top: 13%; left: 20%;
+    width: 40%; height: 28%; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.95), rgba(255,255,255,0));
+    pointer-events: none;
+  }
+  .feature-icon svg {
+    width: 26px; height: 26px; display: block; position: relative; z-index: 1;
+    fill: none; stroke: var(--c-teal); stroke-width: 1.6;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+  @keyframes orbFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  .feature-card:nth-child(2) .feature-icon { animation-delay: 1.2s; }
+  .feature-card:nth-child(3) .feature-icon { animation-delay: 2.4s; }
+  .feature-card:nth-child(4) .feature-icon { animation-delay: 3.6s; }
+  @media (prefers-reduced-motion: reduce) { .feature-icon { animation: none; } }
   .feature-card h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.1rem; font-weight: 600;
@@ -303,6 +333,11 @@
   /* SPECS */
   .specs-section { background: var(--c-bg); }
   .specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  /* specs/applications full-width green band titles */
+  .specs-band { background: #049395; width: 100%; padding: 2.1rem 0; margin-bottom: 3rem; }
+  .specs-band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .specs-band-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.6rem, 2.5vw, 2rem); line-height: 1.2; letter-spacing: 0.02em; color: #fff; text-align: center; }
+  @media (max-width:900px){ .specs-band-grid { grid-template-columns: 1fr; gap: 0.4rem; } }
   .spec-table { width: 100%; border-collapse: collapse; }
   .spec-table tr { border-bottom: 0.5px solid var(--c-line); }
   .spec-table tr:last-child { border-bottom: none; }
@@ -326,11 +361,20 @@
   .spec-highlight p { font-size: 0.82rem; opacity: 0.8; line-height: 1.7; }
   .application-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .app-tag {
-    border: 0.5px solid var(--c-line); padding: 0.5rem 1rem;
-    font-size: 0.75rem; color: var(--c-ink2); letter-spacing: 0.04em;
-    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.42rem 0.95rem; border-radius: 999px;
+    font-size: 0.75rem; letter-spacing: 0.04em;
+    color: var(--c-teal); background: rgba(45,110,106,0.08);
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .app-tag:hover { border-color: var(--c-teal); color: var(--c-teal); }
+  .app-tag::before {
+    content: '\2713'; font-size: 0.72em; font-weight: 700; line-height: 1;
+  }
+  .app-tag:hover {
+    background: var(--c-teal); color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(45,110,106,0.25);
+  }
 
   /* BANNER IMAGE */
   .banner-image {
@@ -355,9 +399,17 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem; color: var(--c-ink3); letter-spacing: 0.2em;
   }
-  /* 全宽图片 top1（specs 与 contact 之间；按 1500x530 比例完整显示）*/
+  /* Full-width image top1 (between specs and contact; shown in full at 1500x530 ratio)*/
   .topband-image { width: 100%; aspect-ratio: 1500/265; overflow: hidden; line-height: 0; background: var(--c-bg2); }
   .topband-image img { width: 100%; height: auto; display: block; }
+  /* cautions list: warning-triangle icons replace bullets */
+  .caution-list { list-style: none; padding-left: 0; margin: 0; }
+  .caution-list li { display: flex; align-items: flex-start; gap: 0.55rem; }
+  .caution-ico {
+    flex: 0 0 auto; width: 15px; height: 15px; margin-top: 0.32em;
+    fill: none; stroke: var(--c-teal); stroke-width: 1.7;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
 
   /* CONTACT */
   .contact-section { background: #4F5298; color: var(--c-cream); padding: 4rem 0 3rem; }
@@ -373,7 +425,7 @@
     width: 2.4rem; height: 2px; background: #FFE9A0; flex-shrink: 0;
   }
   .contact-section .section-title { color: #fff; }
-  /* 左右列等高，右列用flex撑满高度 */
+  /* Left/right columns equal height; right column uses flex to fill height */
   .contact-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: stretch;
@@ -471,13 +523,30 @@
   .hero-left > *:nth-child(3) { animation-delay: 0.35s; }
   .hero-left > *:nth-child(4) { animation-delay: 0.5s; }
 
+  /* Hero index: abstract icons + diagonal slash + staggered reveal + hover text color */
+  .hero-index { position: relative; margin-top: 1.6rem; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
+  .hi-item { position: relative; padding-left: 1.9rem; display: flex; align-items: center; gap: 1.1rem; opacity: 1; animation: hiReveal 0.6s ease backwards; }
+  .hi-item:nth-child(1) { animation-delay: 0.4s; }
+  .hi-item:nth-child(2) { animation-delay: 0.6s; }
+  .hi-item:nth-child(3) { animation-delay: 0.8s; }
+  .hi-item::before { content: ''; position: absolute; left: 0.5rem; top: 50%; width: 1.5px; height: 1.8rem; background: var(--c-teal); opacity: 0.4; transform: translateY(-50%) rotate(35deg); transition: opacity 0.35s ease; }
+  .hi-item:hover::before { opacity: 0.9; }
+  .hi-ico { flex: 0 0 auto; width: 28px; height: 28px; fill: none; stroke: var(--c-teal); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; transition: opacity 0.35s ease; }
+  .hi-item:hover .hi-ico { opacity: 1; }
+  .hi-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 300; line-height: 1.1; letter-spacing: 0.03em; color: var(--c-ink); transition: color 0.35s ease; }
+  .hi-sub { font-size: 0.78rem; color: var(--c-ink3); margin-top: 0.45rem; margin-left: 6em; letter-spacing: 0.06em; transition: color 0.35s ease; }
+  .hi-item:hover .hi-title { color: var(--c-teal); }
+  .hi-item:hover .hi-sub { color: var(--c-teal); opacity: 0.75; }
+  @keyframes hiReveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { .hi-item { animation: none; } }
+
   @keyframes floatIn {
     from { opacity: 0; transform: scale(0.92); }
     to { opacity: 1; transform: scale(1); }
   }
   .hero-circle { animation: none; }
 
-  /* ORB 交互按钮 */
+  /* ORB interactive buttons */
   .hero-orb-btn {
     position: absolute; border-radius: 50%;
     cursor: pointer;
@@ -491,9 +560,9 @@
     background: rgba(45,110,106,0.55);
     box-shadow: 0 0 0 4px rgba(45,110,106,0.18);
   }
-  /* 修复：原文件中 .hero-orb-1~5 在两个 <style> 块中各定义了一次，
-     第一次无 animation（静态装饰用），第二次才有 animation + 交互样式，
-     导致类名重复冲突。现统一合并到此处，只保留交互版本。 */
+  /* Fix: .hero-orb-1~5 were each defined twice across two <style> blocks;
+     the first without animation (static decoration), the second with animation + interactive styles,
+     causing class-name conflicts. Now merged here, keeping only the interactive version. */
   .hero-orb-1 { width: 72px; height: 72px; animation: breathe1 3.8s ease-in-out infinite; }
   .hero-orb-2 { width: 50px; height: 50px; background: rgba(184,151,90,0.18); animation: breathe2 4.4s ease-in-out infinite; }
   .hero-orb-2.active { background: rgba(184,151,90,0.65); box-shadow: 0 0 0 4px rgba(184,151,90,0.2); }
@@ -503,7 +572,7 @@
   .hero-orb-5 { width: 90px; height: 90px; background: rgba(45,110,106,0.18); animation: breathe1 4.7s ease-in-out infinite; }
   .hero-orb-5.active { background: rgba(45,110,106,0.6); box-shadow: 0 0 0 4px rgba(45,110,106,0.22); }
 
-  /* 大圆居中定位，四小圆JS等距排列，M单独在大圆正下方 */
+  /* Large circle centered; four small circles placed equidistantly by JS; M alone directly below the large circle */
   .hero-visual {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
@@ -606,12 +675,12 @@
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     .container { padding: 0 1.5rem; }
-    /* 修复：移动端 footer 不使用固定 padding-left，改为均匀 */
+    /* Fix: mobile footer uses even padding instead of a fixed padding-left */
     footer { padding: 2rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
     .contact-form-row { grid-template-columns: 1fr; }
   }
 
-  /* ===== 复制自 EduInst-diabetic 的页首/页脚/联系表单样式(覆盖层) ===== */
+  /* ===== Header/footer/contact-form styles (override layer) copied from EduInst-diabetic ===== */
   nav { position: fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; background:rgba(245,242,237,0.92); backdrop-filter:blur(12px); border-bottom:0.5px solid var(--c-line); }
   .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; letter-spacing:0.06em; color:var(--c-ink); text-decoration:none; display:flex; align-items:center; gap:0.6rem; }
   .nav-logo span { color: var(--c-teal); }
@@ -659,9 +728,9 @@
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
   }
 
-  /* AD/TD/SC 字号增大 */
+  /* AD/TD/SC font-size increase */
   .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
-  /* ===== Featured Products 下拉菜单 ===== */
+  /* ===== Featured Products dropdown menu ===== */
   .nav-links .has-dropdown { position: relative; }
   .nav-links .dropdown-trigger { cursor: pointer; }
   .fp-menu {
@@ -704,7 +773,7 @@
   }
 
 
-  /* Banner overlay 手写体浅紫文字 + 飞入动画 */
+  /* Banner overlay handwritten light-purple text + fly-in animation */
   .banner-quote {
     position: absolute;
     left: 5%;
@@ -760,7 +829,7 @@
         <span class="fp-item fp-item-disabled">Hydrocolloid Dressing (With Border)</span>
         <span class="fp-item fp-item-disabled">Hydrocolloid Dressing (Sacrum)</span>
         <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
-        <span class="fp-item fp-item-disabled">Silver Alginate Dressing</span>
+        <a href="silver-alginate-dressing-AD14.html" class="fp-item">Silver Alginate Dressing</a>
         <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
         <span class="fp-item fp-item-disabled">Foam Dressing Silicone Adhesive Border (Sacrum)</span>
         <span class="fp-item fp-item-disabled">Foam Dressing Silicone Adhesive Border (Heel)</span>
@@ -810,41 +879,28 @@
   <div class="hero-left">
     <div class="hero-tag">Velcura Medical · Advanced Wound Care</div>
     <h1 style="font-family:'Playfair Display',serif; font-style:italic; font-weight:300; font-size:clamp(2rem,4.5vw,3.4rem); line-height:1.15; color:var(--c-ink); letter-spacing:0.01em; margin-top:1rem;">Hydrocolloid Dressing<br>(Super Thin)</h1>
-    <div style="display:flex; flex-direction:column; gap:1.2rem; margin-top:1.5rem; flex:1; justify-content:center;">
-
-      <div style="display:flex; align-items:flex-start; gap:1.4rem;">
-        <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.4rem;">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:0.72rem; color:var(--c-teal); letter-spacing:0.12em;">01</span>
-          <div style="width:1px; height:2.4rem; background:var(--c-teal); margin-top:0.4rem; opacity:0.35;"></div>
-        </div>
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,2.24vw,1.68rem); font-weight:300; line-height:1; color:var(--c-ink); letter-spacing:0.04em; margin-top:0.5em;">Ultra-Thin & Discreet</div>
-          <div style="font-size:0.78rem; color:var(--c-ink3); margin-top:0.5rem; letter-spacing:0.06em;">Near-Invisible Profile</div>
+    <div class="hero-index">
+      <div class="hi-item">
+        <svg class="hi-ico" viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="3" rx="1.5"/></svg>
+        <div class="hi-body">
+          <div class="hi-title">Ultra-Thin &amp; Discreet</div>
+          <div class="hi-sub">Near-Invisible Profile</div>
         </div>
       </div>
-
-      <div style="display:flex; align-items:flex-start; gap:1.4rem;">
-        <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.4rem;">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:0.72rem; color:var(--c-teal); letter-spacing:0.12em;">02</span>
-          <div style="width:1px; height:2.4rem; background:var(--c-teal); margin-top:0.4rem; opacity:0.35;"></div>
-        </div>
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(0.96rem,1.76vw,1.36rem); font-weight:300; line-height:1.15; color:var(--c-ink); letter-spacing:0.04em; margin-top:0.5em;">Autolytic<br>Debridement</div>
-          <div style="font-size:0.78rem; color:var(--c-ink3); margin-top:0.5rem; letter-spacing:0.06em;">Moist Healing Action</div>
+      <div class="hi-item">
+        <svg class="hi-ico" viewBox="0 0 24 24"><path d="M12 3.5 13.4 10.6 20.5 12 13.4 13.4 12 20.5 10.6 13.4 3.5 12 10.6 10.6Z"/></svg>
+        <div class="hi-body">
+          <div class="hi-title">Autolytic Debridement</div>
+          <div class="hi-sub">Moist Healing Action</div>
         </div>
       </div>
-
-      <div style="display:flex; align-items:flex-start; gap:1.4rem;">
-        <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.4rem;">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:0.72rem; color:var(--c-teal); letter-spacing:0.12em;">03</span>
-          <div style="width:1px; height:2.4rem; background:var(--c-teal); margin-top:0.4rem; opacity:0.35;"></div>
-        </div>
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,2.24vw,1.68rem); font-weight:300; line-height:1; color:var(--c-ink); letter-spacing:0.04em; margin-top:0.5em;">Up to 5 Days Wear</div>
-          <div style="font-size:0.78rem; color:var(--c-ink3); margin-top:0.5rem; letter-spacing:0.06em;">Waterproof & Shower-Safe</div>
+      <div class="hi-item">
+        <svg class="hi-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3.2 2"/></svg>
+        <div class="hi-body">
+          <div class="hi-title">Up to 5 Days Wear</div>
+          <div class="hi-sub">Waterproof &amp; Shower-Safe</div>
         </div>
       </div>
-
     </div>
     <div id="hero-img-box" style="display:none; margin-top:1rem; transition: opacity 0.3s ease; width:100%; max-width:100%; overflow:hidden; border: 0.5px solid var(--c-line);">
       <img data-src="" alt="Hydrocolloid Dressing Super Thin" style="width:100%; height:auto; display:block; object-fit:contain;">
@@ -857,7 +913,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <div id="hero-carousel" style="position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; border:0.5px solid var(--c-line); background:#fff;">
+    <div id="hero-carousel" style="position:relative; width:100%; max-width:min(48vw, calc(100vh - 200px)); aspect-ratio:1/1; overflow:hidden; border:0.5px solid var(--c-line); background:#fff;">
       <img class="hc-slide" src="https://img.velcura.net/ad01-01.png" fetchpriority="high" alt="Hydrocolloid Dressing Super Thin product" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; transition:opacity 0.6s ease;">
       <img class="hc-slide" data-src="https://img.velcura.net/水胶体_02.jpg" alt="Hydrocolloid Dressing Super Thin 01" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 0.6s ease;">
       <img class="hc-slide" data-src="https://img.velcura.net/水胶体_03.jpg" alt="Hydrocolloid Dressing Super Thin 02" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 0.6s ease;">
@@ -870,7 +926,7 @@
   </div>
 </section>
 
-<!-- STATS BAR — 修复：从 <script> 后面移到 Hero 紧接位置，确保文档流正确 -->
+<!-- STATS BAR — Fix: moved from after <script> to immediately after Hero to keep document flow correct -->
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">< 1 mm</div>
@@ -909,22 +965,22 @@
       </div>
       <div class="feature-cards">
         <div class="feature-card">
-          <span class="feature-icon">⬡</span>
+          <span class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="4.5" rx="2.25"/><path d="M5 17.5h14"/></svg></span>
           <h3>Ultra-Thin Near-Invisible Profile</h3>
           <p>Less than 1 mm thick and semi-translucent, the dressing virtually disappears once applied — ideal for the face, hands, joints and any visible site where patients want to continue daily life without an obvious bandage. Flexible enough to follow body contours without lifting.</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">◈</span>
+          <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3.5c0 0 6.5 7 6.5 11a6.5 6.5 0 0 1-13 0c0-4 6.5-11 6.5-11Z"/><path d="M9 14.8a3 3 0 0 0 3 2.7"/></svg></span>
           <h3>Autolytic Debridement & Moist Healing</h3>
           <p>On contact with exudate, the hydrocolloid matrix forms a soft gel that maintains the optimum moist environment for re-epithelialisation. The sealed micro-climate activates endogenous proteases, supporting gentle autolytic debridement of fibrin and necrotic tissue — no mechanical trauma to the wound bed.</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">◇</span>
+          <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 2.8v5.6c0 4.6-3.4 7.7-7.5 8.8-4.1-1.1-7.5-4.2-7.5-8.8V5.8L12 3Z"/><path d="M12 9.4c0 0-2.3 2.6-2.3 4.2a2.3 2.3 0 0 0 4.6 0c0-1.6-2.3-4.2-2.3-4.2Z"/></svg></span>
           <h3>Waterproof Protective Barrier</h3>
           <p>A semi-permeable polyurethane outer film is fully waterproof and blocks bacteria, viruses, dirt and friction — patients can shower, work and exercise without disturbing the dressing. Water vapour still escapes outward, so the skin doesn't macerate.</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">○</span>
+          <span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.6V12l3 1.9"/></svg></span>
           <h3>Self-Adhesive · 5-Day Wear Time</h3>
           <p>A gentle self-adhesive border secures the dressing without additional tape; the low-trauma adhesive lifts without epidermal stripping at change. Wear time of up to 5 days reduces dressing-change frequency, lowering disturbance to the wound and the burden on patients and caregivers.</p>
         </div>
@@ -941,11 +997,17 @@
 
 <!-- SPECS -->
 <section class="specs-section" id="specs">
+  <div class="specs-band">
+    <div class="container">
+      <div class="specs-band-grid">
+        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Clinical Applications (Indications)</div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="specs-layout">
       <div>
-        <div class="section-tag">Specifications</div>
-        <h2 class="section-title">Technical Parameters</h2>
         <table class="spec-table">
           <tr><td>Product Name</td><td>Hydrocolloid Dressing (Super Thin)</td></tr>
           <tr><td>Construction</td><td>Two-layer ultra-thin composite: Hydrocolloid gel-forming wound contact layer (CMC + adhesive matrix) / Semi-permeable polyurethane waterproof outer film</td></tr>
@@ -959,8 +1021,6 @@
         </table>
       </div>
       <div>
-        <div class="section-tag">Indications</div>
-        <h2 class="section-title">Clinical Applications</h2>
         <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
           Best for superficial, low-exudate wounds where discretion, comfort and uninterrupted daily activity matter. Not recommended for infected wounds, heavily exuding wounds, or dry necrotic eschar without active debridement strategy.
         </p>
@@ -976,11 +1036,11 @@
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
           <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
-          <ul style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9; padding-left:1.2rem;">
-            <li>Not suitable for clinically infected wounds — the occlusive environment may encourage anaerobic bacterial growth.</li>
-            <li>Not recommended for heavily exuding wounds — the thin profile has limited absorbency; choose a foam or alginate dressing instead.</li>
-            <li>For deep, full-thickness or third-degree wounds, use only under the guidance of a healthcare professional.</li>
-            <li>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
+          <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not suitable for clinically infected wounds — the occlusive environment may encourage anaerobic bacterial growth.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not recommended for heavily exuding wounds — the thin profile has limited absorbency; choose a foam or alginate dressing instead.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>For deep, full-thickness or third-degree wounds, use only under the guidance of a healthcare professional.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
           </ul>
         </div>
       </div>
@@ -1052,17 +1112,17 @@
 </footer>
 
 <script>
-  // 五个小圆统一由JS定位，圆心到大圆圆心等距
+  // All five small circles positioned by JS, equidistant from the large circle's center
   function positionOrbs() {
     const circle = document.querySelector('.hero-circle');
     if (!circle) return;
-    const r = circle.offsetWidth / 2;   // 大圆半径
-    const gap = 20;                      // 小圆圆心超出大圆边缘的距离
+    const r = circle.offsetWidth / 2;   // large circle radius
+    const gap = 20;                      // distance small-circle centers extend beyond the large circle's edge
 
     const allOrbs = [
       { el: document.querySelector('.hero-orb-1'), deg: 210 }, // D
       { el: document.querySelector('.hero-orb-3'), deg: 240 }, // I
-      { el: document.querySelector('.hero-orb-m'), deg: 270 }, // M 正下
+      { el: document.querySelector('.hero-orb-m'), deg: 270 }, // M directly below
       { el: document.querySelector('.hero-orb-5'), deg: 300 }, // E
       { el: document.querySelector('.hero-orb-4'), deg: 330 }, // S
     ];
@@ -1070,7 +1130,7 @@
     allOrbs.forEach(({ el, deg }) => {
       if (!el) return;
       const orbR = el.offsetWidth / 2;
-      const dist = r + orbR + gap;           // 大圆圆心 → 小圆圆心
+      const dist = r + orbR + gap;           // large circle center -> small circle center
       const rad = (deg - 90) * Math.PI / 180;
       const cx = r + Math.cos(rad) * dist;
       const cy = r + Math.sin(rad) * dist;
@@ -1181,7 +1241,7 @@
     });
   });
 
-  // 自动轮播
+  // auto-rotate carousel
   let autoIndex = 0;
   let autoTimer = null;
   let paused = false;
@@ -1208,7 +1268,7 @@
     }, 3500);
   }
 
-  // 点击时暂停5秒后继续
+  // pause 5s on click, then resume
   orbs.forEach(orb => {
     orb.addEventListener('click', () => {
       paused = true;
@@ -1217,7 +1277,7 @@
     });
   });
 
-  // 页面加载后1秒启动(无交互orb时跳过,避免报错)
+  // start 1s after page load (skip when no interactive orb, to avoid errors)
   setTimeout(() => {
     if (orbs && orbs.length) {
       activateOrb(0);
@@ -1225,11 +1285,11 @@
     }
   }, 1000);
 
-  // 版权年份动态生成
+  // dynamically generate copyright year
   document.getElementById('footer-copy').textContent =
     '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
 
-  // Hero 图片轮播
+  // Hero image carousel
   (function(){
     var slides = document.querySelectorAll('#hero-carousel .hc-slide');
     var dots = document.querySelectorAll('#hero-carousel .hc-dot');
@@ -1251,7 +1311,7 @@
     resetTimer();
   })();
 
-  // 真懒加载:滚动到接近视口才加载;轮播延后图也走这套
+  // true lazy-load: load only when near viewport; deferred carousel images use this too
   (function () {
     var imgs = document.querySelectorAll('img[data-src]');
     if (!imgs.length) return;
@@ -1268,7 +1328,7 @@
         });
       }, { rootMargin: '300px' });
       imgs.forEach(function (img) { io.observe(img); });
-      // 首屏稳定后(2.5秒)把仍未加载的轮播图也加载,保证轮播能切到所有图
+      // after first paint settles (2.5s), load remaining carousel images so all slides are available
       setTimeout(function () {
         document.querySelectorAll('#hero-carousel img[data-src]').forEach(load);
       }, 2500);
@@ -1277,7 +1337,7 @@
     }
   })();
 
-  // ===== 表单必填校验(复制自 EduInst-diabetic) =====
+  // ===== Form required-field validation (copied from EduInst-diabetic) =====
   (function () {
     const form = document.getElementById('inquiry-form');
     if (!form) return;
@@ -1309,7 +1369,7 @@
   })();
 
 
-  // Banner quote 飞入动画:滚入视口时触发
+  // Banner quote fly-in animation: triggered on scroll into view
   (function(){
     var q = document.getElementById('banner-quote');
     if (!q) return;
