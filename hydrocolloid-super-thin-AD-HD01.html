@@ -359,7 +359,8 @@
     font-size: 1.3rem; font-weight: 300; margin-bottom: 0.5rem;
   }
   .spec-highlight p { font-size: 0.82rem; opacity: 0.8; line-height: 1.7; }
-  .application-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .application-tags { display: flex; flex-direction: column; gap: 0.6rem; }
+  .tag-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
   .app-tag {
     display: inline-flex; align-items: center; gap: 0.4rem;
     padding: 0.42rem 0.95rem; border-radius: 999px;
@@ -1023,14 +1024,20 @@
           Best for superficial, low-exudate wounds where discretion, comfort and uninterrupted daily activity matter. Not recommended for infected wounds, heavily exuding wounds, or dry necrotic eschar without active debridement strategy.
         </p>
         <div class="application-tags">
-          <span class="app-tag">Donor Sites</span>
-          <span class="app-tag">Superficial Burns</span>
-          <span class="app-tag">Pressure Injuries Stage I–II</span>
-          <span class="app-tag">Post-Acne & Blemishes</span>
-          <span class="app-tag">Minor Blisters</span>
-          <span class="app-tag">Dry Surgical Incisions</span>
-          <span class="app-tag">Friction Injuries</span>
-          <span class="app-tag">Maturation-Phase Wounds</span>
+          <div class="tag-row">
+            <span class="app-tag">Donor Sites</span>
+            <span class="app-tag">Superficial Burns</span>
+            <span class="app-tag">Pressure Injuries Stage I–II</span>
+            <span class="app-tag">Post-Acne &amp; Blemishes</span>
+          </div>
+          <div class="tag-row">
+            <span class="app-tag">Minor Blisters</span>
+            <span class="app-tag">Dry Surgical Incisions</span>
+            <span class="app-tag">Friction Injuries</span>
+          </div>
+          <div class="tag-row">
+            <span class="app-tag">Maturation-Phase Wounds</span>
+          </div>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
           <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
