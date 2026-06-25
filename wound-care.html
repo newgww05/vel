@@ -578,6 +578,9 @@
       <div class="l2-cat" id="l2cat-personal" onmouseenter="openL3('personal')" onclick="selectL2('personal')">
         Scar Management <span class="l2-cat-arr">›</span>
       </div>
+      <div class="l2-cat" id="l2cat-surgical-wound-care" onmouseenter="openL3('surgical-wound-care')" onclick="selectL2('surgical-wound-care')">
+        Surgical Wound Care <span class="l2-cat-arr">›</span>
+      </div>
       <div class="l2-cat" id="l2cat-continence" onmouseenter="openL3('continence')" onclick="selectL2('continence')">
         Incontinence Care <span class="l2-cat-arr">›</span>
       </div>
@@ -723,6 +726,9 @@ var L3DATA = {
   ]},
   personal: { lbl:'Scar Management', ttl:'3 products · 1 group', groups:[
     {g:'Scar Care', items:['Silicone Scar Sheet','Hydrocolloid Acne Patch','Collagen Mask']}
+  ]},
+  'surgical-wound-care': { lbl:'Surgical Wound Care', ttl:'2 products · 1 group', groups:[
+    {g:'Surgical Drapes', items:['Incise Drape','Iodine Incise Drape']}
   ]},
   continence: { lbl:'Incontinence Care', ttl:'5 products · 1 group', groups:[
     {g:'Washable Underpads', items:['Washable Bed Pad Standard','Washable Bed Pad Large','Washable Bed Pad King Size','Washable Bed Pad with Tuck-in Sides','Washable Bed Pad for Baby']}
@@ -1140,7 +1146,9 @@ var PRODS = {
     specs:[['Risk Grade','Grade 3 — Acute Phase / Wound Management (Very High Risk)'],['Design','Rigid high-leg offloading brace'],['Insole','Modular multilayer offloading system'],['Sole','External rigid full-length rocker'],['Standard','IWGDF Gold Standard Offloading — DFA Grade 3'],['Manufacturer','Optima Molliter, Italy (est. 1894)']],
     indications:['Active diabetic plantar foot ulcer','Post-operative diabetic foot surgery','Charcot foot acute phase','Malleolar and metatarsal fractures','Post-amputation rehabilitation (up to transmetatarsal)'],
     note:'Part of Optima Molliter DFA Grade 3 acute protocol. Clinically proven in prospective randomised studies published in Diabetes Care (ADA, 2007).'
-  }
+  },
+  'Incise Drape':{badge:'Incise Drape',bs:'background:#eff6ff;color:#1d4ed8;',imgs:[],tagline:'Sterile transparent adhesive incise drape — applied directly over the prepared surgical site to seal in resident skin flora and form a sterile barrier from skin to incision throughout the procedure.',features:['Transparent polyethylene/polyurethane incise film with hypoallergenic acrylic adhesive applied directly to the surgical site','Conforms to skin contours and adheres securely even in moist or hair-bearing areas — surgeon cuts through both drape and skin in one motion','Reduces migration of resident skin flora into the incision throughout the procedure, supporting surgical site infection (SSI) prevention','Single-use sterile — peel-and-apply delivery from siliconized release liner, removes cleanly at the end of the procedure'],specs:[['Construction','Transparent incise film + acrylic adhesive on siliconized release liner'],['Backing','Polyethylene or polyurethane film'],['Common sizes','From small (15×20 cm) up to full-body (60×85 cm) — multiple size variants available'],['Sterility','Individually sterile-packaged'],['Sterilization','Ethylene oxide (EO)'],['Use','Single-use, single-patient']],indications:['General surgery','Orthopaedic procedures','Cardiovascular & thoracic surgery','Caesarean section','Abdominal procedures','Other procedures requiring a sterile incise barrier'],note:''},
+  'Iodine Incise Drape':{badge:'Iodine Incise Drape · Antimicrobial',bs:'background:#fffbeb;color:#b45309;',imgs:[],tagline:'Iodophor-impregnated antimicrobial incise drape — continuous broad-spectrum antimicrobial activity built into the adhesive itself, supporting surgical site infection (SSI) prevention throughout the procedure.',features:['Iodophor (povidone-iodine, PVP-I) impregnated adhesive delivers continuous broad-spectrum antimicrobial activity directly under the drape — the antimicrobial agent is in the adhesive itself and is not washed off by saline irrigation, blood or bodily fluids during surgery','Clinically associated with reduced surgical site infection (SSI) rates in high-risk procedures: cardiac surgery (Bejko 2015, J Cardiovasc Transl Res — 5,100-patient comparison), joint arthroplasty (Rezapoor 2018, J Arthroplasty), hepatic surgery (Yoshimura 2003, World J Surg), and meta-analytic evidence for clean and clean-contaminated wounds','Adheres securely to the skin and resists drape lift throughout the procedure — drape lift is a documented contamination pathway in incise-drape surgery','Transparent low-memory film conforms to body contours and stretches without losing adhesion — surgeon cuts through both drape and skin in one motion, with a sterile barrier maintained right to the wound edge'],specs:[['Construction','Transparent incise film + iodophor-impregnated acrylic adhesive on siliconized release liner'],['Backing','Polyethylene or polyurethane low-memory film'],['Antimicrobial agent','Iodophor (povidone-iodine, PVP-I)'],['Antimicrobial activity','Continuous, broad-spectrum, not washed off by intra-operative fluids'],['Common sizes','From 35×35 cm up to 60×85 cm — multiple size variants available'],['Sterility','Individually sterile-packaged'],['Sterilization','Ethylene oxide (EO)'],['Use','Single-use, single-patient']],indications:['Cardiac & cardiothoracic surgery','Orthopaedic surgery & joint arthroplasty','Neurosurgery (cranial & spinal)','Hepatobiliary surgery','High-risk general surgery','SSI-prevention protocol for clean and clean-contaminated wounds'],note:'Contraindicated in patients with known iodine or povidone-iodine hypersensitivity. Use with caution in patients with thyroid disease, in neonates, and in pregnant women per manufacturer guidance and local clinical protocol.'}
 };
 
 // Category overview data
