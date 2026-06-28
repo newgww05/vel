@@ -515,28 +515,35 @@
   /* ============ Care pathway ============ */
   .pathway-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
   .pathway-track {
-    display: grid; grid-template-columns: repeat(6, 1fr);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 3rem 2rem;
     position: relative; margin-top: 3.5rem;
   }
   .pathway-track::before {
     content: '';
-    position: absolute; top: 14px; left: 8%; right: 8%;
+    position: absolute; top: 22px; left: 8%; right: 8%;
     height: 1px; background: var(--c-line);
+    display: none;
   }
-  .path-step { text-align: center; padding: 0 0.6rem; position: relative; }
+  /* Row 1: Stage I, Stage II — each takes 2 columns */
+  .path-step:nth-child(1) { grid-column: 1 / 3; }
+  .path-step:nth-child(2) { grid-column: 3 / 5; }
+  /* Row 2: Stage III, IV, Unstageable, DTPI — auto-placed in 4 columns */
+  .path-step { text-align: center; padding: 0 1rem; position: relative; }
   .path-dot {
-    width: 29px; height: 29px; border-radius: 50%;
+    width: 44px; height: 44px; border-radius: 50%;
     background: #fbfaf8; border: 1px solid var(--c-teal);
     color: var(--c-teal);
-    font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; font-weight: 600;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 1.1rem;
   }
   .path-step h4 {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 0.92rem; font-weight: 400; margin-bottom: 0.45rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 400; margin-bottom: 0.6rem;
+    letter-spacing: 0.01em;
   }
-  .path-step p { font-size: 0.76rem; color: var(--c-ink2); line-height: 1.7; }
+  .path-step p { font-size: 0.92rem; color: var(--c-ink2); line-height: 1.75; }
 
   /* ============ Home prevention ============ */
   .prevent-section { padding: 6rem 0; }
@@ -651,7 +658,8 @@
     .stats-bar { grid-template-columns: 1fr 1fr; }
     .stat-item:nth-child(2) { border-right: none; }
     .stat-item:nth-child(-n+2) { border-bottom: 0.5px solid var(--c-line); }
-    .pathway-track { grid-template-columns: 1fr 1fr 1fr; row-gap: 2.5rem; }
+    .pathway-track { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
+    .path-step:nth-child(1), .path-step:nth-child(2) { grid-column: auto; }
     .pathway-track::before { display: none; }
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -1093,7 +1101,7 @@
       <div class="path-step">
         <div class="path-dot">II</div>
         <h4>Stage II · Partial-Thickness</h4>
-        <p>Maintain moist healing for re-epithelialisation. Hydrocolloid (super-thin) for low exudate; <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">silicone-bordered foam</a> if exudate is moderate or peri-wound skin is fragile. Change every 3–5 days.</p>
+        <p>Maintain moist healing for re-epithelialisation. <a href="hydrocolloid-super-thin-AD-HD01.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Hydrocolloid</a> (super-thin) for low exudate; <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">silicone-bordered foam</a> if exudate is moderate or peri-wound skin is fragile. Change every 3–5 days.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">III</div>
@@ -1108,12 +1116,12 @@
       <div class="path-step">
         <div class="path-dot">U</div>
         <h4>Unstageable · Eschar Covered</h4>
-        <p>Debride before staging. Hydrogel softens dry eschar for autolytic debridement; <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">alginate</a> handles moist slough. Stage and re-plan once the wound bed is visualised.</p>
+        <p>Debride before staging. <a href="wound-care.html?prod=Hydrogel" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Hydrogel</a> softens dry eschar for autolytic debridement; <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">alginate</a> handles moist slough. Stage and re-plan once the wound bed is visualised.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">DTI</div>
         <h4>DTPI · Deep Discoloration</h4>
-        <p>Offload aggressively and observe — DTPI often evolves within days. Avoid opaque dressings that hide colour change. Transparent film or thin silicone over the area; reassess every shift.</p>
+        <p>Offload aggressively and observe — DTPI often evolves within days. Avoid opaque dressings that hide colour change. <a href="wound-care.html?prod=Frame%20Style%20Transparent%20Film%20IV%20Dressing" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Transparent film</a> or thin silicone over the area; reassess every shift.</p>
       </div>
     </div>
   </div>
@@ -1256,7 +1264,7 @@
         <div class="pyramid-row pyramid-row-i">
           <span class="pyramid-bullet" style="background:#97c0e2;"></span>
           <div>
-            <strong>Stage I + At-Risk</strong> — intact erythema or high-risk skin. Prophylactic silicone foam dressings over sacrum and heels reduce incidence (clinical evidence). Transparent film for observation only.
+            <strong>Stage I + At-Risk</strong> — intact erythema or high-risk skin. Prophylactic <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">silicone foam</a> dressings over sacrum and heels reduce incidence (clinical evidence). <a href="wound-care.html?prod=Frame%20Style%20Transparent%20Film%20IV%20Dressing" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Transparent film</a> for observation only.
           </div>
         </div>
         <div class="pyramid-row pyramid-row-base">
@@ -1303,7 +1311,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-yes">
               <strong>Yes (Stage I or DTPI)</strong>
-              <p>Offload pressure immediately. Use <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">prophylactic silicone foam</a> (sacrum, heels, trochanter) or transparent film for ongoing observation. Re-assess every shift.</p>
+              <p>Offload pressure immediately. Use <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">prophylactic silicone foam</a> (sacrum, heels, trochanter) or <a href="wound-care.html?prod=Frame%20Style%20Transparent%20Film%20IV%20Dressing" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">transparent film</a> for ongoing observation. Re-assess every shift.</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>No, the wound is open →</strong>
@@ -1321,7 +1329,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-warn">
               <strong>Covered (Unstageable)</strong>
-              <p>Debride first. Hydrogel for dry eschar (autolytic), <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">alginate</a> for moist slough, or refer for enzymatic / sharp debridement. Re-stage after debridement before final dressing choice.</p>
+              <p>Debride first. <a href="wound-care.html?prod=Hydrogel" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Hydrogel</a> for dry eschar (autolytic), <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">alginate</a> for moist slough, or refer for enzymatic / sharp debridement. Re-stage after debridement before final dressing choice.</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>Wound bed visible →</strong>
