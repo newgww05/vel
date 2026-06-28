@@ -1464,11 +1464,54 @@ function showProd(name) {
   document.getElementById('l2Main').scrollTop = 0;
 }
 
-// Auto-select category from URL param
+// Auto-select category from URL param, and optionally deep-link to a specific product
+// Usage:  wound-care.html?cat=advanced              → opens Advanced Wound Care category
+//         wound-care.html?prod=Calcium%20Alginate   → opens Calcium Alginate product detail
+//         wound-care.html?cat=traditional&prod=...  → both together
 (function(){
   var params = new URLSearchParams(window.location.search);
-  var cat = params.get('cat') || 'advanced';
-  selectL2(cat);
+  var cat = params.get('cat');
+  var prodName = params.get('prod');
+
+  // If only ?prod is given (no cat), auto-detect the right category from L3DATA
+  if (prodName && !cat) {
+    var decodedPeek = decodeURIComponent(prodName);
+    for (var _c in L3DATA) {
+      var found = L3DATA[_c].groups.some(function(g){
+        return g.items.indexOf(decodedPeek) !== -1;
+      });
+      if (found) { cat = _c; break; }
+    }
+    // Case-insensitive fallback
+    if (!cat) {
+      for (var _c2 in L3DATA) {
+        var found2 = L3DATA[_c2].groups.some(function(g){
+          return g.items.some(function(it){ return it.toLowerCase() === decodedPeek.toLowerCase(); });
+        });
+        if (found2) { cat = _c2; break; }
+      }
+    }
+  }
+
+  selectL2(cat || 'advanced');
+
+  // Open the specific product detail panel
+  if (prodName) {
+    var decoded = decodeURIComponent(prodName);
+    // Wait for selectL2 to render the L3 menu before opening the product
+    setTimeout(function(){
+      if (PRODS[decoded]) {
+        showProd(decoded);
+      } else {
+        // Case-insensitive lookup
+        var foundKey = null;
+        Object.keys(PRODS).forEach(function(k) {
+          if (k.toLowerCase() === decoded.toLowerCase()) foundKey = k;
+        });
+        if (foundKey) showProd(foundKey);
+      }
+    }, 120);
+  }
 })();
 // Product search
 function getAllProducts() {
