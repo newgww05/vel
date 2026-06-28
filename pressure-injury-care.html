@@ -612,8 +612,8 @@
   /* ============ 创新区段 CSS ============ */
   /* 金字塔 */
   .pyramid-section { padding: 6rem 0; background: #ffffff; }
-  .pyramid-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem; }
-  .pyramid-svg { width: 100%; height: auto; max-width: 560px; margin: 0 auto; display: block; }
+  .pyramid-wrap { display: grid; grid-template-columns: 5fr 3fr; gap: 3rem; align-items: center; margin-top: 3rem; }
+  .pyramid-svg { width: 100%; height: auto; max-width: 700px; margin: 0 auto; display: block; }
   .pyramid-legend { display: flex; flex-direction: column; gap: 1.25rem; }
   .pyramid-row { display: flex; gap: 0.9rem; align-items: flex-start; padding: 0.85rem 1rem; border-radius: 8px; background: #fbfaf8; border-left: 3px solid; font-size: 0.92rem; line-height: 1.7; color: var(--c-ink2); }
   .pyramid-row strong { color: var(--c-ink); font-weight: 600; }
@@ -626,15 +626,12 @@
   .pyramid-row em { font-style: italic; color: var(--c-purple); }
 
   /* 解剖部位 */
-  .anatomy-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
-  .anatomy-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; margin-top: 3rem; align-items: start; }
-  .anatomy-figure { background: #fff; padding: 2rem; border-radius: 14px; border: 0.5px solid var(--c-line); }
-  .anatomy-figure svg { width: 100%; height: auto; max-width: 480px; margin: 0 auto; display: block; }
-  .anatomy-info { display: flex; flex-direction: column; gap: 1.25rem; }
-  .anatomy-card { display: flex; gap: 1.25rem; padding: 1.25rem 1.5rem; background: #fff; border-radius: 10px; border: 0.5px solid var(--c-line); }
-  .anatomy-card-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--c-blue); line-height: 1; flex-shrink: 0; }
-  .anatomy-card h4 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; color: var(--c-ink); margin-bottom: 0.4rem; letter-spacing: 0.01em; }
-  .anatomy-card p { font-size: 0.88rem; color: var(--c-ink2); line-height: 1.7; }
+  
+  
+  
+  
+  
+  
 
   /* 决策树 */
   .decision-section { padding: 6rem 0; background: #ffffff; }
@@ -684,7 +681,7 @@
   /* 移动端 */
   @media (max-width: 880px) {
     .pyramid-wrap { grid-template-columns: 1fr; gap: 2rem; }
-    .anatomy-layout { grid-template-columns: 1fr; gap: 2rem; }
+    
     .decision-step { grid-template-columns: 1fr; gap: 0.8rem; padding: 1.25rem; }
     .decision-options { grid-template-columns: 1fr; }
     .braden-row { grid-template-columns: 60px 1fr; }
@@ -790,105 +787,52 @@
   </div>
 </div>
 <div class="stats-note">* Figures reflect commonly recommended ranges from international clinical scar-management guidelines and published literature; individual clinical assessment applies.</div>
-
-<!-- 横幅图 1500×600 -->
-<div class="banner-image">
-  <img src="https://img.velcura.net/tjb1.webp" alt="Pressure injury care and wound dressing strategy" width="1500" height="600" loading="lazy">
-  <div class="banner-overlay">
-    <h2>How Pressure Injuries<br>Form, and How to <em>Intervene</em></h2>
-    <p>Pressure injuries are not "skin problems" — they are mechanical and ischemic injuries to deep tissue that surface upward. Once formed, they demand stage-specific intervention: from offloading pressure and restoring microclimate balance to managing exudate, debriding necrosis and controlling bacterial bioburden. Understanding the underlying mechanisms is the foundation of every effective dressing decision.</p>
-  </div>
+<!-- TL;DR — 30-second takeaway -->
+<div style="max-width: 880px; margin: 2rem auto 2.5rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, #f0f7fc 0%, #e0eef9 100%); border-left: 4px solid var(--c-teal, #2c6396); border-radius: 6px;">
+  <div style="display: inline-block; padding: 3px 11px; background: var(--c-teal, #2c6396); color: white; font-size: 0.7rem; letter-spacing: 0.14em; font-weight: 600; border-radius: 3px; margin-bottom: 0.7rem;">IN 60 SECONDS</div>
+  <p style="margin: 0; font-size: 0.99rem; line-height: 1.7; color: #2c3e50;">
+    Pressure injuries demand a <strong>continuum, not a single dressing</strong>. Velcura's portfolio aligns with <strong>NPIAP/EPUAP 2019 guidance</strong> across the full clinical arc — soft silicone foam border dressings for prevention and Stage I–II protection of bony prominences; calcium alginate for Stage III–IV exudate and dead-space; silver-impregnated and activated charcoal dressings for infection and malodour management in complex cases. One product family, six clinical missions.
+  </p>
 </div>
 
-<!-- How Pressure Injuries Form -->
-<section class="patho-section" id="patho">
-  <div class="container">
-    <div class="section-tag">How Pressure Injuries Form</div>
-    <div class="patho-grid">
-      <div class="feature-card">
-        <span class="feature-icon">⬡</span>
-        <h3>Sustained Pressure · Capillary Ischemia</h3>
-        <p>When external pressure on tissue exceeds capillary closing pressure (around 32 mmHg) for an extended period, local microcirculation collapses, oxygen delivery is blocked, and cells progress from reversible hypoxia to irreversible necrosis. This is why pressure injuries cluster at bony prominences — the sacrum, heels, ischial tuberosities and occiput — where soft tissue is thinnest and pressure concentration is highest.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">◈</span>
-        <h3>Shear &amp; Friction · Deep Plane Damage</h3>
-        <p>When a patient slides down in bed or a chair, the skin stays where the surface grips it, while underlying tissue moves with gravity. The resulting tangential forces tear blood vessels and deep tissue planes — explaining why some injuries surface as a small skin opening that hides a much larger deep cavity below. Friction additionally strips the stratum corneum, weakening the skin's first line of defence.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">◇</span>
-        <h3>Microclimate Imbalance · Barrier Failure</h3>
-        <p>Trapped moisture (sweat, incontinence, exudate) combined with heat raises skin pH and softens the corneum. Hyper-hydrated skin tolerates 5× less friction than dry skin and is significantly more vulnerable to maceration and infection. Maintaining an optimal moisture and temperature microclimate at the skin–support surface interface is therefore as important as redistributing pressure itself.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NPIAP 分期 + 护理要素 -->
-<section class="grading-section" id="grading">
-  <div class="container">
-    <div class="grading-layout">
-      <div>
-        <div class="section-tag">NPIAP / EPUAP Staging</div>
-        <h2 class="section-title">The Six Stages of<br>Pressure Injury</h2>
-        <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
-          The 2016 NPIAP staging system is the international clinical standard. Each stage describes a distinct depth of tissue damage and demands a different dressing strategy — getting the stage right is the precondition for getting the dressing right.
-        </p>
-        <table class="grade-table">
-          <tr><td>Stage I</td><td><strong>Intact skin with non-blanchable erythema.</strong> A localized area of unblanchable redness, usually over a bony prominence. The skin is unbroken; pain, firmness or temperature change may precede the colour change.</td></tr>
-          <tr><td>Stage II</td><td><strong>Partial-thickness skin loss with exposed dermis.</strong> Presents as a shallow open ulcer with a red-pink wound bed, or as an intact / ruptured serum-filled blister. No granulation tissue, slough or eschar.</td></tr>
-          <tr><td>Stage III</td><td><strong>Full-thickness skin loss; subcutaneous fat visible.</strong> Bone, tendon and muscle are not exposed. Slough and undermining or tunnelling may be present. Depth varies by anatomical location.</td></tr>
-          <tr><td>Stage IV</td><td><strong>Full-thickness skin and tissue loss; bone, tendon or muscle exposed.</strong> Slough and eschar are often present along with extensive undermining and tunnelling. High risk of osteomyelitis.</td></tr>
-          <tr><td>Unstageable</td><td><strong>Obscured full-thickness loss.</strong> The base of the ulcer is covered by slough or eschar so the true depth cannot be determined. Stage III or IV will be confirmed only after debridement.</td></tr>
-          <tr><td>DTPI</td><td><strong>Deep Tissue Pressure Injury — intact or non-intact skin with persistent non-blanchable deep red, maroon or purple discoloration.</strong> Often evolves rapidly to reveal the true depth of injury below.</td></tr>
-        </table>
-      </div>
-      <div>
-        <div class="section-tag">Care Elements</div>
-        <h2 class="section-title">The TIME-H Framework<br>for Pressure Injuries</h2>
-        <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:1.5rem;">
-          Built on the internationally adopted TIME wound bed preparation framework (extended to TIME-H), this five-step approach pairs every clinical priority with a matching dressing material.
-        </p>
-        <div class="dimes-list">
-          <div class="dimes-item">
-            <div class="dimes-letter">T</div>
-            <div><h4>Tissue · Debride Necrotic Tissue</h4><p>Slough and eschar must be removed for healing to proceed. Autolytic debridement uses moisture-retentive dressings (hydrogels, hydrocolloids); enzymatic and sharp debridement may also be required.</p></div>
-          </div>
-          <div class="dimes-item">
-            <div class="dimes-letter">I</div>
-            <div><h4>Infection · Reduce Bioburden</h4><p>Critical colonization, biofilm and frank infection stall healing. Antimicrobial dressings — ionic silver, nano-silver, activated charcoal — reduce bacterial load and target multi-drug-resistant organisms including MRSA.</p></div>
-          </div>
-          <div class="dimes-item">
-            <div class="dimes-letter">M</div>
-            <div><h4>Moisture · Balance Exudate</h4><p>Too wet macerates; too dry desiccates. Match absorbency to exudate level — alginates and superabsorbents for heavy, foam for moderate, hydrocolloid or film for light.</p></div>
-          </div>
-          <div class="dimes-item">
-            <div class="dimes-letter">E</div>
-            <div><h4>Edge · Support Epithelial Advance</h4><p>Once the wound bed is clean and balanced, undermined or rolled edges block re-epithelialisation. Soft silicone contact layers protect new granulation tissue and accelerate edge advance.</p></div>
-          </div>
-          <div class="dimes-item">
-            <div class="dimes-letter">H</div>
-            <div><h4>Healing Environment · Offload &amp; Protect</h4><p>No dressing replaces pressure offloading. Repositioning every 2 hours, appropriate support surfaces, and prophylactic silicone foam over high-risk bony prominences are non-negotiable foundations.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Solutions -->
+<!-- Anatomy-matched product range image (FULL-WIDTH B2B product matrix) -->
+<figure style="margin: 1.5rem 0 0; padding: 0; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+  <img src="https://img.velcura.net/body1.webp" 
+       alt="Velcura's anatomy-matched pressure injury dressing range — seven body sites (occiput, shoulders, elbows, sacrum, hips, inner knees, heels) with their matching dressing shapes and sizes"
+       width="1440" height="720"
+       loading="lazy"
+       style="width: 100%; height: auto; display: block;">
+  <figcaption style="text-align: center; font-size: 0.88rem; color: #5a6c7d; font-style: italic; margin-top: 1rem; padding: 0 1rem; letter-spacing: 0.02em;">
+    Seven bony prominences × seven anatomy-matched dressing shapes. The Velcura PI range, applied.
+  </figcaption>
+</figure>
 <section class="solutions-section" id="solutions">
+  <!-- Full-width teal banner: VELCURA DRESSING RANGE + Six Dressings, Six Clinical Missions -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+        <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+        Velcura Dressing Range
+      </div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+        Six Dressings,<br>Six Clinical Missions
+      </h2>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="section-tag">Velcura Dressing Range</div>
-    <h2 class="section-title">Material Science Meets<br>Clinical Stage</h2>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  Six dressing categories, six clinical roles — from prevention to deep-cavity exudate, from infection control to malodour management.
+</p>
+
     <p class="section-lead">
-      Each dressing category solves a distinct clinical problem in pressure injury care. Below are Velcura's core dressings mapped to the stages and pathologies they were designed for. Material choice is not a preference — it is a function of exudate volume, tissue depth, bioburden risk and peri-wound condition.
+      Each card below is one of Velcura's six core PI dressing categories — mapped to the clinical mission it was designed for. Material choice is a function of exudate volume, tissue depth, bioburden risk and peri-wound condition; the six together cover the full prevention-to-Stage IV+ continuum.
     </p>
     <div class="solutions-grid">
       <div class="feature-card">
         <span class="feature-icon">⬡</span>
-        <h3>Silicone Foam with Silver</h3>
-        <p>Five-layer composite: soft silicone wound contact + hydrophilic foam + superabsorbent locking + waterproof film. The silicone face adheres only to intact skin — never to fragile granulation tissue. Ionic silver provides sustained antimicrobial cover. <strong>Workhorse for Stage II–III sacrum, heel and trochanter injuries.</strong></p>
+        <h3>Foam Silicone Adhesive Border</h3>
+        <p>Soft silicone wound-contact face + hydrophilic polyurethane foam pad + waterproof breathable film backing, with a low-tack silicone adhesive border that releases without epidermal stripping. The silicone interface adheres only to intact peri-wound skin — never to fragile granulation tissue — and lifts cleanly without trauma at each dressing change. <strong>NPIAP/EPUAP 2019 guidelines explicitly recommend soft silicone foam dressings as a preventive intervention against friction and shear at high-risk anatomical sites — the core dressing across the prevention-through-treatment continuum: Stage I prevention, Stage II/III treatment, available in sacrum and heel anatomical shapes for bony prominences.</strong></p>
         <a class="solution-link" href="silicone-foam-border-AD44.html">View product →</a>
       </div>
       <div class="feature-card">
@@ -925,36 +869,166 @@
   </div>
 </section>
 
+<!-- 横幅图 1500×600 -->
+<div class="banner-image">
+  <img src="https://img.velcura.net/tjb1.webp" alt="Pressure injury care and wound dressing strategy" width="1500" height="600" loading="lazy">
+  <div class="banner-overlay">
+    <h2>How Pressure Injuries<br>Form, and How to <em>Intervene</em></h2>
+    <p>Pressure injuries are not "skin problems" — they are mechanical and ischemic injuries to deep tissue that surface upward. Once formed, they demand stage-specific intervention: from offloading pressure and restoring microclimate balance to managing exudate, debriding necrosis and controlling bacterial bioburden. Understanding the underlying mechanisms is the foundation of every effective dressing decision.</p>
+  </div>
+</div>
+
+<!-- How Pressure Injuries Form -->
+<section class="patho-section" id="patho">
+  <div class="container">
+    <div class="section-tag">How Pressure Injuries Form</div>
+    <div class="patho-grid">
+      <div class="feature-card">
+        <span class="feature-icon">⬡</span>
+        <h3>Sustained Pressure · Capillary Ischemia</h3>
+        <p>When external pressure on tissue exceeds capillary closing pressure (around 32 mmHg) for an extended period, local microcirculation collapses, oxygen delivery is blocked, and cells progress from reversible hypoxia to irreversible necrosis. This is why pressure injuries cluster at bony prominences — the sacrum, heels, ischial tuberosities and occiput — where soft tissue is thinnest and pressure concentration is highest.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◈</span>
+        <h3>Shear &amp; Friction · Deep Plane Damage</h3>
+        <p>When a patient slides down in bed or a chair, the skin stays where the surface grips it, while underlying tissue moves with gravity. The resulting tangential forces tear blood vessels and deep tissue planes — explaining why some injuries surface as a small skin opening that hides a much larger deep cavity below. Friction additionally strips the stratum corneum, weakening the skin's first line of defence.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◇</span>
+        <h3>Microclimate Imbalance · Barrier Failure</h3>
+        <p>Trapped moisture (sweat, incontinence, exudate) combined with heat raises skin pH and softens the corneum. Hyper-hydrated skin tolerates 5× less friction than dry skin and is significantly more vulnerable to maceration and infection. Maintaining an optimal moisture and temperature microclimate at the skin–support surface interface is therefore as important as redistributing pressure itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NPIAP 分期 + 护理要素 -->
+<section class="grading-section" id="grading">
+  <!-- Full-width teal banner: TWO side-by-side titles (NPIAP Staging + Care Elements) -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+          <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+          NPIAP / EPUAP Staging
+        </div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0;">
+          The Six Stages of<br>Pressure Injury
+        </h2>
+      </div>
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+          <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+          Care Elements
+        </div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0;">
+          The TIME-H Framework<br>for Pressure Injuries
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grading-layout">
+      <div>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  Six NPIAP stages — and the wrong staging makes every downstream dressing choice wrong too.
+</p>
+
+        <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
+          The 2016 NPIAP staging system is the international clinical standard. Each stage describes a distinct depth of tissue damage and demands a different dressing strategy — getting the stage right is the precondition for getting the dressing right.
+        </p>
+        <table class="grade-table">
+          <tr><td>Stage I</td><td><strong>Intact skin with non-blanchable erythema.</strong> A localized area of unblanchable redness, usually over a bony prominence. The skin is unbroken; pain, firmness or temperature change may precede the colour change.</td></tr>
+          <tr><td>Stage II</td><td><strong>Partial-thickness skin loss with exposed dermis.</strong> Presents as a shallow open ulcer with a red-pink wound bed, or as an intact / ruptured serum-filled blister. No granulation tissue, slough or eschar.</td></tr>
+          <tr><td>Stage III</td><td><strong>Full-thickness skin loss; subcutaneous fat visible.</strong> Bone, tendon and muscle are not exposed. Slough and undermining or tunnelling may be present. Depth varies by anatomical location.</td></tr>
+          <tr><td>Stage IV</td><td><strong>Full-thickness skin and tissue loss; bone, tendon or muscle exposed.</strong> Slough and eschar are often present along with extensive undermining and tunnelling. High risk of osteomyelitis.</td></tr>
+          <tr><td>Unstageable</td><td><strong>Obscured full-thickness loss.</strong> The base of the ulcer is covered by slough or eschar so the true depth cannot be determined. Stage III or IV will be confirmed only after debridement.</td></tr>
+          <tr><td>DTPI</td><td><strong>Deep Tissue Pressure Injury — intact or non-intact skin with persistent non-blanchable deep red, maroon or purple discoloration.</strong> Often evolves rapidly to reveal the true depth of injury below.</td></tr>
+        </table>
+      </div>
+      <div>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  Tissue · Infection · Moisture · Edge · Host — the five clinical levers every wound dressing must address.
+</p>
+
+        <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:1.5rem;">
+          Built on the internationally adopted TIME wound bed preparation framework (extended to TIME-H), this five-step approach pairs every clinical priority with a matching dressing material.
+        </p>
+        <div class="dimes-list">
+          <div class="dimes-item">
+            <div class="dimes-letter">T</div>
+            <div><h4>Tissue · Debride Necrotic Tissue</h4><p>Slough and eschar must be removed for healing to proceed. Autolytic debridement uses moisture-retentive dressings (hydrogels, hydrocolloids); enzymatic and sharp debridement may also be required.</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">I</div>
+            <div><h4>Infection · Reduce Bioburden</h4><p>Critical colonization, biofilm and frank infection stall healing. Antimicrobial dressings — ionic silver, nano-silver, activated charcoal — reduce bacterial load and target multi-drug-resistant organisms including MRSA.</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">M</div>
+            <div><h4>Moisture · Balance Exudate</h4><p>Too wet macerates; too dry desiccates. Match absorbency to exudate level — alginates and superabsorbents for heavy, foam for moderate, hydrocolloid or film for light.</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">E</div>
+            <div><h4>Edge · Support Epithelial Advance</h4><p>Once the wound bed is clean and balanced, undermined or rolled edges block re-epithelialisation. Soft silicone contact layers protect new granulation tissue and accelerate edge advance.</p></div>
+          </div>
+          <div class="dimes-item">
+            <div class="dimes-letter">H</div>
+            <div><h4>Healing Environment · Offload &amp; Protect</h4><p>No dressing replaces pressure offloading. Repositioning every 2 hours, appropriate support surfaces, and prophylactic silicone foam over high-risk bony prominences are non-negotiable foundations.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions -->
+
 <!-- Stage-by-Stage Care Pathway -->
 <section class="pathway-section" id="pathway">
+  <!-- Full-width teal banner: Stage-by-Stage Dressing Strategy -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+        <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+        Stage-by-Stage Dressing Strategy
+      </div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+        From Stage I Redness<br>to Stage IV Cavity
+      </h2>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="section-tag">Stage-by-Stage Dressing Strategy</div>
-    <h2 class="section-title">From Stage I Redness<br>to Stage IV Cavity</h2>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  Each stage has one primary goal — protect, occlude, fill or debride — and a small dressing arsenal that delivers it.
+</p>
+
     <div class="pathway-track">
       <div class="path-step">
         <div class="path-dot">I</div>
         <h4>Stage I · Intact Erythema</h4>
-        <p>Offload pressure immediately. Cover with prophylactic silicone foam or thin hydrocolloid to reduce friction and microclimate disturbance. No occlusive necessity yet — observation is the priority.</p>
+        <p>Offload pressure immediately. Cover with <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">prophylactic silicone foam</a> or <a href="hydrocolloid-super-thin-AD-HD01.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">thin hydrocolloid</a> to reduce friction and microclimate disturbance. No occlusive necessity yet — observation is the priority.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">II</div>
         <h4>Stage II · Partial-Thickness</h4>
-        <p>Maintain moist healing for re-epithelialisation. Hydrocolloid (super-thin) for low exudate; silicone-bordered foam if exudate is moderate or peri-wound skin is fragile. Change every 3–5 days.</p>
+        <p>Maintain moist healing for re-epithelialisation. Hydrocolloid (super-thin) for low exudate; <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">silicone-bordered foam</a> if exudate is moderate or peri-wound skin is fragile. Change every 3–5 days.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">III</div>
         <h4>Stage III · Full-Thickness</h4>
-        <p>Manage moderate-to-heavy exudate, support autolytic debridement, guard against infection. Foam with silver as the workhorse; layer calcium alginate when exudate is heavy or cavity present.</p>
+        <p>Manage moderate-to-heavy exudate, support autolytic debridement, guard against infection. Foam with silver as the workhorse; layer <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">calcium alginate</a> when exudate is heavy or cavity present.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">IV</div>
         <h4>Stage IV · Bone Exposed</h4>
-        <p>Pack cavities and tunnels with alginate rope. Consider nano-silver antimicrobial when bioburden is high or osteomyelitis risk is present. Activated charcoal addresses malodour. Multidisciplinary referral.</p>
+        <p>Pack cavities and tunnels with <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">alginate rope</a>. Consider <a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">nano-silver</a> antimicrobial when bioburden is high or osteomyelitis risk is present. <a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Activated charcoal</a> addresses malodour. Multidisciplinary referral.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">U</div>
         <h4>Unstageable · Eschar Covered</h4>
-        <p>Debride before staging. Hydrogel softens dry eschar for autolytic debridement; alginate handles moist slough. Stage and re-plan once the wound bed is visualised.</p>
+        <p>Debride before staging. Hydrogel softens dry eschar for autolytic debridement; <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">alginate</a> handles moist slough. Stage and re-plan once the wound bed is visualised.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">DTI</div>
@@ -967,11 +1041,26 @@
 
 <!-- 预防核心 -->
 <section class="prevent-section" id="prevent">
+  <!-- Full-width teal banner: Prevention -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+        <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+        Prevention · The First Line of Defence
+      </div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+        Why Prevention Costs<br>Less Than Treatment
+      </h2>
+    </div>
+  </div>
+
   <div class="container">
     <div class="prevent-layout">
       <div>
-        <div class="section-tag">Prevention · The First Line of Defence</div>
-        <h2 class="section-title">Why Prevention Costs<br>Less Than Treatment</h2>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  A single Stage IV pressure injury can run $70,000+ in treatment — prevention dressings cost a fraction of that.
+</p>
+
         <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--c-ink2); line-height:1.9;">
           Once a Stage III or IV pressure injury develops, treatment can run several months and tens of thousands of dollars per patient. A consistent prevention bundle — risk screening, repositioning, surface choice, skin care, nutrition and prophylactic dressings — can avoid most injuries before they form. This is where wound dressings step into a proactive role rather than a reactive one.
         </p>
@@ -1002,9 +1091,24 @@
 
 <!-- ============ 创新区段 1:敷料 × 分期金字塔(响应式 SVG) ============ -->
 <section class="pyramid-section" id="pyramid">
+  <!-- Full-width teal banner: The Pressure Injury Dressing Pyramid -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+        <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+        Dressing × Stage
+      </div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+        The Pressure Injury<br>Dressing Pyramid
+      </h2>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="section-tag">Dressing × Stage</div>
-    <h2 class="section-title">The Pressure Injury<br>Dressing Pyramid</h2>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  Five layers from foundation prevention to apex intervention — the higher the stage, the narrower the dressing arsenal.
+</p>
+
     <p class="section-lead">
       The deeper the injury, the more specialised the dressing. This pyramid maps each NPIAP stage to its primary dressing strategy — the foundation is universal prevention, the apex is reserved for the most severe cases.
     </p>
@@ -1053,19 +1157,19 @@
         <div class="pyramid-row pyramid-row-iv">
           <span class="pyramid-bullet" style="background:#2c6396;"></span>
           <div>
-            <strong>Stage IV</strong> — bone, tendon or muscle exposed. Nano-silver for high bioburden, calcium alginate rope for cavity packing, activated charcoal for malodour, NPWT for selected cases. Multidisciplinary care.
+            <strong>Stage IV</strong> — bone, tendon or muscle exposed. <a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Nano-silver</a> for high bioburden, <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">calcium alginate rope</a> for cavity packing, <a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">activated charcoal</a> for malodour, NPWT for selected cases. Multidisciplinary care.
           </div>
         </div>
         <div class="pyramid-row pyramid-row-iii">
           <span class="pyramid-bullet" style="background:#3a75ae;"></span>
           <div>
-            <strong>Stage III</strong> — full-thickness, subcutaneous fat visible. Silicone foam with silver is the clinical workhorse; calcium alginate for heavy exudate or cavity; autolytic debridement supported by occlusive moisture balance.
+            <strong>Stage III</strong> — full-thickness, subcutaneous fat visible. Silicone foam with silver is the clinical workhorse; <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">calcium alginate</a> for heavy exudate or cavity; autolytic debridement supported by occlusive moisture balance.
           </div>
         </div>
         <div class="pyramid-row pyramid-row-ii">
           <span class="pyramid-bullet" style="background:#6fa6d2;"></span>
           <div>
-            <strong>Stage II</strong> — partial-thickness with exposed dermis. Super-thin hydrocolloid for low exudate, silicone-bordered foam if exudate moderate or peri-wound skin fragile. 3–5 day wear time.
+            <strong>Stage II</strong> — partial-thickness with exposed dermis. Super-<a href="hydrocolloid-super-thin-AD-HD01.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">thin hydrocolloid</a> for low exudate, <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">silicone-bordered foam</a> if exudate moderate or peri-wound skin fragile. 3–5 day wear time.
           </div>
         </div>
         <div class="pyramid-row pyramid-row-i">
@@ -1085,138 +1189,26 @@
   </div>
 </section>
 
-<!-- ============ 创新区段 2:好发部位人体图 ============ -->
-<section class="anatomy-section" id="anatomy">
-  <div class="container">
-    <div class="section-tag">High-Risk Anatomy</div>
-    <h2 class="section-title">Where Pressure<br>Injuries Form</h2>
-    <p class="section-lead">
-      Pressure injuries cluster at bony prominences — areas where soft tissue is thin and external pressure concentrates. The seven sites below account for over 90% of all pressure injuries in clinical practice. The position the patient most often occupies (supine, lateral, seated) determines which sites are most at risk.
-    </p>
-
-    <div class="anatomy-layout">
-      <!-- 人体仰卧图 + 标注 -->
-      <div class="anatomy-figure">
-        <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomical map of pressure injury sites">
-          <!-- 仰卧位人体轮廓(简化卡通) -->
-          <!-- 头 -->
-          <ellipse cx="200" cy="60" rx="42" ry="50" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- 颈 -->
-          <rect x="180" y="100" width="40" height="20" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- 躯干 -->
-          <path d="M 145 120 L 255 120 L 270 280 L 250 380 L 150 380 L 130 280 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- 左臂 -->
-          <path d="M 145 130 L 100 140 L 90 240 L 100 260 L 115 250 L 125 150 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- 右臂 -->
-          <path d="M 255 130 L 300 140 L 310 240 L 300 260 L 285 250 L 275 150 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- 左腿 -->
-          <path d="M 155 380 L 145 530 L 165 560 L 185 555 L 200 400 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- 右腿 -->
-          <path d="M 245 380 L 255 530 L 235 560 L 215 555 L 200 400 Z" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.5"/>
-
-          <!-- 高发部位红点 + 标注 -->
-          <!-- 1. 后枕 Occiput -->
-          <circle cx="200" cy="40" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
-          <line x1="208" y1="40" x2="320" y2="40" stroke="#dc2626" stroke-width="1"/>
-          <text x="325" y="44" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Occiput</text>
-
-          <!-- 2. 肩胛 Scapula -->
-          <circle cx="160" cy="170" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
-          <line x1="152" y1="170" x2="65" y2="170" stroke="#dc2626" stroke-width="1"/>
-          <text x="0" y="174" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Scapula</text>
-
-          <!-- 3. 肘 Elbow -->
-          <circle cx="105" cy="240" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
-          <line x1="97" y1="240" x2="55" y2="240" stroke="#dc2626" stroke-width="1"/>
-          <text x="0" y="244" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Elbow</text>
-
-          <!-- 4. 骶尾 Sacrum (最常见) -->
-          <circle cx="200" cy="360" r="11" fill="#b91c1c" stroke="#fff" stroke-width="2"/>
-          <text x="200" y="364" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#fff" font-weight="700">1</text>
-          <line x1="211" y1="360" x2="320" y2="360" stroke="#b91c1c" stroke-width="1.5"/>
-          <text x="325" y="358" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="700">Sacrum</text>
-          <text x="325" y="372" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(most common ~30%)</text>
-
-          <!-- 5. 坐骨结节 Ischial -->
-          <circle cx="175" cy="395" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
-          <circle cx="225" cy="395" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
-          <line x1="167" y1="395" x2="65" y2="395" stroke="#dc2626" stroke-width="1"/>
-          <text x="0" y="399" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Ischial</text>
-          <text x="0" y="412" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">tuberosity</text>
-
-          <!-- 6. 髂 Trochanter -->
-          <circle cx="135" cy="370" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
-          <line x1="127" y1="370" x2="65" y2="320" stroke="#dc2626" stroke-width="1"/>
-          <text x="0" y="318" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="600">Trochanter</text>
-
-          <!-- 7. 足跟 Heel (第二常见) -->
-          <circle cx="160" cy="555" r="10" fill="#b91c1c" stroke="#fff" stroke-width="2"/>
-          <text x="160" y="559" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#fff" font-weight="700">2</text>
-          <circle cx="240" cy="555" r="10" fill="#b91c1c" stroke="#fff" stroke-width="2"/>
-          <text x="240" y="559" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#fff" font-weight="700">2</text>
-          <line x1="250" y1="555" x2="320" y2="555" stroke="#b91c1c" stroke-width="1.5"/>
-          <text x="325" y="553" font-family="DM Sans, sans-serif" font-size="11" fill="#1e293b" font-weight="700">Heel</text>
-          <text x="325" y="567" font-family="DM Sans, sans-serif" font-size="9" fill="#64748b">(2nd most ~20%)</text>
-
-          <!-- 副标 -->
-          <text x="200" y="590" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="11" fill="#64748b">Supine position — high-risk zones</text>
-        </svg>
-      </div>
-
-      <!-- 部位风险说明 -->
-      <div class="anatomy-info">
-        <div class="anatomy-card">
-          <div class="anatomy-card-num">01</div>
-          <div>
-            <h4>Sacrum &amp; Coccyx</h4>
-            <p>The single most common site (~30% of all pressure injuries). Thin tissue cover, frequent friction during bed mobility, and exposure to incontinence-related moisture make this area particularly vulnerable. Prophylactic silicone foam over the sacrum is one of the most evidence-supported preventive interventions.</p>
-          </div>
-        </div>
-        <div class="anatomy-card">
-          <div class="anatomy-card-num">02</div>
-          <div>
-            <h4>Heels</h4>
-            <p>Second most common (~20%). The calcaneus has minimal subcutaneous tissue and tolerates pressure poorly. Float heels off the mattress entirely with pillows or commercial offloading boots — pressure-redistribution mattresses alone do not protect the heel.</p>
-          </div>
-        </div>
-        <div class="anatomy-card">
-          <div class="anatomy-card-num">03</div>
-          <div>
-            <h4>Ischial Tuberosity</h4>
-            <p>Critical for wheelchair-bound and seated patients. Sitting concentrates body weight onto a small bony area; injuries here can extend deep into the gluteal muscles. Cushion selection and 15-minute repositioning intervals are essential.</p>
-          </div>
-        </div>
-        <div class="anatomy-card">
-          <div class="anatomy-card-num">04</div>
-          <div>
-            <h4>Greater Trochanter</h4>
-            <p>The hip bone projection. Critical for patients lying on their sides — use the 30° tilt (rather than full lateral) to reduce direct pressure on this prominence.</p>
-          </div>
-        </div>
-        <div class="anatomy-card">
-          <div class="anatomy-card-num">05</div>
-          <div>
-            <h4>Occiput &amp; Scapula</h4>
-            <p>Often overlooked. The occiput is the most common pressure injury site in paediatric and neonatal patients (the head is proportionally larger). Scapular injuries occur with prolonged supine positioning, particularly in ventilated patients.</p>
-          </div>
-        </div>
-        <div class="anatomy-card">
-          <div class="anatomy-card-num">06</div>
-          <div>
-            <h4>Medical Device-Related (MDR)</h4>
-            <p>An increasingly recognised category — pressure injuries caused by tubes, masks, splints, restraints or compression devices. Often missed because they occur at non-typical anatomical sites. Inspect skin under every device, every shift.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ 创新区段 3:决策树 + 风险评估 ============ -->
 <section class="decision-section" id="decision">
+  <!-- Full-width teal banner: Clinical Decision Tree -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+        <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+        Clinical Decision Tree
+      </div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+        Which Dressing,<br>For Which Wound?
+      </h2>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="section-tag">Clinical Decision Tree</div>
-    <h2 class="section-title">Which Dressing,<br>For Which Wound?</h2>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  A practical decision matrix — depth and exudate first, infection risk and skin condition second.
+</p>
+
     <p class="section-lead">
       A practical decision algorithm built around four sequential questions. This is not a substitute for clinical judgement — it is a structured way to think about dressing selection that aligns with the TIME-H framework.
     </p>
@@ -1230,7 +1222,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-yes">
               <strong>Yes (Stage I or DTPI)</strong>
-              <p>Offload pressure immediately. Use prophylactic silicone foam (sacrum, heels, trochanter) or transparent film for ongoing observation. Re-assess every shift.</p>
+              <p>Offload pressure immediately. Use <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">prophylactic silicone foam</a> (sacrum, heels, trochanter) or transparent film for ongoing observation. Re-assess every shift.</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>No, the wound is open →</strong>
@@ -1248,7 +1240,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-warn">
               <strong>Covered (Unstageable)</strong>
-              <p>Debride first. Hydrogel for dry eschar (autolytic), alginate for moist slough, or refer for enzymatic / sharp debridement. Re-stage after debridement before final dressing choice.</p>
+              <p>Debride first. Hydrogel for dry eschar (autolytic), <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">alginate</a> for moist slough, or refer for enzymatic / sharp debridement. Re-stage after debridement before final dressing choice.</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>Wound bed visible →</strong>
@@ -1266,7 +1258,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-warn">
               <strong>Yes — local infection signs / biofilm suspect</strong>
-              <p>Add antimicrobial cover. <strong>Nano-silver dressing</strong> for broad-spectrum activity including MRSA and anti-biofilm. <strong>Activated charcoal</strong> if odour is prominent. Review every 7 days — discontinue once infection is controlled (antimicrobial stewardship).</p>
+              <p>Add antimicrobial cover. <strong><a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Nano-silver dressing</a></strong> for broad-spectrum activity including MRSA and anti-biofilm. <strong><a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Activated charcoal</a></strong> if odour is prominent. Review every 7 days — discontinue once infection is controlled (antimicrobial stewardship).</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>No infection signs →</strong>
@@ -1300,10 +1292,24 @@
       </div>
     </div>
 
+    <!-- Full-width teal banner: Braden Risk Score header -->
+    <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 2.5rem; text-align: center;">
+      <div style="max-width: 1180px; margin: 0 auto;">
+        <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+          <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+          Risk Assessment · Braden
+        </div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; font-style: italic; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0 0 0.9rem 0;">
+          Braden Risk Score · Quick Reference
+        </h2>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); line-height: 1.7; max-width: 760px; margin: 0 auto;">
+          The Braden Scale is the international standard for pressure injury risk screening. Lower scores indicate higher risk. Use at admission and at every transfer of care.
+        </p>
+      </div>
+    </div>
+
     <!-- Braden 风险评分简表 -->
     <div class="braden-box">
-      <h3 class="braden-title">Braden Risk Score · Quick Reference</h3>
-      <p class="braden-intro">The Braden Scale is the international standard for pressure injury risk screening. Lower scores indicate higher risk. Use at admission and at every transfer of care.</p>
       <div class="braden-grid">
         <div class="braden-row"><span class="braden-score braden-very-high">≤ 9</span><span class="braden-level">Very High Risk</span><span class="braden-action">Specialist pressure-redistribution surface · Skin assessment every shift · Prophylactic silicone foam over sacrum &amp; heels</span></div>
         <div class="braden-row"><span class="braden-score braden-high">10–12</span><span class="braden-level">High Risk</span><span class="braden-action">High-specification reactive or alternating-pressure mattress · Repositioning every 2 hours · Heel offloading</span></div>
@@ -1317,9 +1323,24 @@
 
 <!-- ============ 创新区段 4:特殊人群护理 ============ -->
 <section class="special-section" id="special">
+  <!-- Full-width teal banner: Special Populations -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+        <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+        Special Populations
+      </div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+        Tailoring Care for<br>Different Patients
+      </h2>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="section-tag">Special Populations</div>
-    <h2 class="section-title">Tailoring Care for<br>Different Patients</h2>
+<p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
+  Geriatric, neonatal, ICU, oncology — each patient population modifies the standard dressing choice.
+</p>
+
     <p class="section-lead">
       Pressure injury risk and dressing requirements vary substantially across patient populations. The same wound can demand different products depending on who the patient is.
     </p>
@@ -1328,12 +1349,12 @@
       <div class="special-card">
         <div class="special-icon">◐</div>
         <h4>Geriatric Patients</h4>
-        <p>Skin thickness decreases ~20% per decade after 60. The dermis becomes papyraceous, capillaries fragile, healing capacity reduced. <strong>Avoid all aggressive adhesives</strong> — silicone borders or fully non-adhesive foam with secondary fixation are first-line choices. Watch for medical adhesive-related skin injury (MARSI) at every change.</p>
+        <p>Skin thickness decreases ~20% per decade after 60. The dermis becomes papyraceous, capillaries fragile, healing capacity reduced. <strong>Avoid all aggressive adhesives</strong> — <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">silicone borders</a> or fully <a href="foam-non-adhesive-AD12.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">non-adhesive foam</a> with secondary fixation are first-line choices. Watch for medical adhesive-related skin injury (MARSI) at every change.</p>
       </div>
       <div class="special-card">
         <div class="special-icon">◑</div>
         <h4>Diabetic Patients</h4>
-        <p>Microvascular disease + peripheral neuropathy = high risk + delayed recognition. Diabetic foot pressure injuries can progress silently to deep tissue damage. <strong>Aggressive infection control</strong> — low threshold for nano-silver antimicrobial dressings; consider MRSA and biofilm at every assessment.</p>
+        <p>Microvascular disease + peripheral neuropathy = high risk + delayed recognition. Diabetic foot pressure injuries can progress silently to deep tissue damage. <strong>Aggressive infection control</strong> — low threshold for <a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">nano-silver antimicrobial dressings</a>; consider MRSA and biofilm at every assessment.</p>
       </div>
       <div class="special-card">
         <div class="special-icon">◒</div>
@@ -1348,12 +1369,12 @@
       <div class="special-card">
         <div class="special-icon">◔</div>
         <h4>Paediatric &amp; Neonatal</h4>
-        <p>The head is proportionally larger — occipital pressure injuries dominate. Skin barrier is thin in preterm neonates, with high MARSI risk. <strong>Specialised paediatric silicone products, micro-adjustments to head position every 2–4 hours.</strong></p>
+        <p>The head is proportionally larger — occipital pressure injuries dominate. Skin barrier is thin in preterm neonates, with high MARSI risk. <strong>Specialised <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">paediatric silicone products</a>, micro-adjustments to head position every 2–4 hours.</strong></p>
       </div>
       <div class="special-card">
         <div class="special-icon">◕</div>
         <h4>Palliative Care</h4>
-        <p>Goals shift from healing to comfort and dignity. Kennedy Terminal Ulcers may develop hours to days before death and are not preventable. <strong>Activated charcoal addresses malodour; gentle non-adherent dressings prioritise pain-free changes over absorbency optimisation.</strong></p>
+        <p>Goals shift from healing to comfort and dignity. Kennedy Terminal Ulcers may develop hours to days before death and are not preventable. <strong><a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Activated charcoal</a> addresses malodour; gentle non-adherent dressings prioritise pain-free changes over absorbency optimisation.</strong></p>
       </div>
     </div>
   </div>
@@ -1550,6 +1571,193 @@
       msg.textContent = 'Thank you. Your inquiry has been submitted.';
       form.reset();
     });
+  })();
+
+  /* ============================================================
+     Logo Orbit Animation
+     Trigger: hover on pyramid SVG for 1.5 seconds
+     Action:  nav logo flies from header position, orbits the pyramid
+              from base to apex with rotation, lands on the apex,
+              and gently returns home after the mouse leaves.
+     ============================================================ */
+  (function(){
+    const pyramidSvg = document.querySelector('.pyramid-svg');
+    const navLogoAnchor = document.querySelector('.nav-logo');
+    if (!pyramidSvg || !navLogoAnchor) {
+      console.warn('[Pyramid orbit] Element not found:', {pyramidSvg, navLogoAnchor});
+      return;
+    }
+    const navLogoImg = navLogoAnchor.querySelector('img');
+    if (!navLogoImg) {
+      console.warn('[Pyramid orbit] Nav logo <img> not found');
+      return;
+    }
+    console.log('[Pyramid orbit] Initialized. Hover the pyramid for 1.5s to launch.');
+
+    // --- Visual hover affordance ---
+    pyramidSvg.style.cursor = 'pointer';
+    pyramidSvg.style.transition = 'filter 0.3s ease';
+
+    // Add a hint label below the pyramid
+    const hint = document.createElement('div');
+    hint.textContent = '✨ Hover here for 1.5 seconds — watch the logo orbit the pyramid';
+    hint.style.cssText = `
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--c-ink3, #8A8780);
+      font-style: italic;
+      letter-spacing: 0.04em;
+      margin-top: 0.6rem;
+      opacity: 0.7;
+      transition: opacity 0.3s ease, color 0.3s ease;
+    `;
+    pyramidSvg.insertAdjacentElement('afterend', hint);
+
+    let hoverTimer = null;
+    let returnTimer = null;
+    let isAnimating = false;
+    let flyer = null;
+    let mainAnim = null;
+
+    function startOrbit(){
+      if (isAnimating) return;
+      isAnimating = true;
+      console.log('[Pyramid orbit] Launching logo flight ⇡');
+      hint.style.opacity = '0';
+
+      const navRect = navLogoImg.getBoundingClientRect();
+      const svgRect = pyramidSvg.getBoundingClientRect();
+      const scaleX = svgRect.width / 800;
+      const scaleY = svgRect.height / 600;
+
+      // SVG viewBox key points (matches the 5-layer pyramid geometry)
+      const apexSvg     = { x: 400, y: 40  };
+      const baseLeftSvg = { x: 160, y: 435 };
+      const baseRightSvg= { x: 640, y: 435 };
+      const midLeftSvg  = { x: 280, y: 235 };
+      const midRightSvg = { x: 520, y: 235 };
+
+      function toScreen(p){
+        return { x: svgRect.left + p.x * scaleX, y: svgRect.top + p.y * scaleY };
+      }
+      const apex      = toScreen(apexSvg);
+      const baseLeft  = toScreen(baseLeftSvg);
+      const baseRight = toScreen(baseRightSvg);
+      const midLeft   = toScreen(midLeftSvg);
+      const midRight  = toScreen(midRightSvg);
+
+      const startX = navRect.left;
+      const startY = navRect.top;
+
+      function off(p){
+        return { dx: p.x - startX - navRect.width/2, dy: p.y - startY - navRect.height/2 };
+      }
+      const oBaseL = off(baseLeft);
+      const oBaseR = off(baseRight);
+      const oMidL  = off(midLeft);
+      const oMidR  = off(midRight);
+      const oApex  = off(apex);
+
+      // Flyer: enlarged + glowing copy of the logo
+      const flySize = Math.max(navRect.width * 1.5, 60);
+      flyer = document.createElement('img');
+      flyer.src = navLogoImg.src;
+      flyer.alt = '';
+      flyer.style.cssText = `
+        position: fixed;
+        left: ${navRect.left + navRect.width/2 - flySize/2}px;
+        top: ${navRect.top + navRect.height/2 - flySize/2}px;
+        width: ${flySize}px;
+        height: ${flySize}px;
+        z-index: 9999;
+        pointer-events: none;
+        will-change: transform;
+        transform-origin: 50% 50%;
+        filter: drop-shadow(0 6px 16px rgba(44, 99, 150, 0.55)) drop-shadow(0 0 8px rgba(151, 192, 226, 0.7));
+      `;
+      document.body.appendChild(flyer);
+
+      navLogoImg.style.transition = 'opacity 0.3s ease';
+      navLogoImg.style.opacity = '0';
+
+      // Orbit path: nav → base-mid → base-left → up left edge → cross to right of apex → land above apex (UPRIGHT, NOT touching)
+      // Scale arc: 1.2 (start, "near") → 0.85 (apex, "far") → 1.2 again on return (perspective: things shrink as they fly away)
+      // Total rotation: 2160° = 6 full turns → logo lands UPRIGHT
+      const keyframes = [
+        // Phase 1 start: large (near the viewer at nav)
+        { transform: 'translate(0px, 0px) rotate(0deg) scale(1.2)',                                                    offset: 0    },
+        { transform: `translate(${(oBaseL.dx + oBaseR.dx)/2}px, ${oBaseL.dy + 50}px) rotate(360deg) scale(1.1)`,        offset: 0.18 },
+        { transform: `translate(${oBaseL.dx - 30}px, ${oBaseL.dy + 20}px) rotate(540deg) scale(1.0)`,                  offset: 0.30 },
+        { transform: `translate(${oMidL.dx - 20}px, ${oMidL.dy + 5}px) rotate(900deg) scale(0.95)`,                    offset: 0.48 },
+        { transform: `translate(${oApex.dx - 35}px, ${oApex.dy - 30}px) rotate(1260deg) scale(0.9)`,                   offset: 0.62 },
+        { transform: `translate(${oMidR.dx + 20}px, ${oMidR.dy + 5}px) rotate(1620deg) scale(0.88)`,                   offset: 0.78 },
+        { transform: `translate(${oBaseR.dx + 30}px, ${oBaseR.dy + 20}px) rotate(1980deg) scale(0.85)`,                offset: 0.88 },
+        // Phase 1 end: smallest, UPRIGHT, hovering 40px above the apex (clear airspace, not touching)
+        { transform: `translate(${oApex.dx}px, ${oApex.dy - 40}px) rotate(2160deg) scale(0.85)`,                       offset: 1.00 }
+      ];
+
+      mainAnim = flyer.animate(keyframes, {
+        duration: 6500,
+        easing: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
+        fill: 'forwards'
+      });
+
+      mainAnim.onfinish = () => {
+        console.log('[Pyramid orbit] Landed upright above apex ✨ — pausing 850ms before return.');
+        // Auto-return after 850ms upright pause above the apex
+        if (returnTimer) clearTimeout(returnTimer);
+        returnTimer = setTimeout(returnHome, 850);
+      };
+    }
+
+    function returnHome(){
+      if (!isAnimating || !flyer) return;
+      console.log('[Pyramid orbit] Returning to nav ↩ (scaling from 0.85 → 1.2, small → large)');
+      flyer.style.transition = 'transform 1.4s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.5s linear 1.0s';
+      // Return target: nav position, upright, LARGE (scale 1.2) — completes the "small → large" arc
+      flyer.style.transform = 'translate(0px, 0px) rotate(0deg) scale(1.2)';
+      flyer.style.opacity = '0';
+      navLogoImg.style.opacity = '1';
+      setTimeout(() => {
+        if (flyer && flyer.parentNode) flyer.parentNode.removeChild(flyer);
+        flyer = null;
+        mainAnim = null;
+        isAnimating = false;
+        hint.style.opacity = '0.7';
+      }, 1600);
+    }
+
+    // Reactive hover affordance — instant feedback when entering pyramid
+    pyramidSvg.addEventListener('mouseenter', () => {
+      if (returnTimer){ clearTimeout(returnTimer); returnTimer = null; }
+      pyramidSvg.style.filter = 'drop-shadow(0 8px 20px rgba(44, 99, 150, 0.25))';
+      hint.style.opacity = '1';
+      hint.style.color = '#2c6396';
+      if (isAnimating) return;
+      if (hoverTimer) clearTimeout(hoverTimer);
+      console.log('[Pyramid orbit] Hover detected — countdown 1.5s...');
+      hoverTimer = setTimeout(startOrbit, 1500);
+    });
+
+    pyramidSvg.addEventListener('mouseleave', () => {
+      pyramidSvg.style.filter = '';
+      hint.style.color = '';
+      if (!isAnimating) hint.style.opacity = '0.7';
+      // Only cancel the countdown if the launch hasn't fired yet.
+      // Once launched, the animation auto-returns 850ms after landing — no mouseleave action needed.
+      if (hoverTimer){
+        clearTimeout(hoverTimer);
+        hoverTimer = null;
+        console.log('[Pyramid orbit] Hover cancelled before launch.');
+      }
+    });
+
+    // Respect reduced-motion preferences
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      console.log('[Pyramid orbit] Reduced motion preferred — animation disabled.');
+      pyramidSvg.style.cursor = 'default';
+      hint.style.display = 'none';
+    }
   })();
 </script>
 
