@@ -15,7 +15,10 @@
 <meta property="og:title" content="Pressure Injury Care | NPIAP-Aligned Wound Dressing Strategy | Velcura Medical">
 <meta property="og:description" content="From Stage I redness to Stage IV bone exposure — a clinical wound dressing strategy aligned with NPIAP/EPUAP guidelines. For hospitals, long-term care and distributors.">
 <meta property="og:image" content="https://img.velcura.net/og-share.png">
-<meta property="og:url" content="https://velcura.net/pressure-injury-care.html">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Velcura Pressure Injury Care – NPIAP-aligned wound dressing strategy">
+  <meta property="og:url" content="https://velcura.net/pressure-injury-care.html">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +27,18 @@
 <meta name="twitter:image" content="https://img.velcura.net/og-share.png">
 
 <!-- Structured Data JSON-LD -->
-<script type="application/ld+json">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velcura.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Wound Care", "item": "https://velcura.net/wound-care.html" },
+      { "@type": "ListItem", "position": 3, "name": "Pressure Injury Care", "item": "https://velcura.net/pressure-injury-care.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
@@ -172,28 +186,30 @@
     font-size: 0.95rem; color: var(--c-ink2); line-height: 1.9;
     max-width: 480px; margin-bottom: 2.5rem;
   }
-  .hero-causes { display: flex; flex-direction: column; gap: 1.6rem; }
-  .cause-row { display: flex; align-items: flex-start; gap: 1.4rem; }
-  .cause-marker { display: flex; flex-direction: column; align-items: center; padding-top: 0.3rem; }
-  .cause-marker span {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.72rem; color: var(--c-teal); letter-spacing: 0.12em;
+  .hero-causes { display: flex; flex-direction: column; gap: 1.8rem; }
+  .cause-row { display: flex; align-items: center; gap: 1.6rem; }
+  .cause-ico {
+    flex: 0 0 auto; width: 32px; height: 32px;
+    fill: none; stroke: var(--c-teal); stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+    opacity: 0.75; transition: opacity 0.35s ease, color 0.35s ease;
+    color: var(--c-teal);
   }
-  .cause-marker i {
-    width: 1px; height: 2.6rem; background: var(--c-teal);
-    margin-top: 0.4rem; opacity: 0.35;
-  }
+  .cause-ico svg { width: 100%; height: 100%; display: block; }
+  .cause-row:hover .cause-ico { opacity: 1; }
   .cause-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 300;
     line-height: 1.1; letter-spacing: 0.04em;
+    transition: color 0.35s ease;
   }
+  .cause-row:hover .cause-name { color: var(--c-teal); }
   .cause-en {
-    font-size: 0.76rem; color: var(--c-ink3);
-    margin-top: 0.35rem; letter-spacing: 0.06em;
+    font-size: 0.78rem; color: var(--c-ink3);
+    margin-top: 0.45rem; letter-spacing: 0.06em;
   }
 
-  /* ---- 右侧:疤痕分型轮盘 ---- */
+  /* ---- Right:Scar type wheel ---- */
   .hero-right {
     display: flex; align-items: center; justify-content: center;
     padding: 3rem 2rem;
@@ -207,14 +223,14 @@
     border-radius: 50%;
     border: none;
     display: flex; align-items: center; justify-content: center;
-    /* 青绿渐变球体:左上高光 → 边缘深青绿 */
+    /* Teal gradient sphere:Top-left highlight → Edge deep teal */
     background:
       radial-gradient(circle at 34% 30%, #c9e3e0 0%, #a9d2ce 32%, #79b3ad 68%, #5fa099 100%);
     box-shadow: inset -8px -10px 26px rgba(60,130,124,0.25),
                 inset 6px 8px 22px rgba(255,255,255,0.55),
                 0 10px 40px rgba(95,160,153,0.22);
   }
-  /* 浅色内圈 */
+  /* Light inner ring */
   .wagner-circle::before {
     content: '';
     position: absolute; inset: 13%;
@@ -222,7 +238,7 @@
     background: radial-gradient(circle at 42% 38%, #ffffff 0%, #f3faf9 55%, #e6f3f1 100%);
     box-shadow: inset 0 0 18px rgba(120,180,175,0.18);
   }
-  /* 蓝色四角星 */
+  /* Blue 4-point star */
   .wagner-star {
     position: absolute;
     top: 17%; left: calc(50% - 17px);
@@ -270,7 +286,7 @@
     transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
     user-select: none;
   }
-  /* 0 → 5 由淡蓝到中深蓝 */
+  /* 0 → 5 Light blue to medium dark blue */
   .wagner-node:nth-of-type(1) { background: #BAD6EC; color: #2C6396; }
   .wagner-node:nth-of-type(2) { background: #97C0E2; color: #245A88; }
   .wagner-node:nth-of-type(3) { background: #6FA6D2; color: #ffffff; }
@@ -319,7 +335,7 @@
     border-bottom: 0.5px solid var(--c-line);
   }
 
-  /* ============ 横幅图 ============ */
+  /* ============ Banner image ============ */
   .banner-image {
     width: 100%;
     aspect-ratio: 1500 / 600;
@@ -331,7 +347,7 @@
     width: 100%; height: 100%;
     object-fit: cover; display: block;
   }
-  /* 左侧浅色蒙版,保证青绿文字可读 */
+  /* Left light mask,Ensure teal text readable */
   .banner-image::before {
     content: '';
     position: absolute; inset: 0; z-index: 1;
@@ -364,7 +380,7 @@
     max-width: 30rem;
   }
 
-  /* ============ 通用版式 ============ */
+  /* ============ Common layout ============ */
   .container { max-width: 1180px; margin: 0 auto; padding: 0 3rem; }
   .section-tag {
     font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -385,30 +401,78 @@
     max-width: 680px; margin-bottom: 3rem;
   }
 
+  /* ============ Feature cards (transparent-film-iv Style) ============ */
+  .feature-cards {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--c-line);
+    margin-top: 2rem;
+  }
   .feature-card {
-    border: 0.5px solid var(--c-line);
-    padding: 2.2rem 1.8rem;
-    transition: border-color 0.25s, transform 0.25s;
-    background: #fff;
+    background: #fbfaf8; padding: 2rem 1.9rem;
+    transition: background 0.35s ease;
+    position: relative;
   }
-  .feature-card:hover { border-color: var(--c-teal); transform: translateY(-3px); }
-  .feature-icon {
-    display: inline-block; font-size: 1.4rem; color: var(--c-teal);
-    margin-bottom: 1.1rem;
+  .feature-card:hover { background: var(--c-teal); }
+  .feature-card:hover h3 { color: #fff; }
+  .feature-card:hover p { color: rgba(255,255,255,0.82); }
+  .feature-card:hover p strong { color: #fff; }
+  .feature-card:hover .solution-link { color: #fff; }
+  .feature-card:hover .feature-icon {
+    scale: 1.08;
+    box-shadow: 0 9px 22px rgba(0,0,0,0.20), inset 0 1px 3px rgba(255,255,255,1), inset 0 -4px 8px rgba(45,110,106,0.14);
   }
-  .feature-card h3 {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.05rem; font-weight: 400; margin-bottom: 0.7rem;
-  }
-  .feature-card p { font-size: 0.85rem; color: var(--c-ink2); line-height: 1.8; }
+  .feature-card:nth-child(2) .feature-icon { animation-delay: 1.2s; }
+  .feature-card:nth-child(3) .feature-icon { animation-delay: 2.4s; }
+  .feature-card:nth-child(4) .feature-icon { animation-delay: 3.6s; }
+  .feature-card:nth-child(5) .feature-icon { animation-delay: 4.8s; }
+  .feature-card:nth-child(6) .feature-icon { animation-delay: 6s; }
 
-  /* ============ 病理机制 ============ */
+  .feature-icon {
+    width: 54px; height: 54px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.1rem; position: relative;
+    background: radial-gradient(130% 130% at 32% 26%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.55) 33%, rgba(173,196,196,0.35) 64%, rgba(45,110,106,0.18) 100%);
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow: 0 5px 14px rgba(45,110,106,0.14), inset 0 1px 3px rgba(255,255,255,0.95), inset 0 -4px 8px rgba(45,110,106,0.10);
+    animation: orbFloat 6s ease-in-out infinite;
+    transition: scale 0.35s ease, box-shadow 0.35s ease;
+  }
+  .feature-icon svg {
+    width: 24px; height: 24px;
+    fill: none; stroke: var(--c-teal);
+    stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  }
+  @keyframes orbFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .feature-icon { animation: none; }
+  }
+
+  .feature-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 400;
+    margin-bottom: 0.6rem; color: var(--c-ink);
+    transition: color 0.35s ease;
+    letter-spacing: 0.01em;
+  }
+  .feature-card p {
+    font-size: 0.85rem; color: var(--c-ink2); line-height: 1.75;
+    transition: color 0.35s ease;
+  }
+  .feature-card p strong {
+    color: var(--c-ink);
+    transition: color 0.35s ease;
+  }
+
+  /* ============ Pathophysiology ============ */
   .patho-section { padding: 6rem 0; }
   .patho-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
   }
 
-  /* ============ 疤痕分型表 + 管理要素 ============ */
+  /* ============ Stage classification table + Care elements ============ */
   .grading-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
   .grading-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 4rem; }
   .grade-table { width: 100%; border-collapse: collapse; }
@@ -439,9 +503,8 @@
   }
   .dimes-item p { font-size: 0.82rem; color: var(--c-ink2); line-height: 1.7; }
 
-  /* ============ 解决方案 ============ */
+  /* ============ Solutions ============ */
   .solutions-section { padding: 6rem 0; }
-  .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .solution-link {
     display: inline-block; margin-top: 1rem;
     font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
@@ -449,7 +512,7 @@
   }
   .solution-link:hover { color: var(--c-gold2); }
 
-  /* ============ 护理路径 ============ */
+  /* ============ Care pathway ============ */
   .pathway-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
   .pathway-track {
     display: grid; grid-template-columns: repeat(6, 1fr);
@@ -475,7 +538,7 @@
   }
   .path-step p { font-size: 0.76rem; color: var(--c-ink2); line-height: 1.7; }
 
-  /* ============ 居家预防 ============ */
+  /* ============ Home prevention ============ */
   .prevent-section { padding: 6rem 0; }
   .prevent-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
   .check-list { list-style: none; }
@@ -582,7 +645,8 @@
     .hero-left { padding: 3.5rem 1.5rem 2.5rem; }
     .hero-left::after { display: none; }
     .hero-right { padding: 2rem 1rem 3.5rem; }
-    .patho-grid, .solutions-grid { grid-template-columns: 1fr; }
+    .patho-grid { grid-template-columns: 1fr; }
+    .feature-cards { grid-template-columns: 1fr; }
     .grading-layout, .prevent-layout, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .stats-bar { grid-template-columns: 1fr 1fr; }
     .stat-item:nth-child(2) { border-right: none; }
@@ -609,8 +673,8 @@
     .wagner-node { width: 44px; height: 44px; font-size: 1.15rem; }
   }
 
-  /* ============ 创新区段 CSS ============ */
-  /* 金字塔 */
+  /* ============ Innovation section CSS ============ */
+  /* Pyramid */
   .pyramid-section { padding: 6rem 0; background: #ffffff; }
   .pyramid-wrap { display: grid; grid-template-columns: 5fr 3fr; gap: 3rem; align-items: center; margin-top: 3rem; }
   .pyramid-svg { width: 100%; height: auto; max-width: 700px; margin: 0 auto; display: block; }
@@ -625,7 +689,7 @@
   .pyramid-bullet { width: 12px; height: 12px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
   .pyramid-row em { font-style: italic; color: var(--c-purple); }
 
-  /* 解剖部位 */
+  /* Anatomy */
   
   
   
@@ -633,7 +697,7 @@
   
   
 
-  /* 决策树 */
+  /* Decision tree */
   .decision-section { padding: 6rem 0; background: #ffffff; }
   .decision-tree { margin-top: 3rem; display: flex; flex-direction: column; gap: 2rem; }
   .decision-step { display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; padding: 1.5rem; border-radius: 12px; background: #fbfaf8; border: 0.5px solid var(--c-line); }
@@ -654,7 +718,7 @@
   .exudate-table tbody tr:hover { background: #fbfaf8; }
   .exudate-table tbody td { color: var(--c-ink2); }
 
-  /* Braden 评分 */
+  /* Braden Score */
   .braden-box { margin-top: 4rem; padding: 2.5rem 2rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 14px; }
   .braden-title { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 1.5rem; color: var(--c-ink); margin-bottom: 0.5rem; }
   .braden-intro { font-size: 0.92rem; color: var(--c-ink2); line-height: 1.7; margin-bottom: 1.75rem; }
@@ -669,7 +733,7 @@
   .braden-level { font-weight: 600; color: var(--c-ink); }
   .braden-action { color: var(--c-ink2); line-height: 1.6; }
 
-  /* 特殊人群 */
+  /* Special populations */
   .special-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
   .special-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .special-card { padding: 1.75rem 1.5rem; background: #fff; border-radius: 12px; border: 0.5px solid var(--c-line); transition: transform 0.3s, box-shadow 0.3s; }
@@ -678,7 +742,7 @@
   .special-card h4 { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 1.25rem; color: var(--c-ink); margin-bottom: 0.6rem; }
   .special-card p { font-size: 0.87rem; color: var(--c-ink2); line-height: 1.75; }
 
-  /* 移动端 */
+  /* Mobile */
   @media (max-width: 880px) {
     .pyramid-wrap { grid-template-columns: 1fr; gap: 2rem; }
     
@@ -712,30 +776,42 @@
 </nav>
 
 <!-- HERO -->
+<!-- Full-width teal banner: Hero title -->
+<div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 7rem 1.5rem 4.5rem;">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.5rem;">
+      <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+      Velcura Medical · Clinical Wound Care Guide
+    </div>
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0; display: flex; justify-content: center; align-items: baseline; gap: clamp(2.5rem, 7vw, 7rem); flex-wrap: wrap;">
+      <span>Pressure Injury Care</span>
+      <em style="font-style: italic; opacity: 0.92;">NPIAP-Aligned Strategy</em>
+    </h1>
+  </div>
+</div>
+
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Velcura Medical · Clinical Wound Care Guide</div>
-    <h1 class="hero-title">Pressure Injury Care<br><em>NPIAP-Aligned Strategy</em></h1>
     <p class="hero-sub">
       A pressure injury is local damage to skin and underlying tissue caused by sustained pressure — often combined with shear or friction — over a bony prominence. It is preventable, but once established, every stage demands a fundamentally different dressing strategy. This guide aligns NPIAP/EPUAP staging from Stage I to IV (plus Deep Tissue Pressure Injury and Unstageable lesions) with the right material science, so distributors, hospital procurement and long-term-care providers can match the dressing to the wound.
     </p>
     <div class="hero-causes">
       <div class="cause-row">
-        <div class="cause-marker"><span>01</span><i></i></div>
+        <span class="cause-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></span>
         <div>
           <div class="cause-name">Sustained Pressure</div>
           <div class="cause-en">Capillary occlusion &gt; 32 mmHg leads to local ischemia</div>
         </div>
       </div>
       <div class="cause-row">
-        <div class="cause-marker"><span>02</span><i></i></div>
+        <span class="cause-ico"><svg viewBox="0 0 24 24"><path d="M4 18l14-14M8 18l12-12M12 18l8-8"/></svg></span>
         <div>
-          <div class="cause-name">Shear & Friction</div>
+          <div class="cause-name">Shear &amp; Friction</div>
           <div class="cause-en">Tangential forces tear deep tissue planes</div>
         </div>
       </div>
       <div class="cause-row">
-        <div class="cause-marker"><span>03</span><i></i></div>
+        <span class="cause-ico"><svg viewBox="0 0 24 24"><path d="M12 3 7 10.5a6 6 0 1 0 10 0Z"/><path d="M9 14a3 3 0 0 0 3 3" stroke-width="1.2"/></svg></span>
         <div>
           <div class="cause-name">Microclimate Disturbance</div>
           <div class="cause-en">Moisture &amp; temperature compromise skin barrier integrity</div>
@@ -787,14 +863,6 @@
   </div>
 </div>
 <div class="stats-note">* Figures reflect commonly recommended ranges from international clinical scar-management guidelines and published literature; individual clinical assessment applies.</div>
-<!-- TL;DR — 30-second takeaway -->
-<div style="max-width: 880px; margin: 2rem auto 2.5rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, #f0f7fc 0%, #e0eef9 100%); border-left: 4px solid var(--c-teal, #2c6396); border-radius: 6px;">
-  <div style="display: inline-block; padding: 3px 11px; background: var(--c-teal, #2c6396); color: white; font-size: 0.7rem; letter-spacing: 0.14em; font-weight: 600; border-radius: 3px; margin-bottom: 0.7rem;">IN 60 SECONDS</div>
-  <p style="margin: 0; font-size: 0.99rem; line-height: 1.7; color: #2c3e50;">
-    Pressure injuries demand a <strong>continuum, not a single dressing</strong>. Velcura's portfolio aligns with <strong>NPIAP/EPUAP 2019 guidance</strong> across the full clinical arc — soft silicone foam border dressings for prevention and Stage I–II protection of bony prominences; calcium alginate for Stage III–IV exudate and dead-space; silver-impregnated and activated charcoal dressings for infection and malodour management in complex cases. One product family, six clinical missions.
-  </p>
-</div>
-
 <!-- Anatomy-matched product range image (FULL-WIDTH B2B product matrix) -->
 <figure style="margin: 1.5rem 0 0; padding: 0; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
   <img src="https://img.velcura.net/body1.webp" 
@@ -808,13 +876,13 @@
 </figure>
 <section class="solutions-section" id="solutions">
   <!-- Full-width teal banner: VELCURA DRESSING RANGE + Six Dressings, Six Clinical Missions -->
-  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
     <div style="max-width: 1180px; margin: 0 auto;">
       <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
         <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
         Velcura Dressing Range
       </div>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; text-align: center; margin: 0;">
         Six Dressings,<br>Six Clinical Missions
       </h2>
     </div>
@@ -822,45 +890,45 @@
 
   <div class="container">
 <p style="font-style:italic; color:#5a6c7d; font-size:0.95rem; max-width:760px; margin: 0.5rem auto 1.4rem; padding-left:1rem; border-left:2px solid #97c0e2; line-height:1.65; letter-spacing:0.01em;">
-  Six dressing categories, six clinical roles — from prevention to deep-cavity exudate, from infection control to malodour management.
+  Pressure injuries demand a continuum, not a single dressing — six categories, six clinical missions across the full prevention-to-Stage IV+ continuum.
 </p>
 
     <p class="section-lead">
-      Each card below is one of Velcura's six core PI dressing categories — mapped to the clinical mission it was designed for. Material choice is a function of exudate volume, tissue depth, bioburden risk and peri-wound condition; the six together cover the full prevention-to-Stage IV+ continuum.
+      Velcura's portfolio aligns with <strong>NPIAP/EPUAP 2019 guidance</strong> across the full clinical arc — <strong>soft silicone foam border</strong> for prevention and Stage I–II protection of bony prominences, <strong>calcium alginate</strong> for Stage III–IV exudate and dead-space, <strong>silver-impregnated and activated charcoal</strong> dressings for infection and malodour management in complex cases. Material choice is a function of exudate volume, tissue depth, bioburden risk and peri-wound condition.
     </p>
-    <div class="solutions-grid">
+    <div class="feature-cards">
       <div class="feature-card">
-        <span class="feature-icon">⬡</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3 L20 7.5 V16.5 L12 21 L4 16.5 V7.5 Z"/><path d="M12 7.5 L16.5 10 V15 L12 17.5 L7.5 15 V10 Z" stroke-width="1.2" opacity="0.65"/></svg></span>
         <h3>Foam Silicone Adhesive Border</h3>
         <p>Soft silicone wound-contact face + hydrophilic polyurethane foam pad + waterproof breathable film backing, with a low-tack silicone adhesive border that releases without epidermal stripping. The silicone interface adheres only to intact peri-wound skin — never to fragile granulation tissue — and lifts cleanly without trauma at each dressing change. <strong>NPIAP/EPUAP 2019 guidelines explicitly recommend soft silicone foam dressings as a preventive intervention against friction and shear at high-risk anatomical sites — the core dressing across the prevention-through-treatment continuum: Stage I prevention, Stage II/III treatment, available in sacrum and heel anatomical shapes for bony prominences.</strong></p>
         <a class="solution-link" href="silicone-foam-border-AD44.html">View product →</a>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◈</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/></svg></span>
         <h3>Foam (Non-Adhesive)</h3>
         <p>Pure adhesive-free polyurethane foam — no silicone, acrylic or hydrocolloid contact whatsoever. Designed for the most fragile peri-wound skin, patients with adhesive sensitivities, and use beneath compression bandaging. <strong>The right tool when no adhesive surface can be tolerated.</strong></p>
         <a class="solution-link" href="foam-non-adhesive-AD12.html">View product →</a>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◇</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3 L21 12 L12 21 L3 12 Z"/><path d="M3 12 L21 12" stroke-width="0.8" opacity="0.5"/></svg></span>
         <h3>Hydrocolloid (Super Thin)</h3>
         <p>Sub-millimetre, semi-translucent self-adhesive matrix that gels on contact with light exudate. Creates the sealed, moist environment required for autolytic debridement and re-epithelialisation. <strong>First-line for Stage I and superficial Stage II injuries on bony prominences.</strong></p>
         <a class="solution-link" href="hydrocolloid-super-thin-AD-HD01.html">View product →</a>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">⬢</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3 L20 7.5 V16.5 L12 21 L4 16.5 V7.5 Z"/><path d="M12 3 V21 M4 7.5 L20 16.5 M20 7.5 L4 16.5" stroke-width="0.7" opacity="0.55"/></svg></span>
         <h3>Calcium Alginate</h3>
         <p>100% natural seaweed-derived fibres. Ion-exchange with wound sodium converts the insoluble fibre into a soft conformable gel, absorbing up to 20× its own weight. Available as rope for cavities. <strong>Stage III–IV with moderate-to-heavy exudate; packs sinuses and tunnels with haemostatic support.</strong></p>
         <a class="solution-link" href="calcium-alginate-AD006.html">View product →</a>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◆</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 4 L20 12 L12 20 L4 12 Z" fill="currentColor" fill-opacity="0.55" stroke="currentColor"/><path d="M12 1.5 V4 M12 20 V22.5 M1.5 12 H4 M20 12 H22.5" stroke-width="1.2"/></svg></span>
         <h3>Nano-Silver Antibacterial</h3>
         <p>Nanocrystalline silver particles (20–100 nm) bonded to medical-grade fibres deliver sustained Ag⁺ release through multiple antimicrobial pathways — disrupting cell walls, respiratory enzymes and DNA/RNA simultaneously. Proven anti-biofilm activity. <strong>Infected or critically colonised Stage III–IV; MRSA, VRE, Pseudomonas coverage.</strong></p>
         <a class="solution-link" href="nano-silver-antibacterial-AD47.html">View product →</a>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◇</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><circle cx="9" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="9" cy="16.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="15.5" cy="16.5" r="0.8" fill="currentColor" stroke="none"/></svg></span>
         <h3>Activated Charcoal (Non-Adhesive)</h3>
         <p>Microporous carbon cloth with 1,000+ m²/g surface area physically adsorbs the volatile odour molecules — cadaverine, putrescine, organic acids — released by necrotic tissue. Also traps bacteria and endotoxins. <strong>Malodorous Stage III–IV injuries, including those approaching palliative-care intensity.</strong></p>
         <a class="solution-link" href="activated-charcoal-non-adhesive-AD24.html">View product →</a>
@@ -869,7 +937,7 @@
   </div>
 </section>
 
-<!-- 横幅图 1500×600 -->
+<!-- Banner image 1500×600 -->
 <div class="banner-image">
   <img src="https://img.velcura.net/tjb1.webp" alt="Pressure injury care and wound dressing strategy" width="1500" height="600" loading="lazy">
   <div class="banner-overlay">
@@ -880,21 +948,33 @@
 
 <!-- How Pressure Injuries Form -->
 <section class="patho-section" id="patho">
+  <!-- Full-width teal banner: How Pressure Injuries Form -->
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
+        <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
+        Pathophysiology
+      </div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; text-align: center; margin: 0;">
+        How Pressure Injuries Form
+      </h2>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="section-tag">How Pressure Injuries Form</div>
     <div class="patho-grid">
       <div class="feature-card">
-        <span class="feature-icon">⬡</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></span>
         <h3>Sustained Pressure · Capillary Ischemia</h3>
         <p>When external pressure on tissue exceeds capillary closing pressure (around 32 mmHg) for an extended period, local microcirculation collapses, oxygen delivery is blocked, and cells progress from reversible hypoxia to irreversible necrosis. This is why pressure injuries cluster at bony prominences — the sacrum, heels, ischial tuberosities and occiput — where soft tissue is thinnest and pressure concentration is highest.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◈</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 18l14-14M8 18l12-12M12 18l8-8"/></svg></span>
         <h3>Shear &amp; Friction · Deep Plane Damage</h3>
         <p>When a patient slides down in bed or a chair, the skin stays where the surface grips it, while underlying tissue moves with gravity. The resulting tangential forces tear blood vessels and deep tissue planes — explaining why some injuries surface as a small skin opening that hides a much larger deep cavity below. Friction additionally strips the stratum corneum, weakening the skin's first line of defence.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◇</span>
+        <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3 7 10.5a6 6 0 1 0 10 0Z"/><path d="M9 14a3 3 0 0 0 3 3" stroke-width="1.2"/></svg></span>
         <h3>Microclimate Imbalance · Barrier Failure</h3>
         <p>Trapped moisture (sweat, incontinence, exudate) combined with heat raises skin pH and softens the corneum. Hyper-hydrated skin tolerates 5× less friction than dry skin and is significantly more vulnerable to maceration and infection. Maintaining an optimal moisture and temperature microclimate at the skin–support surface interface is therefore as important as redistributing pressure itself.</p>
       </div>
@@ -902,17 +982,17 @@
   </div>
 </section>
 
-<!-- NPIAP 分期 + 护理要素 -->
+<!-- NPIAP Staging + Care elements -->
 <section class="grading-section" id="grading">
   <!-- Full-width teal banner: TWO side-by-side titles (NPIAP Staging + Care Elements) -->
-  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
     <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
       <div>
         <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
           <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
           NPIAP / EPUAP Staging
         </div>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0;">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; text-align: center; margin: 0;">
           The Six Stages of<br>Pressure Injury
         </h2>
       </div>
@@ -921,7 +1001,7 @@
           <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
           Care Elements
         </div>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0;">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; text-align: center; margin: 0;">
           The TIME-H Framework<br>for Pressure Injuries
         </h2>
       </div>
@@ -987,13 +1067,13 @@
 <!-- Stage-by-Stage Care Pathway -->
 <section class="pathway-section" id="pathway">
   <!-- Full-width teal banner: Stage-by-Stage Dressing Strategy -->
-  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
     <div style="max-width: 1180px; margin: 0 auto;">
       <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
         <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
         Stage-by-Stage Dressing Strategy
       </div>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; text-align: center; margin: 0;">
         From Stage I Redness<br>to Stage IV Cavity
       </h2>
     </div>
@@ -1008,27 +1088,27 @@
       <div class="path-step">
         <div class="path-dot">I</div>
         <h4>Stage I · Intact Erythema</h4>
-        <p>Offload pressure immediately. Cover with <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">prophylactic silicone foam</a> or <a href="hydrocolloid-super-thin-AD-HD01.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">thin hydrocolloid</a> to reduce friction and microclimate disturbance. No occlusive necessity yet — observation is the priority.</p>
+        <p>Offload pressure immediately. Cover with <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">prophylactic silicone foam</a> or <a href="hydrocolloid-super-thin-AD-HD01.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">thin hydrocolloid</a> to reduce friction and microclimate disturbance. No occlusive necessity yet — observation is the priority.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">II</div>
         <h4>Stage II · Partial-Thickness</h4>
-        <p>Maintain moist healing for re-epithelialisation. Hydrocolloid (super-thin) for low exudate; <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">silicone-bordered foam</a> if exudate is moderate or peri-wound skin is fragile. Change every 3–5 days.</p>
+        <p>Maintain moist healing for re-epithelialisation. Hydrocolloid (super-thin) for low exudate; <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">silicone-bordered foam</a> if exudate is moderate or peri-wound skin is fragile. Change every 3–5 days.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">III</div>
         <h4>Stage III · Full-Thickness</h4>
-        <p>Manage moderate-to-heavy exudate, support autolytic debridement, guard against infection. Foam with silver as the workhorse; layer <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">calcium alginate</a> when exudate is heavy or cavity present.</p>
+        <p>Manage moderate-to-heavy exudate, support autolytic debridement, guard against infection. Foam with silver as the workhorse; layer <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">calcium alginate</a> when exudate is heavy or cavity present.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">IV</div>
         <h4>Stage IV · Bone Exposed</h4>
-        <p>Pack cavities and tunnels with <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">alginate rope</a>. Consider <a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">nano-silver</a> antimicrobial when bioburden is high or osteomyelitis risk is present. <a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Activated charcoal</a> addresses malodour. Multidisciplinary referral.</p>
+        <p>Pack cavities and tunnels with <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">alginate rope</a>. Consider <a href="nano-silver-antibacterial-AD47.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">nano-silver</a> antimicrobial when bioburden is high or osteomyelitis risk is present. <a href="activated-charcoal-non-adhesive-AD24.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Activated charcoal</a> addresses malodour. Multidisciplinary referral.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">U</div>
         <h4>Unstageable · Eschar Covered</h4>
-        <p>Debride before staging. Hydrogel softens dry eschar for autolytic debridement; <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">alginate</a> handles moist slough. Stage and re-plan once the wound bed is visualised.</p>
+        <p>Debride before staging. Hydrogel softens dry eschar for autolytic debridement; <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">alginate</a> handles moist slough. Stage and re-plan once the wound bed is visualised.</p>
       </div>
       <div class="path-step">
         <div class="path-dot">DTI</div>
@@ -1039,16 +1119,16 @@
   </div>
 </section>
 
-<!-- 预防核心 -->
+<!-- Prevention core -->
 <section class="prevent-section" id="prevent">
   <!-- Full-width teal banner: Prevention -->
-  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
     <div style="max-width: 1180px; margin: 0 auto;">
       <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
         <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
         Prevention · The First Line of Defence
       </div>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; text-align: center; margin: 0;">
         Why Prevention Costs<br>Less Than Treatment
       </h2>
     </div>
@@ -1089,17 +1169,18 @@
   </div>
 </section>
 
-<!-- ============ 创新区段 1:敷料 × 分期金字塔(响应式 SVG) ============ -->
+<!-- ============ Innovation section 1:Dressings × Staging pyramid(Responsive SVG) ============ -->
 <section class="pyramid-section" id="pyramid">
   <!-- Full-width teal banner: The Pressure Injury Dressing Pyramid -->
-  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
     <div style="max-width: 1180px; margin: 0 auto;">
       <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
         <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
         Dressing × Stage
       </div>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
-        The Pressure Injury<br>Dressing Pyramid
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0; display: flex; justify-content: center; align-items: baseline; gap: clamp(2.5rem, 7vw, 7rem); flex-wrap: wrap;">
+        <span>The Pressure Injury</span>
+        <span>Dressing Pyramid</span>
       </h2>
     </div>
   </div>
@@ -1115,7 +1196,7 @@
 
     <div class="pyramid-wrap">
       <svg class="pyramid-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pressure injury dressing pyramid">
-        <!-- 5 层金字塔,从底到顶逐层缩窄 -->
+        <!-- 5 5-layer pyramid,Tapering from base to apex -->
         <!-- Layer 5 (top): Stage IV -->
         <polygon points="400,40 460,135 340,135" fill="#2c6396" opacity="0.95"/>
         <text x="400" y="100" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" letter-spacing="0.1em">STAGE IV</text>
@@ -1146,7 +1227,7 @@
         <text x="400" y="520" text-anchor="middle" fill="#1e293b" font-family="DM Sans, sans-serif" font-size="10" opacity="0.75">Braden Score · 2-hour Repositioning · Heel Offloading</text>
         <text x="400" y="542" text-anchor="middle" fill="#1e293b" font-family="Playfair Display, serif" font-style="italic" font-size="11" opacity="0.6">— Every patient. Every shift. —</text>
 
-        <!-- 右侧标注线和说明 -->
+        <!-- Right annotations and labels -->
         <line x1="460" y1="90" x2="650" y2="90" stroke="#2c6396" stroke-width="0.5" stroke-dasharray="3,3"/>
         <line x1="520" y1="190" x2="650" y2="190" stroke="#3a75ae" stroke-width="0.5" stroke-dasharray="3,3"/>
         <line x1="580" y1="290" x2="650" y2="290" stroke="#6fa6d2" stroke-width="0.5" stroke-dasharray="3,3"/>
@@ -1157,19 +1238,19 @@
         <div class="pyramid-row pyramid-row-iv">
           <span class="pyramid-bullet" style="background:#2c6396;"></span>
           <div>
-            <strong>Stage IV</strong> — bone, tendon or muscle exposed. <a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Nano-silver</a> for high bioburden, <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">calcium alginate rope</a> for cavity packing, <a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">activated charcoal</a> for malodour, NPWT for selected cases. Multidisciplinary care.
+            <strong>Stage IV</strong> — bone, tendon or muscle exposed. <a href="nano-silver-antibacterial-AD47.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Nano-silver</a> for high bioburden, <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">calcium alginate rope</a> for cavity packing, <a href="activated-charcoal-non-adhesive-AD24.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">activated charcoal</a> for malodour, NPWT for selected cases. Multidisciplinary care.
           </div>
         </div>
         <div class="pyramid-row pyramid-row-iii">
           <span class="pyramid-bullet" style="background:#3a75ae;"></span>
           <div>
-            <strong>Stage III</strong> — full-thickness, subcutaneous fat visible. Silicone foam with silver is the clinical workhorse; <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">calcium alginate</a> for heavy exudate or cavity; autolytic debridement supported by occlusive moisture balance.
+            <strong>Stage III</strong> — full-thickness, subcutaneous fat visible. Silicone foam with silver is the clinical workhorse; <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">calcium alginate</a> for heavy exudate or cavity; autolytic debridement supported by occlusive moisture balance.
           </div>
         </div>
         <div class="pyramid-row pyramid-row-ii">
           <span class="pyramid-bullet" style="background:#6fa6d2;"></span>
           <div>
-            <strong>Stage II</strong> — partial-thickness with exposed dermis. Super-<a href="hydrocolloid-super-thin-AD-HD01.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">thin hydrocolloid</a> for low exudate, <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">silicone-bordered foam</a> if exudate moderate or peri-wound skin fragile. 3–5 day wear time.
+            <strong>Stage II</strong> — partial-thickness with exposed dermis. Super-<a href="hydrocolloid-super-thin-AD-HD01.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">thin hydrocolloid</a> for low exudate, <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">silicone-bordered foam</a> if exudate moderate or peri-wound skin fragile. 3–5 day wear time.
           </div>
         </div>
         <div class="pyramid-row pyramid-row-i">
@@ -1189,16 +1270,16 @@
   </div>
 </section>
 
-<!-- ============ 创新区段 3:决策树 + 风险评估 ============ -->
+<!-- ============ Innovation section 3:Decision tree + Risk assessment ============ -->
 <section class="decision-section" id="decision">
   <!-- Full-width teal banner: Clinical Decision Tree -->
-  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
     <div style="max-width: 1180px; margin: 0 auto;">
       <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
         <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
         Clinical Decision Tree
       </div>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; text-align: center; margin: 0;">
         Which Dressing,<br>For Which Wound?
       </h2>
     </div>
@@ -1222,7 +1303,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-yes">
               <strong>Yes (Stage I or DTPI)</strong>
-              <p>Offload pressure immediately. Use <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">prophylactic silicone foam</a> (sacrum, heels, trochanter) or transparent film for ongoing observation. Re-assess every shift.</p>
+              <p>Offload pressure immediately. Use <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">prophylactic silicone foam</a> (sacrum, heels, trochanter) or transparent film for ongoing observation. Re-assess every shift.</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>No, the wound is open →</strong>
@@ -1240,7 +1321,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-warn">
               <strong>Covered (Unstageable)</strong>
-              <p>Debride first. Hydrogel for dry eschar (autolytic), <a href="calcium-alginate-AD006.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">alginate</a> for moist slough, or refer for enzymatic / sharp debridement. Re-stage after debridement before final dressing choice.</p>
+              <p>Debride first. Hydrogel for dry eschar (autolytic), <a href="calcium-alginate-AD006.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">alginate</a> for moist slough, or refer for enzymatic / sharp debridement. Re-stage after debridement before final dressing choice.</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>Wound bed visible →</strong>
@@ -1258,7 +1339,7 @@
           <div class="decision-options">
             <div class="decision-option decision-option-warn">
               <strong>Yes — local infection signs / biofilm suspect</strong>
-              <p>Add antimicrobial cover. <strong><a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Nano-silver dressing</a></strong> for broad-spectrum activity including MRSA and anti-biofilm. <strong><a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Activated charcoal</a></strong> if odour is prominent. Review every 7 days — discontinue once infection is controlled (antimicrobial stewardship).</p>
+              <p>Add antimicrobial cover. <strong><a href="nano-silver-antibacterial-AD47.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Nano-silver dressing</a></strong> for broad-spectrum activity including MRSA and anti-biofilm. <strong><a href="activated-charcoal-non-adhesive-AD24.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Activated charcoal</a></strong> if odour is prominent. Review every 7 days — discontinue once infection is controlled (antimicrobial stewardship).</p>
             </div>
             <div class="decision-option decision-option-next">
               <strong>No infection signs →</strong>
@@ -1293,22 +1374,22 @@
     </div>
 
     <!-- Full-width teal banner: Braden Risk Score header -->
-    <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 2.5rem; text-align: center;">
+    <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 2.5rem;">
       <div style="max-width: 1180px; margin: 0 auto;">
         <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
           <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
           Risk Assessment · Braden
         </div>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; font-style: italic; color: white; line-height: 1.2; letter-spacing: 0.01em; margin: 0 0 0.9rem 0;">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 300; font-style: italic; color: white; line-height: 1.2; letter-spacing: 0.01em; text-align: center; margin: 0 0 0.9rem 0;">
           Braden Risk Score · Quick Reference
         </h2>
-        <p style="font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); line-height: 1.7; max-width: 760px; margin: 0 auto;">
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); line-height: 1.7; max-width: 760px; text-align: center; margin: 0 auto;">
           The Braden Scale is the international standard for pressure injury risk screening. Lower scores indicate higher risk. Use at admission and at every transfer of care.
         </p>
       </div>
     </div>
 
-    <!-- Braden 风险评分简表 -->
+    <!-- Braden Risk score quick reference -->
     <div class="braden-box">
       <div class="braden-grid">
         <div class="braden-row"><span class="braden-score braden-very-high">≤ 9</span><span class="braden-level">Very High Risk</span><span class="braden-action">Specialist pressure-redistribution surface · Skin assessment every shift · Prophylactic silicone foam over sacrum &amp; heels</span></div>
@@ -1321,16 +1402,16 @@
   </div>
 </section>
 
-<!-- ============ 创新区段 4:特殊人群护理 ============ -->
+<!-- ============ Innovation section 4:Special populations care ============ -->
 <section class="special-section" id="special">
   <!-- Full-width teal banner: Special Populations -->
-  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #178a9f; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem; text-align: center;">
+  <div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); background: #0d8b8e; padding: 3.5rem 1.5rem 4rem; margin-bottom: 3rem;">
     <div style="max-width: 1180px; margin: 0 auto;">
       <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 1.2rem;">
         <span style="display: inline-block; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.65);"></span>
         Special Populations
       </div>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; margin: 0;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 300; color: white; line-height: 1.18; letter-spacing: 0.01em; text-align: center; margin: 0;">
         Tailoring Care for<br>Different Patients
       </h2>
     </div>
@@ -1349,12 +1430,12 @@
       <div class="special-card">
         <div class="special-icon">◐</div>
         <h4>Geriatric Patients</h4>
-        <p>Skin thickness decreases ~20% per decade after 60. The dermis becomes papyraceous, capillaries fragile, healing capacity reduced. <strong>Avoid all aggressive adhesives</strong> — <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">silicone borders</a> or fully <a href="foam-non-adhesive-AD12.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">non-adhesive foam</a> with secondary fixation are first-line choices. Watch for medical adhesive-related skin injury (MARSI) at every change.</p>
+        <p>Skin thickness decreases ~20% per decade after 60. The dermis becomes papyraceous, capillaries fragile, healing capacity reduced. <strong>Avoid all aggressive adhesives</strong> — <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">silicone borders</a> or fully <a href="foam-non-adhesive-AD12.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">non-adhesive foam</a> with secondary fixation are first-line choices. Watch for medical adhesive-related skin injury (MARSI) at every change.</p>
       </div>
       <div class="special-card">
         <div class="special-icon">◑</div>
         <h4>Diabetic Patients</h4>
-        <p>Microvascular disease + peripheral neuropathy = high risk + delayed recognition. Diabetic foot pressure injuries can progress silently to deep tissue damage. <strong>Aggressive infection control</strong> — low threshold for <a href="nano-silver-antibacterial-AD47.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">nano-silver antimicrobial dressings</a>; consider MRSA and biofilm at every assessment.</p>
+        <p>Microvascular disease + peripheral neuropathy = high risk + delayed recognition. Diabetic foot pressure injuries can progress silently to deep tissue damage. <strong>Aggressive infection control</strong> — low threshold for <a href="nano-silver-antibacterial-AD47.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">nano-silver antimicrobial dressings</a>; consider MRSA and biofilm at every assessment.</p>
       </div>
       <div class="special-card">
         <div class="special-icon">◒</div>
@@ -1369,12 +1450,12 @@
       <div class="special-card">
         <div class="special-icon">◔</div>
         <h4>Paediatric &amp; Neonatal</h4>
-        <p>The head is proportionally larger — occipital pressure injuries dominate. Skin barrier is thin in preterm neonates, with high MARSI risk. <strong>Specialised <a href="silicone-foam-border-AD44.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">paediatric silicone products</a>, micro-adjustments to head position every 2–4 hours.</strong></p>
+        <p>The head is proportionally larger — occipital pressure injuries dominate. Skin barrier is thin in preterm neonates, with high MARSI risk. <strong>Specialised <a href="silicone-foam-border-AD44.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">paediatric silicone products</a>, micro-adjustments to head position every 2–4 hours.</strong></p>
       </div>
       <div class="special-card">
         <div class="special-icon">◕</div>
         <h4>Palliative Care</h4>
-        <p>Goals shift from healing to comfort and dignity. Kennedy Terminal Ulcers may develop hours to days before death and are not preventable. <strong><a href="activated-charcoal-non-adhesive-AD24.html" style="color:#178a9f; text-decoration:none; border-bottom:1px solid rgba(23,138,159,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#178a9f'" onmouseout="this.style.borderBottomColor='rgba(23,138,159,0.4)'">Activated charcoal</a> addresses malodour; gentle non-adherent dressings prioritise pain-free changes over absorbency optimisation.</strong></p>
+        <p>Goals shift from healing to comfort and dignity. Kennedy Terminal Ulcers may develop hours to days before death and are not preventable. <strong><a href="activated-charcoal-non-adhesive-AD24.html" style="color:#0d8b8e; text-decoration:none; border-bottom:1px solid rgba(13,139,142,0.4); transition:color 0.2s, border-color 0.2s;" onmouseover="this.style.borderBottomColor='#0d8b8e'" onmouseout="this.style.borderBottomColor='rgba(13,139,142,0.4)'">Activated charcoal</a> addresses malodour; gentle non-adherent dressings prioritise pain-free changes over absorbency optimisation.</strong></p>
       </div>
     </div>
   </div>
@@ -1462,7 +1543,7 @@
   const circle = document.getElementById('wagner-circle');
   let activeIdx = -1;
 
-  // 六个节点沿圆周均布(从正上方开始)
+  // Six nodes evenly distributed(Starting from top)
   function positionNodes() {
     const r = circle.offsetWidth / 2;
     nodes.forEach((node, i) => {
@@ -1511,7 +1592,7 @@
     });
   });
 
-  // 自动轮播(尊重 reduced motion)
+  // Auto rotation(respect reduced motion)
   let autoIdx = -1;
   let paused = false;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1528,11 +1609,11 @@
     }, 1500);
   }
 
-  // 版权年份
+  // Copyright year
   document.getElementById('footer-copy').textContent =
     '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
 
-  // ===== 表单必填校验:缺项不可提交 =====
+  // ===== Form required validation:Empty fields blocked =====
   (function () {
     const form = document.getElementById('inquiry-form');
     if (!form) return;
