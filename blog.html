@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Center | Wound Care, Skin Protection & Clinical Insights | Velcura Medical</title>
+  <meta name="description" content="Velcura's clinical Knowledge Center — practical guidance on wound care, skin protection, infection control and prevention strategy. Educational articles for clinicians, caregivers and procurement teams worldwide.">
+  <meta name="keywords" content="wound care knowledge, clinical articles, skin protection guide, IAD prevention, pressure injury education, dressing selection, Velcura blog, medical knowledge base">
+  <meta name="author" content="Velcura Medical">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://velcura.net/blog.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Knowledge Center | Velcura Medical">
+  <meta property="og:description" content="Clinical wound-care and skin-protection knowledge — articles, methodology and brand updates.">
+  <meta property="og:image" content="https://img.velcura.net/knowledgecenter.webp">
+  <meta property="og:image:width" content="1500">
+  <meta property="og:image:height" content="500">
+  <meta property="og:image:alt" content="Velcura Knowledge Center — wound care and skin protection insights">
+  <meta property="og:url" content="https://velcura.net/blog.html">
+  <meta property="og:site_name" content="Velcura Medical">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Velcura Knowledge Center">
+  <meta name="twitter:description" content="Clinical wound-care knowledge from Velcura Medical — practical, evidence-aligned articles.">
+  <meta name="twitter:image" content="https://img.velcura.net/knowledgecenter.webp">
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velcura.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Knowledge Center", "item": "https://velcura.net/blog.html" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Velcura Knowledge Center",
+    "description": "Clinical wound-care, skin-protection and infection-control knowledge from Velcura Medical.",
+    "url": "https://velcura.net/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Velcura Medical Technology (Shenzhen) Co., Ltd.",
+      "logo": { "@type": "ImageObject", "url": "https://img.velcura.net/logogpt40.png" }
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+    --c-ink: #1a1a1a;
+    --c-ink2: #555;
+    --c-ink3: #8A8780;
+    --c-line: #e4e0d8;
+    --c-bg: #fbfaf8;
+    --c-teal: #0d8b8e;
+    --c-teal2: #4A9490;
+    --c-gold: #b69b6b;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--c-ink);
+    background: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ============ Nav ============ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--c-line);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 500;
+    letter-spacing: 0.06em; color: var(--c-ink);
+  }
+  .nav-logo span {
+    font-weight: 400; color: var(--c-ink2); font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+  .nav-links {
+    list-style: none; display: flex; gap: 2rem; align-items: center;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif; font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--c-ink2); transition: color 0.25s;
+    position: relative; padding: 0.4rem 0;
+  }
+  .nav-links a:hover { color: var(--c-teal); }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: -2px;
+    width: 0; height: 1px; background: var(--c-teal);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-actions { display: flex; gap: 1rem; }
+  .nav-cta {
+    font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.55rem 1.2rem; border: 1px solid var(--c-line);
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+  }
+  .nav-cta:hover { background: var(--c-teal); color: #fff; border-color: var(--c-teal); }
+
+  /* ============ Hero banner image (1500 x 500) ============ */
+  .hero-img-wrap {
+    width: 100vw; position: relative; margin-top: 70px;
+    overflow: hidden;
+  }
+  .hero-img-wrap img {
+    width: 100%; height: auto; display: block;
+    max-height: 560px; object-fit: cover;
+  }
+
+  /* ============ Common layout ============ */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* ============ Full-width teal banner (per-topic header) ============ */
+  .topic-banner {
+    width: 100vw; position: relative; left: 50%; transform: translateX(-50%);
+    background: #0d8b8e; padding: 3rem 1.5rem 3.4rem; margin-bottom: 2.5rem;
+  }
+  .topic-banner-inner { max-width: 1180px; margin: 0 auto; }
+  .topic-banner-tag {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.92); margin-bottom: 1rem;
+  }
+  .topic-banner-tag span {
+    display: inline-block; width: 1.8rem; height: 1px;
+    background: rgba(255,255,255,0.65);
+  }
+  .topic-banner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 300;
+    color: #fff; line-height: 1.2; letter-spacing: 0.01em;
+    text-align: center; margin: 0;
+  }
+  .topic-banner h2 em { font-style: italic; opacity: 0.92; }
+
+  /* ============ Topic sections ============ */
+  .topic-section { padding: 4rem 0 5rem; }
+  .topic-section.alt { background: #fbfaf8; }
+
+  /* ============ Article cards ============ */
+  .article-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--c-line);
+    margin-top: 1.5rem;
+  }
+  .article-card {
+    background: #fbfaf8; padding: 2rem 1.9rem;
+    transition: background 0.35s ease;
+    position: relative; cursor: pointer;
+    display: flex; flex-direction: column;
+  }
+  .article-card:hover { background: var(--c-teal); }
+  .article-card:hover h3, .article-card:hover .article-meta, .article-card:hover .article-read { color: #fff; }
+  .article-card:hover p { color: rgba(255,255,255,0.85); }
+  .article-card:hover .topic-icon {
+    scale: 1.08;
+    box-shadow: 0 9px 22px rgba(0,0,0,0.22), inset 0 1px 3px rgba(255,255,255,1), inset 0 -4px 8px rgba(45,110,106,0.14);
+  }
+  .topic-icon {
+    width: 54px; height: 54px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.1rem;
+    background: radial-gradient(130% 130% at 32% 26%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.55) 33%, rgba(173,196,196,0.35) 64%, rgba(45,110,106,0.18) 100%);
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow: 0 5px 14px rgba(45,110,106,0.14), inset 0 1px 3px rgba(255,255,255,0.95), inset 0 -4px 8px rgba(45,110,106,0.10);
+    animation: orbFloat 6s ease-in-out infinite;
+    transition: scale 0.35s ease, box-shadow 0.35s ease;
+  }
+  .topic-icon svg {
+    width: 24px; height: 24px;
+    fill: none; stroke: var(--c-teal);
+    stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  }
+  @keyframes orbFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .topic-icon { animation: none; }
+  }
+  .article-meta {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--c-ink3); margin-bottom: 0.6rem;
+    transition: color 0.35s ease;
+  }
+  .article-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 400;
+    color: var(--c-ink); margin-bottom: 0.6rem;
+    line-height: 1.3; letter-spacing: 0.01em;
+    transition: color 0.35s ease;
+  }
+  .article-card p {
+    font-size: 0.88rem; color: var(--c-ink2);
+    line-height: 1.7; flex: 1;
+    transition: color 0.35s ease;
+  }
+  .article-read {
+    font-family: 'DM Sans', sans-serif; font-size: 0.72rem;
+    color: var(--c-gold); letter-spacing: 0.14em; text-transform: uppercase;
+    margin-top: 1.2rem; font-weight: 500;
+    transition: color 0.35s ease;
+  }
+  .article-coming {
+    background: rgba(13,139,142,0.06);
+  }
+  .article-coming .article-read {
+    color: var(--c-ink3); font-style: italic;
+    letter-spacing: 0.08em; text-transform: none;
+  }
+
+  /* ============ Footer ============ */
+  footer {
+    background: #545395; color: rgba(255,255,255,0.85);
+    padding: 1.4rem 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.78rem; letter-spacing: 0.05em; flex-wrap: wrap; gap: 0.8rem;
+  }
+  footer a { color: rgba(255,255,255,0.85); }
+  footer a:hover { color: #fff; }
+
+  /* ============ Responsive ============ */
+  @media (max-width: 980px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .container { padding: 0 1.5rem; }
+    .article-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============ Contact section (from incontinence-care) ============ */
+  .contact-section { padding: 3.5rem 0 4rem; background: #545395; border-top: none; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
+  .contact-grid > div:last-child { margin-left: 1.6rem; }
+  .contact-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 300; margin-bottom: 2rem;
+    color: #ffffff;
+  }
+  .contact-item { display: flex; gap: 1.3rem; margin-bottom: 1.5rem; }
+  .contact-item-icon {
+    width: 38px; height: 38px; border: 0.5px solid rgba(255,255,255,0.55); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #ffffff; flex-shrink: 0;
+  }
+  .contact-item-label {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); margin-bottom: 0.2rem;
+  }
+  .contact-item-value { font-size: 1.1rem; color: #ffffff; line-height: 1.6; }
+  .contact-form {
+    border: 1px solid rgba(255,255,255,0.28);
+    padding: 2.5rem; border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+  }
+  .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form input, .contact-form textarea {
+    width: 100%; padding: 0.95rem 1.1rem; margin-bottom: 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 1.1rem;
+    border: 1px solid rgba(255,255,255,0.4); background: transparent;
+    color: #ffffff; outline: none; transition: border-color 0.2s, background 0.2s;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #ffffff; opacity: 1;
+  }
+  .contact-form input:focus, .contact-form textarea:focus {
+    border-color: #ffffff; background: rgba(255,255,255,0.08);
+  }
+  .contact-form textarea { min-height: 120px; resize: vertical; }
+  .contact-form input.invalid, .contact-form textarea.invalid {
+    border-color: #ff9a8f;
+  }
+  .btn-gold {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #545395; background: #ffffff; border: none;
+    padding: 0.9rem 2.4rem; border-radius: 999px;
+    cursor: pointer; transition: background 0.2s, color 0.2s;
+  }
+  .btn-gold:hover { background: rgba(255,255,255,0.85); }
+  .form-msg {
+    font-size: 0.8rem; margin-top: 0.9rem; min-height: 1.1rem;
+  }
+  .form-msg.error { color: #ffc9c2; }
+  .form-msg.success { color: #d7f5e6; }
+  .disclaimer {
+    text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.8);
+    padding: 1.2rem 2rem; border-top: 0.5px solid rgba(255,255,255,0.18);
+    background: #545395;
+    line-height: 1.8;
+  }
+  footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.33rem 3rem;
+    background: #545395;
+    border-top: none;
+  }
+  footer { padding: 1.33rem 1.5rem; flex-wrap: wrap; gap: 0.8rem; background: #545395; }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600; color: #ffffff;
+  }
+  .footer-logo span { color: #ffffff; }
+  .footer-copy, .footer-link { font-size: 0.74rem; color: #ffffff; }
+  .footer-link { text-decoration: none; }
+  .footer-link:hover { color: #ffffff; opacity: 0.8; }
+  .contact-form textarea:focus {
+    border-color: #ffffff; background: rgba(255,255,255,0.08);
+  }
+
+  /* ============ Media query overrides (contact/footer) ============ */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 3.5rem 1.5rem 2.5rem; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 2rem 1rem 3.5rem; }
+    .patho-grid, .solutions-grid { grid-template-columns: 1fr; }
+    .grading-layout, .prevent-layout, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(-n+2) { border-bottom: 0.5px solid var(--c-line); }
+    .pathway-track { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
+    .path-step:nth-child(1), .path-step:nth-child(2) { grid-column: auto; }
+    .pathway-track::before { display: none; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .container { padding: 0 1.5rem; }
+    footer { padding: 1.33rem 1.5rem; flex-wrap: wrap; gap: 0.8rem; background: #545395; }
+    .contact-form-row { grid-template-columns: 1fr; }
+    .banner-image { aspect-ratio: auto; min-height: 440px; }
+    .banner-image::before {
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,255,255,0.88) 55%,
+        rgba(255,255,255,0.55) 100%);
+    }
+    .banner-overlay { max-width: 100%; padding: 0 1.5rem; }
+    .banner-overlay p { max-width: 100%; }
+  }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" style="height:36px;width:auto;display:block;">
+    Velcura <span>Medical</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#understand">Understand</a></li>
+    <li><a href="#clean">Clean</a></li>
+    <li><a href="#treat">Treat</a></li>
+    <li><a href="#protect">Protect</a></li>
+    <li><a href="#repair">Repair</a></li>
+    <li><a href="#prevent">Prevent</a></li>
+    <li><a href="#news">News</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a class="nav-cta" href="index.html">Home</a>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ Hero banner image (1500 x 500) ============ -->
+<div class="hero-img-wrap">
+  <img src="https://img.velcura.net/knowledgecenter.webp" alt="Velcura Knowledge Center — clinical wound care and skin protection knowledge" width="1500" height="500">
+</div>
+
+<!-- ============ 1. UNDERSTAND ============ -->
+<section class="topic-section" id="understand">
+  <div class="topic-banner">
+    <div class="topic-banner-inner">
+      <div class="topic-banner-tag"><span></span>Pillar 01</div>
+      <h2>Understand <em>· The Science Beneath the Skin</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.5 10.9V16a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-2.1A6 6 0 0 0 12 3Z"/><path d="M10 20h4M11 22h2" stroke-width="1.4"/></svg>
+        </span>
+        <div class="article-meta">Foundation · 6 min read</div>
+        <h3>What Is a Pressure Injury, Really?</h3>
+        <p>Beyond the textbook definition — the cellular cascade from sustained pressure → capillary occlusion → ischaemia → necrosis, and why the dressing you choose has to interrupt this chain at the right level.</p>
+        <div class="article-read">Coming Soon →</div>
+      </div>
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <div class="article-meta">Mechanism · 5 min read</div>
+        <h3>IAD vs Pressure Injury · A Differential Diagnosis</h3>
+        <p>The two coexist in the same patient, in the same anatomical zone, but call for fundamentally different management. A side-by-side decision framework.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. CLEAN ============ -->
+<section class="topic-section alt" id="clean">
+  <div class="topic-banner">
+    <div class="topic-banner-inner">
+      <div class="topic-banner-tag"><span></span>Pillar 02</div>
+      <h2>Clean <em>· The First Line of Skin Protection</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3 7 10.5a6 6 0 1 0 10 0Z"/><path d="M9 14a3 3 0 0 0 3 3" stroke-width="1.2"/></svg>
+        </span>
+        <div class="article-meta">Daily Practice · 4 min read</div>
+        <h3>Gentle, No-Rinse Cleansing for IAD-Prone Skin</h3>
+        <p>Why standard soap-and-water is wrong for incontinent skin, what no-rinse cleansers actually do at the corneocyte level, and how to integrate them into a routine that takes less time, not more.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8" stroke-width="1.4"/></svg>
+        </span>
+        <div class="article-meta">Surgical · 5 min read</div>
+        <h3>Pre-Surgical Skin Antisepsis — The Modern Protocol</h3>
+        <p>Chlorhexidine vs povidone-iodine, contact time, sequencing with iodine incise drapes. Where the evidence currently sits in 2026.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. TREAT ============ -->
+<section class="topic-section" id="treat">
+  <div class="topic-banner">
+    <div class="topic-banner-inner">
+      <div class="topic-banner-tag"><span></span>Pillar 03</div>
+      <h2>Treat <em>· Dressing Strategy by Wound Type</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4 L20 12 L12 20 L4 12 Z" fill="currentColor" fill-opacity="0.55" stroke="currentColor"/><path d="M12 1.5 V4 M12 20 V22.5 M1.5 12 H4 M20 12 H22.5" stroke-width="1.2"/></svg>
+        </span>
+        <div class="article-meta">Selection · 7 min read</div>
+        <h3>Choosing the Right Dressing for Stage III–IV Pressure Injuries</h3>
+        <p>Calcium alginate for dead-space, silver foam for bioburden, charcoal for malodour — when each is the right tool, and the dressing-change cadence that keeps the cost-per-day rational.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><circle cx="9" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="9" cy="16.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="15.5" cy="16.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <div class="article-meta">Infection Control · 6 min read</div>
+        <h3>MRSA in Pressure Ulcers — A Practical Containment Protocol</h3>
+        <p>When to suspect MRSA without waiting for culture, the silver / charcoal combination strategy, and the bedside isolation steps that protect the next patient.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PROTECT ============ -->
+<section class="topic-section alt" id="protect">
+  <div class="topic-banner">
+    <div class="topic-banner-inner">
+      <div class="topic-banner-tag"><span></span>Pillar 04</div>
+      <h2>Protect <em>· Before Damage Starts</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3 L20 6 V13 C20 17 16 20 12 21 C8 20 4 17 4 13 V6 Z"/></svg>
+        </span>
+        <div class="article-meta">Pressure Prevention · 5 min read</div>
+        <h3>Prophylactic Silicone Foam Border on the Sacrum — When to Apply</h3>
+        <p>Which Braden score threshold, how long to leave in place, when to switch sides, and how to inspect skin without disrupting the seal.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="3" rx="0.5"/><rect x="3" y="9.5" width="18" height="2.5" rx="0.5"/><rect x="3" y="13.5" width="18" height="2.5" rx="0.5"/><rect x="3" y="17" width="18" height="2" rx="0.5"/></svg>
+        </span>
+        <div class="article-meta">Bedding Strategy · 4 min read</div>
+        <h3>Washable Underpads · Why Reusable Beats Disposable</h3>
+        <p>Cost-per-day analysis, sustainability profile, and the five-layer composite engineering that makes reusable underpads safe for 300+ wash cycles.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. REPAIR ============ -->
+<section class="topic-section" id="repair">
+  <div class="topic-banner">
+    <div class="topic-banner-inner">
+      <div class="topic-banner-tag"><span></span>Pillar 05</div>
+      <h2>Repair <em>· Optimising the Healing Window</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-width="1.6"/></svg>
+        </span>
+        <div class="article-meta">Healing · 5 min read</div>
+        <h3>Re-Epithelialisation · When Is the Wound Truly Closed?</h3>
+        <p>Macroscopic closure is not the end. What the underlying tissue is still doing at 7, 14 and 28 days post-closure, and how to dress for that invisible work.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3 L20 7.5 V16.5 L12 21 L4 16.5 V7.5 Z"/><path d="M12 7.5 L16.5 10 V15 L12 17.5 L7.5 15 V10 Z" stroke-width="1.2" opacity="0.65"/></svg>
+        </span>
+        <div class="article-meta">Scar Management · 6 min read</div>
+        <h3>Hypertrophic Scar Control After Surgical Closure</h3>
+        <p>The first 72 hours and the first 6 months — when silicone gel sheets help, when they don't, and when to escalate.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. PREVENT ============ -->
+<section class="topic-section alt" id="prevent">
+  <div class="topic-banner">
+    <div class="topic-banner-inner">
+      <div class="topic-banner-tag"><span></span>Pillar 06</div>
+      <h2>Prevent <em>· The Discipline of Not Needing a Cure</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="10" rx="1"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg>
+        </span>
+        <div class="article-meta">Cost Analysis · 7 min read</div>
+        <h3>The Cost of Prevention vs the Cost of Cure</h3>
+        <p>A Stage IV pressure injury runs $70,000+ in treatment. The prevention dressing costs $4. The math is not subtle — but the budget owner often sees only the line-item, not the trajectory.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4l9 5v6c0 4-3.5 7.5-9 8.5-5.5-1-9-4.5-9-8.5V9z"/><path d="M9 12l2.5 2.5L16 10" stroke-width="1.6"/></svg>
+        </span>
+        <div class="article-meta">Bundle Protocol · 5 min read</div>
+        <h3>The Five-Step IAD Prevention Bundle</h3>
+        <p>Cleanse → moisturise → protect → manage moisture → reposition. The order matters, the products matter, and the documentation matters. Operationalised for any nursing-home shift.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. NEWS ============ -->
+<section class="topic-section" id="news">
+  <div class="topic-banner">
+    <div class="topic-banner-inner">
+      <div class="topic-banner-tag"><span></span>Pillar 07</div>
+      <h2>News <em>· Velcura &amp; the Wound-Care World</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M7 9h10M7 12h10M7 15h6" stroke-width="1.3"/></svg>
+        </span>
+        <div class="article-meta">Brand · Q2 2026</div>
+        <h3>Velcura's New PICC Securement Dressing — Launched</h3>
+        <p>Integrated CHG gel pad with 7-day broad-spectrum antimicrobial coverage. Engineered for CLABSI reduction in long-dwell central venous lines.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+      <div class="article-card article-coming">
+        <span class="topic-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
+        </span>
+        <div class="article-meta">Industry · 2026</div>
+        <h3>NPIAP / EPUAP Guideline Update — What Changed</h3>
+        <p>The 2026 revision: new emphasis on microclimate management, refined staging for Deep Tissue Pressure Injury, and what it means for daily dressing-selection decisions.</p>
+        <div class="article-read">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-heading">Contact Us</div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✆</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">+852 98567973</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">@</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">info@velcura.net</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⌖</div>
+          <div>
+            <div class="contact-item-label">Address</div>
+            <div class="contact-item-value">
+              Room 2134, 2nd Floor, Building 3, Block 30 (Wenzhengxin Building),<br>
+              No. 2 Kefa Road, Science and Technology Park Community,<br>
+              Yuehai Street, Nanshan District, Shenzhen
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <form id="inquiry-form" novalidate>
+            <div class="contact-form-row">
+              <input type="text" name="name" placeholder="Name *" required>
+              <input type="text" name="company" placeholder="Company">
+            </div>
+            <input type="email" name="email" placeholder="Email *" required>
+            <input type="tel" name="phone" placeholder="Phone *" required>
+            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <button type="submit" class="btn-gold">Send Inquiry</button>
+            <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  This page is intended for clinical education and product information purposes; it does not constitute medical advice or a substitute for individualised clinical judgement. Incontinence assessment, IAD staging and the choice between continence products and active wound dressings should be performed by qualified healthcare professionals in accordance with current continence-care and IAD best-practice guidelines, and local regulations. Velcura Medical is a manufacturer of washable reusable underpads and wound care dressings; specific product registrations, sizes and indications may vary by country.
+</div>
+
+<footer>
+  <div class="footer-logo">Velcura <span>Medical</span></div>
+  <div class="footer-copy" id="footer-copy"></div>
+  <a class="footer-link" href="https://velcura.net">velcura.net ↗</a>
+</footer>
+
+<script>
+  // Footer year
+  document.getElementById('footer-copy').textContent = '© 2025 Velcura Medical. All Rights Reserved.';
+
+  // ===== Form required validation:Empty fields blocked =====
+  (function () {
+    const form = document.getElementById('inquiry-form');
+    if (!form) return;
+    const msg = document.getElementById('form-msg');
+    const required = form.querySelectorAll('[required]');
+    const emailField = form.querySelector('input[type="email"]');
+
+    function clearInvalid(el) { el.classList.remove('invalid'); }
+    required.forEach(el => el.addEventListener('input', () => clearInvalid(el)));
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let firstInvalid = null;
+      required.forEach(el => {
+        const empty = !el.value.trim();
+        const badEmail = el === emailField && el.value.trim() &&
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (empty || badEmail) {
+          el.classList.add('invalid');
+          if (!firstInvalid) firstInvalid = el;
+        } else {
+          el.classList.remove('invalid');
+        }
+      });
+
+      if (firstInvalid) {
+        msg.className = 'form-msg error';
+        msg.textContent = firstInvalid === emailField && emailField.value.trim()
+          ? 'Please enter a valid email address.'
+          : 'Please complete all required fields (*) before submitting.';
+        firstInvalid.focus();
+        return;
+      }
+
+      msg.className = 'form-msg success';
+      msg.textContent = 'Thank you. Your inquiry has been submitted.';
+      form.reset();
+    });
+  })();
+</script>
+
+</body>
+</html>
