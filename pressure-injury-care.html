@@ -1689,7 +1689,7 @@
 
     // Add a hint label below the pyramid
     const hint = document.createElement('div');
-    hint.textContent = '✨ Hover here for 1.5 seconds — watch the logo orbit the pyramid';
+    hint.textContent = '✨ Watch the Velcura logo orbit the dressing pyramid';
     hint.style.cssText = `
       text-align: center;
       font-size: 0.78rem;
@@ -1816,29 +1816,28 @@
       }, 1600);
     }
 
-    // Reactive hover affordance — instant feedback when entering pyramid
-    pyramidSvg.addEventListener('mouseenter', () => {
-      if (returnTimer){ clearTimeout(returnTimer); returnTimer = null; }
-      pyramidSvg.style.filter = 'drop-shadow(0 8px 20px rgba(44, 99, 150, 0.25))';
-      hint.style.opacity = '1';
-      hint.style.color = '#2c6396';
-      if (isAnimating) return;
-      if (hoverTimer) clearTimeout(hoverTimer);
-      console.log('[Pyramid orbit] Hover detected — countdown 1.5s...');
-      hoverTimer = setTimeout(startOrbit, 1500);
-    });
+    // Auto-trigger: launch 1 second after the pyramid enters the viewport (no hover required)
+    let hasAutoLaunched = false;
+    const orbitObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAutoLaunched && !isAnimating) {
+          hasAutoLaunched = true;
+          console.log('[Pyramid orbit] Pyramid in viewport — auto-launching in 1s...');
+          if (hoverTimer) clearTimeout(hoverTimer);
+          hoverTimer = setTimeout(startOrbit, 1000);
+        }
+      });
+    }, { threshold: 0.4 });
+    orbitObserver.observe(pyramidSvg);
 
+    // Subtle hover-only visual feedback (no trigger): drop-shadow on the pyramid SVG
+    pyramidSvg.addEventListener('mouseenter', () => {
+      pyramidSvg.style.filter = 'drop-shadow(0 8px 20px rgba(44, 99, 150, 0.25))';
+      hint.style.color = '#2c6396';
+    });
     pyramidSvg.addEventListener('mouseleave', () => {
       pyramidSvg.style.filter = '';
       hint.style.color = '';
-      if (!isAnimating) hint.style.opacity = '0.7';
-      // Only cancel the countdown if the launch hasn't fired yet.
-      // Once launched, the animation auto-returns 850ms after landing — no mouseleave action needed.
-      if (hoverTimer){
-        clearTimeout(hoverTimer);
-        hoverTimer = null;
-        console.log('[Pyramid orbit] Hover cancelled before launch.');
-      }
     });
 
     // Respect reduced-motion preferences
