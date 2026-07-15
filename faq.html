@@ -25,7 +25,7 @@
 <meta name="twitter:description" content="MOQ, OEM/ODM, samples, packaging, lead time, shipping — Velcura wound care manufacturer Q&A.">
 <meta name="twitter:image" content="https://img.velcura.net/og-share.png">
 
-<!-- FAQ Schema (核心:让 Google 渲染 "People also ask" 富结果) -->
+<!-- FAQ Schema (key to Google rendering a "People also ask" rich result) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,7 +83,7 @@
 }
 </script>
 
-<!-- 字体 + 预连接 -->
+<!-- Fonts + preconnect -->
 <link rel="preconnect" href="https://img.velcura.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,7 +99,7 @@
   }
   html, body { width:100%; font-family:'DM Sans',sans-serif; background:#fff; color:var(--slate-800); -webkit-font-smoothing:antialiased; }
 
-  /* 顶部导航(沿用 index 风格) */
+  /* Top navigation (matches the index style) */
   .nav { position:relative; padding:18px 48px; display:flex; align-items:flex-start; justify-content:space-between; z-index:100; background:#fff; border-bottom:1px solid #f0f4f8; }
   .nav-brand { font-family:'Playfair Display',serif; font-style:italic; font-size:22px; font-weight:400; line-height:1.4; letter-spacing:0.03em; color:var(--slate-700); text-decoration:none; max-width:240px; }
   .nav-links { display:flex; gap:36px; list-style:none; margin-top:6px; margin-left:11em; }
@@ -107,7 +107,7 @@
   .nav-links a:hover, .nav-links a.active { color:var(--sky-600); }
   .nav-hamburger { display:none; background:none; border:none; cursor:pointer; padding:8px; }
 
-  /* Hero 标题区 */
+  /* Hero heading area */
   .faq-hero {
     padding: 100px 48px 60px;
     text-align:center;
@@ -118,7 +118,7 @@
   .faq-title { font-family:'Playfair Display',serif; font-style:italic; font-weight:400; font-size:clamp(40px, 6vw, 64px); color:var(--slate-800); line-height:1.15; margin-bottom:20px; }
   .faq-sub { font-size:17px; color:var(--slate-500); max-width:640px; margin:0 auto; line-height:1.65; }
 
-  /* FAQ 主体 */
+  /* FAQ body */
   .faq-body { max-width:880px; margin:0 auto; padding:80px 24px 100px; }
   .faq-item {
     border-top:1px solid #e5edf5;
@@ -153,7 +153,7 @@
     padding-top:18px;
   }
 
-  /* CTA 区 */
+  /* CTA area */
   .faq-cta {
     background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);
     padding:60px 24px;
@@ -170,7 +170,7 @@
   }
   .faq-cta-btn:hover { background:var(--sky-700); transform:translateY(-1px); }
 
-  /* 页脚 */
+  /* Footer */
   .footer { background:#545395; color:#fff; padding:50px 48px 30px; }
   .footer-inner { max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px; }
   .footer-brand { font-family:'Playfair Display',serif; font-style:italic; font-size:24px; }
@@ -192,9 +192,9 @@
     .faq-a { font-size:14px; }
   }
 
-  /* AD/TD/SC 字号增大 */
+  /* AD/TD/SC font-size increase */
   .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
-  /* ===== Featured Products 下拉菜单 ===== */
+  /* ===== Featured Products dropdown ===== */
   .nav-links .has-dropdown { position: relative; }
   .nav-links .dropdown-trigger { cursor: pointer; }
   .fp-menu {
@@ -249,23 +249,23 @@
     background: rgba(84,83,149,0.06);
     color: var(--c-purple);
   }
-  /* Products 占位(不可点,视觉与其他导航项一致) */
+  /* Products placeholder (not clickable, styled like the other nav items) */
   .nav-products-disabled {
     font-size: 16.45px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
     color: var(--slate-800); cursor: default;
   }
-  /* AD/TD/SC 触发器(克隆首页排版) */
+  /* AD/TD/SC triggers (cloned from the homepage layout) */
   .nav-links .has-dropdown .dropdown-trigger {
     font-size: 16.45px !important; font-weight: 500; letter-spacing: 0.10em;
   }
-  /* AD/TD/SC 整体下移,使 AD 顶端与 Products 底端齐平 */
+  /* Shift AD/TD/SC down so the top of AD lines up with the bottom of Products */
   .nav-links .has-dropdown { margin-top: 20px; }
 
 </style>
 </head>
 <body>
 
-<!-- 导航 -->
+<!-- Navigation -->
 <nav class="nav">
   <a class="nav-brand" href="index.html">Gentle Healing,<br><span style="display:inline-block; margin-left:2.5em;">Complete Care</span></a>
   <ul class="nav-links">
@@ -335,7 +335,7 @@
   <p class="faq-sub">Common questions from distributors, hospital procurement and private-label brand partners working with Velcura Medical.</p>
 </section>
 
-<!-- FAQ 主体 -->
+<!-- FAQ body -->
 <section class="faq-body">
 
   <article class="faq-item" id="moq">
@@ -407,7 +407,7 @@
   <a class="faq-cta-btn" href="index.html#contact">Contact Sales</a>
 </section>
 
-<!-- 页脚 -->
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-inner">
     <div>
@@ -432,19 +432,19 @@
 </footer>
 
 <script>
-  // FAQ 折叠展开
+  // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(function(q){
     q.addEventListener('click', function(){
       var item = q.closest('.faq-item');
       var wasOpen = item.classList.contains('open');
-      // 关掉其他
+      // Close the others
       document.querySelectorAll('.faq-item.open').forEach(function(it){ it.classList.remove('open'); });
-      // 切换当前
+      // Toggle the current one
       if (!wasOpen) item.classList.add('open');
     });
   });
 
-  // 支持 URL hash 直达某条问题(如 faq.html#oem 自动打开 OEM 那条)
+  // Support deep-linking to a question via URL hash (e.g. faq.html#oem opens the OEM entry)
   if (location.hash) {
     var t = document.querySelector(location.hash + '.faq-item');
     if (t) {

@@ -597,8 +597,8 @@
 
       <!-- Search Box -->
       <div style="margin-top:auto; padding:14px 12px 16px; border-top:1px solid #e0f2fe; position:relative;">
-        <div style="font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#0284c7; margin-bottom:6px;">产品搜索</div>
-        <input id="prodSearchInput" type="text" placeholder="输入产品关键词…"
+        <div style="font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#0284c7; margin-bottom:6px;">Product Search</div>
+        <input id="prodSearchInput" type="text" placeholder="Search products…"
           style="width:100%; padding:7px 10px; font-size:12px; border:1px solid #bae6fd; border-radius:6px; outline:none; background:#f0f9ff; color:#0c4a6e; font-family:inherit;"
           oninput="prodSearch(this.value)" autocomplete="off">
         <div id="prodSearchResults" style="display:none; position:absolute; left:12px; right:12px; background:#fff; border:1px solid #bae6fd; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.10); z-index:999; max-height:180px; overflow-y:auto; margin-top:4px;"></div>
@@ -632,24 +632,24 @@
       </div>
 
       <!-- Product detail panel -->
-      <!-- 产品 iframe 面板 -->
+      <!-- Product iframe panel -->
       <div id="l2PanelPd" class="l2-pd" style="display:none; height:100%;">
         <button class="l2-pd-goback" onclick="showOv()" style="display:none;">← Back to Advanced Wound Dressings</button>
         <div id="l2ProdIframeWrap" style="margin-top:8px; height:calc(100% - 48px);">
           <iframe id="l2ProdIframe" src="" style="width:100%; height:100%; min-height:80vh; border:none; display:block;"></iframe>
         </div>
-        <!-- 手机端：直接跳转按钮 -->
+        <!-- Mobile: direct link button -->
         <div id="l2MobileLink" style="display:none; padding:24px 16px; text-align:center;">
-          <p style="font-size:14px; color:#475569; margin-bottom:16px;">点击查看产品详情页面</p>
-          <a id="l2MobileLinkBtn" href="" style="display:inline-block; padding:12px 32px; background:#0284c7; color:#fff; border-radius:999px; font-size:14px; text-decoration:none; letter-spacing:0.05em;">查看详情 →</a>
+          <p style="font-size:14px; color:#475569; margin-bottom:16px;">Open the full product detail page</p>
+          <a id="l2MobileLinkBtn" href="" style="display:inline-block; padding:12px 32px; background:#0284c7; color:#fff; border-radius:999px; font-size:14px; text-decoration:none; letter-spacing:0.05em;">View Details →</a>
         </div>
         <div id="l2ProdComingSoon" style="display:none; padding:60px 40px; text-align:center; color:#94a3b8;">
           <div style="font-size:48px; margin-bottom:16px;">🔧</div>
-          <div style="font-size:18px; font-weight:300; margin-bottom:8px;">页面建设中</div>
-          <div style="font-size:13px;">此产品详情页面即将上线，请联系我们获取更多信息。</div>
+          <div style="font-size:18px; font-weight:300; margin-bottom:8px;">Page Coming Soon</div>
+          <div style="font-size:13px;">This product detail page is coming soon. Please contact us for more information.</div>
         </div>
 
-        <!-- 普通产品详情卡 -->
+        <!-- Standard product detail card -->
         <div id="l2NormalPd" style="display:none;">
           <div class="l2-pd-hero">
             <div class="l2-pd-imgbox" id="l2PdImgBox" style="position:relative;">
@@ -1012,7 +1012,7 @@ var PRODS = {
   'Transparent Film Strip':{badge:'Transparent Film Strip',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/透明敷贴产品-1024x1024.png','https://img.velcura.net/PU%E9%80%8F%E6%98%8E%E6%95%B7%E8%B4%B4%E5%8D%B7-1024x1024.png','https://img.velcura.net/透明敷贴卷_03.jpg'],tagline:'Continuous transparent PU film dressing roll — waterproof, breathable, and ideal for covering IV sites, superficial wounds, and post-operative incisions.',features:['Waterproof transparent PU film provides a reliable barrier while allowing wound inspection','Highly breathable — permits water vapour transmission to reduce maceration','Continuous roll format allows cutting to any required length','Hypoallergenic adhesive for secure, gentle fixation on sensitive skin'],specs:[['Available widths','5 / 10 / 15 / 20 cm'],['Roll length','10 m'],['Backing','Transparent PU film'],['Waterproof','Yes'],['MVTR','High — breathable']],indications:['IV catheter fixation','Post-operative incision coverage','Superficial wound protection','Skin graft donor sites'],note:''},
   'Frame Style Transparent Film IV Dressing':{badge:'Transparent Film I.V. Dressing · Frame Style',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/不带切口留置针贴产品-1024x1024.png','https://img.velcura.net/I_V留置针贴_01.jpg','https://img.velcura.net/I_V留置针贴_02.jpg'],tagline:'Sterile semi-permeable polyurethane film I.V. dressing with paper picture-frame delivery carrier — secures peripheral, central and arterial catheters with continuous direct visibility of the insertion site, in line with CDC/HICPAC catheter-care guidance (Up to 7-day wear time).',features:['Transparent polyurethane film provides continuous, direct, dressing-on visibility of the catheter insertion site — clinicians can inspect for early signs of phlebitis, infiltration, dislodgement or erythema at any time without removing the dressing','Picture-frame paper carrier holds the film flat and tension-free during application — supports one-handed sterile delivery, minimises the wrinkles and lift that cause early dressing failure on PIV and PICC sites','Waterproof film with in-vitro viral barrier to 27 nm and bacterial barrier — patient can shower with the dressing in place, while the semi-permeable membrane allows moisture vapour transmission to support a healthy skin microclimate','Thin, conformable film with hypoallergenic latex-free acrylic adhesive — moulds to anatomical contours, lifts cleanly without epidermal stripping or medical adhesive-related skin injury (MARSI), suitable for sensitive skin including paediatric and geriatric'],specs:[['Product Name','Transparent Film I.V. Dressing (Frame Style)'],['REF No.','107 001 – 107 006'],['Construction','Sterile semi-permeable polyurethane film + hypoallergenic acrylic adhesive + paper picture-frame carrier'],['Available Sizes','5.5×6 · 6×7 · 7×9 · 9×10 · 9×12 cm'],['Packaging','1 pc/peel pouch · 50 pcs/box · 10 boxes/carton · OEM packaging available'],['Sterility','Individually sterile-packaged'],['Sterilization','Ethylene oxide (EO)'],['Adhesive','Hypoallergenic acrylic, latex-free'],['Barrier Performance','Waterproof; in-vitro viral barrier to 27 nm; bacterial barrier'],['MVTR','High (semi-permeable; breathable)'],['Wear Time','Up to 7 days (per CDC/HICPAC catheter dressing change interval)'],['Shelf Life','3 years'],['Regulatory Class','Class II Medical Device'],['Origin','China']],indications:['Peripheral I.V. catheter securement','Central venous catheter (CVC) securement','PICC line securement','Arterial line securement','Epidural catheter securement','Implanted port-site coverage','Subcutaneous infusion-set securement','Post-procedure secondary wound dressing','Donor-site coverage','Burns secondary dressing'],note:''},
   'Non-woven IV Dressing':{badge:'Non-woven IV Dressing',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/无纺布留置针贴产品-1024x767.png','https://img.velcura.net/product-3.jpg','https://img.velcura.net/留置针贴_03.jpg'],tagline:'Non-woven adhesive IV dressing for peripheral catheter fixation — soft, breathable, and comfortable for extended wear.',features:['Soft non-woven backing provides comfortable, breathable fixation for extended periods','Hypoallergenic adhesive suitable for sensitive skin and long-term use','Available in multiple sizes to fit different catheter types and patient anatomy','Opaque design protects insertion site from light exposure'],specs:[['REF No.','108 001 – 108 004'],['Available sizes','5×6 to 9×12 cm'],['Backing','Non-woven fabric'],['Adhesion','Hypoallergenic adhesive'],['Sterility','Individually sterile packaged']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Long-term IV access management'],note:''},
-  'Reinforced IV Dressing':{badge:'Reinforced IV Dressing',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/Reinforced_I_V_dressing.png','https://img.velcura.net/Reinforced_I_V_dressing_2.png','https://img.velcura.net/Reinforced_I_V_dressing_3.png'],tagline:'Reinforced transparent film IV dressing with a fabric-reinforced border for secure, durable catheter fixation — a clear central window allows continuous monitoring of the insertion site.',features:['Transparent central film window allows continuous visual inspection of the catheter insertion site without removing the dressing','Reinforced non-woven border strengthens the edges for secure, long-lasting fixation and resists edge lifting and rolling','Notched design fits neatly around the catheter hub and is supplied with a securement tape strip for added stability','Waterproof, breathable film provides a bacterial and viral barrier while allowing moisture vapour to escape — shower-safe'],specs:[['Structure','Transparent film centre + reinforced non-woven border'],['Window','Clear film over insertion site'],['Fixation','Reinforced border + securement tape strip'],['Backing','Waterproof breathable film'],['Sterility','Individually sterile packaged']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Arterial line securement','High-movement or long-term IV access'],note:''},
+  'Reinforced IV Dressing':{badge:'Reinforced IV Dressing',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/Reinforced_I.V._dressing.png','https://img.velcura.net/Reinforced_I.V._dressing2.png','https://img.velcura.net/Reinforced_I.V._dressing3.png'],tagline:'Reinforced transparent film IV dressing with a fabric-reinforced border for secure, durable catheter fixation — a clear central window allows continuous monitoring of the insertion site.',features:['Transparent central film window allows continuous visual inspection of the catheter insertion site without removing the dressing','Reinforced non-woven border strengthens the edges for secure, long-lasting fixation and resists edge lifting and rolling','Notched design fits neatly around the catheter hub and is supplied with a securement tape strip for added stability','Waterproof, breathable film provides a bacterial and viral barrier while allowing moisture vapour to escape — shower-safe'],specs:[['Structure','Transparent film centre + reinforced non-woven border'],['Window','Clear film over insertion site'],['Fixation','Reinforced border + securement tape strip'],['Backing','Waterproof breathable film'],['Sterility','Individually sterile packaged']],indications:['Peripheral IV catheter fixation','Central venous catheter sites','Arterial line securement','High-movement or long-term IV access'],note:''},
   'Wound Closure Strips':{badge:'Wound Closure Strips · Sterile',bs:'background:#f0fdf4;color:#166534;',imgs:['https://img.velcura.net/创口贴产品.png','https://img.velcura.net/product-3.jpg','https://img.velcura.net/伤口免缝贴产品.png'],tagline:'Sterile reinforced skin-closure strips for needleless approximation of wound edges — close wounds across the surface, not through the dermis. Suitable for primary closure of minor lacerations and as a surface-layer adjunct after subcuticular suturing or early suture/staple removal.',features:['Truly needleless closure — the porous strip is applied across the wound surface and pulls skin edges together by adhesive tension alone. No needle penetration of the dermis, no stitch marks, no railroad-track scarring, and no need for return visits to remove material.','Porous, breathable non-woven backing allows moisture vapour transmission and oxygen exchange across the closure line — supports the moist wound-healing environment without trapping exudate, and reduces under-strip maceration during the early healing phase.','Hypoallergenic latex-free acrylic adhesive — gentle enough for fragile, paediatric and elderly skin, yet strong enough to maintain wound apposition through normal daily activity. Lifts cleanly at the end of healing without epidermal stripping or medical adhesive-related skin injury (MARSI).','Versatile across the closure spectrum — usable as primary closure for minor low-tension lacerations, as a surface-layer adjunct after subcuticular suturing, or as reinforcement following early suture/staple removal. Multiple widths and lengths cover paediatric facial wounds through to longer surgical incisions.'],specs:[['Construction','Porous non-woven polyester or rayon backing + hypoallergenic pressure-sensitive acrylic adhesive on siliconized release liner'],['Backing','Non-woven, latex-free, breathable; reinforced filament option on premium grade'],['Adhesive','Hypoallergenic acrylic, latex-free, zinc-oxide-free'],['Available Sizes','3×75 mm · 6×75 mm · 12×100 mm — other sizes on request'],['Packaging','6 strips/envelope · 50 envelopes/box · 10 boxes/carton · OEM packaging available'],['Sterility','Individually sterile-packaged (peel pouch)'],['Sterilization','Ethylene oxide (EO)'],['Use','Single-use, single-patient'],['Shelf Life','3 years'],['Regulatory Class','Class II Medical Device'],['Origin','China']],indications:['Primary closure of minor low-tension lacerations','Paediatric facial wounds (where suture/staple removal is undesirable)','Skin tears (ISTAP Category I–II)','Low-tension surgical incisions','Post-suture reinforcement after early suture removal','Post-staple reinforcement after early staple removal','Elderly thin-skin wounds where suture trauma is a concern','Donor-site edge approximation','Adjunct to skin adhesive (Dermabond and similar)'],note:'Not for use on wounds under significant tension, on infected or contaminated wounds, on wounds with non-viable edges, or in place of deep-layer suturing when dermal closure is required. Apply only to clean, dry skin with edges apposed and antiseptic fully dry.'},
 
   // PERSONAL CARE
@@ -1376,7 +1376,7 @@ function showOv() {
   document.getElementById('l2Main').scrollTop = 0;
 }
 
-// 产品对应的三级页面映射
+// Product → detail page mapping
 var PROD_PAGES = {
   // All TD products (Wound Closure Strips, IV dressings, Tapes, Island dressings, Adhesive dressings)
   // now use inline PRODS data — detail pages remain accessible via index.html and detail-page NAV TD dropdown.
@@ -1419,7 +1419,7 @@ function showProd(name) {
 
   var page = PROD_PAGES[name];
   if (page) {
-    // 有三级页面：桌面显示iframe，手机显示跳转按钮
+    // Has a detail page: iframe on desktop, link button on mobile
     iframeWrap.style.display = 'block';
     normalPd.style.display = 'none';
     coming.style.display = 'none';
@@ -1427,13 +1427,13 @@ function showProd(name) {
     mobileLinkBtn.href = page;
     mobileLink.style.display = '';
   } else {
-    // 无三级页面：显示产品详情卡
+    // No detail page: show the inline product card
     iframeWrap.style.display = 'none';
     mobileLink.style.display = 'none';
     normalPd.style.display = 'block';
     coming.style.display = 'none';
 
-    // 填充产品详情
+    // Populate product details
     var badge = document.getElementById('l2PdBadge');
     var imgBox = document.getElementById('l2PdImgBox');
     var imgs = p && p.imgs ? p.imgs : (p && p.img ? [p.img] : []);
@@ -1598,7 +1598,7 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// 页面初始化
+// Page init
 selectL2('advanced');
 </script>
 </body>

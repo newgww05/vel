@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="China-based manufacturer of advanced and traditional wound care dressings. ISO 13485 / CE / FDA. OEM/ODM for hospitals and distributors worldwide.">
 <meta name="twitter:image" content="https://img.velcura.net/og-share.png">
 
-<!-- Organization Schema (建立品牌知识图谱) -->
+<!-- Organization Schema (builds the brand knowledge graph) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -78,7 +78,7 @@
 }
 </script>
 
-<!-- WebSite Schema (启用 Sitelinks Search Box 可能性) -->
+<!-- WebSite Schema (enables a possible Sitelinks Search Box) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,15 +91,15 @@
 }
 </script>
 
-<!-- 提前与图床、字体服务器建立连接,缩短首图等待 -->
+<!-- Open connections to the image CDN and font servers early to cut first-image wait -->
 <link rel="preconnect" href="https://img.velcura.net" crossorigin>
 <link rel="dns-prefetch" href="https://img.velcura.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- 预加载首屏 logo,让它尽早开始下载 -->
+<!-- Preload the above-the-fold logo so it starts downloading immediately -->
 <link rel="preload" as="image" href="https://img.velcura.net/logogpt40.png">
 <link rel="preload" as="image" href="https://img.velcura.net/home1.webp" fetchpriority="high">
-<!-- 字体改用 link 加载(比 CSS @import 更快,不阻塞样式解析) -->
+<!-- Load fonts via link (faster than CSS @import and does not block style parsing) -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@200;300;400;500&family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
@@ -171,15 +171,15 @@
 
   .cat-ring {
     width:128px; height:128px; border-radius:50%;
-    /* 青蓝绿玻璃球 — 与中心蓝色 logo 形成色相错位,不争夺视觉焦点 */
+    /* Teal glass orb — hue-offset from the blue centre logo so it does not fight for focus */
     background:
-      /* 顶部强白高光 */
+      /* Strong white highlight on top */
       radial-gradient(circle at 30% 22%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 15%, rgba(255,255,255,0) 38%),
-      /* 中部青绿色环境光 */
+      /* Teal ambient light through the middle */
       radial-gradient(circle at 72% 75%, rgba(130,210,205,0.55) 0%, rgba(110,195,195,0.28) 35%, rgba(110,195,195,0) 65%),
-      /* 底部深青绿,加强立体 */
+      /* Deep teal at the base to strengthen the 3D read */
       radial-gradient(circle at 50% 92%, rgba(80,170,165,0.55) 0%, rgba(110,195,195,0.28) 45%, rgba(150,220,215,0) 75%),
-      /* 透明水晶基底 — 青绿色调 */
+      /* Transparent crystal base — teal tint */
       radial-gradient(ellipse at 50% 50%, rgba(245,255,253,0.32) 0%, rgba(210,245,240,0.32) 60%, rgba(170,230,222,0.42) 100%);
     backdrop-filter:blur(12px) saturate(1.4); -webkit-backdrop-filter:blur(12px) saturate(1.4);
     border:1px solid rgba(255,255,255,1);
@@ -380,9 +380,9 @@
   }
 
   
-  /* AD/TD/SC 字号增大 */
+  /* AD/TD/SC font-size increase */
   .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
-  /* ===== Featured Products 下拉菜单 ===== */
+  /* ===== Featured Products dropdown ===== */
   .nav-links .has-dropdown { position: relative; }
   .nav-links .dropdown-trigger { cursor: pointer; }
   .fp-menu {
@@ -437,19 +437,19 @@
     background: rgba(84,83,149,0.06);
     color: var(--c-purple);
   }
-  /* Products 占位(不可点击,但颜色和其他导航项一致) */
+  /* Products placeholder (not clickable, but coloured like the other nav items) */
   .nav-products-disabled {
     font-size: 16.45px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
     color: var(--slate-800); cursor: default;
   }
-  /* index 页面 AD/TD/SC 触发器需要继承首页字号 */
+  /* AD/TD/SC triggers on index inherit the homepage font size */
   .nav-links .has-dropdown .dropdown-trigger {
     font-size: 19.7px !important; font-weight: 500; letter-spacing: 0.10em;
   }
 
 
 
-  /* 临床场景圆圈:占位状态(视觉与正常一致,但点击无反应) */
+  /* Clinical-scenario circles: placeholder state (looks normal, but does not respond to clicks) */
   .cat-disabled { cursor: default; }
   .cat-disabled:hover .cat-ring { transform: none !important; }
 
@@ -811,7 +811,7 @@ cats.forEach((cat, i) => {
 });
 
 /* ── Nav ── */
-/* ── 图片懒加载:滚动到接近视口时才加载(替代原先固定等待2秒) ── */
+/* ── Image lazy-load: fetch only when near the viewport (replaces the old fixed 2s wait) ── */
 (function() {
   var lazyImgs = document.querySelectorAll('img[data-src]');
   function loadImg(img) {
@@ -826,10 +826,10 @@ cats.forEach((cat, i) => {
           obs.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '200px' }); // 提前200px开始加载,滚动到时已就绪
+    }, { rootMargin: '200px' }); // Start 200px early so it's ready by the time it scrolls in
     lazyImgs.forEach(function(img) { io.observe(img); });
   } else {
-    // 老浏览器兜底:直接加载,不再空等
+    // Legacy-browser fallback: load straight away rather than waiting
     lazyImgs.forEach(loadImg);
   }
 })();
