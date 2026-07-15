@@ -392,6 +392,59 @@
     display: flex; align-items: center; justify-content: center;
     border: 1px dashed var(--c-line);
   }
+  /* ===== Banner fly-in headline ===== */
+  .banner-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.5rem; z-index: 3; pointer-events: none;
+    text-align: center; padding: 0 6%;
+  }
+  .banner-line {
+    opacity: 0;
+    font-family: 'Cinzel', 'DM Sans', serif;
+    color: #fff;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.4);
+    will-change: transform, opacity;
+  }
+  .banner-line-1 {
+    font-size: clamp(22px, 3.1vw, 46px);
+    font-weight: 700;
+  }
+  .banner-line-2 {
+    font-size: clamp(18px, 2.4vw, 36px);
+    font-weight: 600;
+    color: #ffe9b8;
+  }
+  /* Fly in from opposite sides once the banner scrolls into view */
+  .banner-overlay.in .banner-line-1 {
+    animation: bannerFlyL 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  }
+  .banner-overlay.in .banner-line-2 {
+    animation: bannerFlyR 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+  }
+  @keyframes bannerFlyL {
+    0%   { opacity: 0; transform: translateX(-90px) scale(0.94); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
+  }
+  @keyframes bannerFlyR {
+    0%   { opacity: 0; transform: translateX(90px) scale(0.94); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
+  }
+  /* Scrim so white text stays readable on any photo */
+  .banner-image::after {
+    content: ''; position: absolute; inset: 0; z-index: 2;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .banner-overlay.in .banner-line-1,
+    .banner-overlay.in .banner-line-2 {
+      animation: none; opacity: 1; transform: none;
+    }
+  }
   .banner-image img[src=""]+.banner-placeholder { display: flex; }
   .banner-image img:not([src=""])+.banner-placeholder { display: none; }
   .banner-placeholder span {
@@ -525,8 +578,8 @@
   /* Hero index: abstract icons + diagonal slash + staggered reveal + hover text color */
   .hero-index { position: relative; margin-top: 1.6rem; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
   .hi-item { position: relative; padding-left: 1.9rem; display: flex; align-items: center; gap: 2.5rem; opacity: 1; animation: hiReveal 0.6s ease backwards; }
-  .hi-item:nth-child(1) { animation-delay: 0.4s; margin-left: 4.4rem; }   /* 斜线：第1行右移最多（可调） */
-  .hi-item:nth-child(2) { animation-delay: 0.6s; margin-left: 2.2rem; }   /* 斜线：第2行右移居中（可调） */
+  .hi-item:nth-child(1) { animation-delay: 0.4s; margin-left: 4.4rem; }   /* Diagonal: row 1 shifted furthest right (tunable) */
+  .hi-item:nth-child(2) { animation-delay: 0.6s; margin-left: 2.2rem; }   /* Diagonal: row 2 shifted to the middle (tunable) */
   .hi-item:nth-child(3) { animation-delay: 0.8s; }
   .hi-ico { flex: 0 0 auto; width: 28px; height: 28px; fill: none; stroke: var(--c-teal); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; transition: opacity 0.35s ease; }
   .hi-item:hover .hi-ico { opacity: 1; }
@@ -822,25 +875,25 @@
     <li class="has-dropdown">
       <a href="#" class="dropdown-trigger">AD ▾</a>
       <div class="fp-menu">
-        <span class="fp-item fp-item-current">Foam Dressing Silicone Adhesive Border</span>
-        <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
-        <a href="silicone-foam-dressing.html" class="fp-item">Silicone Foam Dressing</a>
-        <a href="nano-silver-antibacterial-AD47.html" class="fp-item">Nano-Silver Medical Antibacterial Dressing</a>
         <a href="hydrocolloid-super-thin-AD-HD01.html" class="fp-item">Hydrocolloid Dressing (Super Thin)</a>
-        <a href="hydrocolloid-dressing-with-border.html" class="fp-item">Hydrocolloid Dressing (With Border)</a>
-        <a href="hydrocolloid-dressing-sacrum.html" class="fp-item">Hydrocolloid Dressing (Sacrum)</a>
-        <a href="silver-alginate-dressing-AD14.html" class="fp-item">Silver Alginate Dressing</a>
-        <a href="foam-silicone-border-sacrum.html" class="fp-item">Foam Dressing Silicone Adhesive Border (Sacrum)</a>
-        <a href="foam-silicone-border-heel.html" class="fp-item">Foam Dressing Silicone Adhesive Border (Heel)</a>
+        <span class="fp-item fp-item-disabled">Hydrocolloid Dressing (With Border)</span>
+        <span class="fp-item fp-item-disabled">Hydrocolloid Dressing (Sacrum)</span>
+        <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
+        <span class="fp-item fp-item-disabled">Silver Alginate Dressing</span>
+        <span class="fp-item fp-item-current">Foam Dressing Silicone Adhesive Border</span>
+        <span class="fp-item fp-item-disabled">Foam Dressing Silicone Adhesive Border (Sacrum)</span>
+        <span class="fp-item fp-item-disabled">Foam Dressing Silicone Adhesive Border (Heel)</span>
+        <span class="fp-item fp-item-disabled">Silicone Foam Dressing</span>
         <a href="foam-non-adhesive-AD12.html" class="fp-item">Foam Dressing Non-Adhesive</a>
-        <a href="foam-non-adhesive-elbow.html" class="fp-item">Foam Dressing Non-Adhesive (Elbow)</a>
-        <a href="foam-non-adhesive-tracheostomy.html" class="fp-item">Foam Dressing Non-Adhesive (Tracheostomy Tubes)</a>
-        <a href="silver-foam-non-adhesive.html" class="fp-item">Silver Foam Dressing Non-Adhesive</a>
-        <a href="silver-hydrophilic-fiber-dressing.html" class="fp-item">Silver Hydrophilic Fiber Dressing</a>
-        <a href="silver-activated-charcoal.html" class="fp-item">Silver Activated Charcoal Dressing</a>
+        <span class="fp-item fp-item-disabled">Foam Dressing Non-Adhesive (Elbow)</span>
+        <span class="fp-item fp-item-disabled">Foam Dressing Non-Adhesive (Tracheostomy Tubes)</span>
+        <span class="fp-item fp-item-disabled">Silver Foam Dressing Non-Adhesive</span>
+        <span class="fp-item fp-item-disabled">Silver Hydrophilic Fiber Dressing</span>
+        <a href="nano-silver-antibacterial-AD47.html" class="fp-item">Nano-Silver Medical Antibacterial Dressing</a>
+        <span class="fp-item fp-item-disabled">Silver Activated Charcoal Dressing</span>
         <a href="activated-charcoal-non-adhesive-AD24.html" class="fp-item">Activated Charcoal Dressing Non-Adhesive</a>
-        <a href="silicone-contact-layer.html" class="fp-item">Silicone Contact Layer</a>
-        <a href="vaseline-gauze.html" class="fp-item">Vaseline Gauze</a>
+        <span class="fp-item fp-item-disabled">Silicone Contact Layer</span>
+        <span class="fp-item fp-item-disabled">Vaseline Gauze</span>
       </div>
     </li>
     <li class="has-dropdown">
@@ -925,7 +978,7 @@
   </div>
 </section>
 
-<!-- STATS BAR — 修复：从 <script> 后面移到 Hero 紧接位置，确保文档流正确 -->
+<!-- STATS BAR — moved to sit right after Hero, keeping the document flow correct -->
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">15×</div>
@@ -990,10 +1043,14 @@
 </section>
 
 <!-- BANNER IMAGE -->
-<div class="banner-image">
-  <img data-src="https://img.velcura.net/5sapAD44.webp" alt="Foam Dressing Silicone Adhesive Border" id="banner-img">
+<div class="banner-image" id="banner-wrap">
+  <img data-src="https://img.velcura.net/2014team.webp" alt="Young athletes — preventing sports injuries in the next generation" id="banner-img">
   <div class="banner-placeholder">
     <span>1540 × 480</span>
+  </div>
+  <div class="banner-overlay" id="banner-overlay" aria-hidden="true">
+    <div class="banner-line banner-line-1">Preventing Sports Injuries in the Young.</div>
+    <div class="banner-line banner-line-2">Strong Youth, Stronger World.</div>
   </div>
 </div>
 
@@ -1120,17 +1177,17 @@
 </footer>
 
 <script>
-  // 五个小圆统一由JS定位，圆心到大圆圆心等距
+  // All five orbs are positioned by JS, equidistant from the main circle centre
   function positionOrbs() {
     const circle = document.querySelector('.hero-circle');
     if (!circle) return;
-    const r = circle.offsetWidth / 2;   // 大圆半径
-    const gap = 20;                      // 小圆圆心超出大圆边缘的距离
+    const r = circle.offsetWidth / 2;   // Main circle radius
+    const gap = 20;                      // How far each orb centre sits beyond the main circle edge
 
     const allOrbs = [
       { el: document.querySelector('.hero-orb-1'), deg: 210 }, // D
       { el: document.querySelector('.hero-orb-3'), deg: 240 }, // I
-      { el: document.querySelector('.hero-orb-m'), deg: 270 }, // M 正下
+      { el: document.querySelector('.hero-orb-m'), deg: 270 }, // M straight down
       { el: document.querySelector('.hero-orb-5'), deg: 300 }, // E
       { el: document.querySelector('.hero-orb-4'), deg: 330 }, // S
     ];
@@ -1138,7 +1195,7 @@
     allOrbs.forEach(({ el, deg }) => {
       if (!el) return;
       const orbR = el.offsetWidth / 2;
-      const dist = r + orbR + gap;           // 大圆圆心 → 小圆圆心
+      const dist = r + orbR + gap;           // Main circle centre → orb centre
       const rad = (deg - 90) * Math.PI / 180;
       const cx = r + Math.cos(rad) * dist;
       const cy = r + Math.sin(rad) * dist;
@@ -1249,7 +1306,7 @@
     });
   });
 
-  // 自动轮播
+  // Auto-rotate
   let autoIndex = 0;
   let autoTimer = null;
   let paused = false;
@@ -1276,7 +1333,7 @@
     }, 3500);
   }
 
-  // 点击时暂停5秒后继续
+  // Pause for 5s after a click, then resume
   orbs.forEach(orb => {
     orb.addEventListener('click', () => {
       paused = true;
@@ -1285,7 +1342,7 @@
     });
   });
 
-  // 页面加载后1秒启动(无交互orb时跳过,避免报错)
+  // Start 1s after load (skip when there are no interactive orbs, to avoid errors)
   setTimeout(() => {
     if (orbs && orbs.length) {
       activateOrb(0);
@@ -1293,11 +1350,11 @@
     }
   }, 1000);
 
-  // 版权年份动态生成
+  // Copyright year
   document.getElementById('footer-copy').textContent =
     '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
 
-  // Hero 图片轮播
+  // Hero image carousel
   (function(){
     var slides = document.querySelectorAll('#hero-carousel .hc-slide');
     var dots = document.querySelectorAll('#hero-carousel .hc-dot');
@@ -1319,7 +1376,7 @@
     resetTimer();
   })();
 
-  // 真懒加载:滚动到接近视口才加载;轮播延后图也走这套
+  // True lazy-load: fetch only when near the viewport; deferred carousel frames use this too
   (function () {
     var imgs = document.querySelectorAll('img[data-src]');
     if (!imgs.length) return;
@@ -1336,7 +1393,7 @@
         });
       }, { rootMargin: '300px' });
       imgs.forEach(function (img) { io.observe(img); });
-      // 首屏稳定后(2.5秒)把仍未加载的轮播图也加载,保证轮播能切到所有图
+      // After the first screen settles (2.5s) load any remaining carousel frames so every slide can show
       setTimeout(function () {
         document.querySelectorAll('#hero-carousel img[data-src]').forEach(load);
       }, 2500);
@@ -1345,7 +1402,21 @@
     }
   })();
 
-  // ===== 表单必填校验(复制自 EduInst-diabetic) =====
+  // Banner headline flies in when the banner scrolls into view
+  (function () {
+    var wrap = document.getElementById('banner-wrap');
+    var ov   = document.getElementById('banner-overlay');
+    if (!wrap || !ov) return;
+    if (!('IntersectionObserver' in window)) { ov.classList.add('in'); return; }
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { ov.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.35 });
+    io.observe(wrap);
+  })();
+
+  // ===== Required-field validation =====
   (function () {
     const form = document.getElementById('inquiry-form');
     if (!form) return;
