@@ -93,6 +93,9 @@
 <style>
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   :root {
+    /* Tokens needed by the contact form copied from the product pages */
+    --c-cream:#ffffff; --c-gold:#B8975A; --c-gold2:#D4B07A; --c-ink:#1A1916;
+    --c-ink2:#4A4843; --c-ink3:#8A8780; --c-line:rgba(26,25,22,0.12);
     --sky-200:#bae6fd; --sky-500:#0ea5e9; --sky-600:#0284c7; --sky-700:#0369a1;
     --slate-400:#94a3b8; --slate-500:#64748b; --slate-600:#475569; --slate-700:#334155; --slate-800:#1e293b;
     --gold:rgba(192,168,120,0.31);
@@ -261,6 +264,43 @@
   /* Shift AD/TD/SC down so the top of AD lines up with the bottom of Products */
   .nav-links .has-dropdown { margin-top: 20px; }
 
+
+
+  
+
+  /* ===== Contact section — copied from non-woven-surgical-tape.html ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+  .contact-section { padding:3.5rem 0 4rem; background:#545395; border-top:none; color:#fff; }
+  .contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:center; }
+  .contact-grid > div:last-child { margin-left:1.6rem; }
+  .contact-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.4vw,2.8rem); font-weight:300; margin-bottom:2rem; color:#fff; }
+  .contact-section .section-title { color:#fff; }
+  .contact-item { display:flex; gap:1.3rem; margin-bottom:1.5rem; align-items:flex-start; }
+  .contact-item-icon { width:38px; height:38px; border:0.5px solid rgba(255,255,255,0.55); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; }
+  .contact-item-label { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:0.2rem; }
+  .contact-item-value { font-size:1.1rem; color:#fff; line-height:1.6; }
+  .contact-form { border:1px solid rgba(255,255,255,0.28); padding:2.5rem; border-radius:4px; background:rgba(255,255,255,0.06); }
+  .contact-form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .contact-form input, .contact-form textarea { width:100%; padding:0.95rem 1.1rem; margin-bottom:1rem; font-family:'DM Sans',sans-serif; font-size:1.1rem; border:1px solid rgba(255,255,255,0.4); background:transparent; color:#fff; outline:none; transition:border-color 0.2s, background 0.2s; }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color:#fff !important; opacity:1; }
+  .contact-form input:focus, .contact-form textarea:focus { border-color:#fff; background:rgba(255,255,255,0.08); }
+  .contact-form textarea { min-height:120px; height:auto; resize:vertical; }
+  .btn-gold { font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#545395; background:#fff; border:none; padding:0.9rem 2.4rem; border-radius:999px; cursor:pointer; transition:background 0.2s, color 0.2s; }
+  .btn-gold:hover { background:rgba(255,255,255,0.85); }
+  .contact-form input.invalid, .contact-form textarea.invalid { border-color:#ff9a8f; }
+  .form-msg { font-size:0.8rem; margin-top:0.9rem; min-height:1.1rem; }
+  .form-msg.error { color:#ffc9c2; }
+  .form-msg.success { color:#d7f5e6; }
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .container { padding: 0 1.5rem; }
+    .contact-form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width:900px) {
+    .contact-form-row { grid-template-columns:1fr; }
+    .contact-grid { grid-template-columns:1fr; gap:3rem; }
+    .contact-grid > div:last-child { margin-left:0; }
+  }
 </style>
 </head>
 <body>
@@ -320,7 +360,7 @@
       </div>
     </li>
     <li><a href="faq.html" class="active">FAQ</a></li>
-    <li><a href="index.html#contact">Contact Us</a></li>
+    <li><a href="#contact">Contact Us</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span style="display:block; width:24px; height:2px; background:#475569; margin:5px 0;"></span>
@@ -405,7 +445,58 @@
 <section class="faq-cta">
   <h2>Have another question?</h2>
   <p>Our team typically responds within one business day.</p>
-  <a class="faq-cta-btn" href="index.html#contact">Contact Sales</a>
+  <a class="faq-cta-btn" href="#contact">Contact Sales</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-heading">Contact Us</div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✆</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">+852 98567973</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">@</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">info@velcura.net</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⌖</div>
+          <div>
+            <div class="contact-item-label">Address</div>
+            <div class="contact-item-value">
+              Room 2134, 2nd Floor, Building 3, Block 30 (Wenzhengxin Building),<br>
+              No. 2 Kefa Road, Science and Technology Park Community,<br>
+              Yuehai Street, Nanshan District, Shenzhen
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <form id="inquiry-form" novalidate>
+            <div class="contact-form-row">
+              <input type="text" name="name" placeholder="Name *" required>
+              <input type="text" name="company" placeholder="Company">
+            </div>
+            <input type="email" name="email" placeholder="Email *" required>
+            <input type="tel" name="phone" placeholder="Phone *" required>
+            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <button type="submit" class="btn-gold">Send Inquiry</button>
+            <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
@@ -453,6 +544,38 @@
       setTimeout(function(){ t.scrollIntoView({behavior:'smooth', block:'center'}); }, 100);
     }
   }
+
+
+  // ===== Required-field validation =====
+  (function () {
+    const form = document.getElementById('inquiry-form');
+    if (!form) return;
+    const msg = document.getElementById('form-msg');
+    const required = form.querySelectorAll('[required]');
+    const emailField = form.querySelector('input[type="email"]');
+    function clearInvalid(el){ el.classList.remove('invalid'); }
+    required.forEach(el => el.addEventListener('input', () => clearInvalid(el)));
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      let firstInvalid = null;
+      required.forEach(el => {
+        const empty = !el.value.trim();
+        const badEmail = el === emailField && el.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (empty || badEmail){ el.classList.add('invalid'); if(!firstInvalid) firstInvalid = el; }
+        else { el.classList.remove('invalid'); }
+      });
+      if (firstInvalid){
+        msg.className = 'form-msg error';
+        msg.textContent = firstInvalid === emailField && emailField.value.trim()
+          ? 'Please enter a valid email address.'
+          : 'Please complete all required fields (*) before submitting.';
+        firstInvalid.focus(); return;
+      }
+      msg.className = 'form-msg success';
+      msg.textContent = 'Thank you. Your inquiry has been submitted.';
+      form.reset();
+    });
+  })();
 </script>
 
 </body>
