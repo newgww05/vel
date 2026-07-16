@@ -7,6 +7,14 @@
 <title>Why Velcura · Who We Serve · Where We Reach | Velcura Medical</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+  /* Design tokens — needed by the AD/TD/SC dropdown menus copied from index.html */
+  :root {
+    --c-ink:#1A1916; --c-ink2:#4A4843; --c-ink3:#8A8780;
+    --c-teal:#2D6E6A; --c-purple:#545395;
+    --c-line:rgba(26,25,22,0.12);
+    --sky-600:#0284c7; --slate-800:#1e293b;
+  }
+
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a1916;overflow-x:hidden;}
 
@@ -16,33 +24,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);}
 .nav-links a{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#4a4843;text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover{color:#2D6E6A;}
-/* Dropdown */
-.nav-dropdown{position:relative;list-style:none;}
-.nav-dropdown-trigger{cursor:pointer;white-space:nowrap;}
-.nav-dropdown-menu{
-  display:none;
-  position:absolute;top:100%;left:50%;transform:translateX(-50%);
-  padding-top:8px;
-  background:transparent;
-  min-width:260px;z-index:200;
-  list-style:none;
-}
-.nav-dropdown-menu-inner{
-  background:#fff;
-  border:1px solid rgba(0,0,0,0.08);
-  border-radius:10px;
-  box-shadow:0 8px 32px rgba(0,0,0,0.10);
-  padding:8px 0;
-}
-.nav-dropdown-menu li a{
-  display:block;padding:8px 20px;
-  font-size:0.75rem;letter-spacing:0.04em;
-  color:#334155;text-decoration:none;text-transform:none;
-  transition:background 0.15s,color 0.15s;
-  white-space:nowrap;
-}
-.nav-dropdown-menu li a:hover{background:#f0f9ff;color:#0284c7;}
-.nav-dropdown:hover .nav-dropdown-menu{display:block;}
 .nav-cta{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#545395;padding:0.6rem 1.6rem;text-decoration:none;border-radius:999px;transition:background 0.2s, transform 0.2s;white-space:nowrap;}
 .nav-cta:hover{background:#444383;transform:translateY(-1px);}
 
@@ -152,54 +133,189 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
   nav{padding:1rem 1.5rem;}
   .nav-links{display:none;}
 }
+
+
+  /* ===== AD/TD/SC dropdown — copied from index.html ===== */
+  /* ===== Featured Products dropdown ===== */
+  .nav-links .has-dropdown { position: relative; }
+  .nav-links .dropdown-trigger { cursor: pointer; }
+  .fp-menu {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
+    min-width: 360px; padding: 0.8rem 0;
+    max-height: 70vh; overflow-y: auto; overscroll-behavior: contain;
+    background: #fff; border: 0.5px solid var(--c-line);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-links .has-dropdown:hover .fp-menu,
+  .nav-links .has-dropdown:focus-within .fp-menu {
+    opacity: 1; visibility: visible; pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-links .fp-menu .fp-item {
+    display: block;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.02em; text-transform: none;
+    color: var(--c-ink2); text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-links .fp-menu .fp-item:hover, .nav-links .fp-menu .fp-item:focus-visible {
+    background: rgba(84,83,149,0.06); color: var(--c-purple);
+  }
+  @media (max-width: 900px) {
+    .fp-menu { position: static; transform: none; min-width: 0; box-shadow: none; opacity: 1; visibility: visible; pointer-events: auto; padding: 0; border: none; }
+    .fp-item { padding: 0.4rem 0; }
+  }
+
+
+  .nav-links .fp-menu .fp-item-disabled {
+    cursor: default; color: var(--c-ink2);
+  }
+  .nav-links .fp-menu .fp-item-disabled:hover {
+    background: transparent; color: var(--c-ink2);
+  }
+
+
+  .nav-links .fp-menu .fp-item-current {
+    color: var(--c-purple);
+    font-weight: 500;
+    cursor: default;
+    background: rgba(84,83,149,0.06);
+    border-left: 2px solid var(--c-purple);
+    padding-left: calc(1.4rem - 2px);
+  }
+  .nav-links .fp-menu .fp-item-current:hover {
+    background: rgba(84,83,149,0.06);
+    color: var(--c-purple);
+  }
+  /* Products placeholder (not clickable, but coloured like the other nav items) */
+  .nav-products-disabled {
+    font-size: 16.45px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--slate-800); cursor: default;
+  }
+
+  /* Current page marker in the top nav — mirrors .fp-item-current */
+  .nav-links a.nav-current { color: var(--c-purple); cursor: default; }
+  .nav-links a.nav-current:hover { color: var(--c-purple); }
+
+  /* ===== Warehouse strip =====
+     pad2.webp is 630x420. Bleeding it across a 1920px viewport would mean
+     a 3x upscale and a 47% crop — soft, and half the picture gone. So the
+     band goes full width, the photograph does not: it sits at its native
+     size and framing, with the line beside it rather than veiled over it. */
+  .ops-strip {
+    width: 100%;
+    background: #545395;
+    padding: clamp(2rem, 5vw, 3.5rem) 0;
+  }
+  .ops-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4.5rem);
+  }
+  .ops-strip-img {
+    width: 630px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+  .ops-strip-line {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    color: #F5F3EF;
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  .ops-strip-line.fly-in {
+    animation: opsFlyIn 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  @keyframes opsFlyIn {
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @media (max-width: 900px) {
+    .ops-strip-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+    .ops-strip-img { width: 100%; }
+    .ops-strip-line { text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ops-strip-line { opacity: 1; transform: none; }
+    .ops-strip-line.fly-in { animation: none; }
+  }
 </style>
+<link rel="stylesheet" href="gloss.css">
+<script src="glossary.js" defer></script>
+<script src="gloss-engine.js" defer></script>
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="https://velcura.net">Velcura <span>Medical</span></a>
   <ul class="nav-links">
-    <li class="nav-dropdown">
-      <a href="wound-care.html?cat=advanced" class="nav-dropdown-trigger">Advanced Wound Care ▾</a>
-      <ul class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
-        <li><a href="wound-care.html?cat=advanced">Hydrocolloid Dressing (Super Thin)</a></li>
-        <li><a href="wound-care.html?cat=advanced">Hydrocolloid Dressing with Border</a></li>
-        <li><a href="wound-care.html?cat=advanced">Hydrocolloid Sacral Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silicone Foam Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silicone Foam Sacral Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silicone Foam Heel Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silicone Foam Dressing Non-Border</a></li>
-        <li><a href="wound-care.html?cat=advanced">PU Foam Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">PU Foam Elbow Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">PU Foam Tracheostomy Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Calcium Alginate Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silver Alginate Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Nano-Silver Medical Antibacterial Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silver Foam Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silver Activated Charcoal Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silver Hydrophilic Fiber Dressing</a></li>
-        <li><a href="wound-care.html?cat=advanced">Silicone Contact Layer</a></li>
-        <li><a href="wound-care.html?cat=advanced">Vaseline Gauze Dressing</a></li>
-      </div></ul>
+      <li class="has-dropdown">
+      <a href="#" class="dropdown-trigger">AD ▾</a>
+      <div class="fp-menu">
+        <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
+        <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
+        <a href="silicone-foam-dressing.html" class="fp-item">Silicone Foam Dressing</a>
+        <a href="nano-silver-antibacterial-AD47.html" class="fp-item">Nano-Silver Medical Antibacterial Dressing</a>
+        <a href="hydrocolloid-super-thin-AD-HD01.html" class="fp-item">Hydrocolloid Dressing (Super Thin)</a>
+        <a href="hydrocolloid-dressing-with-border.html" class="fp-item">Hydrocolloid Dressing (With Border)</a>
+        <a href="hydrocolloid-dressing-sacrum.html" class="fp-item">Hydrocolloid Dressing (Sacrum)</a>
+        <a href="silver-alginate-dressing-AD14.html" class="fp-item">Silver Alginate Dressing</a>
+        <a href="foam-silicone-border-sacrum.html" class="fp-item">Foam Dressing Silicone Adhesive Border (Sacrum)</a>
+        <a href="foam-silicone-border-heel.html" class="fp-item">Foam Dressing Silicone Adhesive Border (Heel)</a>
+        <a href="foam-non-adhesive-AD12.html" class="fp-item">Foam Dressing Non-Adhesive</a>
+        <a href="foam-non-adhesive-elbow.html" class="fp-item">Foam Dressing Non-Adhesive (Elbow)</a>
+        <a href="foam-non-adhesive-tracheostomy.html" class="fp-item">Foam Dressing Non-Adhesive (Tracheostomy Tubes)</a>
+        <a href="silver-foam-non-adhesive.html" class="fp-item">Silver Foam Dressing Non-Adhesive</a>
+        <a href="silver-hydrophilic-fiber-dressing.html" class="fp-item">Silver Hydrophilic Fiber Dressing</a>
+        <a href="silver-activated-charcoal.html" class="fp-item">Silver Activated Charcoal Dressing</a>
+        <a href="activated-charcoal-non-adhesive-AD24.html" class="fp-item">Activated Charcoal Dressing Non-Adhesive</a>
+        <a href="silicone-contact-layer.html" class="fp-item">Silicone Contact Layer</a>
+        <a href="vaseline-gauze.html" class="fp-item">Vaseline Gauze</a>
+      </div>
     </li>
-    <li class="nav-dropdown">
-      <a href="wound-care.html?cat=traditional" class="nav-dropdown-trigger">General Products ▾</a>
-      <ul class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
-        <li><a href="wound-care.html?prod=Medical%20Gauze">Medical Gauze</a></li>
-<li><a href="wound-care.html?cat=traditional">Film Island Dressing</a></li>
-        <li><a href="wound-care.html?cat=traditional">Non-woven Adhesive Wound Dressing</a></li>
-        <li><a href="wound-care.html?cat=traditional">Non-woven Adhesive Wound Dressing Strip</a></li>
-        <li><a href="wound-care.html?cat=traditional">Transparent Film IV Dressing</a></li>
-        <li><a href="wound-care.html?cat=traditional">Transparent Film IV Dressing with Notch</a></li>
-        <li><a href="wound-care.html?cat=traditional">Wound Closure Strips</a></li>
-        <li><a href="wound-care.html?cat=traditional">Non-woven Surgical Tape</a></li>
-        <li><a href="wound-care.html?cat=traditional">Skin Color Non-woven Surgical Tape</a></li>
-        <li><a href="wound-care.html?cat=traditional">Paper Tape</a></li>
-        <li><a href="wound-care.html?cat=traditional">Incise Drape</a></li>
-        <li><a href="wound-care.html?cat=traditional">Iodine Incise Drape</a></li>
-      </div></ul>
+      <li class="has-dropdown">
+        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <div class="fp-menu">
+          <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
+          <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
+          <a href="transparent-film-iv-notch.html" class="fp-item">Transparent Film I.V. Dressing with Notch</a>
+          <a href="non-woven-surgical-tape.html" class="fp-item">Non-woven Surgical Tape</a>
+          <a href="paper-tape.html" class="fp-item">Paper Tape</a>
+          <a href="film-island-dressing.html" class="fp-item">Film Island Dressing</a>
+          <a href="non-woven-adhesive-with-pad.html" class="fp-item">Non-woven Adhesive Wound Dressing with Pad</a>
+          <a href="non-woven-adhesive-strip.html" class="fp-item">Non-woven Adhesive Wound Dressing Strip</a>
+          <a href="wound-care.html?prod=Medical%20Gauze" class="fp-item">Medical Gauze</a>
+        </div>
+      </li>
+      <li class="has-dropdown">
+      <a href="#" class="dropdown-trigger">SC ▾</a>
+      <div class="fp-menu">
+        <a href="incise-drape.html" class="fp-item">Incise Drape</a>
+        <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
+        <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
+        <a href="skin-closure-strip.html" class="fp-item">Skin Closure Strip</a>
+        <a href="picc-securement-dressing.html" class="fp-item">PICC Securement Dressing</a>
+      </div>
     </li>
-  </ul>
+      <li><a href="velcura-3y.html" class="nav-current">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+</ul>
   <a class="nav-cta" href="https://velcura.net">Back to Home</a>
 </nav>
 <section class="hero">
@@ -336,7 +452,7 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 
 <!-- Full-width image strip -->
 <div style="width:100%;line-height:0;overflow:hidden;">
-  <img data-src="https://img.velcura.net/%E7%82%8E%E7%97%87%E7%9A%84%E5%91%A8%E6%9C%9F.webp" alt="Comprehensive Wound Care Journey" style="width:100%;height:auto;display:block;">
+  <img data-src="https://img.velcura.net/boxvel.webp" alt="Velcura wound care product range" style="width:100%;height:auto;display:block;">
 </div>
 
 <!-- Secondary bar: logo / arrow / tagline -->
@@ -356,10 +472,18 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
 </style>
 
-<!-- Full-width image strip 2 -->
-<div style="width:100%;line-height:0;overflow:hidden;">
-  <img data-src="https://img.velcura.net/dimes.webp" alt="Velcura" style="width:100%;height:auto;display:block;aspect-ratio:1540/540;object-fit:cover;">
-</div>
+<!-- Warehouse strip — the photograph is 630x420, so it is shown at its
+     own size and framing rather than stretched across the viewport. The
+     line sits beside it, not over it. -->
+<section class="ops-strip">
+  <div class="ops-strip-inner">
+    <p class="ops-strip-line">Planned to the Pallet,<br>Ready for the Port.</p>
+    <img data-src="https://img.velcura.net/pad2.webp"
+         width="630" height="420"
+         alt="Velcura production team beside palletised stock of washable underpads"
+         class="ops-strip-img">
+  </div>
+</section>
 
 
 <section class="serve-section">
@@ -575,22 +699,7 @@ footer{padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:spa
 </footer>
 
 <script>
-// Dropdown click
-document.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger) {
-  trigger.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    var menu = trigger.parentElement.querySelector('.nav-dropdown-menu');
-    var isOpen = menu.classList.contains('open');
-    // close all
-    document.querySelectorAll('.nav-dropdown-menu').forEach(function(m){ m.classList.remove('open'); });
-    if (!isOpen) menu.classList.add('open');
-  });
-});
-// close on outside click
-document.addEventListener('click', function() {
-  document.querySelectorAll('.nav-dropdown-menu').forEach(function(m){ m.classList.remove('open'); });
-});
+// Dropdowns are pure CSS (:hover / :focus-within) — no JS needed
 
 // Deferred image loading — load below-fold images after 2 seconds
 setTimeout(function() {
@@ -648,6 +757,21 @@ function showPanel(key) {
   });
 })();
 
+</script>
+
+<script>
+/* Fly the warehouse line in once, when the strip comes into view. */
+(function () {
+  var line = document.querySelector('.ops-strip-line');
+  if (!line) return;
+  if (!('IntersectionObserver' in window)) { line.classList.add('fly-in'); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { line.classList.add('fly-in'); io.disconnect(); }
+    });
+  }, { threshold: 0.4 });
+  io.observe(document.querySelector('.ops-strip'));
+})();
 </script>
 </body>
 </html>
