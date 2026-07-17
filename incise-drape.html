@@ -315,6 +315,8 @@
   .banner-quote.fly-in { animation: bannerFlyIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   @keyframes bannerFlyIn { 0% { opacity: 0; transform: translateY(-50%) translateX(-80px); } 100% { opacity: 1; transform: translateY(-50%) translateX(0); } }
   @media (max-width: 900px) { .banner-quote { max-width: 55%; font-size: 1.15rem; left: 4%; } }
+
+  .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
 </head>
 <body>
@@ -358,7 +360,7 @@
           <a href="film-island-dressing.html" class="fp-item">Film Island Dressing</a>
           <a href="non-woven-adhesive-with-pad.html" class="fp-item">Non-woven Adhesive Wound Dressing with Pad</a>
           <a href="non-woven-adhesive-strip.html" class="fp-item">Non-woven Adhesive Wound Dressing Strip</a>
-          <a href="wound-care.html?prod=Medical%20Gauze" class="fp-item">Medical Gauze</a>
+          <a href="medical-gauze-traditional.html" class="fp-item">Medical Gauze</a>
         </div>
       </li>
     <li class="has-dropdown">
@@ -599,6 +601,7 @@
             <input type="tel" name="phone" placeholder="Phone *" required>
             <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
+            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
           </form>
         </div>
@@ -628,11 +631,16 @@
   })();
 
   (function () {
-    const form = document.getElementById('inquiry-form'); if (!form) return;
+    const CONTACT_ENDPOINT = "https://velcura-contact-relay.newgww05.workers.dev";
+    const form = document.getElementById('inquiry-form');
+    if (!form) return;
     const msg = document.getElementById('form-msg');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtnDefaultText = submitBtn ? submitBtn.textContent : '';
     const required = form.querySelectorAll('[required]');
     const emailField = form.querySelector('input[type="email"]');
-    required.forEach(el => el.addEventListener('input', () => el.classList.remove('invalid')));
+    function clearInvalid(el){ el.classList.remove('invalid'); }
+    required.forEach(el => el.addEventListener('input', () => clearInvalid(el)));
     form.addEventListener('submit', function(e){
       e.preventDefault();
       let firstInvalid = null;
@@ -644,12 +652,49 @@
       });
       if (firstInvalid){
         msg.className = 'form-msg error';
-        msg.textContent = firstInvalid === emailField && emailField.value.trim() ? 'Please enter a valid email address.' : 'Please complete all required fields (*) before submitting.';
+        msg.textContent = firstInvalid === emailField && emailField.value.trim()
+          ? 'Please enter a valid email address.'
+          : 'Please complete all required fields (*) before submitting.';
         firstInvalid.focus(); return;
       }
-      msg.className = 'form-msg success';
-      msg.textContent = 'Thank you. Your inquiry has been submitted.';
-      form.reset();
+
+      const payload = {
+        name: form.querySelector('[name="name"]').value.trim(),
+        company: (form.querySelector('[name="company"]') ? form.querySelector('[name="company"]').value.trim() : ''),
+        email: emailField.value.trim(),
+        phone: form.querySelector('[name="phone"]').value.trim(),
+        message: form.querySelector('[name="message"]').value.trim(),
+        website: form.querySelector('[name="website"]') ? form.querySelector('[name="website"]').value : '',
+        sourcePage: location.href,
+      };
+
+      if (submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+      msg.className = 'form-msg';
+      msg.textContent = '';
+
+      fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+        .then(function(result){
+          if (result.ok && result.data && result.data.ok){
+            msg.className = 'form-msg success';
+            msg.textContent = 'Thank you. Your inquiry has been submitted.';
+            form.reset();
+          } else {
+            msg.className = 'form-msg error';
+            msg.textContent = 'Something went wrong. Please try again or email us directly.';
+          }
+        })
+        .catch(function(){
+          msg.className = 'form-msg error';
+          msg.textContent = 'Network error. Please try again or email us directly.';
+        })
+        .finally(function(){
+          if (submitBtn){ submitBtn.disabled = false; submitBtn.textContent = submitBtnDefaultText; }
+        });
     });
   })();
 
