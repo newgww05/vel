@@ -92,7 +92,7 @@
 
 <div class="detail-overlay" id="detailOverlay">
   <div class="detail-top">
-    <span class="detail-close" onclick="closeDetail()">&#10005;</span>
+    <span class="detail-close" onclick="history.back()">&#10005;</span>
     <div class="topbar-title" id="detailTopTitle">Product</div>
   </div>
   <div class="detail-carousel" id="detailCarousel"></div>
@@ -608,7 +608,7 @@ function renderCard(name){
   var tag = p.tagline || '';
   var pills = (p.indications || []).slice(0,2).map(function(i){ return '<span class="p-card-pill">' + i + '</span>'; }).join('');
   var esc = name.replace(/'/g,"\\'");
-  return '<div class="p-card" onclick="openDetail(\'' + esc + '\')">'
+  return '<div class="p-card" onclick="goToDetail(\'' + esc + '\')">'
        + '<img class="p-card-img" src="' + img + '" alt="" loading="lazy">'
        + '<div class="p-card-body">'
        + '<p class="p-card-name">' + name + '</p>'
@@ -636,7 +636,16 @@ function renderCarousel(){
   box.innerHTML = html;
 }
 
-function openDetail(name){
+/* Reverse lookup: product name → category key, so "back" from a deep-linked
+   product lands on that product's OWN category list, not an unrelated one */
+var PROD_TO_CAT = {};
+Object.keys(L3DATA).forEach(function(catKey){
+  L3DATA[catKey].groups.forEach(function(grp){
+    grp.items.forEach(function(item){ PROD_TO_CAT[item] = catKey; });
+  });
+});
+
+function openDetailUI(name){
   var p = PRODS[name];
   if (!p) return;
   carouselState = { imgs: p.imgs || [], idx: 0 };
@@ -660,25 +669,57 @@ function openDetail(name){
   document.body.style.overflow = 'hidden';
 }
 
-function closeDetail(){
+function closeDetailUI(){
   document.getElementById('detailOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
 
+/* goToDetail: called when a product card is tapped. Pushes a history entry
+   for the detail view, so the back button/gesture returns to THIS category's
+   list first, rather than jumping back to whatever page linked here. */
+function goToDetail(name){
+  var cat = PROD_TO_CAT[name] || activeCat;
+  if (cat !== activeCat){ activeCat = cat; renderCatRail(); renderList(); }
+  history.pushState({view:'detail', prod:name, cat:cat}, '', 'wound-care-mobile.html?cat=' + cat + '&prod=' + encodeURIComponent(name));
+  openDetailUI(name);
+}
+
+window.addEventListener('popstate', function(e){
+  var st = e.state;
+  if (st && st.view === 'detail') {
+    if (st.cat && st.cat !== activeCat){ activeCat = st.cat; renderCatRail(); renderList(); }
+    openDetailUI(st.prod);
+  } else {
+    closeDetailUI();
+    if (st && st.cat) { activeCat = st.cat; renderCatRail(); renderList(); }
+  }
+});
+
 /* Deep-link support: wound-care-mobile.html?cat=advanced or ?prod=Product+Name */
-var deepLinkCat = null;
 var deepLinkProd = null;
 (function(){
   var params = new URLSearchParams(window.location.search);
   var cat = params.get('cat');
-  if (cat && L3DATA[cat]) { activeCat = cat; deepLinkCat = cat; }
   var prod = params.get('prod');
-  if (prod && PRODS[prod]) deepLinkProd = prod;
+  if (prod && PRODS[prod]) {
+    deepLinkProd = prod;
+    activeCat = PROD_TO_CAT[prod] || cat || activeCat;
+  } else if (cat && L3DATA[cat]) {
+    activeCat = cat;
+  }
 })();
 
 renderCatRail();
 renderList();
-if (deepLinkProd) { openDetail(deepLinkProd); }
+
+if (deepLinkProd) {
+  /* Normalise current history entry to the LIST view (no ?prod=), then push
+     a fresh entry for the detail view on top of it. First "back" from here
+     lands on this category's product list, not the page that linked here. */
+  history.replaceState({view:'list', cat:activeCat}, '', 'wound-care-mobile.html?cat=' + activeCat);
+  history.pushState({view:'detail', prod:deepLinkProd, cat:activeCat}, '', 'wound-care-mobile.html?cat=' + activeCat + '&prod=' + encodeURIComponent(deepLinkProd));
+  openDetailUI(deepLinkProd);
+}
 </script>
 </body>
 </html>
