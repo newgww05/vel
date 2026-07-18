@@ -665,15 +665,20 @@ function closeDetail(){
   document.body.style.overflow = '';
 }
 
-/* Deep-link support: wound-care-mobile.html?cat=advanced */
+/* Deep-link support: wound-care-mobile.html?cat=advanced or ?prod=Product+Name */
+var deepLinkCat = null;
+var deepLinkProd = null;
 (function(){
   var params = new URLSearchParams(window.location.search);
   var cat = params.get('cat');
-  if (cat && L3DATA[cat]) activeCat = cat;
+  if (cat && L3DATA[cat]) { activeCat = cat; deepLinkCat = cat; }
+  var prod = params.get('prod');
+  if (prod && PRODS[prod]) deepLinkProd = prod;
 })();
 
 renderCatRail();
 renderList();
+if (deepLinkProd) { openDetail(deepLinkProd); }
 </script>
 </body>
 </html>
