@@ -23,8 +23,10 @@
   .cat-chip.active { background:#0284c7; color:#fff; border-color:#0284c7; }
 
   /* Search */
-  .search-wrap { padding:10px 14px 0; }
-  .search-input { width:100%; padding:10px 14px; font-size:13px; border:1px solid #bae6fd; border-radius:999px; outline:none; background:#f0f9ff; color:#0c4a6e; font-family:inherit; }
+  .search-wrap { padding:10px 14px 0; position:relative; display:flex; align-items:center; }
+  .search-input { width:100%; padding:10px 42px 10px 14px; font-size:13px; border:1px solid #bae6fd; border-radius:999px; outline:none; background:#f0f9ff; color:#0c4a6e; font-family:inherit; }
+  .search-btn { position:absolute; right:22px; top:50%; transform:translateY(-50%); width:30px; height:30px; border-radius:50%; border:none; background:#0284c7; color:#fff; display:flex; align-items:center; justify-content:center; padding:0; }
+  .search-btn:active { background:#0369a1; }
 
   /* Product list */
   .cat-heading { padding:14px 14px 4px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#64748b; }
@@ -103,7 +105,10 @@
 </div>
 
 <div class="search-wrap">
-  <input id="searchInput" class="search-input" type="text" placeholder="Search products, e.g. &quot;foam&quot;, &quot;diabetic foot&quot;" oninput="onSearch(this.value)" autocomplete="off">
+  <input id="searchInput" class="search-input" type="text" placeholder="Search products, e.g. &quot;foam&quot;, &quot;diabetic foot&quot;" oninput="onSearch(this.value)" onkeydown="if(event.key==='Enter'){onSearch(this.value); this.blur();}" autocomplete="off" enterkeyhint="search">
+  <button type="button" class="search-btn" aria-label="Search" onclick="var i=document.getElementById('searchInput'); onSearch(i.value); i.blur();">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  </button>
 </div>
 
 <div class="cat-rail" id="catRail"></div>
