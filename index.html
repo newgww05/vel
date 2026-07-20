@@ -298,7 +298,7 @@ if (window.innerWidth <= 780) {
   @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(6px);} }
 
   /* MOBILE SCENE */
-  .scene-mobile { display:none; width:100%; flex-direction:column; align-items:center; padding-top:100px; }
+  .scene-mobile { display:none; width:100%; flex-direction:column; align-items:center; padding-top:28px; }
   .mobile-center {
     position:relative; width:190px; height:190px; border-radius:50%;
     background:linear-gradient(135deg, #b2dff2 0%, #c2e8f7 30%, #d8f1fb 65%, #edfafe 100%);
@@ -390,6 +390,8 @@ if (window.innerWidth <= 780) {
     .nav-links,.nav-cta { display:none; }
     .nav-hamburger { display:flex; }
     .nav { padding:16px 20px; }
+    .hero-banner-wrap { aspect-ratio:unset; min-height:250px; display:flex; align-items:center; justify-content:center; }
+    .hero { min-height:unset; align-items:flex-start; padding-bottom:24px; }
     .stats { padding:40px 16px; }
     .stats-card { grid-template-columns:repeat(2,1fr); border-radius:20px; padding:32px 16px; gap:20px; }
     .stat-item { padding:18px 8px; }
@@ -547,7 +549,7 @@ if (window.innerWidth <= 780) {
 </nav>
 
 <!-- Full-width banner -->
-<div style="width:100%; line-height:0; overflow:hidden; aspect-ratio:1400/500; background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 50%,#bae6fd 100%);">
+<div class="hero-banner-wrap" style="width:100%; line-height:0; overflow:hidden; aspect-ratio:1400/500; background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 50%,#bae6fd 100%);">
   <img src="https://img.velcura.net/home1.webp" alt="Velcura Medical" width="1400" height="500" fetchpriority="high" decoding="async" style="width:100%; height:auto; display:block;">
 </div>
 
@@ -873,12 +875,12 @@ cats.forEach(cat => {
 
 /* ── Mobile nodes: product-first categories (separate from desktop orbit) ── */
 const mobileCatsData = [
-  { name:'All Products',        link:'wound-care-mobile.html' },
   { name:'Advanced Wound Care', link:'wound-care-mobile.html?cat=advanced' },
   { name:'Traditional Care',    link:'wound-care-mobile.html?cat=traditional' },
   { name:'Surgical Wound Care', link:'wound-care-mobile.html?cat=surgical-wound-care' },
   { name:'Diabetic Foot Care',  link:'EduInst-diabetic.html' },
   { name:'Scar Management',     link:'scar-management.html' },
+  { name:'Blog',                link:'blog.html' },
 ];
 const mobileCats     = document.getElementById('mobileCats');
 const mobileSubPanel = document.getElementById('mobileSubPanel');
