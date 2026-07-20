@@ -126,6 +126,23 @@
     transition: background 0.25s, color 0.25s, border-color 0.25s;
   }
   .nav-cta:hover { background: var(--c-teal); color: #fff; border-color: var(--c-teal); }
+  .nav-cta-quickread {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-teal);
+    padding: 0.55rem 1.2rem 0.55rem 1rem; border: 1px solid var(--c-line);
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+  }
+  .nav-cta-quickread:hover { background: var(--c-teal); color: #fff; border-color: var(--c-teal); }
+  .nav-cta-quickread-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--c-teal); flex-shrink: 0;
+    animation: navQrPulse 1.8s ease-in-out infinite;
+  }
+  .nav-cta-quickread:hover .nav-cta-quickread-dot { background: #fff; animation: none; }
+  @keyframes navQrPulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(13,139,142,0.45); }
+    50% { box-shadow: 0 0 0 5px rgba(13,139,142,0); }
+  }
 
   /* ============ Hero banner image (1500 x 500) ============ */
   .hero-img-wrap {
@@ -430,6 +447,7 @@
     <li><a href="#news">News</a></li>
   </ul>
   <div class="nav-actions">
+    <a class="nav-cta-quickread" href="wound-care-quickread.html" target="_blank"><span class="nav-cta-quickread-dot"></span>产品快阅版</a>
     <a class="nav-cta" href="index.html">Home</a>
     <a class="nav-cta" href="#contact">Contact</a>
   </div>
