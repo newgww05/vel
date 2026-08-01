@@ -53,6 +53,12 @@ if (window.innerWidth <= 780) {
 
   .card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px; }
   .p-card { display:flex; flex-direction:column; border:1px solid #e0f2fe; border-radius:14px; padding:14px; cursor:pointer; transition:box-shadow .15s, border-color .15s; }
+  .p-card.search-highlight { animation:cardHighlight 1.8s ease; }
+  @keyframes cardHighlight {
+    0%   { box-shadow:0 0 0 0 rgba(2,132,199,0.55); border-color:#0284c7; }
+    60%  { box-shadow:0 0 0 8px rgba(2,132,199,0); border-color:#0284c7; }
+    100% { box-shadow:0 0 0 0 rgba(2,132,199,0); border-color:#e0f2fe; }
+  }
   .p-card:hover { border-color:#7dd3fc; box-shadow:0 4px 16px rgba(2,132,199,0.10); }
   .p-card-img { width:100%; aspect-ratio:1/1; object-fit:contain; background:#f8fafc; border-radius:10px; margin-bottom:10px; opacity:0; transition:opacity .25s ease; }
   .p-card-img.loaded { opacity:1; }
@@ -663,7 +669,7 @@ function renderCard(name, priority){
   var imgAttrs = priority
     ? 'loading="eager" fetchpriority="high" decoding="async"'
     : 'loading="lazy" decoding="async"';
-  return '<div class="p-card" onclick="goToDetail(\'' + esc + '\')">'
+  return '<div class="p-card" data-name="' + name.replace(/"/g,'&quot;') + '" onclick="goToDetail(\'' + esc + '\')">'
        + '<img class="p-card-img" src="' + img + '" alt="" ' + imgAttrs + ' onload="this.classList.add(\'loaded\')">'
        + '<p class="p-card-name">' + name + '</p>'
        + '<p class="p-card-tag">' + tag + '</p>'
@@ -724,6 +730,26 @@ function goToDetail(name){
   if (cat !== activeCat){ activeCat = cat; renderCatRail(); renderList(); }
   history.pushState({view:'detail', prod:name, cat:cat}, '', 'wound-care-quickread.html?cat=' + cat + '&prod=' + encodeURIComponent(name));
   openDetailUI(name);
+  scrollToProductCard(name);
+}
+
+/* Brings the left-hand list to the exact card behind the open detail panel —
+   needed after a search jump, since the card may be in a group that hasn't
+   rendered yet (progressive rendering) or is scrolled out of view. Polls
+   briefly for the card to exist, then scrolls it into view and highlights it. */
+function scrollToProductCard(name, attemptsLeft){
+  if (attemptsLeft === undefined) attemptsLeft = 40; // ~40 * ~50ms ≈ 2s max wait
+  var esc = (window.CSS && CSS.escape) ? CSS.escape(name) : name.replace(/"/g,'\\"');
+  var card = document.querySelector('.p-card[data-name="' + esc + '"]');
+  if (!card){
+    if (attemptsLeft > 0) setTimeout(function(){ scrollToProductCard(name, attemptsLeft - 1); }, 50);
+    return;
+  }
+  card.scrollIntoView({behavior:'smooth', block:'center'});
+  card.classList.remove('search-highlight');
+  void card.offsetWidth; // restart animation if triggered again on the same card
+  card.classList.add('search-highlight');
+  setTimeout(function(){ card.classList.remove('search-highlight'); }, 1900);
 }
 
 window.addEventListener('popstate', function(e){
@@ -731,6 +757,7 @@ window.addEventListener('popstate', function(e){
   if (st && st.view === 'detail') {
     if (st.cat && st.cat !== activeCat){ activeCat = st.cat; renderCatRail(); renderList(); }
     openDetailUI(st.prod);
+    scrollToProductCard(st.prod);
   } else {
     closeDetailUI();
     if (st && st.cat) { activeCat = st.cat; renderCatRail(); renderList(); }
@@ -767,6 +794,7 @@ if (deepLinkProd) {
   history.replaceState({view:'list', cat:activeCat}, '', 'wound-care-quickread.html?cat=' + activeCat);
   history.pushState({view:'detail', prod:deepLinkProd, cat:activeCat}, '', 'wound-care-quickread.html?cat=' + activeCat + '&prod=' + encodeURIComponent(deepLinkProd));
   openDetailUI(deepLinkProd);
+  scrollToProductCard(deepLinkProd);
 }
 
 /* ===== Mini inquiry tab (right edge, follows scroll via fixed positioning) ===== */
