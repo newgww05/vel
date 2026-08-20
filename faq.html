@@ -183,14 +183,11 @@
   .faq-cta-btn:hover { background:var(--sky-700); transform:translateY(-1px); }
 
   /* Footer */
-  .footer { background:#545395; color:#fff; padding:50px 48px 30px; }
-  .footer-inner { max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px; }
-  .footer-brand { font-family:'Playfair Display',serif; font-style:italic; font-size:24px; }
-  .footer-brand span { font-size:13px; letter-spacing:0.18em; display:block; margin-top:4px; }
-  .footer-contact { font-size:13px; line-height:1.8; opacity:0.85; }
-  .footer-bottom { max-width:1100px; margin:30px auto 0; padding-top:20px; border-top:1px solid rgba(255,255,255,0.15); font-size:12px; opacity:0.6; text-align:center; }
-  .footer a { color:#fff; opacity:0.85; text-decoration:none; }
-  .footer a:hover { opacity:1; }
+  .footer { background:#545395; padding: 1.4rem 2.5rem; display: flex; align-items: center; justify-content: space-between; color: rgba(255,255,255,0.85); font-size: 0.78rem; letter-spacing: 0.05em; flex-wrap: wrap; gap: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; font-weight: 500; color: rgba(255,255,255,0.95); }
+  .footer-logo span { font-family: 'DM Sans', sans-serif; font-style: normal; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.75); margin-left: 0.4rem; }
+  .footer-link { color: rgba(255,255,255,0.85); margin-left: 1.2rem; text-decoration: none; }
+  .footer-link:hover { color: #fff; }
 
   @media (max-width:768px) {
     .nav { padding:14px 20px; }
@@ -512,27 +509,16 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">Velcura<span>MEDICAL</span></div>
-    </div>
-    <div class="footer-contact">
-      <div><strong>Velcura Medical Technology (Shenzhen) Co., Ltd.</strong></div>
-      <div>Room 2134, 2nd Floor, Building 3, Block 30 (Wenzhengxin Building),</div>
-      <div>No. 2 Kefa Road, Nanshan District, Shenzhen</div>
-      <div style="margin-top:8px;">
-        <a href="mailto:info@velcura.net">info@velcura.net</a> &nbsp;·&nbsp;
-        <a href="tel:+85298567973">+852 9856 7973</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 Velcura Medical. All rights reserved.
-    &nbsp;·&nbsp; <a href="index.html">Home</a>
-    &nbsp;·&nbsp; <a href="faq.html">FAQ</a>
-    &nbsp;·&nbsp; <a href="wound-care.html">Products</a>
-  </div>
+  <div class="footer-logo">Velcura <span>Medical</span></div>
+  <div class="footer-copy" id="footer-copy"></div>
+  <a class="footer-link" href="https://velcura.net">velcura.net ↗</a>
 </footer>
+
+<script>
+  // Dynamically generate the copyright year
+  document.getElementById('footer-copy').textContent =
+    '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
+</script>
 
 <script>
   // FAQ accordion
