@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQSLVJTBFP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LQSLVJTBFP');
-    </script>
-
 <script>
 if (window.innerWidth <= 780) {
   window.location.replace('index-mobile.html' + window.location.search);
@@ -25,6 +16,7 @@ if (window.innerWidth <= 780) {
 <meta name="geo.region" content="CN-44">
 <meta name="geo.placename" content="Shenzhen, Guangdong, China">
 <link rel="canonical" href="https://velcura.net/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://velcura.net/index-mobile.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -64,7 +56,7 @@ if (window.innerWidth <= 780) {
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Room 2134, 2nd Floor, Building 3, Block 30 (Wenzhengxin Building), No. 2 Kefa Road, Science and Technology Park Community, Yuehai Street, Nanshan District",
+    "streetAddress": "Room 2134, 2nd Floor, Building 3, Block 30 (Wenzhengxin Building), 2 Kefa Road, Kejiyuan Community, Yuehai Subdistrict, Nanshan District",
     "addressLocality": "Shenzhen",
     "addressRegion": "Guangdong",
     "postalCode": "518057",
@@ -885,7 +877,7 @@ cats.forEach(cat => {
 /* ── Mobile nodes: product-first categories (separate from desktop orbit) ── */
 const mobileCatsData = [
   { name:'Advanced Wound Care', link:'wound-care-mobile.html?cat=advanced' },
-  { name:'Traditional Care',    link:'wound-care-mobile.html?cat=traditional' },
+  { name:'Traditional Wound Care', link:'wound-care-mobile.html?cat=traditional' },
   { name:'Surgical Wound Care', link:'wound-care-mobile.html?cat=surgical-wound-care' },
   { name:'Diabetic Foot Care',  link:'EduInst-diabetic.html' },
   { name:'Scar Management',     link:'scar-management.html' },

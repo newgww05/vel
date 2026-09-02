@@ -4,7 +4,7 @@
   <!-- Homepage (highest priority) -->
   <url>
     <loc>https://velcura.net/</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- FAQ -->
   <url>
     <loc>https://velcura.net/faq.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -20,13 +20,13 @@
   <!-- Blog -->
   <url>
     <loc>https://velcura.net/blog.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://velcura.net/blog-wound-dressing-evolution.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <loc>https://velcura.net/blog-wound-dressing-revolution.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -34,7 +34,7 @@
   <!-- About us -->
   <url>
     <loc>https://velcura.net/velcura-3y.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -64,37 +64,37 @@
   <!-- Individual product pages -->
   <url>
     <loc>https://velcura.net/silicone-foam-border-AD44.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/foam-non-adhesive-AD12.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/activated-charcoal-non-adhesive-AD24.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/hydrocolloid-super-thin-AD-HD01.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/calcium-alginate-AD006.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/nano-silver-antibacterial-AD47.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -102,134 +102,134 @@
   <!-- TD series (Traditional Dressings) -->
   <url>
     <loc>https://velcura.net/wound-closure-strips.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/transparent-film-iv.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/transparent-film-iv-notch.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/non-woven-surgical-tape.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/paper-tape.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/film-island-dressing.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/non-woven-adhesive-with-pad.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/non-woven-adhesive-strip.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/medical-gauze-traditional.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
     <loc>https://velcura.net/foam-non-adhesive-elbow.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/foam-non-adhesive-tracheostomy.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/foam-silicone-border-heel.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/foam-silicone-border-sacrum.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/hydrocolloid-dressing-sacrum.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/hydrocolloid-dressing-with-border.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/silicone-contact-layer.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/silicone-foam-dressing.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/silver-activated-charcoal.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/silver-alginate-dressing-AD14.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/silver-foam-non-adhesive.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/silver-hydrophilic-fiber-dressing.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/vaseline-gauze.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -237,25 +237,25 @@
   <!-- SC series (Surgical Wound Care) -->
   <url>
     <loc>https://velcura.net/incise-drape.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/iodine-incise-drape.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/skin-closure-strip.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://velcura.net/picc-securement-dressing.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -263,39 +263,55 @@
   <!-- Education / disease-management pages -->
   <url>
     <loc>https://velcura.net/pressure-injury-care.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://velcura.net/incontinence-care.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://velcura.net/surgical-wound-care.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://velcura.net/scar-management.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/EduInst.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://velcura.net/EduInst-diabetic.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+
+  <!-- Quick-read product overview -->
+  <url>
+    <loc>https://velcura.net/wound-care-quickread.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://velcura.net/blog-iad-vs-pressure-injury.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
