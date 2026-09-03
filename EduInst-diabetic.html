@@ -374,6 +374,14 @@
   .patho-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
   }
+  .patho-grid .feature-card { position: relative; overflow: hidden; }
+  .patho-grid .feature-card::before {
+    content: attr(data-num);
+    position: absolute; top: -0.6rem; right: 0.5rem;
+    font-family: 'Cormorant Garamond', serif; font-size: 5.5rem; font-weight: 300;
+    color: var(--c-line); line-height: 1; z-index: 0;
+  }
+  .patho-grid .feature-card > * { position: relative; z-index: 1; }
 
   /* ============ Wagner 表 + 创面床准备 ============ */
   .grading-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
@@ -408,7 +416,23 @@
 
   /* ============ 解决方案 ============ */
   .solutions-section { padding: 6rem 0; }
-  .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .solutions-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
+  .solutions-grid .feature-card:nth-child(1),
+  .solutions-grid .feature-card:nth-child(2) { grid-column: span 3; }
+  .solutions-grid .feature-card:nth-child(3),
+  .solutions-grid .feature-card:nth-child(4),
+  .solutions-grid .feature-card:nth-child(5) { grid-column: span 2; }
+  .solution-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 2.2rem; height: 2.2rem; border-radius: 50%;
+    background: #EAF3F8; color: var(--c-teal);
+    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .solution-tag {
+    font-size: 0.68rem; letter-spacing: 0.1em; color: var(--c-ink3);
+    text-transform: uppercase; margin-bottom: 0.4rem;
+  }
   .solution-link {
     display: inline-block; margin-top: 1rem;
     font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
@@ -545,6 +569,11 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 900px) {
+    .solutions-grid .feature-card:nth-child(1),
+    .solutions-grid .feature-card:nth-child(2),
+    .solutions-grid .feature-card:nth-child(3),
+    .solutions-grid .feature-card:nth-child(4),
+    .solutions-grid .feature-card:nth-child(5) { grid-column: span 6; }
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 3.5rem 1.5rem 2.5rem; }
     .hero-left::after { display: none; }
@@ -688,20 +717,20 @@
   <div class="container">
     <div class="section-tag">病理机制</div>
     <div class="patho-grid">
-      <div class="feature-card">
+      <div class="feature-card" data-num="01">
         <span class="feature-icon">⬡</span>
-        <h3>感觉缺失 · 损伤不自知</h3>
-        <p>周围神经病变使足部痛觉、温度觉减退,鞋内异物、烫伤、磨损常被忽视;运动神经受累引起足部畸形与压力点改变,自主神经病变导致皮肤干裂,为溃疡形成创造条件。</p>
+        <h3>无声警报</h3>
+        <p>长期高血糖首先损伤最长的神经纤维——这正是为什么离脊髓最远的双脚往往最先失去知觉。多达一半病程较长的糖尿病患者存在不同程度的周围神经病变,而许多人直到伤口已经出现才意识到这一点。鞋里的一粒石子、袜子过紧的接缝,或是被滚烫路面烫伤,都可能连续几天都不被察觉。</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card" data-num="02">
         <span class="feature-icon">◈</span>
-        <h3>血供不足 · 修复乏力</h3>
-        <p>下肢动脉病变使创面局部氧与营养供应下降,组织修复细胞活性受抑,创面长期停滞于炎症期;严重缺血时还会出现静息痛与组织坏死,显著增加截肢风险。</p>
+        <h3>饥饿的组织</h3>
+        <p>糖尿病会加速小腿中小动脉的粥样硬化。抵达伤口的血流减少,意味着氧气更少、营养更少、用于抗菌与重建组织的免疫细胞也更少。这正是为什么糖尿病足溃疡表面看起来干净,创面却迟迟无法闭合——愈合所需要的"燃料"根本不够。</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card" data-num="03">
         <span class="feature-icon">◇</span>
-        <h3>感染与生物膜 · 反复迁延</h3>
-        <p>高血糖削弱中性粒细胞功能,细菌易于定植并形成生物膜,常规处理难以清除;感染可由浅表迅速向深部肌腱、骨组织扩展,是溃疡恶化与住院的主要原因。</p>
+        <h3>妥协的防御</h3>
+        <p>持续偏高的血糖会在细胞层面削弱白细胞功能,原本健康免疫系统几天内就能清除的细菌,得以在此建立立足点。加上局部血流减少,这正是为什么糖尿病足部感染往往比预期扩散得更深、更快——通常在表面看起来"感染不明显"时,病灶其实已经抵达肌腱或骨骼。</p>
       </div>
     </div>
   </div>
@@ -763,28 +792,45 @@
 <section class="solutions-section" id="solutions">
   <div class="container">
     <div class="section-tag">解决方案</div>
-    <h2 class="section-title">针对性产品组合</h2>
+    <h2 class="section-title">按 DIMES 框架<br>逐项对应的产品方案</h2>
     <p class="section-lead">
-      Velcura 针对糖尿病足溃疡的不同阶段与渗出水平,提供抗感染、渗液管理与压力卸载三位一体的产品组合,协助临床实现更快愈合与更低截肢风险。
+      与其把产品笼统堆在一起,不如让每一款都对应创面床准备中一个具体的环节。以下按 D-I-M-E-S 五个环节,分别匹配 Velcura 现有产品线中最贴合的解决方案,并附真实产品页链接,方便临床与采购直接查阅规格与适应症。
     </p>
     <div class="solutions-grid">
       <div class="feature-card">
-        <span class="feature-icon">⬡</span>
-        <h3>银离子抗菌敷料</h3>
-        <p>持续释放银离子,广谱抑菌,有效控制生物膜,降低糖尿病足溃疡感染风险,加速创面床准备,适用于感染或高感染风险创面。</p>
-        <a class="solution-link" href="#contact">咨询产品 →</a>
+        <span class="solution-badge">D</span>
+        <div class="solution-tag">清创 Debridement</div>
+        <h3>水凝胶敷料</h3>
+        <p>高含水量凝胶为干燥、附着胼胝或坏死组织的创面持续补水,启动自溶性清创,软化并松解失活组织,为后续处理暴露健康创面床——尤其适合无法耐受锐性清创的门诊场景。</p>
+        <a class="solution-link" href="hydrogel-dressing.html">查看产品 →</a>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◈</span>
-        <h3>ConkoSil 硅凝胶泡沫敷贴</h3>
-        <p>四层复合结构,吸液达自身重量 15 倍,锁液防浸渍,硅凝胶接触层换药无痛揭除,最长换药周期 7 天,适用于中重度渗出创面。</p>
-        <a class="solution-link" href="#contact">咨询产品 →</a>
+        <span class="solution-badge">I</span>
+        <div class="solution-tag">感染控制 Infection</div>
+        <h3>银离子藻酸盐敷料</h3>
+        <p>藻酸盐纤维吸收中重度渗液的同时,持续释放银离子广谱抑菌,针对糖尿病足溃疡常见的定植菌与生物膜提供持续抗菌保护,降低感染向深部肌腱、骨组织扩展的风险。</p>
+        <a class="solution-link" href="silver-alginate-dressing-AD14.html">查看产品 →</a>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">◇</span>
-        <h3>减压卸载辅助</h3>
-        <p>配合减压鞋垫及泡沫卸载材料,有效分散足底压力,消除创面机械性刺激,是足底溃疡实现愈合并预防复发的关键环节。</p>
-        <a class="solution-link" href="#contact">咨询产品 →</a>
+        <span class="solution-badge">M</span>
+        <div class="solution-tag">湿度平衡 Moisture</div>
+        <h3>硅酮泡沫边框敷料</h3>
+        <p>高吸收性泡沫芯层管理渗出液、维持湿润愈合微环境而不浸渍创周皮肤;硅酮粘胶温和固定,换药时不损伤新生肉芽与脆弱的创周组织,最长可 7 天更换一次。</p>
+        <a class="solution-link" href="silicone-foam-border-AD44.html">查看产品 →</a>
+      </div>
+      <div class="feature-card">
+        <span class="solution-badge">E</span>
+        <div class="solution-tag">创缘管理 Edge</div>
+        <h3>超薄水胶体敷料</h3>
+        <p>超薄水胶体紧密贴合创缘轮廓,保护新生上皮免受机械摩擦与鞋内压力,同时维持创缘适度湿润以促进上皮爬行,适合创面进入收缩期后的持续管理与高危部位预防。</p>
+        <a class="solution-link" href="hydrocolloid-super-thin-AD-HD01.html">查看产品 →</a>
+      </div>
+      <div class="feature-card">
+        <span class="solution-badge">S</span>
+        <div class="solution-tag">支持治疗 Support</div>
+        <h3>分级减压鞋具系列</h3>
+        <p>血糖控制、营养支持与血运重建需要多学科协作,而机械性减压卸载是创面护理团队可以直接介入的一环。Velcura 按 Wagner 分级提供从日常预防鞋到急性期减压助行器的完整鞋具产品线,协助消除持续性机械负荷这一常被忽视的愈合障碍。</p>
+        <a class="solution-link" href="wound-care.html">查看减压鞋具系列 →</a>
       </div>
     </div>
   </div>
