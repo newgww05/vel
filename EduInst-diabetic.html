@@ -415,7 +415,7 @@
   .dimes-item p { font-size: 0.82rem; color: var(--c-ink2); line-height: 1.7; }
 
   /* ============ 解决方案 ============ */
-  .solutions-section { padding: 6rem 0; }
+  .solutions-section { padding: 6rem 0 2rem; }
   .solutions-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
   .solutions-grid .feature-card:nth-child(1),
   .solutions-grid .feature-card:nth-child(2) { grid-column: span 3; }
@@ -439,6 +439,55 @@
     color: var(--c-gold); text-decoration: none;
   }
   .solution-link:hover { color: var(--c-gold2); }
+
+  /* ============ 产品实拍画廊(悬停翻转) ============ */
+  .gallery-section { padding: 1.85rem 0 6rem; }
+  .gallery-wrap { width: 100vw; position: relative; left: 50%; transform: translateX(-50%); padding: 0 1.5rem; }
+  .flip-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 0; }
+  .flip-card { height: 500px; perspective: 900px; transition: box-shadow 0.9s ease; }
+  .flip-card:hover, .flip-card:focus-within { box-shadow: 0 20px 40px rgba(15,30,35,0.22); z-index: 3; position: relative; }
+  .flip-card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.9s cubic-bezier(0.34, 1.15, 0.64, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner { transform: rotateY(180deg) scale(1.015); }
+  .flip-face {
+    position: absolute; inset: 0; backface-visibility: hidden;
+    overflow: hidden; background: #f4f7f8;
+  }
+  .flip-face img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .flip-back { transform: rotateY(180deg); background: #fbfaf8; }
+  .flip-badge {
+    position: absolute; top: 0.9rem; left: 0.9rem; z-index: 2;
+    width: 2rem; height: 2rem; border-radius: 50%;
+    background: rgba(255,255,255,0.92); color: var(--c-teal);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .flip-caption {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+    padding: 1rem 0.9rem 0.9rem;
+    background: linear-gradient(180deg, rgba(20,30,35,0) 0%, rgba(15,25,30,0.62) 100%);
+  }
+  .flip-caption .name { font-size: 0.86rem; font-weight: 600; color: #fff; line-height: 1.35; }
+  .flip-caption .sub { font-size: 0.68rem; color: rgba(255,255,255,0.8); margin-top: 0.2rem; letter-spacing: 0.02em; }
+  .flip-back-body {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 1.6rem 1.2rem;
+  }
+  .flip-back-body .name { font-size: 0.92rem; font-weight: 600; color: var(--c-ink); margin-bottom: 0.6rem; }
+  .flip-back-body .desc { font-size: 0.76rem; color: var(--c-ink2); line-height: 1.7; }
+  .flip-model-list { list-style: none; text-align: left; margin-top: 0.9rem; width: 100%; }
+  .flip-model-list li {
+    font-size: 0.76rem; color: var(--c-ink2); padding: 0.45rem 0;
+    border-bottom: 0.5px solid var(--c-line);
+  }
+  .flip-model-list li strong { color: var(--c-teal); font-weight: 600; }
 
   /* ============ 护理路径 ============ */
   .pathway-section { padding: 6rem 0; background: #fbfaf8; border-top: 0.5px solid var(--c-line); border-bottom: 0.5px solid var(--c-line); }
@@ -574,6 +623,8 @@
     .solutions-grid .feature-card:nth-child(3),
     .solutions-grid .feature-card:nth-child(4),
     .solutions-grid .feature-card:nth-child(5) { grid-column: span 6; }
+    .flip-gallery { grid-template-columns: repeat(2, 1fr); }
+    .flip-card { height: 380px; }
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 3.5rem 1.5rem 2.5rem; }
     .hero-left::after { display: none; }
@@ -832,6 +883,119 @@
         <p>血糖控制、营养支持与血运重建需要多学科协作,而机械性减压卸载是创面护理团队可以直接介入的一环。Velcura 按 Wagner 分级提供从日常预防鞋到急性期减压助行器的完整鞋具产品线,协助消除持续性机械负荷这一常被忽视的愈合障碍。</p>
         <a class="solution-link" href="wound-care.html">查看减压鞋具系列 →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 产品实拍画廊 -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-wrap">
+    <div class="flip-gallery">
+
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-badge">D</span>
+            <img src="https://img.velcura.net/水凝胶敷贴产品-1024x1024.png" alt="水凝胶敷料 正面产品图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">水凝胶敷料</div>
+              <div class="sub">清创 · Debridement</div>
+            </div>
+          </div>
+          <div class="flip-face flip-back">
+            <img src="https://img.velcura.net/水凝胶敷贴-01-1.jpg" alt="水凝胶敷料 实物细节图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">水凝胶敷料</div>
+              <div class="sub">实物细节 · Detail View</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-badge">I</span>
+            <img src="https://img.velcura.net/银离子藻酸盐产品.png" alt="银离子藻酸盐敷料 正面产品图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">银离子藻酸盐敷料</div>
+              <div class="sub">感染控制 · Infection</div>
+            </div>
+          </div>
+          <div class="flip-face flip-back">
+            <img src="https://img.velcura.net/银离子藻酸盐_01.jpg" alt="银离子藻酸盐敷料 实物细节图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">银离子藻酸盐敷料</div>
+              <div class="sub">实物细节 · Detail View</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-badge">M</span>
+            <img src="https://img.velcura.net/银离子硅凝胶泡沫敷贴产品.png" alt="硅酮泡沫边框敷料 正面产品图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">硅酮泡沫边框敷料</div>
+              <div class="sub">湿度平衡 · Moisture</div>
+            </div>
+          </div>
+          <div class="flip-face flip-back">
+            <img src="https://img.velcura.net/银离子硅凝胶泡沫敷贴-01.png" alt="硅酮泡沫边框敷料 实物细节图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">硅酮泡沫边框敷料</div>
+              <div class="sub">实物细节 · Detail View</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-badge">E</span>
+            <img src="https://img.velcura.net/ad01-01.png" alt="超薄水胶体敷料 正面产品图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">超薄水胶体敷料</div>
+              <div class="sub">创缘管理 · Edge</div>
+            </div>
+          </div>
+          <div class="flip-face flip-back">
+            <img src="https://img.velcura.net/ad01-04.jpg" alt="超薄水胶体敷料 实物细节图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">超薄水胶体敷料</div>
+              <div class="sub">实物细节 · Detail View</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-badge">S</span>
+            <img src="https://img.velcura.net/Diabetes Care1.webp" alt="分级减压鞋具系列 产品图" loading="lazy">
+            <div class="flip-caption">
+              <div class="name">分级减压鞋具系列</div>
+              <div class="sub">支持治疗 · Support</div>
+            </div>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="flip-back-body">
+              <div class="name">按 Wagner 分级选型</div>
+              <ul class="flip-model-list">
+                <li><strong>YDA</strong> — 日常预防鞋(0级)</li>
+                <li><strong>MAC1 / TQURA</strong> — 一级预防(1级)</li>
+                <li><strong>MAC2 / MAC3 / YDA Pro</strong> — 二级预防(2级)</li>
+                <li><strong>SBi Motus / SBi Frame</strong> — 急性期减压助行器(3级)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
