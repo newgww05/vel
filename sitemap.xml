@@ -323,4 +323,47 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Wound Cleanser (new landing page) -->
+  <url>
+    <loc>https://velcura.net/wound-cleanser.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+
+  <!-- Biocellulose Dressing (new landing page) -->
+  <url>
+    <loc>https://velcura.net/biocellulose-dressing.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Collagen Wound Dressing (new landing page) -->
+  <url>
+    <loc>https://velcura.net/collagen-wound-dressing.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+  <!-- NPWT Foam Dressing Kit (new landing page) -->
+  <url>
+    <loc>https://velcura.net/npwt-foam-dressing.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Super Absorbent Dressing (new landing page) -->
+  <url>
+    <loc>https://velcura.net/super-absorbent-dressing.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
