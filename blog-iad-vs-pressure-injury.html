@@ -52,9 +52,9 @@
   <meta name="distribution" content="global">
   <meta name="target-audience" content="clinical nurses, wound ostomy continence nurses, aged care staff, rehabilitation clinicians, home caregivers">
 
-  <link rel="canonical" href="https://velcura.net/blog-iad-vs-pressure-injury.html">
-  <link rel="alternate" hreflang="zh" href="https://velcura.net/blog-iad-vs-pressure-injury.html">
-  <link rel="alternate" hreflang="x-default" href="https://velcura.net/blog-iad-vs-pressure-injury.html">
+  <link rel="canonical" href="https://velcura.net/blog-iad-vs-pressure-injury">
+  <link rel="alternate" hreflang="en" href="https://velcura.net/blog-iad-vs-pressure-injury">
+  <link rel="alternate" hreflang="x-default" href="https://velcura.net/blog-iad-vs-pressure-injury">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
@@ -64,7 +64,7 @@
   <meta property="og:image:width" content="1500">
   <meta property="og:image:height" content="500">
   <meta property="og:image:alt" content="IAD vs Pressure Injury Differentiation — Velcura Medical Knowledge Center">
-  <meta property="og:url" content="https://velcura.net/blog-iad-vs-pressure-injury.html">
+  <meta property="og:url" content="https://velcura.net/blog-iad-vs-pressure-injury">
   <meta property="og:site_name" content="Velcura Medical">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-08-17">
@@ -84,10 +84,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": "https://velcura.net/blog-iad-vs-pressure-injury.html#article",
+    "@id": "https://velcura.net/blog-iad-vs-pressure-injury#article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://velcura.net/blog-iad-vs-pressure-injury.html"
+      "@id": "https://velcura.net/blog-iad-vs-pressure-injury"
     },
     "headline": "Why Sacrococcygeal Redness Isn't Always a Pressure Injury: Differentiating IAD from Pressure Injury",
     "alternativeHeadline": "From differentiating incontinence-associated dermatitis and pressure injury to caring for patients when both occur together",
@@ -179,8 +179,8 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velcura.net/" },
-      { "@type": "ListItem", "position": 2, "name": "Knowledge Center", "item": "https://velcura.net/blog.html" },
-      { "@type": "ListItem", "position": 3, "name": "IAD vs Pressure Injury", "item": "https://velcura.net/blog-iad-vs-pressure-injury.html" }
+      { "@type": "ListItem", "position": 2, "name": "Knowledge Center", "item": "https://velcura.net/blog" },
+      { "@type": "ListItem", "position": 3, "name": "IAD vs Pressure Injury", "item": "https://velcura.net/blog-iad-vs-pressure-injury" }
     ]
   }
   </script>
@@ -837,7 +837,7 @@
     <p class="pull-quote">
       When you see skin that's <strong>"red, wet, and broken,"</strong> the real question isn't "what does it look like" — it's <strong>"how did it happen."</strong>
     </p>
-    <div class="pull-quote-attr">— Core thesis of this article · <span>IAD × Pressure Injury Differentiation</span></div>
+    <div class="pull-quote-attr">— Core thesis of this article · <span>IAD vs. Pressure Injury Differentiation</span></div>
   </div>
 </section>
 
@@ -1257,7 +1257,7 @@
     <div class="faq-item">
       <div class="faq-question">How do you tell IAD and pressure injury apart?</div>
       <div class="faq-answer">
-        Differential diagnosis isn't about color — it's about asking why: ① Is there incontinence or moisture? ② Is there sustained pressure or shear force? ③ Does the distribution pattern fit one mechanism better than another? ④ Is there evidence both mechanisms are present? For reference: IAD often involves the buttocks/perineum, has irregular borders, and shows prominent moisture-associated maceration; pressure injury is often linked to bony prominences and may involve deeper tissue damage.
+        Differential diagnosis isn't about color — it's about asking why: 1) Is there incontinence or moisture? 2) Is there sustained pressure or shear force? 3) Does the distribution pattern fit one mechanism better than another? 4) Is there evidence both mechanisms are present? For reference: IAD often involves the buttocks/perineum, has irregular borders, and shows prominent moisture-associated maceration; pressure injury is often linked to bony prominences and may involve deeper tissue damage.
       </div>
     </div>
     <div class="faq-item">
@@ -1430,5 +1430,29 @@
   })();
 </script>
 
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
+</script>
 </body>
 </html>

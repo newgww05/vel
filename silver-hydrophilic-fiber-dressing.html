@@ -17,14 +17,14 @@
 <meta name="keywords" content="silver hydrophilic fiber dressing, Hydrofiber silver, CMC silver dressing, ionic silver gelling fiber, vertical absorption dressing, antimicrobial cavity dressing, carboxymethylcellulose silver, Velcura">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical">
-<link rel="canonical" href="https://velcura.net/silver-hydrophilic-fiber-dressing.html">
+<link rel="canonical" href="https://velcura.net/silver-hydrophilic-fiber-dressing">
 
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="Silver Hydrophilic Fiber Dressing | Velcura Medical">
 <meta property="og:description" content="Non-woven CMC gelling fibres with ionic silver — absorbs exudate vertically, locking fluid and silver at the wound while sparing peri-wound skin; conforms to cavities and lifts away in one piece.">
 <meta property="og:image" content="https://img.velcura.net/银离子亲水性纤维敷料产品.png">
-<meta property="og:url" content="https://velcura.net/silver-hydrophilic-fiber-dressing.html">
+<meta property="og:url" content="https://velcura.net/silver-hydrophilic-fiber-dressing">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -534,8 +534,8 @@
   /* Hero index: abstract icons + diagonal slash + staggered reveal + hover text color */
   .hero-index { position: relative; margin-top: 1.6rem; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
   .hi-item { position: relative; padding-left: 1.9rem; display: flex; align-items: center; gap: 2.5rem; opacity: 1; animation: hiReveal 0.6s ease backwards; }
-  .hi-item:nth-child(1) { animation-delay: 0.4s; margin-left: 4.4rem; }   /* 斜线：第1行右移最多（可调） */
-  .hi-item:nth-child(2) { animation-delay: 0.6s; margin-left: 2.2rem; }   /* 斜线：第2行右移居中（可调） */
+  .hi-item:nth-child(1) { animation-delay: 0.4s; margin-left: 4.4rem; }   /* Diagonal: row 1 shifted right the most (adjustable) */
+  .hi-item:nth-child(2) { animation-delay: 0.6s; margin-left: 2.2rem; }   /* Diagonal: row 2 shifted right, centred (adjustable) */
   .hi-item:nth-child(3) { animation-delay: 0.8s; }
   .hi-ico { flex: 0 0 auto; width: 28px; height: 28px; fill: none; stroke: var(--c-teal); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; transition: opacity 0.35s ease; }
   .hi-item:hover .hi-ico { opacity: 1; }
@@ -933,7 +933,7 @@
   </div>
 </section>
 
-<!-- STATS BAR — 修复：从 <script> 后面移到 Hero 紧接位置，确保文档流正确 -->
+<!-- STATS BAR — fix: moved from after <script> to directly after the Hero to keep document flow correct -->
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">30×</div>
@@ -1134,17 +1134,17 @@
 </footer>
 
 <script>
-  // 五个小圆统一由JS定位，圆心到大圆圆心等距
+  // The five small circles are positioned by JS, equidistant from the large circle's centre
   function positionOrbs() {
     const circle = document.querySelector('.hero-circle');
     if (!circle) return;
-    const r = circle.offsetWidth / 2;   // 大圆半径
-    const gap = 20;                      // 小圆圆心超出大圆边缘的距离
+    const r = circle.offsetWidth / 2;   // Large circle radius
+    const gap = 20;                      // Distance of small-circle centres beyond the large circle's edge
 
     const allOrbs = [
       { el: document.querySelector('.hero-orb-1'), deg: 210 }, // D
       { el: document.querySelector('.hero-orb-3'), deg: 240 }, // I
-      { el: document.querySelector('.hero-orb-m'), deg: 270 }, // M 正下
+      { el: document.querySelector('.hero-orb-m'), deg: 270 }, // M directly below
       { el: document.querySelector('.hero-orb-5'), deg: 300 }, // E
       { el: document.querySelector('.hero-orb-4'), deg: 330 }, // S
     ];
@@ -1152,7 +1152,7 @@
     allOrbs.forEach(({ el, deg }) => {
       if (!el) return;
       const orbR = el.offsetWidth / 2;
-      const dist = r + orbR + gap;           // 大圆圆心 → 小圆圆心
+      const dist = r + orbR + gap;           // Large-circle centre -> small-circle centre
       const rad = (deg - 90) * Math.PI / 180;
       const cx = r + Math.cos(rad) * dist;
       const cy = r + Math.sin(rad) * dist;
@@ -1263,7 +1263,7 @@
     });
   });
 
-  // 自动轮播
+  // Auto-rotate
   let autoIndex = 0;
   let autoTimer = null;
   let paused = false;
@@ -1290,7 +1290,7 @@
     }, 3500);
   }
 
-  // 点击时暂停5秒后继续
+  // Pause for 5 seconds on click, then resume
   orbs.forEach(orb => {
     orb.addEventListener('click', () => {
       paused = true;
@@ -1299,7 +1299,7 @@
     });
   });
 
-  // 页面加载后1秒启动(无交互orb时跳过,避免报错)
+  // Start 1 second after page load (skipped when there is no interactive orb, to avoid errors)
   setTimeout(() => {
     if (orbs && orbs.length) {
       activateOrb(0);
@@ -1307,11 +1307,11 @@
     }
   }, 1000);
 
-  // 版权年份动态生成
+  // Generate copyright year dynamically
   document.getElementById('footer-copy').textContent =
     '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
 
-  // Hero 图片轮播
+  // Hero image carousel
   (function(){
     var slides = document.querySelectorAll('#hero-carousel .hc-slide');
     var dots = document.querySelectorAll('#hero-carousel .hc-dot');
@@ -1333,7 +1333,7 @@
     resetTimer();
   })();
 
-  // 真懒加载:滚动到接近视口才加载;轮播延后图也走这套
+  // True lazy loading: load only when scrolled near the viewport; deferred carousel images use the same logic
   (function () {
     var imgs = document.querySelectorAll('img[data-src]');
     if (!imgs.length) return;
@@ -1350,7 +1350,7 @@
         });
       }, { rootMargin: '300px' });
       imgs.forEach(function (img) { io.observe(img); });
-      // 首屏稳定后(2.5秒)把仍未加载的轮播图也加载,保证轮播能切到所有图
+      // After the first screen settles (2.5 s), load any remaining carousel images so the carousel can reach all of them
       setTimeout(function () {
         document.querySelectorAll('#hero-carousel img[data-src]').forEach(load);
       }, 2500);
@@ -1359,7 +1359,7 @@
     }
   })();
 
-  // ===== 表单必填校验(复制自 EduInst-diabetic) =====
+  // ===== Required-field validation (copied from EduInst-diabetic) =====
   (function () {
     const CONTACT_ENDPOINT = "https://velcura-contact-relay.newgww05.workers.dev";
     const form = document.getElementById('inquiry-form');
@@ -1430,5 +1430,29 @@
 
 </script>
 
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
+</script>
 </body>
 </html>

@@ -47,14 +47,14 @@
 <meta name="distribution" content="global">
 <meta name="target-audience" content="clinical nurses, wound care specialists, hospital procurement, distributors, OEM buyers, long-term care providers">
 
-<link rel="canonical" href="https://velcura.net/npwt-foam-dressing.html">
+<link rel="canonical" href="https://velcura.net/npwt-foam-dressing">
 
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="NPWT Foam Dressing Kit | Velcura Medical">
 <meta property="og:description" content="A complete negative pressure wound therapy kit that actively removes exudate and promotes granulation tissue formation — for chronic, diabetic and post-surgical wounds.">
 <meta property="og:image" content="https://img.velcura.net/负压引流产品-1024x905.png">
-<meta property="og:url" content="https://velcura.net/npwt-foam-dressing.html">
+<meta property="og:url" content="https://velcura.net/npwt-foam-dressing">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -69,8 +69,8 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velcura.net/" },
-    { "@type": "ListItem", "position": 2, "name": "Wound Care", "item": "https://velcura.net/wound-care.html" },
-    { "@type": "ListItem", "position": 3, "name": "NPWT Foam Dressing Kit", "item": "https://velcura.net/npwt-foam-dressing.html" }
+    { "@type": "ListItem", "position": 2, "name": "Wound Care", "item": "https://velcura.net/wound-care" },
+    { "@type": "ListItem", "position": 3, "name": "NPWT Foam Dressing Kit", "item": "https://velcura.net/npwt-foam-dressing" }
   ]
 }
 </script>
@@ -1634,5 +1634,29 @@
 
 </script>
 
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
+</script>
 </body>
 </html>

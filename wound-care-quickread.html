@@ -6,11 +6,19 @@ if (window.innerWidth <= 780) {
   window.location.replace('wound-care-mobile.html' + window.location.search);
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQSLVJTBFP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQSLVJTBFP');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wound Care Products | Velcura Medical</title>
 <meta name="description" content="Browse Velcura's advanced, traditional and surgical wound care products by category — foam, hydrocolloid, alginate, antimicrobial dressings and more.">
-<link rel="canonical" href="https://velcura.net/wound-care-quickread.html">
+<link rel="canonical" href="https://velcura.net/wound-care-quickread">
 <link rel="icon" type="image/png" href="https://img.velcura.net/logogpt40.png">
 <link rel="preconnect" href="https://img.velcura.net" crossorigin>
 <link rel="dns-prefetch" href="https://img.velcura.net">
@@ -163,7 +171,7 @@ if (window.innerWidth <= 780) {
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Knowledge Center</a>
   </nav>
-  <button class="topbar-back" onclick="goBackToEntry()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>返回上一页</button>
+  <button class="topbar-back" onclick="goBackToEntry()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back</button>
   <a class="topbar-switch" href="wound-care.html">Detailed Catalog View</a>
 </div>
 
@@ -961,5 +969,29 @@ document.addEventListener('touchmove', armMiniInquiryScrollClose, { passive: tru
   </form>
 </div>
 
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
+</script>
 </body>
 </html>

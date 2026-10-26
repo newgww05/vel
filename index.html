@@ -6,6 +6,14 @@ if (window.innerWidth <= 780) {
   window.location.replace('index-mobile.html' + window.location.search);
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQSLVJTBFP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQSLVJTBFP');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Velcura Medical | Professional Wound Care Dressings Manufacturer | China OEM/ODM</title>
@@ -16,7 +24,7 @@ if (window.innerWidth <= 780) {
 <meta name="geo.region" content="CN-44">
 <meta name="geo.placename" content="Shenzhen, Guangdong, China">
 <link rel="canonical" href="https://velcura.net/">
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://velcura.net/index-mobile.html">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://velcura.net/index-mobile">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -598,7 +606,7 @@ if (window.innerWidth <= 780) {
   <a href="velcura-3y.html" onclick="closeMobileMenu()">About Us</a>
   <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
   <a href="blog.html" onclick="closeMobileMenu()">Blog</a>
-  <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
+  <button class="nav-mobile-cta" onclick="closeMobileMenu(); document.getElementById('inquiry').scrollIntoView({behavior:'smooth'});">Get a Quote</button>
 </div>
 
 <!-- Global submenu (fixed position, click-controlled) -->
@@ -684,6 +692,119 @@ if (window.innerWidth <= 780) {
   <a class="m-wa-banner-btn" href="https://wa.me/85298567973" target="_blank">WhatsApp</a>
 </div>
 
+<!-- ============ Home inquiry form (quote / free samples) ============ -->
+<style>
+  .hq-section { background:#f6f6fb; padding:64px 20px; }
+  .hq-inner { max-width:760px; margin:0 auto; }
+  .hq-eyebrow { display:block; text-align:center; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#545395; font-weight:600; margin-bottom:10px; }
+  .hq-title { text-align:center; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,4vw,38px); color:#1f1f3a; margin:0 0 10px; }
+  .hq-sub { text-align:center; color:#55556e; font-size:15px; line-height:1.6; margin:0 auto 28px; max-width:600px; }
+  .hq-form { display:flex; flex-direction:column; gap:12px; }
+  .hq-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .hq-form input[type="text"], .hq-form input[type="email"], .hq-form input[type="tel"], .hq-form textarea {
+    width:100%; box-sizing:border-box; padding:13px 14px; border:1px solid #d6d6e6; border-radius:6px; background:#fff;
+    font:inherit; font-size:15px; color:#1f1f3a; }
+  .hq-form textarea { min-height:120px; resize:vertical; }
+  .hq-form input:focus, .hq-form textarea:focus { outline:none; border-color:#545395; box-shadow:0 0 0 3px rgba(84,83,149,0.15); }
+  .hq-form .invalid { border-color:#c0392b !important; }
+  .hq-check { display:flex; align-items:center; gap:10px; font-size:14px; color:#33334d; }
+  .hq-check input { width:18px; height:18px; accent-color:#545395; }
+  .hq-btn { align-self:center; margin-top:6px; padding:14px 40px; border:none; border-radius:999px; background:#545395; color:#fff;
+    font-size:15px; font-weight:600; letter-spacing:0.04em; cursor:pointer; transition:background 0.2s; }
+  .hq-btn:hover { background:#41407a; }
+  .hq-btn:disabled { opacity:0.6; cursor:default; }
+  .hq-note { text-align:center; font-size:13px; color:#77778f; margin-top:4px; }
+  .hq-hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .hq-form-msg { text-align:center; font-size:14px; min-height:20px; }
+  .hq-form-msg.error { color:#c0392b; }
+  .hq-form-msg.success { color:#1e8449; }
+  @media (max-width:640px) { .hq-row { grid-template-columns:1fr; } .hq-section { padding:48px 16px; } }
+</style>
+<section class="hq-section" id="inquiry">
+  <div class="hq-inner">
+    <span class="hq-eyebrow">Quote &amp; Free Samples</span>
+    <h2 class="hq-title">Tell Us What You Need</h2>
+    <p class="hq-sub">Products, quantities and destination market — we reply within one business day with pricing, MOQ and the documents for your market. Free samples for qualified business buyers.</p>
+    <form class="hq-form" id="homeInquiryForm" novalidate>
+      <div class="hq-row">
+        <input type="text" name="name" placeholder="Name *" required>
+        <input type="text" name="company" placeholder="Company">
+      </div>
+      <div class="hq-row">
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp *" required>
+      </div>
+      <textarea name="message" placeholder="Products, sizes, quantities and destination market... *" required></textarea>
+      <label class="hq-check"><input type="checkbox" name="samples" value="yes"> I would like free samples</label>
+      <input type="text" name="website" class="hq-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="hq-btn" type="submit">Send Inquiry</button>
+      <div class="hq-form-msg" id="homeInquiryMsg" role="alert" aria-live="polite"></div>
+      <div class="hq-note">Prefer to chat? <a href="https://wa.me/85298567973" target="_blank" rel="noopener" style="color:#545395;">WhatsApp us</a> or email <a href="mailto:info@velcura.net" style="color:#545395;">info@velcura.net</a>.</div>
+    </form>
+  </div>
+</section>
+<script>
+  // ===== Home inquiry form: required-field validation + submit to the contact relay Worker =====
+  (function () {
+    var CONTACT_ENDPOINT = "https://velcura-contact-relay.newgww05.workers.dev";
+    var form = document.getElementById('homeInquiryForm');
+    if (!form) return;
+    var msg = document.getElementById('homeInquiryMsg');
+    var btn = form.querySelector('button[type="submit"]');
+    var btnText = btn.textContent;
+    var required = form.querySelectorAll('[required]');
+    var emailField = form.querySelector('input[type="email"]');
+    required.forEach(function (el) { el.addEventListener('input', function () { el.classList.remove('invalid'); }); });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var firstInvalid = null;
+      required.forEach(function (el) {
+        var v = el.value.trim();
+        var bad = !v || (el === emailField && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+        el.classList.toggle('invalid', bad);
+        if (bad && !firstInvalid) firstInvalid = el;
+      });
+      if (firstInvalid) {
+        msg.className = 'hq-form-msg error';
+        msg.textContent = (firstInvalid === emailField && emailField.value.trim())
+          ? 'Please enter a valid email address.'
+          : 'Please complete all required fields (*) before submitting.';
+        firstInvalid.focus();
+        return;
+      }
+      var wantsSamples = form.querySelector('[name="samples"]').checked;
+      var payload = {
+        name: form.querySelector('[name="name"]').value.trim(),
+        company: form.querySelector('[name="company"]').value.trim(),
+        email: emailField.value.trim(),
+        phone: form.querySelector('[name="phone"]').value.trim(),
+        message: (wantsSamples ? '[Free samples requested]\n' : '') + form.querySelector('[name="message"]').value.trim(),
+        website: form.querySelector('[name="website"]').value,
+        sourcePage: location.href
+      };
+      btn.disabled = true; btn.textContent = 'Sending...';
+      msg.className = 'hq-form-msg'; msg.textContent = '';
+      fetch(CONTACT_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (r) {
+          if (r.ok && r.data && r.data.ok) {
+            msg.className = 'hq-form-msg success';
+            msg.textContent = 'Thank you. Your inquiry has been submitted — we will reply within one business day.';
+            form.reset();
+          } else {
+            msg.className = 'hq-form-msg error';
+            msg.textContent = 'Something went wrong. Please try again or email us directly.';
+          }
+        })
+        .catch(function () {
+          msg.className = 'hq-form-msg error';
+          msg.textContent = 'Network error. Please try again or email us directly.';
+        })
+        .finally(function () { btn.disabled = false; btn.textContent = btnText; });
+    });
+  })();
+</script>
+
 <footer class="footer" id="contact">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -719,7 +840,7 @@ if (window.innerWidth <= 780) {
   <a href="velcura-3y.html" onclick="closeMobileMenu()">About Us</a>
   <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
   <a href="blog.html" onclick="closeMobileMenu()">Blog</a>
-  <button class="nav-mobile-cta" onclick="closeMobileMenu()">Get a Quote</button>
+  <button class="nav-mobile-cta" onclick="closeMobileMenu(); document.getElementById('inquiry').scrollIntoView({behavior:'smooth'});">Get a Quote</button>
 </div>
 
 
@@ -941,6 +1062,30 @@ mobileCatsData.forEach((cat, i) => {
   }
 })();
 
+</script>
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
 </script>
 </body>
 </html>

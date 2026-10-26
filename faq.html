@@ -17,7 +17,7 @@
 <meta name="keywords" content="wound dressing manufacturer FAQ, wound care OEM ODM questions, medical dressing MOQ, custom wound dressing packaging, wound dressing sample policy, China wound dressing supplier lead time, Velcura Medical FAQ">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical Technology (Shenzhen) Co., Ltd.">
-<link rel="canonical" href="https://velcura.net/faq.html">
+<link rel="canonical" href="https://velcura.net/faq">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://img.velcura.net/og-share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://velcura.net/faq.html">
+<meta property="og:url" content="https://velcura.net/faq">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -549,9 +549,9 @@
   }
 
 
-  // ===== Required-field validation + 提交到 ZeptoMail 转发 Worker =====
+  // ===== Required-field validation + submit to the ZeptoMail relay Worker =====
   (function () {
-    // 部署 Worker 后,把下面这行替换成你的 Worker 地址
+    // After deploying the Worker, replace the line below with your Worker URL
     const CONTACT_ENDPOINT = "https://velcura-contact-relay.newgww05.workers.dev";
 
     const form = document.getElementById('inquiry-form');
@@ -621,5 +621,29 @@
   })();
 </script>
 
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
+</script>
 </body>
 </html>

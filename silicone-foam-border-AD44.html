@@ -17,14 +17,14 @@
 <meta name="keywords" content="silicone foam dressing, silicone adhesive border dressing, silver foam dressing, antimicrobial foam dressing, atraumatic dressing, pressure ulcer dressing, diabetic foot ulcer, exudate management, ionic silver dressing, Velcura">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical">
-<link rel="canonical" href="https://velcura.net/silicone-foam-border-AD44.html">
+<link rel="canonical" href="https://velcura.net/silicone-foam-border-AD44">
 
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="Foam Dressing Silicone Adhesive Border | Velcura Medical">
 <meta property="og:description" content="Five-layer silicone foam dressing with self-adhesive border and ionic silver — atraumatic, high-absorbency, antimicrobial. For moderate to heavily exuding chronic and acute wounds.">
 <meta property="og:image" content="https://img.velcura.net/银离子硅凝胶泡沫敷贴产品.png">
-<meta property="og:url" content="https://velcura.net/silicone-foam-border-AD44.html">
+<meta property="og:url" content="https://velcura.net/silicone-foam-border-AD44">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -1509,5 +1509,29 @@
 
 </script>
 
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
+</script>
 </body>
 </html>

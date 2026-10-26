@@ -4,7 +4,10 @@
 > 必须逐项完成以下5件事，不需要用户再次提醒。
 
 ## 1. 独立 canonical 标签
-<link rel="canonical" href="https://velcura.net/[文件名].html">
+<link rel="canonical" href="https://velcura.net/[文件名]">
+- **不带 .html**（2026-10-26 起）：Cloudflare 会把所有 .html 网址 307 跳转到不带后缀的网址，
+  所以 canonical、hreflang、og:url、JSON-LD 里的 url/@id/item、sitemap 的 <loc> 一律写不带 .html 的绝对网址；首页写 https://velcura.net/
+- 站内相对链接（href="faq.html"）可以保留 .html，方便本地预览
 
 ## 2. 结构化数据（JSON-LD）
 - Product schema：name、description、brand、manufacturer（含统一地址）、image
@@ -29,10 +32,14 @@
 - 页面内加一个链接指回 wound-care.html 对应分类（形成主题集群 topic cluster）
 - 如有相关产品/内容页，也互相加内链（如 pressure-injury-care.html、diabetic-foot-ulcer-care.html 等）
 
-## 6. 全英文化
+## 6. 全英文化（含代码注释和按钮文字；图片文件名也尽量用英文）
 - 页面可见文字、代码注释、meta信息、alt文本、结构化数据——全部使用英文，不夹杂中文
 - 禁止把地址、产品参数等信息翻译成中文
 - 完稿后全文扫描一遍中文字符（\u4e00-\u9fff），确认零残留
+
+## 7. GA 统计与询盘追踪
+- head 里放 gtag（G-LQSLVJTBFP），</body> 前放 "GA4 lead tracking" 脚本（从任一现有页面复制）
+- 表单提交成功时提示框 class 必须包含 "msg" 和 "success"，追踪才能识别
 
 ---
 

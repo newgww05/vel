@@ -11,8 +11,9 @@
     </script>
 
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://velcura.net/EduInst.html">
+<link rel="canonical" href="https://velcura.net/EduInst">
 <title>硅凝胶泡沫敷贴 VelSil | Velcura Medical</title>
 <meta name="description" content="VelSil 硅凝胶泡沫敷贴——专为中重度渗出创面设计,兼顾清创、消炎、抗菌与修复全流程管理,温和硅胶粘性减少换药疼痛与二次损伤,适用于压力性损伤、术后创面及慢性伤口护理。">
 <meta property="og:type" content="website">
@@ -21,7 +22,7 @@
 <meta property="og:image" content="https://img.velcura.net/og-share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://velcura.net/EduInst.html">
+<meta property="og:url" content="https://velcura.net/EduInst">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="zh_CN">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1224,5 +1225,29 @@
 
 </script>
 
+<script>
+  // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
+  (function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '', m = null;
+      if (/wa\.me|whatsapp/i.test(h)) m = 'whatsapp';
+      else if (/^mailto:/i.test(h)) m = 'email';
+      else if (/^tel:/i.test(h)) m = 'phone';
+      if (m) gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+    }, true);
+    // Every inquiry form sets its message box to "...msg success" after a successful submit
+    new MutationObserver(function (list) {
+      list.forEach(function (r) {
+        var now = String(r.target.className || ''), was = String(r.oldValue || '');
+        if (/msg/.test(now) && /\bsuccess\b/.test(now) && !/\bsuccess\b/.test(was)) {
+          gtag('event', 'generate_lead', { method: 'inquiry_form', page_path: location.pathname });
+        }
+      });
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true, subtree: true });
+  })();
+</script>
 </body>
 </html>
