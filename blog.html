@@ -10,11 +10,6 @@
       gtag('config', 'G-LQSLVJTBFP');
     </script>
 
-<script>
-if (window.innerWidth <= 780) {
-  window.location.replace('blog-mobile.html' + window.location.search);
-}
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Knowledge Center | Wound Care, Skin Protection & Clinical Insights | Velcura Medical</title>
@@ -443,11 +438,97 @@ if (window.innerWidth <= 780) {
   
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
   .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  /* ===== One page for desktop and phone (780px, the former redirect breakpoint) ===== */
+  @media (min-width:781px) { .m-only { display:none !important; } }
+  @media (max-width:780px) { .d-only { display:none !important; } }
+
+  /* ---------- Phone chrome (from the former blog-mobile.html) ---------- */
+  .topbar { display:flex; align-items:center; gap:10px; padding:14px 18px; border-bottom:1px solid #eef2f6; position:sticky; top:0; background:#fff; z-index:30; }
+  .topbar img { width:30px; height:30px; object-fit:contain; display:block; }
+  .topbar-brand { font-size:15px; font-weight:600; color:#0d3a5c; flex:1; letter-spacing:0.02em; }
+  .topbar-menu-btn { font-size:22px; color:#0d3a5c; padding:4px 8px; background:none; border:none; cursor:pointer; }
+  .menu-overlay { display:none; position:fixed; inset:0; background:rgba(13,58,92,0.4); z-index:90; }
+  .menu-overlay.open { display:block; }
+  .menu-panel { position:fixed; top:0; right:0; bottom:0; width:78%; max-width:300px; background:#fff; z-index:91; padding:20px; transform:translateX(100%); transition:transform .25s; display:flex; flex-direction:column; gap:4px; }
+  .menu-overlay.open .menu-panel { transform:translateX(0); }
+  .menu-close { align-self:flex-end; font-size:22px; color:#64748b; background:none; border:none; padding:6px; margin-bottom:10px; cursor:pointer; }
+  .menu-panel a { padding:14px 8px; font-size:15px; color:#0d3a5c; border-bottom:1px solid #f1f5f9; }
+  .m-wa-banner { display:flex; align-items:center; gap:12px; margin:8px 16px 8px; padding:16px; border-radius:16px; background:#f0fdf4; border:1px solid #bbf7d0; }
+  .m-wa-banner-text { flex:1; font-size:13px; color:#166534; line-height:1.4; }
+  .m-wa-banner-btn { flex:0 0 auto; padding:9px 16px; border-radius:999px; background:#25D366; color:#fff; font-size:12.5px; font-weight:600; }
+  /* display / letter-spacing reset: the desktop rule `footer { display:flex; ... }` also matches this element */
+  footer.mob-footer { display:block; background:#545395; padding:40px 24px 32px; margin-top:24px; letter-spacing:normal; font-size:inherit; }
+  .mob-footer-brand { text-align:center; color:#fff; font-size:14px; letter-spacing:0.06em; margin-bottom:16px; }
+  .mob-footer-contacts { display:flex; flex-direction:column; gap:10px; margin-bottom:18px; }
+  .mob-footer-contact-item { display:flex; align-items:center; gap:10px; color:#fff; font-size:13px; justify-content:center; }
+  .mob-footer-divider { border:none; border-top:1px solid rgba(255,255,255,0.2); margin:16px 0; }
+  .mob-footer-copy { text-align:center; color:rgba(255,255,255,0.6); font-size:11px; }
+
+  /* ---------- Phone layout of the shared content (matches the former blog-mobile.html) ---------- */
+  @media (max-width:780px) {
+    * { -webkit-tap-highlight-color:transparent; }
+    body { line-height:normal; -webkit-font-smoothing:auto; }
+
+    .hero-img-wrap { width:100%; margin-top:0; line-height:0; aspect-ratio:3 / 2; background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 50%,#bae6fd 100%); }
+    .hero-img-wrap img { max-height:none; }
+
+    .manifesto { padding:2.2rem 20px 2rem; }
+    .manifesto .container { padding:0; }
+    .manifesto-line { width:44px; background:var(--c-line); opacity:1; }
+    .manifesto-line + .manifesto-text, .manifesto-text + .manifesto-line { margin-top:1.2rem; }
+    .manifesto-text { font-size:1.05rem; font-weight:400; color:var(--c-ink2); line-height:1.75; max-width:none; letter-spacing:normal; }
+    .manifesto-text strong { color:var(--c-ink); font-weight:500; letter-spacing:normal; }
+
+    /* Pillar headings */
+    .topic-section, .topic-section.alt { padding:0; background:none; }
+    .topic-banner { width:auto; left:auto; transform:none; background:none; padding:22px 20px 4px; margin:0; }
+    .topic-banner-inner { max-width:none; }
+    .topic-banner-tag { display:flex; font-size:10.5px; font-weight:400; letter-spacing:0.18em; color:var(--c-gold); gap:7px; margin-bottom:4px; }
+    .topic-banner-tag span { width:14px; background:var(--c-gold); }
+    .topic-banner h2 { font-size:1.35rem; font-weight:500; color:var(--c-ink); line-height:normal; letter-spacing:normal; text-align:left; }
+    .topic-banner h2 em { opacity:0.75; font-size:0.85em; }
+
+    /* Article cards: one column, icon left, text right */
+    .topic-section .container { padding:0; }
+    .article-grid { display:flex; flex-direction:column; gap:12px; background:none; margin-top:0; padding:10px 16px 6px; }
+    .article-card { display:grid; grid-template-columns:50px 1fr; column-gap:14px; align-items:start; padding:14px; border-radius:14px; border:1px solid var(--c-line); cursor:auto; transition:none; }
+    .article-card, .article-card:hover, .article-card.article-coming, .article-card.article-coming:hover { background:#fbfaf8; }
+    .article-card.article-live, .article-card.article-live:hover { background:#fff; border-left:3px solid var(--c-teal); }
+    .article-card:active, .article-card.article-live:active { background:#f0f9f8; }
+    .article-card > :not(.topic-icon) { grid-column:2; }
+    .article-card .topic-icon, .article-card:hover .topic-icon { grid-row:1 / span 4; width:50px; height:50px; margin:0; animation:none; scale:1;
+      box-shadow:0 4px 10px rgba(45,110,106,0.14), inset 0 1px 3px rgba(255,255,255,0.95); }
+    .article-card .topic-icon svg { width:22px; height:22px; }
+    .article-card .article-meta, .article-card:hover .article-meta { font-size:10.5px; letter-spacing:0.1em; color:var(--c-ink3); margin-bottom:4px; line-height:normal; }
+    .article-card h3, .article-card:hover h3 { font-size:1.08rem; font-weight:500; color:var(--c-ink); line-height:1.32; letter-spacing:normal; margin-bottom:0; }
+    .article-card p, .article-card:hover p { font-size:12.5px; color:var(--c-ink2); line-height:1.55; margin-top:12.5px;
+      display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .article-card .article-read, .article-card:hover .article-read { font-size:10.5px; letter-spacing:0.1em; margin-top:12.5px; font-weight:600; line-height:normal; color:var(--c-gold); }
+    .article-card.article-coming .article-read, .article-card.article-coming:hover .article-read { color:var(--c-ink3); font-style:italic; font-weight:400; text-transform:none; letter-spacing:0.04em; }
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<!-- ===== Phone top bar + slide-out menu ===== -->
+<div class="topbar m-only">
+  <img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical">
+  <div class="topbar-brand">VELCURA MEDICAL</div>
+  <button class="topbar-menu-btn" aria-label="Menu" onclick="document.getElementById('menuOverlay').classList.add('open')">&#9776;</button>
+</div>
+
+<div class="menu-overlay m-only" id="menuOverlay">
+  <div class="menu-panel">
+    <button class="menu-close" onclick="document.getElementById('menuOverlay').classList.remove('open')">&#10005;</button>
+    <a href="index.html">Home</a>
+    <a href="wound-care.html">Wound Care Products</a>
+    <a href="velcura-3y.html">About Us</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</div>
+
+<!-- ===== Desktop navigation ===== -->
+<nav class="d-only">
   <a class="nav-logo" href="index.html">
     <img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" style="height:36px;width:auto;display:block;">
     Velcura <span>Medical</span>
@@ -468,10 +549,13 @@ if (window.innerWidth <= 780) {
   </div>
 </nav>
 
-<!-- ============ Hero banner image (1500 x 500) ============ -->
+<!-- ============ Hero banner: 1500x500 on desktop, 750x500 on phones ============ -->
 <div class="hero-img-wrap">
   <h1 class="sr-only">Velcura Knowledge Center — Wound Care, Skin Protection &amp; Clinical Insights</h1>
-  <img src="https://img.velcura.net/knowledgecenter.webp" alt="Velcura Knowledge Center — clinical wound care and skin protection knowledge" width="1500" height="500">
+  <picture>
+    <source media="(max-width: 780px)" srcset="https://img.velcura.net/knowledgecenter-m.webp" width="750" height="500">
+    <img src="https://img.velcura.net/knowledgecenter.webp" alt="Velcura Knowledge Center — clinical wound care and skin protection knowledge" width="1500" height="500" fetchpriority="high">
+  </picture>
 </div>
 
 <!-- ============ Manifesto (high-impact intro) ============ -->
@@ -727,7 +811,24 @@ if (window.innerWidth <= 780) {
   </div>
 </section>
 
-<section class="contact-section" id="contact">
+<!-- ===== Phone: WhatsApp banner + footer ===== -->
+<div class="m-wa-banner m-only">
+  <div class="m-wa-banner-text">Have a question about a specific article or product? Chat with us directly.</div>
+  <a class="m-wa-banner-btn" href="https://wa.me/85298567973" target="_blank">WhatsApp</a>
+</div>
+
+<footer class="mob-footer m-only">
+  <div class="mob-footer-brand">VELCURA MEDICAL</div>
+  <div class="mob-footer-contacts">
+    <a class="mob-footer-contact-item" href="mailto:info@velcura.net">✉️ info@velcura.net</a>
+    <a class="mob-footer-contact-item" href="tel:+85298567973">📞 +852 9856 7973</a>
+    <a class="mob-footer-contact-item" href="https://wa.me/85298567973" target="_blank">💬 WhatsApp</a>
+  </div>
+  <hr class="mob-footer-divider">
+  <div class="mob-footer-copy">© 2026 Velcura Medical. All rights reserved.</div>
+</footer>
+
+<section class="contact-section d-only" id="contact">
   <div class="container">
     <div class="contact-grid">
       <div>
@@ -778,11 +879,11 @@ if (window.innerWidth <= 780) {
   </div>
 </section>
 
-<div class="disclaimer">
+<div class="disclaimer d-only">
   This page is intended for clinical education and product information purposes; it does not constitute medical advice or a substitute for individualised clinical judgement. Incontinence assessment, IAD staging and the choice between continence products and active wound dressings should be performed by qualified healthcare professionals in accordance with current continence-care and IAD best-practice guidelines, and local regulations. Velcura Medical is a manufacturer of washable reusable underpads and wound care dressings; specific product registrations, sizes and indications may vary by country.
 </div>
 
-<footer>
+<footer class="d-only">
   <div class="footer-logo">Velcura <span>Medical</span></div>
   <div class="footer-copy" id="footer-copy"></div>
   <a class="footer-link" href="https://velcura.net">velcura.net ↗</a>
@@ -790,7 +891,7 @@ if (window.innerWidth <= 780) {
 
 <script>
   // Footer year
-  document.getElementById('footer-copy').textContent = '© 2025 Velcura Medical. All Rights Reserved.';
+  document.getElementById('footer-copy').textContent = '© ' + new Date().getFullYear() + ' Velcura Medical. All Rights Reserved.';
 
   // ===== Form required validation:Empty fields blocked =====
   (function () {
