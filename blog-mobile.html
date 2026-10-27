@@ -40,8 +40,8 @@
   .menu-close { align-self:flex-end; font-size:22px; color:#64748b; background:none; border:none; padding:6px; margin-bottom:10px; }
   .menu-panel a { padding:14px 8px; font-size:15px; color:#0d3a5c; border-bottom:1px solid #f1f5f9; }
 
-  /* Hero banner — taller on mobile, no cropping (letterboxed on matching gradient) */
-  .hero-img-wrap { width:100%; line-height:0; overflow:hidden; min-height:230px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 50%,#bae6fd 100%); }
+  /* Hero banner — box follows the image's 3:1 ratio exactly (no letterbox bands, no cropping) */
+  .hero-img-wrap { width:100%; line-height:0; overflow:hidden; aspect-ratio:3 / 1; background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 50%,#bae6fd 100%); }
   .hero-img-wrap img { width:100%; height:auto; display:block; }
 
   /* Manifesto (kept, as requested) */
