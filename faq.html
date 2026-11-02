@@ -53,7 +53,7 @@
       "name": "Do you offer OEM and ODM services for wound care products?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Velcura Medical is a full-service OEM and ODM partner. OEM service includes manufacturing under your brand with our existing product specifications, custom packaging, custom labelling and your brand identity. ODM service includes co-development of new formulations, sizes or product configurations tailored to your market — from concept and prototyping through clinical-grade production. We work with hospital procurement groups, distributors and private-label brands worldwide."
+        "text": "Yes. Velcura Medical is a full-service OEM and ODM partner. OEM service includes manufacturing under your brand with our existing product specifications, custom packaging, custom labeling and your brand identity. ODM service includes co-development of new formulations, sizes or product configurations tailored to your market — from concept and prototyping through clinical-grade production. We work with hospital procurement groups, distributors and private-label brands worldwide."
       }
     },
     {
@@ -61,15 +61,15 @@
       "name": "What is your sample policy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Free product samples are provided for qualified business buyers — typically up to 3-5 pieces per requested SKU. Shipping costs are paid by the buyer (we accept your courier account or prepayment). Samples are dispatched within 3-5 working days of confirmation. For custom OEM samples (your branding, custom packaging), tooling fees and minimum sample quantities apply. Contact info@velcura.net with your business profile and product list."
+        "text": "Free product samples are provided for qualified business buyers — typically 3–5 pieces per SKU. Shipping costs are paid by the buyer (we accept your courier account or prepayment). Samples are dispatched within 3-5 working days of confirmation. For custom OEM samples (your branding, custom packaging), tooling fees and minimum sample quantities apply. Contact info@velcura.net with your business profile and product list."
       }
     },
     {
       "@type": "Question",
-      "name": "Can packaging and labelling be customised?",
+      "name": "Can packaging and labeling be customized?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — Velcura offers full custom packaging and labelling services. Options include custom box and pouch design, multi-language labelling (English, Spanish, French, Arabic, Russian and others), barcode and lot-number printing, custom carton specifications and shipping marks. Regulatory text and symbols are formatted to match your destination market requirements. Standard turnaround for custom packaging design proofs is 7-10 working days from artwork confirmation."
+        "text": "Yes — Velcura offers full custom packaging and labeling services. Options include custom box and pouch design, multi-language labeling (English, Spanish, French, Arabic, Russian and others), barcode and lot-number printing, custom carton specifications and shipping marks. Regulatory text and symbols are formatted to match your destination market requirements. Standard turnaround for custom packaging design proofs is 7-10 working days from artwork confirmation."
       }
     },
     {
@@ -201,11 +201,11 @@
     .faq-a { font-size:14px; }
   }
 
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -265,7 +265,7 @@
   }
   /* AD/TD/SC triggers (cloned from the homepage layout) */
   .nav-links .has-dropdown .dropdown-trigger {
-    font-size: 16.45px !important; font-weight: 500; letter-spacing: 0.10em;
+    font-size: 15px !important; font-weight: 500; letter-spacing: 0.06em; white-space: nowrap;
   }
   /* Shift AD/TD/SC down so the top of AD lines up with the bottom of Products */
   .nav-links .has-dropdown { margin-top: 20px; }
@@ -309,6 +309,17 @@
     .contact-grid > div:last-child { margin-left:0; }
   }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1599 */
+  @media (max-width:1599px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -319,7 +330,7 @@
     <li><a href="index.html">Home</a></li>
     <li><span class="nav-products-disabled">Products</span></li>
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">AD ▾</a>
+      <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
       <div class="fp-menu">
         <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
         <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -348,7 +359,7 @@
       </div>
     </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -363,7 +374,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">SC ▾</a>
+      <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
       <div class="fp-menu">
         <a href="incise-drape.html" class="fp-item">Incise Drape</a>
         <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -408,7 +419,7 @@
       <span class="faq-q-toggle">+</span>
     </div>
     <div class="faq-a">
-      Yes. Velcura Medical is a full-service OEM and ODM partner. <strong>OEM service</strong> includes manufacturing under your brand with our existing product specifications, custom packaging, custom labelling and your brand identity. <strong>ODM service</strong> includes co-development of new formulations, sizes or product configurations tailored to your market — from concept and prototyping through clinical-grade production. We work with hospital procurement groups, distributors and private-label brands worldwide.
+      Yes. Velcura Medical is a full-service OEM and ODM partner. <strong>OEM service</strong> includes manufacturing under your brand with our existing product specifications, custom packaging, custom labeling and your brand identity. <strong>ODM service</strong> includes co-development of new formulations, sizes or product configurations tailored to your market — from concept and prototyping through clinical-grade production. We work with hospital procurement groups, distributors and private-label brands worldwide.
     </div>
   </article>
 
@@ -418,17 +429,17 @@
       <span class="faq-q-toggle">+</span>
     </div>
     <div class="faq-a">
-      Free product samples are provided for qualified business buyers — typically <strong>up to 3-5 pieces per requested SKU</strong>. Shipping costs are paid by the buyer (we accept your courier account or prepayment). Samples are dispatched within 3-5 working days of confirmation. For custom OEM samples (your branding, custom packaging), tooling fees and minimum sample quantities apply. Contact <a href="mailto:info@velcura.net" style="color:var(--sky-600); text-decoration:none;">info@velcura.net</a> with your business profile and product list.
+      Free product samples are provided for qualified business buyers — typically <strong>3–5 pieces per SKU</strong>. Shipping costs are paid by the buyer (we accept your courier account or prepayment). Samples are dispatched within 3-5 working days of confirmation. For custom OEM samples (your branding, custom packaging), tooling fees and minimum sample quantities apply. Contact <a href="mailto:info@velcura.net" style="color:var(--sky-600); text-decoration:none;">info@velcura.net</a> with your business profile and product list.
     </div>
   </article>
 
   <article class="faq-item" id="packaging">
     <div class="faq-q">
-      <span>Can packaging and labelling be customised?</span>
+      <span>Can packaging and labeling be customized?</span>
       <span class="faq-q-toggle">+</span>
     </div>
     <div class="faq-a">
-      Yes — Velcura offers <strong>full custom packaging and labelling services</strong>. Options include custom box and pouch design, multi-language labelling (English, Spanish, French, Arabic, Russian and others), barcode and lot-number printing, custom carton specifications and shipping marks. Regulatory text and symbols are formatted to match your destination market requirements. Standard turnaround for custom packaging design proofs is <strong>7-10 working days</strong> from artwork confirmation.
+      Yes — Velcura offers <strong>full custom packaging and labeling services</strong>. Options include custom box and pouch design, multi-language labeling (English, Spanish, French, Arabic, Russian and others), barcode and lot-number printing, custom carton specifications and shipping marks. Regulatory text and symbols are formatted to match your destination market requirements. Standard turnaround for custom packaging design proofs is <strong>7-10 working days</strong> from artwork confirmation.
     </div>
   </article>
 
@@ -502,7 +513,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>

@@ -64,7 +64,7 @@
     "https://img.velcura.net/I_V%E7%95%99%E7%BD%AE%E9%92%88%E8%B4%B4_01.jpg",
     "https://img.velcura.net/I_V%E7%95%99%E7%BD%AE%E9%92%88%E8%B4%B4_02.jpg"
   ],
-  "description": "Frame-style, sterile, transparent polyurethane film dressing for the securement of peripheral IV catheters, central venous catheters, arterial lines and other vascular access devices. The transparent window allows continuous visual monitoring of the catheter insertion site without removing the dressing — supporting CDC/HICPAC best practice for catheter-related bloodstream infection prevention. The waterproof, breathable PU film acts as a barrier to liquids, bacteria and viruses while allowing moisture vapour transmission to maintain skin integrity.",
+  "description": "Frame-style, sterile, transparent polyurethane film dressing for the securement of peripheral IV catheters, central venous catheters, arterial lines and other vascular access devices. The transparent window allows continuous visual monitoring of the catheter insertion site without removing the dressing — supporting CDC/HICPAC best practice for catheter-related bloodstream infection prevention. The waterproof, breathable PU film acts as a barrier to liquids, bacteria and viruses while allowing moisture vapor transmission to maintain skin integrity.",
   "brand": {
     "@type": "Brand",
     "name": "Velcura Medical",
@@ -512,9 +512,9 @@
   }
 
   /* AD/TD/SC font-size */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -588,6 +588,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -596,7 +607,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">AD ▾</a>
+      <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
       <div class="fp-menu">
         <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
         <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -625,7 +636,7 @@
       </div>
     </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <span class="fp-item fp-item-current">Transparent Film I.V. Dressing</span>
@@ -640,7 +651,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">SC ▾</a>
+      <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
       <div class="fp-menu">
         <a href="incise-drape.html" class="fp-item">Incise Drape</a>
         <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -715,7 +726,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -733,7 +744,7 @@
           Velcura Transparent Film I.V. Dressing is a frame-style, sterile, semi-permeable polyurethane film designed specifically for vascular access securement — peripheral IV catheters, central venous catheters, arterial lines, PICC and epidural lines. The defining property is one that opaque non-woven dressings simply cannot offer: the catheter insertion site remains under a clear, sealed window for the entire wear interval. Clinicians inspect for redness, swelling, leakage and migration without lifting a single edge, supporting CDC/HICPAC and INS catheter-care recommendations.
         </p>
         <p style="margin-top: 1.2rem;">
-          The PU film itself is a remarkable semi-permeable membrane: in-vitro studies show transparent film dressings can act as a viral barrier down to 27 nm (the size of HCV) while remaining intact and unleaked. At the same time, water vapour and oxygen transit freely outward — patients can shower, exercise and continue daily life without macerating the skin underneath. A picture-frame delivery carrier eliminates the wrinkling, self-sticking and re-positioning that plagued early adhesive films, allowing accurate one-handed placement in seconds.
+          The PU film itself is a remarkable semi-permeable membrane: in-vitro studies show transparent film dressings can act as a viral barrier down to 27 nm (the size of HCV) while remaining intact and unleaked. At the same time, water vapor and oxygen transit freely outward — patients can shower, exercise and continue daily life without macerating the skin underneath. A picture-frame delivery carrier eliminates the wrinkling, self-sticking and re-positioning that plagued early adhesive films, allowing accurate one-handed placement in seconds.
         </p>
       </div>
       <div class="feature-cards">
@@ -750,12 +761,12 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 2.8v5.6c0 4.6-3.4 7.7-7.5 8.8-4.1-1.1-7.5-4.2-7.5-8.8V5.8L12 3Z"/><path d="M9 11.5l2 2 4-4.5"/></svg></span>
           <h3>Waterproof Viral &amp; Bacterial Barrier</h3>
-          <p>Semi-permeable polyurethane is impermeable to liquids, bacteria and viruses (in-vitro to 27 nm — the scale of hepatitis C) while staying breathable to water vapour and oxygen. Patients shower freely; pathogens stay out; the underlying skin doesn't macerate.</p>
+          <p>Semi-permeable polyurethane is impermeable to liquids, bacteria and viruses (in-vitro to 27 nm — the scale of hepatitis C) while staying breathable to water vapor and oxygen. Patients shower freely; pathogens stay out; the underlying skin doesn't macerate.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M5 12c2-4 5-6 7-6s5 2 7 6"/><path d="M5 12c2 4 5 6 7 6s5-2 7-6"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg></span>
           <h3>Thin, Conformable, Skin-Kind</h3>
-          <p>A near-skin-thin profile flexes with bony, hinged or high-movement sites (jugular, antecubital, sacral, paediatric scalp). The hypoallergenic, latex-free acrylic adhesive holds securely up to 7 days yet lifts cleanly — minimising medical-adhesive-related skin injury at change.</p>
+          <p>A near-skin-thin profile flexes with bony, hinged or high-movement sites (jugular, antecubital, sacral, pediatric scalp). The hypoallergenic, latex-free acrylic adhesive holds securely up to 7 days yet lifts cleanly — minimizing medical-adhesive-related skin injury at change.</p>
         </div>
       </div>
     </div>
@@ -773,7 +784,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -821,7 +832,7 @@
           </div>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Do not use on infected or heavily exuding wounds — the occlusive seal retains fluid and may promote anaerobic or fungal growth.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Do not stretch the film during application — tension creates blistering, edge lift and skin shear.</li>
@@ -881,7 +892,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>

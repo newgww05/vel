@@ -13,8 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biocellulose Dressing | Transparent Bacterial Nanocellulose Wound Dressing | Velcura Medical</title>
-<meta name="description" content="Velcura Biocellulose Dressing — a transparent, bacterially cultured nanocellulose dressing with over 90% water content. Conforms to delicate contours, allows wound monitoring without removal, and is biocompatible for burns, donor sites and paediatric wounds.">
-<meta name="keywords" content="biocellulose wound dressing, bacterial cellulose burn dressing, biocellulose venous leg ulcer dressing, transparent wound dressing, nanocellulose dressing manufacturer, donor site dressing, paediatric wound dressing, Velcura Medical">
+<meta name="description" content="Velcura Biocellulose Dressing — a transparent, bacterially cultured nanocellulose dressing with over 90% water content. Conforms to delicate contours, allows wound monitoring without removal, and is biocompatible for burns, donor sites and pediatric wounds.">
+<meta name="keywords" content="biocellulose wound dressing, bacterial cellulose burn dressing, biocellulose venous leg ulcer dressing, transparent wound dressing, nanocellulose dressing manufacturer, donor site dressing, pediatric wound dressing, Velcura Medical">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -99,22 +99,22 @@
     {
       "@type": "Question",
       "name": "What is a biocellulose wound dressing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A biocellulose dressing is made from bacterial nanocellulose — a fine cellulose fibre network produced through bacterial fermentation rather than synthesised chemically. The resulting material is highly conformable, holds over 90% water content, and closely resembles the structure of the body's own extracellular matrix." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A biocellulose dressing is made from bacterial nanocellulose — a fine cellulose fiber network produced through bacterial fermentation rather than synthesized chemically. The resulting material is highly conformable, holds over 90% water content, and closely resembles the structure of the body's own extracellular matrix." }
     },
     {
       "@type": "Question",
       "name": "Why is biocellulose dressing transparent?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The nanocellulose fibre network is fine enough to remain translucent even when fully hydrated. This lets clinicians visually monitor a wound's healing progress through the dressing itself, reducing how often the dressing needs to be lifted or replaced purely for inspection." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The nanocellulose fiber network is fine enough to remain translucent even when fully hydrated. This lets clinicians visually monitor a wound's healing progress through the dressing itself, reducing how often the dressing needs to be lifted or replaced purely for inspection." }
     },
     {
       "@type": "Question",
       "name": "Is biocellulose dressing the same as hydrogel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Both retain high water content, but hydrogel is a synthetic cross-linked polymer, while biocellulose is a naturally grown nanofibre network produced by bacteria. Biocellulose typically offers greater structural integrity and conformability on delicate, contoured or moving areas such as the face and joints." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Both retain high water content, but hydrogel is a synthetic cross-linked polymer, while biocellulose is a naturally grown nanofiber network produced by bacteria. Biocellulose typically offers greater structural integrity and conformability on delicate, contoured or moving areas such as the face and joints." }
     },
     {
       "@type": "Question",
       "name": "What wounds is biocellulose dressing used for?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Biocellulose dressing is commonly used for burns and scalds, skin graft donor sites, radiation skin reactions, facial wounds and paediatric wounds — situations where gentleness, biocompatibility and moisture retention matter more than high absorbency." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Biocellulose dressing is commonly used for burns and scalds, skin graft donor sites, radiation skin reactions, facial wounds and pediatric wounds — situations where gentleness, biocompatibility and moisture retention matter more than high absorbency." }
     }
   ]
 }
@@ -801,11 +801,11 @@
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
   }
 
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown menu ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -890,6 +890,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -898,7 +909,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">AD ▾</a>
+        <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
           <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -927,7 +938,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -942,7 +953,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">SC ▾</a>
+        <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
         <div class="fp-menu">
           <a href="incise-drape.html" class="fp-item">Incise Drape</a>
           <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -982,7 +993,7 @@
       <div class="hi-item">
         <svg class="hi-ico" viewBox="0 0 24 24"><path d="M3 10c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3"/><path d="M3 15c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3"/></svg>
         <div class="hi-body">
-          <div class="hi-title">Nano-Fibre Conformability</div>
+          <div class="hi-title">Nano-Fiber Conformability</div>
           <div class="hi-sub">Adapts to Delicate Contours</div>
         </div>
       </div>
@@ -1017,7 +1028,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">Grown</div>
-    <div class="stat-label">Bacterially cultured, not synthesised</div>
+    <div class="stat-label">Bacterially cultured, not synthesized</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">3 days</div>
@@ -1025,7 +1036,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -1041,17 +1052,17 @@
     <div class="features-grid">
       <div class="features-intro">
         <p>
-          Biocellulose is produced by a specific strain of bacteria (Komagataeibacter species) through a fermentation process — the microorganisms themselves weave cellulose into an ultra-fine nanofibre network, a material more commonly associated with a laboratory culture than a factory production line. The result is a structure remarkably similar to the human extracellular matrix, which helps explain why it is so well tolerated even on the most fragile skin.
+          Biocellulose is produced by a specific strain of bacteria (Komagataeibacter species) through a fermentation process — the microorganisms themselves weave cellulose into an ultra-fine nanofiber network, a material more commonly associated with a laboratory culture than a factory production line. The result is a structure remarkably similar to the human extracellular matrix, which helps explain why it is so well tolerated even on the most fragile skin.
         </p>
         <p style="margin-top: 1.2rem;">
-          Unlike opaque foam or gauze dressings, biocellulose remains translucent even when fully hydrated, letting clinicians visually track healing progress without disturbing the wound bed at every check. Combined with a water content exceeding 90%, it delivers continuous moisture to burns, donor sites and paediatric wounds — situations where gentleness matters as much as performance.
+          Unlike opaque foam or gauze dressings, biocellulose remains translucent even when fully hydrated, letting clinicians visually track healing progress without disturbing the wound bed at every check. Combined with a water content exceeding 90%, it delivers continuous moisture to burns, donor sites and pediatric wounds — situations where gentleness matters as much as performance.
         </p>
       </div>
       <div class="feature-cards">
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 10c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3"/><path d="M3 15c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3"/></svg></span>
-          <h3>Nano-Fibre Network</h3>
-          <p>Bacterial nanocellulose self-assembles into a dense fibre mesh that closely conforms to wound contours — including difficult curves on the face and joints — without folding, gapping or requiring cutting to shape.</p>
+          <h3>Nano-Fiber Network</h3>
+          <p>Bacterial nanocellulose self-assembles into a dense fiber mesh that closely conforms to wound contours — including difficult curves on the face and joints — without folding, gapping or requiring cutting to shape.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
@@ -1066,7 +1077,7 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 4 20 12 12 20 4 12Z"/></svg></span>
           <h3>Biocompatible &amp; Non-Allergenic</h3>
-          <p>Free from synthetic polymers and common sensitisers, making it a suitable choice for paediatric wounds, facial wounds, and patients with sensitive or reactive skin.</p>
+          <p>Free from synthetic polymers and common sensitizers, making it a suitable choice for pediatric wounds, facial wounds, and patients with sensitive or reactive skin.</p>
         </div>
       </div>
     </div>
@@ -1084,7 +1095,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -1114,15 +1125,15 @@
           <span class="app-tag">Donor Sites</span>
           <span class="app-tag">Radiation Skin Reactions</span>
           <span class="app-tag">Facial Wounds</span>
-          <span class="app-tag">Paediatric Wounds</span>
+          <span class="app-tag">Pediatric Wounds</span>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Non-adhesive &mdash; requires a secondary dressing or retention method for fixation in most applications.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not intended for heavily exuding wounds without an additional absorbent secondary dressing.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>For infected wounds, use only under the guidance of a healthcare professional alongside appropriate antimicrobial management.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue use and consult a healthcare professional if any adverse reaction occurs.</li>
           </ul>
         </div>
       </div>
@@ -1144,7 +1155,7 @@
           </div>
           <div class="bc-flip-face bc-flip-back">
             <img src="https://img.velcura.net/生物纤维素敷料-01.png" alt="Biocellulose Dressing — texture detail" loading="lazy">
-            <div class="bc-flip-caption"><div class="bc-name">Nanofibre Texture</div><div class="bc-sub">Detail View</div></div>
+            <div class="bc-flip-caption"><div class="bc-name">Nanofiber Texture</div><div class="bc-sub">Detail View</div></div>
           </div>
         </div>
       </div>
@@ -1171,8 +1182,8 @@
             <div class="bc-flip-caption"><div class="bc-name">Burn &amp; Donor Site Care</div><div class="bc-sub">Clinical Application</div></div>
           </div>
           <div class="bc-flip-face bc-flip-back">
-            <img src="https://img.velcura.net/生物纤维素敷料-01.png" alt="Biocellulose Dressing — paediatric use" loading="lazy">
-            <div class="bc-flip-caption"><div class="bc-name">Paediatric &amp; Facial Wounds</div><div class="bc-sub">Gentle Application</div></div>
+            <img src="https://img.velcura.net/生物纤维素敷料-01.png" alt="Biocellulose Dressing — pediatric use" loading="lazy">
+            <div class="bc-flip-caption"><div class="bc-name">Pediatric &amp; Facial Wounds</div><div class="bc-sub">Gentle Application</div></div>
           </div>
         </div>
       </div>
@@ -1206,7 +1217,6 @@
                 <li><strong>Adhesion</strong> &mdash; Non-adhesive</li>
                 <li><strong>Wear time</strong> &mdash; Up to 3 days</li>
               </ul>
-              <div style="font-size:0.66rem; color:var(--c-ink3); margin-top:0.9rem; line-height:1.5;">Outer packaging and carton photography to be added.</div>
             </div>
           </div>
         </div>
@@ -1246,19 +1256,19 @@
     <div style="max-width:860px; margin-top:2rem;">
       <div style="border-bottom:0.5px solid var(--c-line); padding:1.6rem 0;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.28rem; font-weight:500; margin-bottom:0.7rem;">What is a biocellulose wound dressing?</div>
-        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">A biocellulose dressing is made from bacterial nanocellulose &mdash; a fine cellulose fibre network produced through bacterial fermentation rather than synthesised chemically. The resulting material is highly conformable, holds over 90% water content, and closely resembles the structure of the body's own extracellular matrix.</div>
+        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">A biocellulose dressing is made from bacterial nanocellulose &mdash; a fine cellulose fiber network produced through bacterial fermentation rather than synthesized chemically. The resulting material is highly conformable, holds over 90% water content, and closely resembles the structure of the body's own extracellular matrix.</div>
       </div>
       <div style="border-bottom:0.5px solid var(--c-line); padding:1.6rem 0;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.28rem; font-weight:500; margin-bottom:0.7rem;">Why is biocellulose dressing transparent?</div>
-        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">The nanocellulose fibre network is fine enough to remain translucent even when fully hydrated. This lets clinicians visually monitor a wound's healing progress through the dressing itself, reducing how often it needs to be lifted purely for inspection.</div>
+        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">The nanocellulose fiber network is fine enough to remain translucent even when fully hydrated. This lets clinicians visually monitor a wound's healing progress through the dressing itself, reducing how often it needs to be lifted purely for inspection.</div>
       </div>
       <div style="border-bottom:0.5px solid var(--c-line); padding:1.6rem 0;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.28rem; font-weight:500; margin-bottom:0.7rem;">Is biocellulose dressing the same as hydrogel?</div>
-        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">No. Both retain high water content, but hydrogel is a synthetic cross-linked polymer, while biocellulose is a naturally grown nanofibre network produced by bacteria. Biocellulose typically offers greater structural integrity and conformability on delicate, contoured or moving areas such as the face and joints.</div>
+        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">No. Both retain high water content, but hydrogel is a synthetic cross-linked polymer, while biocellulose is a naturally grown nanofiber network produced by bacteria. Biocellulose typically offers greater structural integrity and conformability on delicate, contoured or moving areas such as the face and joints.</div>
       </div>
       <div style="padding:1.6rem 0;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.28rem; font-weight:500; margin-bottom:0.7rem;">What wounds is biocellulose dressing used for?</div>
-        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">Biocellulose dressing is commonly used for burns and scalds, skin graft donor sites, radiation skin reactions, facial wounds and paediatric wounds &mdash; situations where gentleness, biocompatibility and moisture retention matter more than high absorbency.</div>
+        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">Biocellulose dressing is commonly used for burns and scalds, skin graft donor sites, radiation skin reactions, facial wounds and pediatric wounds &mdash; situations where gentleness, biocompatibility and moisture retention matter more than high absorbency.</div>
       </div>
     </div>
   </div>
@@ -1305,7 +1315,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
@@ -1358,11 +1368,11 @@
   const topics = [
     {
       title: 'How It <em>Works</em>',
-      subtitle: 'Biocellulose is produced by Komagataeibacter bacteria through a fermentation process — the microorganisms weave cellulose into an ultra-fine nanofibre network as they grow. The resulting material holds over 90% water by weight and closely resembles the structure of the human extracellular matrix, which is part of why it is so well tolerated on fragile and sensitive skin. Its translucent structure also allows the wound bed to be monitored visually without lifting the dressing.'
+      subtitle: 'Biocellulose is produced by Komagataeibacter bacteria through a fermentation process — the microorganisms weave cellulose into an ultra-fine nanofiber network as they grow. The resulting material holds over 90% water by weight and closely resembles the structure of the human extracellular matrix, which is part of why it is so well tolerated on fragile and sensitive skin. Its translucent structure also allows the wound bed to be monitored visually without lifting the dressing.'
     },
     {
       title: 'Indications<br>by <em>Condition</em>',
-      subtitle: 'Burns and scalds: continuous moisture and gentle contact support comfort and healing without adhering to fragile new tissue. Donor sites: conforms to irregular, weeping surfaces while allowing visual monitoring. Radiation skin reactions: soothing hydration for compromised, sensitive skin. Facial wounds: drapes closely over contours without folding. Paediatric wounds: biocompatible, non-allergenic material suited to young or reactive skin.'
+      subtitle: 'Burns and scalds: continuous moisture and gentle contact support comfort and healing without adhering to fragile new tissue. Donor sites: conforms to irregular, weeping surfaces while allowing visual monitoring. Radiation skin reactions: soothing hydration for compromised, sensitive skin. Facial wounds: drapes closely over contours without folding. Pediatric wounds: biocompatible, non-allergenic material suited to young or reactive skin.'
     },
     {
       title: 'Application<br>by <em>Condition</em>',
@@ -1375,7 +1385,7 @@
   ];
 
   const defaultTitle = 'Biocellulose<br><em>Dressing</em>';
-  const defaultSubtitle = 'A transparent, bacterially cultured nanocellulose dressing with over 90% water content that conforms to delicate contours and allows wound monitoring without removal. Suitable for burns, donor sites, radiation skin reactions, facial and paediatric wounds.';
+  const defaultSubtitle = 'A transparent, bacterially cultured nanocellulose dressing with over 90% water content that conforms to delicate contours and allows wound monitoring without removal. Suitable for burns, donor sites, radiation skin reactions, facial and pediatric wounds.';
 
   const titleEl = document.getElementById('hero-title');
   const subtitleEl = document.getElementById('hero-subtitle');

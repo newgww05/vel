@@ -12,8 +12,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Velcura Medical | Professional Wound Care Dressings Manufacturer | China OEM/ODM</title>
-<meta name="description" content="Velcura Medical Technology (Shenzhen) — professional manufacturer of advanced and traditional wound care dressings: silicone foam, hydrocolloid, alginate, activated charcoal, nano-silver antibacterial and surgical care products. ISO 13485 quality system, CE / FDA registered, 20,000+ m² facility, 100+ countries served. OEM/ODM partner for hospitals, distributors and private-label brands worldwide.">
-<meta name="keywords" content="wound care manufacturer, wound dressing manufacturer China, advanced wound dressing supplier, silicone foam dressing OEM, hydrocolloid dressing factory, calcium alginate dressing manufacturer, nano-silver antibacterial dressing, activated charcoal dressing, traditional wound dressing wholesale, medical dressing OEM ODM, ISO 13485 wound care, CE FDA wound dressing, Shenzhen medical device manufacturer, Velcura Medical">
+<meta name="description" content="Velcura Medical Technology (Shenzhen) — professional manufacturer of advanced and traditional wound care dressings: silicone foam, hydrocolloid, alginate, activated charcoal, nano-silver antibacterial and surgical care products. ISO 13485 quality system, CE-marked products, 20,000+ m² facility, 100+ countries served. OEM/ODM partner for hospitals, distributors and private-label brands worldwide.">
+<meta name="keywords" content="wound care manufacturer, wound dressing manufacturer China, advanced wound dressing supplier, silicone foam dressing OEM, hydrocolloid dressing factory, calcium alginate dressing manufacturer, nano-silver antibacterial dressing, activated charcoal dressing, traditional wound dressing wholesale, medical dressing OEM ODM, ISO 13485 wound care, CE marked wound dressing, Shenzhen medical device manufacturer, Velcura Medical">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical Technology (Shenzhen) Co., Ltd.">
 <meta name="geo.region" content="CN-44">
@@ -23,7 +23,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Velcura Medical | Professional Wound Care Dressings Manufacturer">
-<meta property="og:description" content="Professional manufacturer of advanced wound care dressings — silicone foam, hydrocolloid, alginate, nano-silver. ISO 13485 / CE / FDA. OEM/ODM partner serving 100+ countries.">
+<meta property="og:description" content="Professional manufacturer of advanced wound care dressings — silicone foam, hydrocolloid, alginate, nano-silver. ISO 13485 / CE. OEM/ODM partner serving 100+ countries.">
 <meta property="og:image" content="https://img.velcura.net/og-share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Velcura Medical | Professional Wound Care Dressings Manufacturer">
-<meta name="twitter:description" content="China-based manufacturer of advanced and traditional wound care dressings. ISO 13485 / CE / FDA. OEM/ODM for hospitals and distributors worldwide.">
+<meta name="twitter:description" content="China-based manufacturer of advanced and traditional wound care dressings. ISO 13485 / CE. OEM/ODM for hospitals and distributors worldwide.">
 <meta name="twitter:image" content="https://img.velcura.net/og-share.png">
 
 <!-- Organization Schema (builds the brand knowledge graph) -->
@@ -46,7 +46,7 @@
   "url": "https://velcura.net/",
   "logo": "https://img.velcura.net/logogpt40.png",
   "image": "https://img.velcura.net/og-share.png",
-  "description": "Professional manufacturer of advanced and traditional wound care dressings, including silicone foam, hydrocolloid, alginate, nano-silver antibacterial and surgical care products. Operating under ISO 13485 quality management with CE and FDA registrations. OEM/ODM partner for hospitals, distributors and private-label brands worldwide.",
+  "description": "Professional manufacturer of advanced and traditional wound care dressings, including silicone foam, hydrocolloid, alginate, nano-silver antibacterial and surgical care products. Operating under ISO 13485 quality management with CE-marked products. OEM/ODM partner for hospitals, distributors and private-label brands worldwide.",
   "foundingLocation": {
     "@type": "Place",
     "address": {
@@ -391,11 +391,11 @@
   }
 
   
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -453,9 +453,9 @@
     font-size: 16.45px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
     color: var(--slate-800); cursor: default;
   }
-  /* AD/TD/SC triggers on index inherit the homepage font size */
+  /* Category dropdown triggers on index */
   .nav-links .has-dropdown .dropdown-trigger {
-    font-size: 19.7px !important; font-weight: 500; letter-spacing: 0.10em;
+    font-size: 16px !important; font-weight: 500; letter-spacing: 0.06em; white-space: nowrap;
   }
 
 
@@ -565,6 +565,17 @@
   }
 
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1439 */
+  @media (max-width:1439px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -591,7 +602,7 @@
   <a class="nav-brand" href="#">Velcura · Make Wound Care Easy</a>
   <ul class="nav-links">
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">AD ▾</a>
+      <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
       <div class="fp-menu">
         <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
         <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -620,7 +631,7 @@
       </div>
     </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -635,7 +646,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">SC ▾</a>
+      <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
       <div class="fp-menu">
         <a href="incise-drape.html" class="fp-item">Incise Drape</a>
         <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -711,7 +722,7 @@
   <div class="stats-card">
     <div class="stat-item"><div class="stat-icon">🏭</div><div class="stat-value">20,000+</div><div class="stat-label">m² Modern<br>Production Base</div></div>
     <div class="stat-item"><div class="stat-icon">🎯</div><div class="stat-value" style="font-size:28px;">ISO 13485</div><div class="stat-label">Quality Management<br>System Certified</div></div>
-    <div class="stat-item"><div class="stat-icon">✅</div><div class="stat-value" style="font-size:28px;">CE / FDA</div><div class="stat-label">International Dual<br>Certifications</div></div>
+    <div class="stat-item"><div class="stat-icon">✅</div><div class="stat-value" style="font-size:28px;">CE</div><div class="stat-label">European<br>Conformity</div></div>
     <div class="stat-item"><div class="stat-icon">🔬</div><div class="stat-value">20%+</div><div class="stat-label">R&D Professional<br>Technical Staff</div></div>
     <div class="stat-item"><div class="stat-icon">🌍</div><div class="stat-value">100+</div><div class="stat-label">Countries &<br>Regions Covered</div></div>
   </div>
@@ -750,18 +761,18 @@
 <section class="m-only m-section alt">
   <div class="m-section-lbl">Manufacturing</div>
   <div class="m-section-ttl">Our Facility</div>
-  <div class="m-photo-block" id="facilityPhoto">
+  <div class="m-photo-block" id="facilityPhoto" style="display:none">
     <div class="icon">🏭</div>
     <div class="lbl">Factory photo — pending</div>
   </div>
-  <p class="m-section-text">20,000+ m² of modern production space, ISO 13485-certified cleanrooms and in-house R&amp;D — built to support both stock orders and private-label programmes at scale.</p>
+  <p class="m-section-text">20,000+ m² of modern production space, ISO 13485-certified cleanrooms and in-house R&amp;D — built to support both stock orders and private-label programs at scale.</p>
 </section>
 
 <!-- Global Logistics (placeholder — replace image when photos are ready) -->
 <section class="m-only m-section">
   <div class="m-section-lbl">Logistics</div>
   <div class="m-section-ttl">Global Shipping</div>
-  <div class="m-photo-block" id="logisticsPhoto">
+  <div class="m-photo-block" id="logisticsPhoto" style="display:none">
     <div class="icon">🚢</div>
     <div class="lbl">Warehouse / shipping photo — pending</div>
   </div>
@@ -784,7 +795,7 @@
       <div class="m-support-icon">📄</div>
       <div>
         <p class="m-support-name">Full Documentation</p>
-        <p class="m-support-text">CE/FDA certificates, COA, MSDS and customs paperwork provided for every shipment.</p>
+        <p class="m-support-text">CE certificates, COA, MSDS and customs paperwork provided for every shipment.</p>
       </div>
     </div>
     <div class="m-support-card">
@@ -806,7 +817,7 @@
       <div class="m-serve-icon">🏥</div>
       <div>
         <p class="m-serve-name">Hospitals &amp; Clinics</p>
-        <p class="m-serve-text">Procurement teams sourcing clinical-grade dressings at scale, backed by ISO 13485 &amp; CE/FDA certification.</p>
+        <p class="m-serve-text">Procurement teams sourcing clinical-grade dressings at scale, backed by ISO 13485 certification and CE marking.</p>
       </div>
     </a>
     <a class="m-serve-card" href="velcura-3y.html">
@@ -833,7 +844,7 @@
   <div class="m-stats-grid">
     <div class="m-stat-item"><div class="m-stat-icon">🏭</div><div class="m-stat-value">20,000+</div><div class="m-stat-label">m² Production Base</div></div>
     <div class="m-stat-item"><div class="m-stat-icon">🎯</div><div class="m-stat-value" style="font-size:16px;">ISO 13485</div><div class="m-stat-label">Certified Quality System</div></div>
-    <div class="m-stat-item"><div class="m-stat-icon">✅</div><div class="m-stat-value" style="font-size:16px;">CE / FDA</div><div class="m-stat-label">Dual Certification</div></div>
+    <div class="m-stat-item"><div class="m-stat-icon">✅</div><div class="m-stat-value" style="font-size:16px;">CE</div><div class="m-stat-label">European Conformity</div></div>
     <div class="m-stat-item"><div class="m-stat-icon">🌍</div><div class="m-stat-value">100+</div><div class="m-stat-label">Countries Covered</div></div>
   </div>
 </section>

@@ -85,7 +85,7 @@
     "https://img.velcura.net/胶原蛋白敷料-02.png",
     "https://img.velcura.net/胶原蛋白敷料-03.png"
   ],
-  "description": "Bioactive collagen matrix stimulating tissue regeneration and remodelling in chronic, non-healing wounds. Provides a structural scaffold for new tissue, stimulates fibroblast activity, and absorbs and neutralises wound-damaging matrix metalloproteinases (MMPs).",
+  "description": "Bioactive collagen matrix stimulating tissue regeneration and remodeling in chronic, non-healing wounds. Provides a structural scaffold for new tissue, stimulates fibroblast activity, and absorbs and neutralizes wound-damaging matrix metalloproteinases (MMPs).",
   "brand": { "@type": "Brand", "name": "Velcura Medical" },
   "category": "Advanced Wound Care Dressing",
   "manufacturer": { "@type": "Organization", "name": "Velcura Medical" }
@@ -114,7 +114,7 @@
     {
       "@type": "Question",
       "name": "How often should collagen dressing be changed?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Typically every 2 to 3 days, or according to clinical assessment and exudate level. Always follow the treating clinician's plan and the product's labelling." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Typically every 2 to 3 days, or according to clinical assessment and exudate level. Always follow the treating clinician's plan and the product's labeling." }
     }
   ]
 }
@@ -801,11 +801,11 @@
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
   }
 
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown menu ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -890,6 +890,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -898,7 +909,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">AD ▾</a>
+        <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
           <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -927,7 +938,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -942,7 +953,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">SC ▾</a>
+        <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
         <div class="fp-menu">
           <a href="incise-drape.html" class="fp-item">Incise Drape</a>
           <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -982,7 +993,7 @@
       <div class="hi-item">
         <svg class="hi-ico" viewBox="0 0 24 24"><path d="M12 3.5 20 7.5V13c0 5-3.5 7.8-8 9.5-4.5-1.7-8-4.5-8-9.5V7.5Z"/></svg>
         <div class="hi-body">
-          <div class="hi-title">Neutralises Excess MMPs</div>
+          <div class="hi-title">Neutralizes Excess MMPs</div>
           <div class="hi-sub">Breaks the Chronic Wound Cycle</div>
         </div>
       </div>
@@ -1025,7 +1036,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -1041,10 +1052,10 @@
     <div class="features-grid">
       <div class="features-intro">
         <p>
-          Most dressings do one of two things: absorb what the wound produces, or protect it from the outside world. Collagen dressing does something different — it actively participates in the wound's own biology. Native collagen fibres form a structural scaffold that fibroblasts can migrate across and build upon, directly supporting the formation of new tissue rather than simply covering the gap.
+          Most dressings do one of two things: absorb what the wound produces, or protect it from the outside world. Collagen dressing does something different — it actively participates in the wound's own biology. Native collagen fibers form a structural scaffold that fibroblasts can migrate across and build upon, directly supporting the formation of new tissue rather than simply covering the gap.
         </p>
         <p style="margin-top: 1.2rem;">
-          Chronic wounds often become &quot;stuck&quot; in a prolonged inflammatory phase, producing excess matrix metalloproteinases (MMPs) — enzymes that break down not only dead tissue but also the body's own new collagen and growth factors, perpetuating the non-healing cycle. Collagen dressing acts as a sacrificial substrate, absorbing and neutralising these excess enzymes so the wound's own healing signals survive long enough to work.
+          Chronic wounds often become &quot;stuck&quot; in a prolonged inflammatory phase, producing excess matrix metalloproteinases (MMPs) — enzymes that break down not only dead tissue but also the body's own new collagen and growth factors, perpetuating the non-healing cycle. Collagen dressing acts as a sacrificial substrate, absorbing and neutralizing these excess enzymes so the wound's own healing signals survive long enough to work.
         </p>
       </div>
       <div class="feature-cards">
@@ -1056,12 +1067,12 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4.5"/></svg></span>
           <h3>Stimulates Fibroblast Activity</h3>
-          <p>Beyond passive coverage, the collagen matrix actively signals fibroblasts to proliferate and synthesise new tissue, helping accelerate closure in wounds that have stalled in the inflammatory phase.</p>
+          <p>Beyond passive coverage, the collagen matrix actively signals fibroblasts to proliferate and synthesize new tissue, helping accelerate closure in wounds that have stalled in the inflammatory phase.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3.5 20 7.5V13c0 5-3.5 7.8-8 9.5-4.5-1.7-8-4.5-8-9.5V7.5Z"/></svg></span>
-          <h3>Neutralises Excess MMPs</h3>
-          <p>Absorbs and neutralises matrix metalloproteinases that would otherwise degrade the wound's own new tissue and growth factors — helping break the cycle that keeps chronic wounds from progressing.</p>
+          <h3>Neutralizes Excess MMPs</h3>
+          <p>Absorbs and neutralizes matrix metalloproteinases that would otherwise degrade the wound's own new tissue and growth factors — helping break the cycle that keeps chronic wounds from progressing.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3.5c0 0 6 6.5 6 10.5a6 6 0 0 1-12 0c0-4 6-10.5 6-10.5Z"/></svg></span>
@@ -1084,7 +1095,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -1116,12 +1127,12 @@
           <span class="app-tag">Venous Ulcers</span>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Non-adhesive &mdash; requires a secondary dressing for fixation and additional absorbency if exudate is moderate to heavy.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not intended as a primary treatment for heavily infected wounds without concurrent antimicrobial management.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not suitable for patients with known sensitivity to collagen or animal-derived materials &mdash; confirm source material compatibility before use.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue use and consult a healthcare professional if any adverse reaction occurs.</li>
           </ul>
         </div>
       </div>
@@ -1152,8 +1163,8 @@
         <div class="cg-flip-inner">
           <div class="cg-flip-face cg-flip-front">
             <span class="cg-flip-badge">Detail</span>
-            <img src="https://img.velcura.net/胶原蛋白敷料-02.png" alt="Collagen Wound Dressing — fibre detail" loading="lazy">
-            <div class="cg-flip-caption"><div class="cg-name">Collagen Fibre Network</div><div class="cg-sub">Structural Scaffold</div></div>
+            <img src="https://img.velcura.net/胶原蛋白敷料-02.png" alt="Collagen Wound Dressing — fiber detail" loading="lazy">
+            <div class="cg-flip-caption"><div class="cg-name">Collagen Fiber Network</div><div class="cg-sub">Structural Scaffold</div></div>
           </div>
           <div class="cg-flip-face cg-flip-back">
             <img src="https://img.velcura.net/胶原蛋白敷料-03.png" alt="Collagen Wound Dressing — flexibility detail" loading="lazy">
@@ -1205,7 +1216,6 @@
                 <li><strong>Wear time</strong> &mdash; Every 2&ndash;3 days</li>
                 <li><strong>Adhesion</strong> &mdash; Non-adhesive</li>
               </ul>
-              <div style="font-size:0.66rem; color:var(--c-ink3); margin-top:0.9rem; line-height:1.5;">Outer packaging and carton photography to be added.</div>
             </div>
           </div>
         </div>
@@ -1257,7 +1267,7 @@
       </div>
       <div style="padding:1.6rem 0;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.28rem; font-weight:500; margin-bottom:0.7rem;">How often should collagen dressing be changed?</div>
-        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">Typically every 2 to 3 days, or according to clinical assessment and exudate level. Always follow the treating clinician's plan and the product's labelling.</div>
+        <div style="font-size:0.9rem; color:var(--c-ink2); line-height:1.85;">Typically every 2 to 3 days, or according to clinical assessment and exudate level. Always follow the treating clinician's plan and the product's labeling.</div>
       </div>
     </div>
   </div>
@@ -1304,7 +1314,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
@@ -1357,7 +1367,7 @@
   const topics = [
     {
       title: 'How It <em>Works</em>',
-      subtitle: 'Native collagen fibres form a structural scaffold that fibroblasts can adhere to and migrate across, directly supporting the formation of new granulation tissue. At the same time, the collagen matrix acts as a sacrificial substrate for excess matrix metalloproteinases (MMPs) — enzymes that build up in chronic wounds and would otherwise degrade the body\'s own new tissue and growth factors. By absorbing this excess enzyme activity, the dressing helps break the cycle that keeps a wound stuck in the inflammatory phase.'
+      subtitle: 'Native collagen fibers form a structural scaffold that fibroblasts can adhere to and migrate across, directly supporting the formation of new granulation tissue. At the same time, the collagen matrix acts as a sacrificial substrate for excess matrix metalloproteinases (MMPs) — enzymes that build up in chronic wounds and would otherwise degrade the body\'s own new tissue and growth factors. By absorbing this excess enzyme activity, the dressing helps break the cycle that keeps a wound stuck in the inflammatory phase.'
     },
     {
       title: 'Indications<br>by <em>Condition</em>',
@@ -1374,7 +1384,7 @@
   ];
 
   const defaultTitle = 'Collagen Wound<br><em>Dressing</em>';
-  const defaultSubtitle = 'A bioactive collagen matrix that provides a structural scaffold for new tissue, stimulates fibroblast activity, and absorbs and neutralises wound-damaging MMPs. Indicated for chronic non-healing wounds, diabetic ulcers, Stage III–IV pressure ulcers and venous ulcers.';
+  const defaultSubtitle = 'A bioactive collagen matrix that provides a structural scaffold for new tissue, stimulates fibroblast activity, and absorbs and neutralizes wound-damaging MMPs. Indicated for chronic non-healing wounds, diabetic ulcers, Stage III–IV pressure ulcers and venous ulcers.';
 
   const titleEl = document.getElementById('hero-title');
   const subtitleEl = document.getElementById('hero-subtitle');

@@ -30,7 +30,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="Paper Tape | Velcura Medical">
-<meta property="og:description" content="Where holding tight would hurt — a paper tape designed around the skin, not the dressing. Microporous, hypoallergenic, built for NICU, paediatric, geriatric and daily-change use.">
+<meta property="og:description" content="Where holding tight would hurt — a paper tape designed around the skin, not the dressing. Microporous, hypoallergenic, built for NICU, pediatric, geriatric and daily-change use.">
 <meta property="og:image" content="https://img.velcura.net/%E7%BA%B8%E8%83%B6%E5%B8%A6%E4%BA%A7%E5%93%81-1024x795.png">
 <meta property="og:image:secure_url" content="https://img.velcura.net/%E7%BA%B8%E8%83%B6%E5%B8%A6%E4%BA%A7%E5%93%81-1024x795.png">
 <meta property="og:image:type" content="image/png">
@@ -63,7 +63,7 @@
     "https://img.velcura.net/%E7%BA%B8%E8%83%B6%E5%B8%A6%E4%BA%A7%E5%93%81-1024x795.png",
     "https://img.velcura.net/Surgical-Tape-Breathable.jpg"
   ],
-  "description": "Soft microporous paper surgical tape coated with a hypoallergenic, latex-free pressure-sensitive acrylic adhesive. Engineered as the gentlest non-silicone option for fragile, neonatal, paediatric and geriatric skin — where the priority is patient comfort, daily dressing changes, and minimising Medical Adhesive-Related Skin Injury (MARSI). The microporous paper backing offers the highest moisture vapour transmission rate of any conventional medical tape, while the adhesive lifts cleanly without residue, fibre shedding, or epidermal stripping.",
+  "description": "Soft microporous paper surgical tape coated with a hypoallergenic, latex-free pressure-sensitive acrylic adhesive. Engineered as the gentlest non-silicone option for fragile, neonatal, pediatric and geriatric skin — where the priority is patient comfort, daily dressing changes, and minimizing Medical Adhesive-Related Skin Injury (MARSI). The microporous paper backing offers the highest moisture vapor transmission rate of any conventional medical tape, while the adhesive lifts cleanly without residue, fiber shedding, or epidermal stripping.",
   "brand": {
     "@type": "Brand",
     "name": "Velcura Medical",
@@ -88,7 +88,7 @@
     "audienceType": "Healthcare Professional",
     "geographicArea": {
       "@type": "AdministrativeArea",
-      "name": "NICU, Paediatric Wards, Geriatric Care, Dermatology"
+      "name": "NICU, Pediatric Wards, Geriatric Care, Dermatology"
     }
   },
   "additionalProperty": [
@@ -96,7 +96,7 @@
     { "@type": "PropertyValue", "name": "Adhesive", "value": "Hypoallergenic acrylic, latex-free, zinc-oxide-free" },
     { "@type": "PropertyValue", "name": "Available Widths", "value": "1.25 cm, 2.5 cm, 5 cm" },
     { "@type": "PropertyValue", "name": "Length", "value": "9.14 m per roll" },
-    { "@type": "PropertyValue", "name": "Colour", "value": "White" },
+    { "@type": "PropertyValue", "name": "Color", "value": "White" },
     { "@type": "PropertyValue", "name": "MVTR", "value": "Highest of conventional medical tapes (microporous)" },
     { "@type": "PropertyValue", "name": "Hand-Tearable", "value": "Yes — no scissors required" },
     { "@type": "PropertyValue", "name": "Residue", "value": "Residue-free removal" },
@@ -512,9 +512,9 @@
   }
 
   /* NAV dropdown */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -588,6 +588,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -596,7 +607,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">AD ▾</a>
+      <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
       <div class="fp-menu">
         <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
         <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -625,7 +636,7 @@
       </div>
     </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -640,7 +651,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">SC ▾</a>
+      <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
       <div class="fp-menu">
         <a href="incise-drape.html" class="fp-item">Incise Drape</a>
         <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -673,7 +684,7 @@
         <svg class="hi-ico" viewBox="0 0 24 24"><path d="M12 21c-4-3-7-6.5-7-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 3.5C19 14.5 16 18 12 21Z"/></svg>
         <div class="hi-body">
           <div class="hi-title">Built for Fragile Skin</div>
-          <div class="hi-sub">NICU · Paediatric · Geriatric</div>
+          <div class="hi-sub">NICU · Pediatric · Geriatric</div>
         </div>
       </div>
       <div class="hi-item">
@@ -713,7 +724,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -728,7 +739,7 @@
     <div class="features-grid">
       <div class="features-intro">
         <p>
-          Most surgical tapes are designed around the dressing — how firmly it holds, how long it stays, how much exudate it tolerates. Paper Tape is designed around the patient. Where the skin is thin, fragile, or due to be exposed again at the next dressing change, the question stops being "how strong is the hold?" and becomes "how gentle is the lift?" Velcura Paper Tape is built for that question — a soft microporous paper backing with a hypoallergenic, latex-free acrylic adhesive that releases cleanly, leaves no residue, and minimises the epidermal stress that turns into Medical Adhesive-Related Skin Injury (MARSI).
+          Most surgical tapes are designed around the dressing — how firmly it holds, how long it stays, how much exudate it tolerates. Paper Tape is designed around the patient. Where the skin is thin, fragile, or due to be exposed again at the next dressing change, the question stops being "how strong is the hold?" and becomes "how gentle is the lift?" Velcura Paper Tape is built for that question — a soft microporous paper backing with a hypoallergenic, latex-free acrylic adhesive that releases cleanly, leaves no residue, and minimizes the epidermal stress that turns into Medical Adhesive-Related Skin Injury (MARSI).
         </p>
         <p style="margin-top: 1.2rem;">
           Neonates have skin nearly 50% thinner than adults; the elderly often present with atrophic, steroid-affected or sun-damaged dermis; oncology and dermatology patients face repeated daily dressing changes. Across these populations, the published MARSI prevalence runs as high as 25%. Paper Tape is the clinical first-choice non-silicone option in exactly these scenarios — gentle enough to use day after day on the same square of skin, breathable enough to leave on without macerating, light enough to hold a gauze pad or IV gauze without overburdening the underlying tissue.
@@ -738,7 +749,7 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="0.9"/><circle cx="12" cy="6" r="0.9"/><circle cx="18" cy="6" r="0.9"/><circle cx="6" cy="12" r="0.9"/><circle cx="12" cy="12" r="0.9"/><circle cx="18" cy="12" r="0.9"/><circle cx="6" cy="18" r="0.9"/><circle cx="12" cy="18" r="0.9"/><circle cx="18" cy="18" r="0.9"/></svg></span>
           <h3>Microporous Paper Backing</h3>
-          <p>Thousands of microscopic pores deliver the highest moisture-vapour transmission rate of any conventional medical tape — air and sweat pass freely, preventing the heat, maceration, and bacterial overgrowth that closed adhesive surfaces cultivate. Breathability is the structural property of the backing itself, not an engineered coating.</p>
+          <p>Thousands of microscopic pores deliver the highest moisture-vapor transmission rate of any conventional medical tape — air and sweat pass freely, preventing the heat, maceration, and bacterial overgrowth that closed adhesive surfaces cultivate. Breathability is the structural property of the backing itself, not an engineered coating.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 21c-4-3-7-6.5-7-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 3.5C19 14.5 16 18 12 21Z"/><path d="M9 11.5l2 2 4-4"/></svg></span>
@@ -748,7 +759,7 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M9 8l-4 4 4 4"/><circle cx="18" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span>
           <h3>Daily-Change Friendly Adhesion</h3>
-          <p>Adheres securely on first application yet releases without epidermal stripping, fibre shedding, or sticky residue at change. Where another tape would punish the skin a little more each time it is replaced, paper tape stays kind through repeated cycles — the working tape of any unit that changes dressings daily.</p>
+          <p>Adheres securely on first application yet releases without epidermal stripping, fiber shedding, or sticky residue at change. Where another tape would punish the skin a little more each time it is replaced, paper tape stays kind through repeated cycles — the working tape of any unit that changes dressings daily.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M8 4v16M16 4v16"/></svg></span>
@@ -771,7 +782,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -783,7 +794,7 @@
           <tr><td>Product Name</td><td>Paper Tape (Microporous Surgical Tape)</td></tr>
           <tr><td>Backing</td><td>Microporous paper / rayon-paper composite, breathable</td></tr>
           <tr><td>Adhesive</td><td>Hypoallergenic acrylic, latex-free, zinc-oxide-free</td></tr>
-          <tr><td>Colour</td><td>White</td></tr>
+          <tr><td>Color</td><td>White</td></tr>
           <tr><td>Available Widths</td><td>1.25 cm · 2.5 cm · 5 cm</td></tr>
           <tr><td>Length</td><td>9.14 m per roll</td></tr>
           <tr><td>Packaging</td><td>Single roll/plastic shell · multi-roll dispenser pack · OEM packaging available</td></tr>
@@ -805,7 +816,7 @@
         <div class="application-tags">
           <div class="tag-row">
             <span class="app-tag">Neonatal &amp; NICU Care</span>
-            <span class="app-tag">Paediatric Dressings</span>
+            <span class="app-tag">Pediatric Dressings</span>
             <span class="app-tag">Geriatric Fragile Skin</span>
           </div>
           <div class="tag-row">
@@ -821,7 +832,7 @@
           </div>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Limited tensile strength — not suitable as the sole fixation for heavy, bulky, or moisture-laden dressings; pair with a stronger tape where load-bearing matters.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Paper backing is moisture-sensitive — replace after bathing, swimming, sweat-saturation, or contact with wound exudate. Choose a transparent film tape for routinely wet environments.</li>
@@ -882,7 +893,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>

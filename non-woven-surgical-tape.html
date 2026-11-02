@@ -63,7 +63,7 @@
     "https://img.velcura.net/Surgical-Tape-Breathable.jpg",
     "https://img.velcura.net/%E6%97%A0%E7%BA%BA%E5%B8%83%E8%83%B6%E5%B8%A6_01.jpg"
   ],
-  "description": "Soft microporous non-woven (spunlace polyester/rayon) surgical tape coated with a hypoallergenic, latex-free pressure-sensitive acrylic adhesive. Designed as the everyday workhorse for secure, breathable fixation of wound dressings, gauze pads, tubes and catheters across general wound care, post-operative use, paediatric and elderly care. Microporous fibres allow free moisture vapour transmission, while the conformable backing follows body contours without stretching or tearing. Hand-tearable to any length; lifts cleanly without adhesive residue at change.",
+  "description": "Soft microporous non-woven (spunlace polyester/rayon) surgical tape coated with a hypoallergenic, latex-free pressure-sensitive acrylic adhesive. Designed as the everyday workhorse for secure, breathable fixation of wound dressings, gauze pads, tubes and catheters across general wound care, post-operative use, pediatric and elderly care. Microporous fibers allow free moisture vapor transmission, while the conformable backing follows body contours without stretching or tearing. Hand-tearable to any length; lifts cleanly without adhesive residue at change.",
   "brand": {
     "@type": "Brand",
     "name": "Velcura Medical",
@@ -502,9 +502,9 @@
   }
 
   /* NAV dropdown */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -578,6 +578,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -586,7 +597,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">AD ▾</a>
+      <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
       <div class="fp-menu">
         <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
         <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -615,7 +626,7 @@
       </div>
     </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -630,7 +641,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-      <a href="#" class="dropdown-trigger">SC ▾</a>
+      <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
       <div class="fp-menu">
         <a href="incise-drape.html" class="fp-item">Incise Drape</a>
         <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -663,7 +674,7 @@
         <svg class="hi-ico" viewBox="0 0 24 24"><path d="M3 9c3-2 6-2 9 0s6 2 9 0"/><path d="M3 15c3-2 6-2 9 0s6 2 9 0"/></svg>
         <div class="hi-body">
           <div class="hi-title">Conforms to Body Contours</div>
-          <div class="hi-sub">Natural Fibre Elasticity</div>
+          <div class="hi-sub">Natural Fiber Elasticity</div>
         </div>
       </div>
       <div class="hi-item">
@@ -703,7 +714,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -721,29 +732,29 @@
           Across every tape drawer in every clinic, the same picture repeats: paper tape for sensitive skin, transparent film when waterproofing matters, zinc oxide or cotton when rigid support is needed — and a roll of soft non-woven tape that handles everything in between. Velcura Non-woven Surgical Tape is built for that everyday majority: the 80% of dressing-fixation jobs where you need something breathable enough to leave on for days, strong enough to hold a gauze pad through a shift, gentle enough not to wreck the skin underneath, and quick enough to tear by hand at the bedside.
         </p>
         <p style="margin-top: 1.2rem;">
-          The microporous spunlace polyester backing breathes like paper but holds like cloth. The hypoallergenic acrylic adhesive — latex-free, zinc-oxide-free — fixes securely yet lifts cleanly without residue or skin tearing. The non-woven structure has just enough natural give to follow contours of joints, abdomens, and paediatric limbs without bunching. It is the tape that earns its place in every kit because it does almost every job well enough — without forcing the clinician to choose a specialty product.
+          The microporous spunlace polyester backing breathes like paper but holds like cloth. The hypoallergenic acrylic adhesive — latex-free, zinc-oxide-free — fixes securely yet lifts cleanly without residue or skin tearing. The non-woven structure has just enough natural give to follow contours of joints, abdomens, and pediatric limbs without bunching. It is the tape that earns its place in every kit because it does almost every job well enough — without forcing the clinician to choose a specialty product.
         </p>
       </div>
       <div class="feature-cards">
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></span>
           <h3>Microporous Spunlace Backing</h3>
-          <p>Soft non-woven polyester (or polyester-rayon blend) creates natural micro-channels for air and moisture vapour to escape — a defining advantage over PE film and zinc oxide tapes, which seal the skin and risk maceration. Breathability you don't have to engineer into the adhesive.</p>
+          <p>Soft non-woven polyester (or polyester-rayon blend) creates natural micro-channels for air and moisture vapor to escape — a defining advantage over PE film and zinc oxide tapes, which seal the skin and risk maceration. Breathability you don't have to engineer into the adhesive.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 2.8v5.6c0 4.6-3.4 7.7-7.5 8.8-4.1-1.1-7.5-4.2-7.5-8.8V5.8L12 3Z"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span>
           <h3>Hypoallergenic, Latex-Free Adhesive</h3>
-          <p>A pressure-sensitive acrylic adhesive — free of latex, free of zinc oxide — minimises the contact-dermatitis and irritation reactions historically associated with rubber and zinc-oxide tape systems. Suitable for sensitive skin, paediatrics, and patients with known latex sensitivity.</p>
+          <p>A pressure-sensitive acrylic adhesive — free of latex, free of zinc oxide — minimizes the contact-dermatitis and irritation reactions historically associated with rubber and zinc-oxide tape systems. Suitable for sensitive skin, pediatrics, and patients with known latex sensitivity.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 9c3-2 6-2 9 0s6 2 9 0"/><path d="M3 15c3-2 6-2 9 0s6 2 9 0"/></svg></span>
           <h3>Conformable, Yet Hand-Tearable</h3>
-          <p>The non-woven structure has natural give — it follows the contours of knees, elbows, abdomens, and paediatric limbs without bunching or buckling. And unlike cotton or zinc-oxide cloth, it tears cleanly by hand across the grain — no scissors, no jagged edges, no delay at the bedside.</p>
+          <p>The non-woven structure has natural give — it follows the contours of knees, elbows, abdomens, and pediatric limbs without bunching or buckling. And unlike cotton or zinc-oxide cloth, it tears cleanly by hand across the grain — no scissors, no jagged edges, no delay at the bedside.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M5 12l4-4M5 12l4 4"/><path d="M19 12l-4-4M19 12l-4 4"/></svg></span>
           <h3>Strong Hold, Clean Removal</h3>
-          <p>Adhesion is calibrated to hold gauze pads, foam dressings, IV gauze, and lightweight tubing securely through normal daily activity — yet lifts without residue, fibre shedding, or skin-stripping. Stronger than paper tape; gentler at change than silk or zinc oxide.</p>
+          <p>Adhesion is calibrated to hold gauze pads, foam dressings, IV gauze, and lightweight tubing securely through normal daily activity — yet lifts without residue, fiber shedding, or skin-stripping. Stronger than paper tape; gentler at change than silk or zinc oxide.</p>
         </div>
       </div>
     </div>
@@ -761,7 +772,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -774,7 +785,7 @@
           <tr><td>REF No.</td><td>401 001 – 401 004</td></tr>
           <tr><td>Backing</td><td>Soft non-woven spunlace polyester / polyester-rayon blend</td></tr>
           <tr><td>Adhesive</td><td>Hypoallergenic acrylic, latex-free, zinc-oxide-free</td></tr>
-          <tr><td>Colour</td><td>White</td></tr>
+          <tr><td>Color</td><td>White</td></tr>
           <tr><td>Available Widths</td><td>1.25 cm · 2.5 cm · 5 cm · 7.5 cm</td></tr>
           <tr><td>Length</td><td>9.14 m per roll</td></tr>
           <tr><td>Packaging</td><td>Single roll/plastic shell · multi-roll box · OEM packaging available</td></tr>
@@ -789,7 +800,7 @@
       </div>
       <div>
         <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
-          The right tape for the broad middle of clinical use — wherever breathability matters more than waterproofing, and gentle reliable hold matters more than rigid immobilisation. Where the skin is severely fragile and even mild adhesive may injure, consider a silicone-bordered alternative; where heavy moisture or athletic immobilisation is the priority, see transparent film or zinc-oxide variants.
+          The right tape for the broad middle of clinical use — wherever breathability matters more than waterproofing, and gentle reliable hold matters more than rigid immobilization. Where the skin is severely fragile and even mild adhesive may injure, consider a silicone-bordered alternative; where heavy moisture or athletic immobilization is the priority, see transparent film or zinc-oxide variants.
         </p>
         <div class="application-tags">
           <div class="tag-row">
@@ -803,14 +814,14 @@
             <span class="app-tag">NG &amp; Feeding Tube Fixation</span>
           </div>
           <div class="tag-row">
-            <span class="app-tag">Paediatric Care</span>
+            <span class="app-tag">Pediatric Care</span>
             <span class="app-tag">Sensitive Skin</span>
             <span class="app-tag">Long-Term Wear</span>
             <span class="app-tag">Home Wound Care</span>
           </div>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Apply only to clean, dry, intact skin — do not place adhesive directly over broken, infected, or actively bleeding wounds.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Do not stretch the tape during application — tension trapped under the adhesive creates blistering, edge lift, and skin shear injuries.</li>
@@ -871,7 +882,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>

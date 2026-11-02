@@ -13,8 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calcium Alginate Dressing | High-Absorbency Wound Dressing | Velcura Medical</title>
-<meta name="description" content="Velcura Calcium Alginate Dressing — high-absorbency natural alginate fibres that gel on contact with wound exudate, releasing calcium ions to support haemostasis. Ideal for moderate-to-heavy exuding wounds, diabetic foot ulcers, pressure injuries and cavity wounds.">
-<meta name="keywords" content="calcium alginate dressing, alginate wound dressing, high absorbency dressing, haemostatic dressing, diabetic foot ulcer dressing, pressure ulcer dressing, cavity wound dressing, exudate management, Velcura">
+<meta name="description" content="Velcura Calcium Alginate Dressing — high-absorbency natural alginate fibers that gel on contact with wound exudate, releasing calcium ions to support hemostasis. Ideal for moderate-to-heavy exuding wounds, diabetic foot ulcers, pressure injuries and cavity wounds.">
+<meta name="keywords" content="calcium alginate dressing, alginate wound dressing, high absorbency dressing, hemostatic dressing, diabetic foot ulcer dressing, pressure ulcer dressing, cavity wound dressing, exudate management, Velcura">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical">
 <link rel="canonical" href="https://velcura.net/calcium-alginate-AD006">
@@ -22,14 +22,14 @@
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="Calcium Alginate Dressing | Velcura Medical">
-<meta property="og:description" content="High-absorbency alginate dressing with haemostatic action. Gels on contact with exudate, conforms to deep and cavity wounds — for moderate-to-heavy exuding wounds.">
+<meta property="og:description" content="High-absorbency alginate dressing with hemostatic action. Gels on contact with exudate, conforms to deep and cavity wounds — for moderate-to-heavy exuding wounds.">
 <meta property="og:image" content="https://img.velcura.net/藻酸盐_01.jpg">
 <meta property="og:url" content="https://velcura.net/calcium-alginate-AD006">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Calcium Alginate Dressing | Velcura Medical">
-<meta name="twitter:description" content="High-absorbency alginate dressing with haemostatic action — for moderate-to-heavy exuding wounds.">
+<meta name="twitter:description" content="High-absorbency alginate dressing with hemostatic action — for moderate-to-heavy exuding wounds.">
 <meta name="twitter:image" content="https://img.velcura.net/藻酸盐_01.jpg">
 
 <!-- Structured Data -->
@@ -39,7 +39,7 @@
   "@type": "Product",
   "name": "Calcium Alginate Dressing",
   "image": "https://img.velcura.net/藻酸盐_01.jpg",
-  "description": "High-absorbency natural alginate dressing with haemostatic action. Calcium ions exchange with sodium in wound exudate to form a soft gel that conforms to the wound bed, while supporting local haemostasis. Indicated for moderate to heavy exuding wounds, cavity wounds, leg ulcers and diabetic foot ulcers.",
+  "description": "High-absorbency natural alginate dressing with hemostatic action. Calcium ions exchange with sodium in wound exudate to form a soft gel that conforms to the wound bed, while supporting local hemostasis. Indicated for moderate to heavy exuding wounds, cavity wounds, leg ulcers and diabetic foot ulcers.",
   "brand": {
     "@type": "Brand",
     "name": "Velcura Medical"
@@ -733,11 +733,11 @@
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
   }
 
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown menu ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -822,6 +822,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -830,7 +841,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">AD ▾</a>
+        <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
           <span class="fp-item fp-item-current">Calcium Alginate Dressing</span>
@@ -859,7 +870,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -874,7 +885,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">SC ▾</a>
+        <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
         <div class="fp-menu">
           <a href="incise-drape.html" class="fp-item">Incise Drape</a>
           <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -907,7 +918,7 @@
       <div class="hi-item">
         <svg class="hi-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8.2v7.6M8.2 12h7.6"/></svg>
         <div class="hi-body">
-          <div class="hi-title">Haemostatic Calcium Release</div>
+          <div class="hi-title">Hemostatic Calcium Release</div>
           <div class="hi-sub">Supports Wound-Bed Coagulation</div>
         </div>
       </div>
@@ -949,7 +960,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">Ca²⁺</div>
-    <div class="stat-label">Haemostatic ion release</div>
+    <div class="stat-label">Hemostatic ion release</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">3 days</div>
@@ -957,7 +968,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -973,22 +984,22 @@
     <div class="features-grid">
       <div class="features-intro">
         <p>
-          Calcium Alginate Dressing is made from natural seaweed-derived calcium alginate fibres. On contact with wound exudate, the fibres undergo ion exchange — calcium ions in the fibre swap with sodium ions in the exudate, transforming the insoluble alginate into a soft, conformable sodium alginate gel. This process absorbs up to 20× its own weight in fluid, while releasing calcium ions that act as a co-factor in the coagulation cascade — actively supporting local haemostasis at the wound bed.
+          Calcium Alginate Dressing is made from natural seaweed-derived calcium alginate fibers. On contact with wound exudate, the fibers undergo ion exchange — calcium ions in the fiber swap with sodium ions in the exudate, transforming the insoluble alginate into a soft, conformable sodium alginate gel. This process absorbs up to 20× its own weight in fluid, while releasing calcium ions that act as a co-factor in the coagulation cascade — actively supporting local hemostasis at the wound bed.
         </p>
         <p style="margin-top: 1.2rem;">
-          Available in flat pad and rope formats, the dressing is purpose-built for moderate-to-heavily exuding wounds, cavity wounds, sinuses and tunnels. As a primary contact dressing it absorbs exudate and supports haemostasis, then lifts off cleanly without adhering to fragile granulation tissue — requires a secondary cover dressing (foam or film) for fixation and barrier function.
+          Available in flat pad and rope formats, the dressing is purpose-built for moderate-to-heavily exuding wounds, cavity wounds, sinuses and tunnels. As a primary contact dressing it absorbs exudate and supports hemostasis, then lifts off cleanly without adhering to fragile granulation tissue — requires a secondary cover dressing (foam or film) for fixation and barrier function.
         </p>
       </div>
       <div class="feature-cards">
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3.5c0 0 6.5 7 6.5 11a6.5 6.5 0 0 1-13 0c0-4 6.5-11 6.5-11Z"/><path d="M9 14.8a3 3 0 0 0 3 2.7"/></svg></span>
           <h3>Very High Exudate Absorption</h3>
-          <p>The alginate fibre matrix absorbs up to 20× its own weight in wound exudate — significantly more than foam or hydrocolloid dressings. Vertical wicking locks fluid into the gel structure, preventing peri-wound maceration even in heavily exuding wounds.</p>
+          <p>The alginate fiber matrix absorbs up to 20× its own weight in wound exudate — significantly more than foam or hydrocolloid dressings. Vertical wicking locks fluid into the gel structure, preventing peri-wound maceration even in heavily exuding wounds.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 8v8M8 12h8"/></svg></span>
-          <h3>Haemostatic Calcium Release</h3>
-          <p>The ion-exchange mechanism releases calcium ions (Ca²⁺) directly to the wound bed — a critical co-factor that supports prothrombin-to-thrombin conversion in the clotting cascade. Particularly valuable for surgical wounds, donor sites and minor-bleeding cavity wounds where local haemostasis matters.</p>
+          <h3>Hemostatic Calcium Release</h3>
+          <p>The ion-exchange mechanism releases calcium ions (Ca²⁺) directly to the wound bed — a critical co-factor that supports prothrombin-to-thrombin conversion in the clotting cascade. Particularly valuable for surgical wounds, donor sites and minor-bleeding cavity wounds where local hemostasis matters.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 9c2.6 0 2.6 3 5.2 3s2.6-3 5.2-3 2.6 3 5.2 3"/><path d="M3 14c2.6 0 2.6 3 5.2 3s2.6-3 5.2-3 2.6 3 5.2 3"/></svg></span>
@@ -998,7 +1009,7 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 18h16"/><path d="M12 14V5"/><path d="M8.5 8.5 12 5l3.5 3.5"/></svg></span>
           <h3>Atraumatic Removal & Integrity</h3>
-          <p>Once gelled, the dressing lifts off the wound bed without adhering to fragile new granulation tissue — change is virtually painless. The fibres maintain their structural integrity even when fully gelled, so the dressing can be removed in one piece without leaving residue in the wound.</p>
+          <p>Once gelled, the dressing lifts off the wound bed without adhering to fragile new granulation tissue — change is virtually painless. The fibers maintain their structural integrity even when fully gelled, so the dressing can be removed in one piece without leaving residue in the wound.</p>
         </div>
       </div>
     </div>
@@ -1016,7 +1027,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -1026,7 +1037,7 @@
       <div>
         <table class="spec-table">
           <tr><td>Product Name</td><td>Calcium Alginate Dressing</td></tr>
-          <tr><td>Construction</td><td>100% natural calcium alginate fibres (seaweed-derived), gel-forming on contact with exudate</td></tr>
+          <tr><td>Construction</td><td>100% natural calcium alginate fibers (seaweed-derived), gel-forming on contact with exudate</td></tr>
           <tr><td>Sizes</td><td>Pad: 5×5 / 7.5×7.5 / 10×10 / 10×20 / 15×15 cm  ·  Rope: 30 cm × 2 g (for cavities)</td></tr>
           <tr><td>Packaging</td><td>10 pcs/box, 10 boxes/carton</td></tr>
           <tr><td>Absorbency</td><td>Very high — up to 20× own weight</td></tr>
@@ -1038,25 +1049,25 @@
       </div>
       <div>
         <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
-          Indicated as a primary contact dressing for moderate-to-heavily exuding chronic and acute wounds, particularly where haemostatic support or cavity-filling is required. Always cover with a secondary dressing (foam or film) for fixation and barrier protection.
+          Indicated as a primary contact dressing for moderate-to-heavily exuding chronic and acute wounds, particularly where hemostatic support or cavity-filling is required. Always cover with a secondary dressing (foam or film) for fixation and barrier protection.
         </p>
         <div class="application-tags">
           <span class="app-tag">Venous Leg Ulcers</span>
           <span class="app-tag">Pressure Injuries Stage III–IV</span>
           <span class="app-tag">Diabetic Foot Ulcers</span>
           <span class="app-tag">Cavity & Sinus Wounds</span>
-          <span class="app-tag">Tunnelling Wounds</span>
+          <span class="app-tag">Tunneling Wounds</span>
           <span class="app-tag">Surgical Wounds with Bleeding</span>
           <span class="app-tag">Donor Sites</span>
           <span class="app-tag">Traumatic Wounds</span>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Requires a secondary cover dressing (foam or film) — alginate alone provides no barrier function and is non-adhesive.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not suitable for dry wounds or eschar-covered necrotic tissue — without exudate the fibres cannot gel and may adhere to the wound bed.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not suitable for dry wounds or eschar-covered necrotic tissue — without exudate the fibers cannot gel and may adhere to the wound bed.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>For third-degree burns and heavily infected wounds, use only under the guidance of a healthcare professional. Irrigate the wound at each change to remove residual gel.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue use and consult a healthcare professional if any adverse reaction occurs.</li>
           </ul>
         </div>
       </div>
@@ -1110,7 +1121,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
@@ -1129,12 +1140,12 @@
 </footer>
 
 <script>
-  // The five small circles are positioned by JS, equidistant from the large circle's centre
+  // The five small circles are positioned by JS, equidistant from the large circle's center
   function positionOrbs() {
     const circle = document.querySelector('.hero-circle');
     if (!circle) return;
     const r = circle.offsetWidth / 2;   // Large circle radius
-    const gap = 20;                      // Distance of small-circle centres beyond the large circle's edge
+    const gap = 20;                      // Distance of small-circle centers beyond the large circle's edge
 
     const allOrbs = [
       { el: document.querySelector('.hero-orb-1'), deg: 210 }, // D
@@ -1147,7 +1158,7 @@
     allOrbs.forEach(({ el, deg }) => {
       if (!el) return;
       const orbR = el.offsetWidth / 2;
-      const dist = r + orbR + gap;           // Large-circle centre -> small-circle centre
+      const dist = r + orbR + gap;           // Large-circle center -> small-circle center
       const rad = (deg - 90) * Math.PI / 180;
       const cx = r + Math.cos(rad) * dist;
       const cy = r + Math.sin(rad) * dist;
@@ -1163,11 +1174,11 @@
   const topics = [
     {
       title: 'How It <em>Works</em>',
-      subtitle: 'Calcium alginate fibres undergo ion exchange on contact with wound exudate — calcium ions in the fibre swap with sodium ions in the wound fluid, converting the insoluble fibre into a soft, conformable sodium alginate gel. This gel absorbs up to 20× its own weight in exudate. Simultaneously, the released calcium ions act as a co-factor in the coagulation cascade (Factor IV), promoting prothrombin-to-thrombin conversion and supporting local haemostasis at the wound bed. The integrated fibre structure means the dressing can later be lifted off in one piece without leaving residue.'
+      subtitle: 'Calcium alginate fibers undergo ion exchange on contact with wound exudate — calcium ions in the fiber swap with sodium ions in the wound fluid, converting the insoluble fiber into a soft, conformable sodium alginate gel. This gel absorbs up to 20× its own weight in exudate. Simultaneously, the released calcium ions act as a co-factor in the coagulation cascade (Factor IV), promoting prothrombin-to-thrombin conversion and supporting local hemostasis at the wound bed. The integrated fiber structure means the dressing can later be lifted off in one piece without leaving residue.'
     },
     {
       title: 'Indications<br>by <em>Condition</em>',
-      subtitle: 'Diabetic foot ulcers and Stage III–IV pressure injuries: manages heavy exudate while supporting the wound bed and protecting peri-wound skin from maceration. Venous leg ulcers: high absorbency makes alginate a first-line primary dressing under compression. Cavity and sinus wounds: rope format packs gently into deep wounds, gelling in situ to fill complex architecture. Surgical wounds and donor sites with minor bleeding: calcium release supports haemostasis while exudate is absorbed. Traumatic wounds: rapid absorption and gel conformability protect the wound bed in acute settings.'
+      subtitle: 'Diabetic foot ulcers and Stage III–IV pressure injuries: manages heavy exudate while supporting the wound bed and protecting peri-wound skin from maceration. Venous leg ulcers: high absorbency makes alginate a first-line primary dressing under compression. Cavity and sinus wounds: rope format packs gently into deep wounds, gelling in situ to fill complex architecture. Surgical wounds and donor sites with minor bleeding: calcium release supports hemostasis while exudate is absorbed. Traumatic wounds: rapid absorption and gel conformability protect the wound bed in acute settings.'
     },
     {
       title: 'Application<br>by <em>Condition</em>',
@@ -1180,7 +1191,7 @@
   ];
 
   const defaultTitle = 'Calcium Alginate<br><em>Dressing</em>';
-  const defaultSubtitle = 'A high-absorbency natural calcium alginate dressing that gels on contact with exudate via ion exchange — releasing calcium ions to support haemostasis. Available as pads and ropes for moderate-to-heavy exudate, cavity wounds, diabetic foot ulcers and pressure injuries. Use as primary contact dressing under a secondary cover.';
+  const defaultSubtitle = 'A high-absorbency natural calcium alginate dressing that gels on contact with exudate via ion exchange — releasing calcium ions to support hemostasis. Available as pads and ropes for moderate-to-heavy exudate, cavity wounds, diabetic foot ulcers and pressure injuries. Use as primary contact dressing under a secondary cover.';
 
   const titleEl = document.getElementById('hero-title');
   const subtitleEl = document.getElementById('hero-subtitle');

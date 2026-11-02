@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hydrocolloid Dressing (Super Thin) | Ultra-Thin Wound Dressing | Velcura Medical</title>
-<meta name="description" content="Velcura Hydrocolloid Dressing (Super Thin) — ultra-thin, semi-translucent self-adhesive dressing for superficial, low-exudate wounds. CMC-based hydrocolloid matrix gels on contact with exudate, creating a sealed moist environment for autolytic debridement and re-epithelialisation. Up to 5 days wear time, fully waterproof.">
+<meta name="description" content="Velcura Hydrocolloid Dressing (Super Thin) — ultra-thin, semi-translucent self-adhesive dressing for superficial, low-exudate wounds. CMC-based hydrocolloid matrix gels on contact with exudate, creating a sealed moist environment for autolytic debridement and re-epithelialization. Up to 5 days wear time, fully waterproof.">
 <meta name="keywords" content="hydrocolloid dressing, super thin hydrocolloid, ultra-thin wound dressing, waterproof wound dressing, autolytic debridement dressing, pressure ulcer dressing, blister dressing, acne pimple patch, Velcura">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical">
@@ -42,7 +42,7 @@
   "@type": "Product",
   "name": "Hydrocolloid Dressing (Super Thin)",
   "image": "https://img.velcura.net/水胶体_02.jpg",
-  "description": "An ultra-thin (less than 1 mm) semi-translucent self-adhesive hydrocolloid dressing. The carboxymethylcellulose-based matrix gels on contact with wound exudate, creating a sealed moist healing environment that accelerates re-epithelialisation and supports autolytic debridement. The waterproof outer film allows showering and daily activity uninterrupted.",
+  "description": "An ultra-thin (less than 1 mm) semi-translucent self-adhesive hydrocolloid dressing. The carboxymethylcellulose-based matrix gels on contact with wound exudate, creating a sealed moist healing environment that accelerates re-epithelialization and supports autolytic debridement. The waterproof outer film allows showering and daily activity uninterrupted.",
   "brand": {
     "@type": "Brand",
     "name": "Velcura Medical"
@@ -736,11 +736,11 @@
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
   }
 
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown menu ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -825,6 +825,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -833,7 +844,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">AD ▾</a>
+        <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
           <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -862,7 +873,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -877,7 +888,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">SC ▾</a>
+        <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
         <div class="fp-menu">
           <a href="incise-drape.html" class="fp-item">Incise Drape</a>
           <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -962,7 +973,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -977,7 +988,7 @@
     <div class="features-grid">
       <div class="features-intro">
         <p>
-          Hydrocolloid Dressing (Super Thin) is engineered as an ultra-thin, near-invisible second skin for superficial wounds with light exudate. On contact with wound fluid, the hydrocolloid matrix (containing carboxymethylcellulose and other gel-forming particles) absorbs and gels — creating a sealed, moist micro-environment that accelerates epithelialisation, supports autolytic debridement of fibrinous tissue, and protects the wound from external contamination, water and friction. The thin, flexible film conforms to body contours so closely it disappears under clothing or on visible skin.
+          Hydrocolloid Dressing (Super Thin) is engineered as an ultra-thin, near-invisible second skin for superficial wounds with light exudate. On contact with wound fluid, the hydrocolloid matrix (containing carboxymethylcellulose and other gel-forming particles) absorbs and gels — creating a sealed, moist micro-environment that accelerates epithelialization, supports autolytic debridement of fibrinous tissue, and protects the wound from external contamination, water and friction. The thin, flexible film conforms to body contours so closely it disappears under clothing or on visible skin.
         </p>
         <p style="margin-top: 1.2rem;">
           Especially indicated for superficial, lightly-exuding wounds where discretion and uninterrupted daily activity matter: Stage I–II pressure injuries on prominent points, superficial burns and donor sites, post-acne lesions, minor blisters, dry surgical incisions and the late maturation phase of healing wounds. Its thin profile makes it ideal for facial, hand and visible-site wounds where conventional dressings are too bulky.
@@ -992,12 +1003,12 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3.5c0 0 6.5 7 6.5 11a6.5 6.5 0 0 1-13 0c0-4 6.5-11 6.5-11Z"/><path d="M9 14.8a3 3 0 0 0 3 2.7"/></svg></span>
           <h3>Autolytic Debridement & Moist Healing</h3>
-          <p>On contact with exudate, the hydrocolloid matrix forms a soft gel that maintains the optimum moist environment for re-epithelialisation. The sealed micro-climate activates endogenous proteases, supporting gentle autolytic debridement of fibrin and necrotic tissue — no mechanical trauma to the wound bed.</p>
+          <p>On contact with exudate, the hydrocolloid matrix forms a soft gel that maintains the optimum moist environment for re-epithelialization. The sealed micro-climate activates endogenous proteases, supporting gentle autolytic debridement of fibrin and necrotic tissue — no mechanical trauma to the wound bed.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 2.8v5.6c0 4.6-3.4 7.7-7.5 8.8-4.1-1.1-7.5-4.2-7.5-8.8V5.8L12 3Z"/><path d="M12 9.4c0 0-2.3 2.6-2.3 4.2a2.3 2.3 0 0 0 4.6 0c0-1.6-2.3-4.2-2.3-4.2Z"/></svg></span>
           <h3>Waterproof Protective Barrier</h3>
-          <p>A semi-permeable polyurethane outer film is fully waterproof and blocks bacteria, viruses, dirt and friction — patients can shower, work and exercise without disturbing the dressing. Water vapour still escapes outward, so the skin doesn't macerate.</p>
+          <p>A semi-permeable polyurethane outer film is fully waterproof and blocks bacteria, viruses, dirt and friction — patients can shower, work and exercise without disturbing the dressing. Water vapor still escapes outward, so the skin doesn't macerate.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.6V12l3 1.9"/></svg></span>
@@ -1020,7 +1031,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -1031,7 +1042,7 @@
         <table class="spec-table">
           <tr><td>Product Name</td><td>Hydrocolloid Dressing (Super Thin)</td></tr>
           <tr><td>Construction</td><td>Two-layer ultra-thin composite: Hydrocolloid gel-forming wound contact layer (CMC + adhesive matrix) / Semi-permeable polyurethane waterproof outer film</td></tr>
-          <tr><td>Sizes</td><td>5×5 / 7.5×7.5 / 10×10 / 10×15 / 15×15 cm (square or oval; bevelled edges)</td></tr>
+          <tr><td>Sizes</td><td>5×5 / 7.5×7.5 / 10×10 / 10×15 / 15×15 cm (square or oval; beveled edges)</td></tr>
           <tr><td>Packaging</td><td>10 pcs/box, 10 boxes/carton</td></tr>
           <tr><td>Exudate Level</td><td>Light to moderate</td></tr>
           <tr><td>Sterilization</td><td>Ethylene oxide (EO)</td></tr>
@@ -1061,12 +1072,12 @@
           </div>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not suitable for clinically infected wounds — the occlusive environment may encourage anaerobic bacterial growth.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not recommended for heavily exuding wounds — the thin profile has limited absorbency; choose a foam or alginate dressing instead.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>For deep, full-thickness or third-degree wounds, use only under the guidance of a healthcare professional.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue use and consult a healthcare professional if any adverse reaction occurs.</li>
           </ul>
         </div>
       </div>
@@ -1120,7 +1131,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
@@ -1173,15 +1184,15 @@
   const topics = [
     {
       title: 'How It <em>Works</em>',
-      subtitle: 'The hydrocolloid wound contact layer contains gel-forming particles — primarily carboxymethylcellulose (CMC) — embedded in a soft polymer adhesive. On contact with wound exudate, these particles absorb fluid and swell into a soft gel that conforms intimately to the wound bed, locking in the moist environment essential for re-epithelialisation. The same sealed micro-environment activates endogenous proteases that gently digest fibrinous and necrotic tissue (autolytic debridement). The outer semi-permeable polyurethane film blocks water, bacteria and dirt while allowing water vapour to escape — preventing maceration of surrounding skin.'
+      subtitle: 'The hydrocolloid wound contact layer contains gel-forming particles — primarily carboxymethylcellulose (CMC) — embedded in a soft polymer adhesive. On contact with wound exudate, these particles absorb fluid and swell into a soft gel that conforms intimately to the wound bed, locking in the moist environment essential for re-epithelialization. The same sealed micro-environment activates endogenous proteases that gently digest fibrinous and necrotic tissue (autolytic debridement). The outer semi-permeable polyurethane film blocks water, bacteria and dirt while allowing water vapor to escape — preventing maceration of surrounding skin.'
     },
     {
       title: 'Indications<br>by <em>Condition</em>',
-      subtitle: 'Stage I–II pressure injuries on bony prominences: thin profile cushions without bulk, supports re-epithelialisation. Superficial burns and donor sites: maintains the moist environment that accelerates re-epithelialisation while shielding nerve endings from pain. Post-acne lesions and blemishes: pulls fluid up and supports tissue remodelling — a cosmetic favourite. Minor blisters and friction injuries: protects intact skin from further mechanical damage. Dry surgical incisions and maturation-phase wounds: provides a clean, waterproof barrier during late healing.'
+      subtitle: 'Stage I–II pressure injuries on bony prominences: thin profile cushions without bulk, supports re-epithelialization. Superficial burns and donor sites: maintains the moist environment that accelerates re-epithelialization while shielding nerve endings from pain. Post-acne lesions and blemishes: pulls fluid up and supports tissue remodeling — a cosmetic favorite. Minor blisters and friction injuries: protects intact skin from further mechanical damage. Dry surgical incisions and maturation-phase wounds: provides a clean, waterproof barrier during late healing.'
     },
     {
       title: 'Application<br>by <em>Condition</em>',
-      subtitle: 'General: cleanse the wound with saline and gently pat dry the peri-wound skin. Select a size that gives a 2–3 cm border of intact skin beyond the wound edge. Warm the dressing in the hands to improve adhesion, peel off the backing and apply gel-side down — smooth from the centre outwards without stretching. Once in place, run a finger around the edges to seal. Leave undisturbed for up to 5 days, or change earlier if the gel pad expands close to the edge or leakage appears. Remove gently by stretching the film parallel to the skin — never pulling upward — to release the adhesive without skin trauma.'
+      subtitle: 'General: cleanse the wound with saline and gently pat dry the peri-wound skin. Select a size that gives a 2–3 cm border of intact skin beyond the wound edge. Warm the dressing in the hands to improve adhesion, peel off the backing and apply gel-side down — smooth from the center outwards without stretching. Once in place, run a finger around the edges to seal. Leave undisturbed for up to 5 days, or change earlier if the gel pad expands close to the edge or leakage appears. Remove gently by stretching the film parallel to the skin — never pulling upward — to release the adhesive without skin trauma.'
     },
     {
       title: 'Storage<br><em>Conditions</em>',
@@ -1190,7 +1201,7 @@
   ];
 
   const defaultTitle = 'Hydrocolloid<br><em>Super Thin</em>';
-  const defaultSubtitle = "An ultra-thin self-adhesive hydrocolloid dressing — a discreet second skin for superficial, low-exudate wounds. The gel-forming matrix creates a sealed moist environment that supports autolytic debridement and re-epithelialisation, while the waterproof film protects against water, bacteria and friction during everyday life.";
+  const defaultSubtitle = "An ultra-thin self-adhesive hydrocolloid dressing — a discreet second skin for superficial, low-exudate wounds. The gel-forming matrix creates a sealed moist environment that supports autolytic debridement and re-epithelialization, while the waterproof film protects against water, bacteria and friction during everyday life.";
 
   const titleEl = document.getElementById('hero-title');
   const subtitleEl = document.getElementById('hero-subtitle');

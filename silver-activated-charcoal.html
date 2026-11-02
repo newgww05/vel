@@ -13,8 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silver Activated Charcoal Dressing | Velcura Medical</title>
-<meta name="description" content="Velcura Silver Activated Charcoal Dressing — activated charcoal impregnated with ionic silver in a non-adherent sleeve. The charcoal adsorbs bacteria, toxins and odour from wound exudate while the bound silver kills the captured bacteria inside the dressing. Dual-action odour control and antimicrobial protection for chronic, infected, malodorous and fungating wounds.">
-<meta name="keywords" content="silver activated charcoal dressing, charcoal silver dressing, antimicrobial odour control dressing, malodorous wound dressing, fungating wound dressing, infected wound dressing, non-adhesive charcoal silver, Velcura">
+<meta name="description" content="Velcura Silver Activated Charcoal Dressing — activated charcoal impregnated with ionic silver in a non-adherent sleeve. The charcoal adsorbs bacteria, toxins and odor from wound exudate while the bound silver kills the captured bacteria inside the dressing. Dual-action odor control and antimicrobial protection for chronic, infected, malodorous and fungating wounds.">
+<meta name="keywords" content="silver activated charcoal dressing, charcoal silver dressing, antimicrobial odor control dressing, malodorous wound dressing, fungating wound dressing, infected wound dressing, non-adhesive charcoal silver, Velcura">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Velcura Medical">
 <link rel="canonical" href="https://velcura.net/silver-activated-charcoal">
@@ -22,14 +22,14 @@
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="Silver Activated Charcoal Dressing | Velcura Medical">
-<meta property="og:description" content="Activated charcoal + ionic silver in a non-adherent sleeve — charcoal traps bacteria and odour, silver kills the captured bacteria inside the dressing. For infected, malodorous and fungating wounds.">
+<meta property="og:description" content="Activated charcoal + ionic silver in a non-adherent sleeve — charcoal traps bacteria and odor, silver kills the captured bacteria inside the dressing. For infected, malodorous and fungating wounds.">
 <meta property="og:image" content="https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E6%B4%BB%E6%80%A7%E7%82%AD%E6%95%B7%E8%B4%B4%EF%BC%88%E9%9D%9E%E7%B2%98%EF%BC%89%E4%BA%A7%E5%93%81.png">
 <meta property="og:url" content="https://velcura.net/silver-activated-charcoal">
 <meta property="og:site_name" content="Velcura Medical">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Silver Activated Charcoal Dressing | Velcura Medical">
-<meta name="twitter:description" content="Activated charcoal + ionic silver in a non-adherent sleeve — charcoal traps bacteria and odour, silver kills the captured bacteria inside the dressing. For infected, malodorous and fungating wounds.">
+<meta name="twitter:description" content="Activated charcoal + ionic silver in a non-adherent sleeve — charcoal traps bacteria and odor, silver kills the captured bacteria inside the dressing. For infected, malodorous and fungating wounds.">
 <meta name="twitter:image" content="https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E6%B4%BB%E6%80%A7%E7%82%AD%E6%95%B7%E8%B4%B4%EF%BC%88%E9%9D%9E%E7%B2%98%EF%BC%89%E4%BA%A7%E5%93%81.png">
 
 <!-- Structured Data -->
@@ -39,7 +39,7 @@
   "@type": "Product",
   "name": "Silver Activated Charcoal Dressing",
   "image": "https://img.velcura.net/%E9%93%B6%E7%A6%BB%E5%AD%90%E6%B4%BB%E6%80%A7%E7%82%AD%E6%95%B7%E8%B4%B4%EF%BC%88%E9%9D%9E%E7%B2%98%EF%BC%89%E4%BA%A7%E5%93%81.png",
-  "description": "A non-adherent activated charcoal dressing impregnated with ionic silver for chronic, infected, colonised and malodorous wounds. The high-surface-area activated carbon adsorbs and binds bacteria, bacterial endotoxins and the volatile molecules responsible for wound odour from the exudate, while the silver held in the charcoal kills the captured bacteria inside the dressing — reducing bioburden and controlling odour at source. The non-adherent sleeve provides atraumatic dressing changes.",
+  "description": "A non-adherent activated charcoal dressing impregnated with ionic silver for chronic, infected, colonized and malodorous wounds. The high-surface-area activated carbon adsorbs and binds bacteria, bacterial endotoxins and the volatile molecules responsible for wound odor from the exudate, while the silver held in the charcoal kills the captured bacteria inside the dressing — reducing bioburden and controlling odor at source. The non-adherent sleeve provides atraumatic dressing changes.",
   "brand": {
     "@type": "Brand",
     "name": "Velcura Medical"
@@ -733,11 +733,11 @@
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
   }
 
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown menu ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -822,6 +822,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -830,7 +841,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">AD ▾</a>
+        <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
           <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -859,7 +870,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -874,7 +885,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">SC ▾</a>
+        <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
         <div class="fp-menu">
           <a href="incise-drape.html" class="fp-item">Incise Drape</a>
           <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -900,7 +911,7 @@
       <div class="hi-item">
         <svg class="hi-ico" viewBox="0 0 24 24"><path d="M12 3 19 7v8l-7 4-7-4V7l7-4Z"/><circle cx="12" cy="11.5" r="1.6"/></svg>
         <div class="hi-body">
-          <div class="hi-title">Charcoal Traps Bacteria &amp; Odour</div>
+          <div class="hi-title">Charcoal Traps Bacteria &amp; Odor</div>
           <div class="hi-sub">Adsorbed Into the Dressing</div>
         </div>
       </div>
@@ -961,14 +972,14 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
 <!-- FEATURES -->
 <!-- GREEN FULL-WIDTH BAND -->
 <div class="green-band">
-  <h2>Charcoal Traps the Bacteria and Odour — Silver Kills Them Inside the Dressing</h2>
+  <h2>Charcoal Traps the Bacteria and Odor — Silver Kills Them Inside the Dressing</h2>
 </div>
 
 <!-- FEATURES -->
@@ -977,22 +988,22 @@
     <div class="features-grid">
       <div class="features-intro">
         <p>
-          Velcura Silver Activated Charcoal Dressing is a knitted activated charcoal cloth impregnated with ionic silver, enclosed in a soft non-adherent sleeve. The microporous carbon offers an exceptionally large surface area that adsorbs and binds bacteria, bacterial endotoxins and the volatile molecules responsible for wound odour — drawing them out of the exudate and concentrating them within the dressing.
+          Velcura Silver Activated Charcoal Dressing is a knitted activated charcoal cloth impregnated with ionic silver, enclosed in a soft non-adherent sleeve. The microporous carbon offers an exceptionally large surface area that adsorbs and binds bacteria, bacterial endotoxins and the volatile molecules responsible for wound odor — drawing them out of the exudate and concentrating them within the dressing.
         </p>
         <p style="margin-top: 1.2rem;">
-          The silver held in the charcoal then kills the captured bacteria in place, before they can re-colonise the wound, so the dressing controls odour and actively reduces bioburden at the same time. Unlike a charcoal-only dressing — which traps odour but does not kill what it holds — and unlike a silver-only dressing without dedicated odour adsorption, this dual action targets the bacteria-and-odour cycle of chronic, infected and fungating wounds. The non-adherent sleeve gives atraumatic, pain-free dressing changes.
+          The silver held in the charcoal then kills the captured bacteria in place, before they can re-colonize the wound, so the dressing controls odor and actively reduces bioburden at the same time. Unlike a charcoal-only dressing — which traps odor but does not kill what it holds — and unlike a silver-only dressing without dedicated odor adsorption, this dual action targets the bacteria-and-odor cycle of chronic, infected and fungating wounds. The non-adherent sleeve gives atraumatic, pain-free dressing changes.
         </p>
       </div>
       <div class="feature-cards">
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3 19.5 7.2v9.6L12 21l-7.5-4.2V7.2L12 3Z"/><circle cx="12" cy="12" r="2"/></svg></span>
           <h3>Activated Charcoal Adsorption</h3>
-          <p>The high-surface-area carbon physically adsorbs and binds bacteria, bacterial endotoxins and the volatile organic molecules responsible for offensive wound odour, drawing them out of the exudate and locking them inside the dressing.</p>
+          <p>The high-surface-area carbon physically adsorbs and binds bacteria, bacterial endotoxins and the volatile organic molecules responsible for offensive wound odor, drawing them out of the exudate and locking them inside the dressing.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></span>
           <h3>Silver Kills the Captured Bacteria</h3>
-          <p>Ionic silver impregnated in the charcoal kills the bacteria bound within the dressing and participates in reducing bioburden — active against a broad range of wound pathogens — so trapped organisms cannot re-colonise the wound.</p>
+          <p>Ionic silver impregnated in the charcoal kills the bacteria bound within the dressing and participates in reducing bioburden — active against a broad range of wound pathogens — so trapped organisms cannot re-colonize the wound.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="9" rx="3.5"/><path d="M5 18.5h14"/></svg></span>
@@ -1001,8 +1012,8 @@
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 12-4.9"/><path d="M19 12a7 7 0 0 1-12 4.9"/><path d="M17 3.4v3.4h-3.4"/><path d="M7 20.6v-3.4h3.4"/></svg></span>
-          <h3>Breaks the Odour–Infection Cycle</h3>
-          <p>By trapping bacteria and toxins and killing them on the spot, the dressing addresses both the cause and the symptom of malodour — useful for chronic wounds stuck in the inflammatory phase, and suitable for use under compression bandaging.</p>
+          <h3>Breaks the Odor–Infection Cycle</h3>
+          <p>By trapping bacteria and toxins and killing them on the spot, the dressing addresses both the cause and the symptom of malodor — useful for chronic wounds stuck in the inflammatory phase, and suitable for use under compression bandaging.</p>
         </div>
       </div>
     </div>
@@ -1020,7 +1031,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -1032,7 +1043,7 @@
           <tr><td>Product Name</td><td>Silver Activated Charcoal Dressing</td></tr>
           <tr><td>Construction</td><td>Knitted activated charcoal cloth impregnated with ionic silver, sealed within a soft non-adherent non-woven sleeve (no adhesive)</td></tr>
           <tr><td>Antimicrobial</td><td>Sustained ionic silver — kills captured bacteria within the dressing</td></tr>
-          <tr><td>Odour Control</td><td>Activated charcoal adsorption</td></tr>
+          <tr><td>Odor Control</td><td>Activated charcoal adsorption</td></tr>
           <tr><td>Sizes</td><td>10.5×10.5 / 10.5×19 / 19×19 cm (do not cut)</td></tr>
           <tr><td>Packaging</td><td>10 pcs/box, 10 boxes/carton</td></tr>
           <tr><td>Exudate Level</td><td>Low to moderate (use with secondary absorbent for heavy exudate)</td></tr>
@@ -1044,12 +1055,12 @@
       </div>
       <div>
         <p style="font-size:0.88rem; color:var(--c-ink2); line-height:1.8; margin-bottom:2rem;">
-          A dual-action dressing for the management of chronic, infected, colonised and malodorous wounds — including fungating lesions and wounds stuck in the inflammatory phase. The charcoal controls odour while the silver reduces bioburden; pair with an absorbent secondary dressing for moderate to heavy exudate.
+          A dual-action dressing for the management of chronic, infected, colonized and malodorous wounds — including fungating lesions and wounds stuck in the inflammatory phase. The charcoal controls odor while the silver reduces bioburden; pair with an absorbent secondary dressing for moderate to heavy exudate.
         </p>
         <div class="application-tags">
           <div class="tag-row">
             <span class="app-tag">Infected Chronic Ulcers</span>
-            <span class="app-tag">Fungating Tumour Wounds</span>
+            <span class="app-tag">Fungating Tumor Wounds</span>
             <span class="app-tag">Malodorous Wounds</span>
             <span class="app-tag">Diabetic Foot Ulcers</span>
           </div>
@@ -1059,17 +1070,17 @@
             <span class="app-tag">Necrotic / Sloughy Wounds</span>
           </div>
           <div class="tag-row">
-            <span class="app-tag">Heavily Colonised Wounds</span>
+            <span class="app-tag">Heavily Colonized Wounds</span>
           </div>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg><strong>Do not cut.</strong> Cutting releases free activated charcoal particles into the wound bed, which may cause irritation and tattooing of tissue.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not for patients with known sensitivity to silver; do not use on third-degree burns, and remove prior to MRI, X-ray or radiotherapy.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Requires a secondary fixation — bandage, tape, tubular netting or compression. The dressing is not self-adhesive.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not suitable for dry wounds — moisten with saline or pair with a hydrogel/contact-layer if wound bed is dry.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue use and consult a healthcare professional if any adverse reaction occurs.</li>
           </ul>
         </div>
       </div>
@@ -1123,7 +1134,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
@@ -1142,12 +1153,12 @@
 </footer>
 
 <script>
-  // The five small circles are positioned by JS, equidistant from the large circle's centre
+  // The five small circles are positioned by JS, equidistant from the large circle's center
   function positionOrbs() {
     const circle = document.querySelector('.hero-circle');
     if (!circle) return;
     const r = circle.offsetWidth / 2;   // Large circle radius
-    const gap = 20;                      // Distance of small-circle centres beyond the large circle's edge
+    const gap = 20;                      // Distance of small-circle centers beyond the large circle's edge
 
     const allOrbs = [
       { el: document.querySelector('.hero-orb-1'), deg: 210 }, // D
@@ -1160,7 +1171,7 @@
     allOrbs.forEach(({ el, deg }) => {
       if (!el) return;
       const orbR = el.offsetWidth / 2;
-      const dist = r + orbR + gap;           // Large-circle centre -> small-circle centre
+      const dist = r + orbR + gap;           // Large-circle center -> small-circle center
       const rad = (deg - 90) * Math.PI / 180;
       const cx = r + Math.cos(rad) * dist;
       const cy = r + Math.sin(rad) * dist;
@@ -1176,15 +1187,15 @@
   const topics = [
     {
       title: 'How It <em>Works</em>',
-      subtitle: 'Activated charcoal is a microporous carbon material with an enormous internal surface area (typically 1,000+ m²/g). Volatile odour molecules — cadaverine, putrescine, ammonia, organic acids and other VOCs produced by bacterial breakdown of tissue — diffuse into the porous network and bind to the carbon surface, neutralising odour at its molecular source. The same porous structure traps free bacteria and bacterial endotoxins drawn from the wound exudate, reducing surface bioburden. The charcoal cloth is sealed in a non-adherent sleeve that protects fragile tissue at every dressing change.'
+      subtitle: 'Activated charcoal is a microporous carbon material with an enormous internal surface area (typically 1,000+ m²/g). Volatile odor molecules — cadaverine, putrescine, ammonia, organic acids and other VOCs produced by bacterial breakdown of tissue — diffuse into the porous network and bind to the carbon surface, neutralizing odor at its molecular source. The same porous structure traps free bacteria and bacterial endotoxins drawn from the wound exudate, reducing surface bioburden. The charcoal cloth is sealed in a non-adherent sleeve that protects fragile tissue at every dressing change.'
     },
     {
       title: 'Indications<br>by <em>Condition</em>',
-      subtitle: 'Fungating tumour wounds: neutralises the heavy, distressing odour from necrotic tissue and bacterial overgrowth that severely affects patient dignity and quality of life. Infected and colonised chronic ulcers: reduces malodour and bacterial bioburden while supporting healing. Diabetic foot ulcers with malodour: combines odour control with atraumatic contact for fragile peri-wound skin. Pressure injuries (Stage III-IV) with malodorous exudate: pairs naturally with foam or absorbent secondary dressings. Venous and arterial ulcers with colonisation: provides odour control under compression bandaging.'
+      subtitle: 'Fungating tumor wounds: neutralizes the heavy, distressing odor from necrotic tissue and bacterial overgrowth that severely affects patient dignity and quality of life. Infected and colonized chronic ulcers: reduces malodor and bacterial bioburden while supporting healing. Diabetic foot ulcers with malodor: combines odor control with atraumatic contact for fragile peri-wound skin. Pressure injuries (Stage III-IV) with malodorous exudate: pairs naturally with foam or absorbent secondary dressings. Venous and arterial ulcers with colonization: provides odor control under compression bandaging.'
     },
     {
       title: 'Application<br>by <em>Condition</em>',
-      subtitle: 'General: cleanse the wound with saline and lightly pat dry the peri-wound skin. Apply the charcoal dressing directly onto the wound bed — DO NOT CUT the dressing, as this releases free charcoal particles. If the wound bed is dry, lightly moisten the contact surface with saline. Cover with a secondary absorbent (foam, super-absorber) for heavier exudate, then secure with bandage, tape, tubular netting or compression bandage. Typical change frequency is every 1–3 days, guided by odour intensity and exudate strike-through; replace earlier if odour returns. Remove gently — the non-adherent sleeve lifts off without trauma to the wound bed.'
+      subtitle: 'General: cleanse the wound with saline and lightly pat dry the peri-wound skin. Apply the charcoal dressing directly onto the wound bed — DO NOT CUT the dressing, as this releases free charcoal particles. If the wound bed is dry, lightly moisten the contact surface with saline. Cover with a secondary absorbent (foam, super-absorber) for heavier exudate, then secure with bandage, tape, tubular netting or compression bandage. Typical change frequency is every 1–3 days, guided by odor intensity and exudate strike-through; replace earlier if odor returns. Remove gently — the non-adherent sleeve lifts off without trauma to the wound bed.'
     },
     {
       title: 'Storage<br><em>Conditions</em>',
@@ -1193,7 +1204,7 @@
   ];
 
   const defaultTitle = 'Activated Charcoal<br><em>Non-Adhesive</em>';
-  const defaultSubtitle = 'A non-adherent activated charcoal dressing for malodorous, infected and colonised wounds. The high-surface-area carbon cloth physically adsorbs odour molecules, bacteria and endotoxins, while the non-adherent sleeve protects fragile tissue at every change — restoring patient dignity in fungating, diabetic, pressure and chronic ulcer wounds.';
+  const defaultSubtitle = 'A non-adherent activated charcoal dressing for malodorous, infected and colonized wounds. The high-surface-area carbon cloth physically adsorbs odor molecules, bacteria and endotoxins, while the non-adherent sleeve protects fragile tissue at every change — restoring patient dignity in fungating, diabetic, pressure and chronic ulcer wounds.';
 
   const titleEl = document.getElementById('hero-title');
   const subtitleEl = document.getElementById('hero-subtitle');

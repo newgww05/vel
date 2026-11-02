@@ -734,11 +734,11 @@
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
   }
 
-  /* AD/TD/SC font-size increase */
-  .nav-links .dropdown-trigger { font-size: 1.6rem; letter-spacing: 0.06em; }
+  /* Category dropdown triggers */
+  .nav-links .dropdown-trigger { font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
   /* ===== Featured Products dropdown menu ===== */
   .nav-links .has-dropdown { position: relative; }
-  .nav-links .dropdown-trigger { cursor: pointer; }
+  .nav-links .dropdown-trigger { cursor: pointer; white-space: nowrap; }
   .fp-menu {
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 360px; padding: 0.8rem 0;
@@ -823,6 +823,17 @@
 
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
 </style>
+<style>
+  /* Category nav: full names on wide screens, one-word names below 1279 */
+  @media (max-width:1279px) {
+    .nav-links .nav-long { display:none; }
+    .nav-links { gap:1.5rem !important; }
+  }
+  @media (max-width:1099px) {
+    .nav-links { gap:1rem !important; }
+    .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -831,7 +842,7 @@
   <a class="nav-logo" href="#"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" fetchpriority="high" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">AD ▾</a>
+        <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
           <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
@@ -860,7 +871,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">TD ▾</a>
+        <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
           <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
           <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
@@ -875,7 +886,7 @@
         </div>
       </li>
     <li class="has-dropdown">
-        <a href="#" class="dropdown-trigger">SC ▾</a>
+        <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
         <div class="fp-menu">
           <a href="incise-drape.html" class="fp-item">Incise Drape</a>
           <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
@@ -958,7 +969,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">NMPA</div>
-    <div class="stat-label">NMPA-certified</div>
+    <div class="stat-label">NMPA-registered</div>
   </div>
 </div>
 
@@ -974,7 +985,7 @@
     <div class="features-grid">
       <div class="features-intro">
         <p>
-          Nano-Silver Medical Antibacterial Dressing incorporates nanocrystalline silver particles (20–100 nm) onto medical-grade fibres, enabling slow, sustained release of silver ions (Ag⁺) across the wound surface. Silver ions act through multiple antimicrobial mechanisms simultaneously — binding bacterial cell walls, disrupting respiratory enzymes, and denaturing microbial DNA and RNA — making the development of resistance exceptionally difficult. Published in-vitro and clinical studies demonstrate sustained efficacy against multi-drug-resistant pathogens including MRSA, VRE and Pseudomonas aeruginosa, as well as activity against bacterial biofilms.
+          Nano-Silver Medical Antibacterial Dressing incorporates nanocrystalline silver particles (20–100 nm) onto medical-grade fibers, enabling slow, sustained release of silver ions (Ag⁺) across the wound surface. Silver ions act through multiple antimicrobial mechanisms simultaneously — binding bacterial cell walls, disrupting respiratory enzymes, and denaturing microbial DNA and RNA — making the development of resistance exceptionally difficult. Published in-vitro and clinical studies demonstrate sustained efficacy against multi-drug-resistant pathogens including MRSA, VRE and Pseudomonas aeruginosa, as well as activity against bacterial biofilms.
         </p>
         <p style="margin-top: 1.2rem;">
           Designed for chronic, infected or high-risk wounds where bacterial bioburden compromises healing: diabetic foot ulcers, infected pressure injuries, venous and arterial leg ulcers, surgical site infections, burns and traumatic wounds. The non-adherent contact layer ensures atraumatic dressing changes; the moist environment supports tissue regeneration alongside infection control.
@@ -989,12 +1000,12 @@
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 4v2.2"/><path d="M12 17.8V20"/><path d="M4 12h2.2"/><path d="M17.8 12H20"/><path d="M6.3 6.3l1.6 1.6"/><path d="M16.1 16.1l1.6 1.6"/><path d="M17.7 6.3l-1.6 1.6"/><path d="M7.9 16.1l-1.6 1.6"/></svg></span>
           <h3>Nanocrystalline Sustained Release</h3>
-          <p>Nano-scale silver particles (20–100 nm) bonded to the fibre matrix release Ag⁺ gradually through controlled hydrolysis and oxidation. The slow-release profile maintains an effective antimicrobial concentration at the wound bed for up to 7 days — reducing dressing-change frequency and protecting the wound between assessments.</p>
+          <p>Nano-scale silver particles (20–100 nm) bonded to the fiber matrix release Ag⁺ gradually through controlled hydrolysis and oxidation. The slow-release profile maintains an effective antimicrobial concentration at the wound bed for up to 7 days — reducing dressing-change frequency and protecting the wound between assessments.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 13c2.5 0 2.5 2.5 5 2.5s2.5-2.5 5-2.5 2.5 2.5 5 2.5"/><path d="M3 17.5c2.5 0 2.5 2.5 5 2.5s2.5-2.5 5-2.5 2.5 2.5 5 2.5"/><path d="M5 4l14 14"/></svg></span>
           <h3>Anti-Biofilm Activity</h3>
-          <p>Biofilms — communities of bacteria embedded in protective polysaccharide matrices — are a leading cause of chronic wound stalling and antibiotic failure. Silver nanoparticles have been shown in published studies to penetrate the extracellular polymeric substance, reduce biofilm viability and prevent re-colonisation throughout the dressing-wear period.</p>
+          <p>Biofilms — communities of bacteria embedded in protective polysaccharide matrices — are a leading cause of chronic wound stalling and antibiotic failure. Silver nanoparticles have been shown in published studies to penetrate the extracellular polymeric substance, reduce biofilm viability and prevent re-colonization throughout the dressing-wear period.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 18h16"/><path d="M12 14V5"/><path d="M8.5 8.5 12 5l3.5 3.5"/></svg></span>
@@ -1017,7 +1028,7 @@
   <div class="specs-band">
     <div class="container">
       <div class="specs-band-grid">
-        <div class="specs-band-title">Technical Parameters (Specs)</div>
+        <div class="specs-band-title">Technical Specifications</div>
         <div class="specs-band-title">Clinical Applications (Indications)</div>
       </div>
     </div>
@@ -1027,7 +1038,7 @@
       <div>
         <table class="spec-table">
           <tr><td>Product Name</td><td>Nano-Silver Medical Antibacterial Dressing</td></tr>
-          <tr><td>Construction</td><td>Medical-grade fibre substrate with bonded nanocrystalline silver particles (20–100 nm); non-adherent wound contact surface</td></tr>
+          <tr><td>Construction</td><td>Medical-grade fiber substrate with bonded nanocrystalline silver particles (20–100 nm); non-adherent wound contact surface</td></tr>
           <tr><td>Sizes</td><td>5×5 / 7.5×7.5 / 10×10 / 10×20 / 15×15 cm (custom sizes available)</td></tr>
           <tr><td>Packaging</td><td>10 pcs/box, 10 boxes/carton</td></tr>
           <tr><td>Antimicrobial Range</td><td>Broad-spectrum — Gram-positive, Gram-negative, MRSA, VRE, Pseudomonas, anti-biofilm</td></tr>
@@ -1043,7 +1054,7 @@
         </p>
         <div class="application-tags">
           <div class="tag-row">
-            <span class="app-tag">MRSA-Colonised Wounds</span>
+            <span class="app-tag">MRSA-Colonized Wounds</span>
             <span class="app-tag">Infected Pressure Injuries</span>
             <span class="app-tag">Infected Diabetic Foot Ulcers</span>
             <span class="app-tag">Venous &amp; Arterial Leg Ulcers</span>
@@ -1058,12 +1069,12 @@
           </div>
         </div>
         <div style="margin-top:3rem; padding:2rem; border:0.5px solid var(--c-line);">
-          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Cautions</div>
+          <div style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-ink3); margin-bottom:1rem;">Precautions</div>
           <ul class="caution-list" style="font-size:0.82rem; color:var(--c-ink2); line-height:1.9;">
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not recommended for patients with known silver sensitivity. Avoid use during MRI examinations — remove before scanning.</li>
             <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Use only on wounds with adequate moisture — silver ion activity requires the presence of wound exudate. Pair with a hydrogel or saline if the wound bed is dry.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not for routine prophylactic use — antimicrobial dressings are indicated for infected, critically colonised or high-risk wounds, and should be discontinued once infection is controlled.</li>
-            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue immediately and seek medical advice if any abnormal reaction occurs.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Not for routine prophylactic use — antimicrobial dressings are indicated for infected, critically colonized or high-risk wounds, and should be discontinued once infection is controlled.</li>
+            <li><svg class="caution-ico" viewBox="0 0 24 24"><path d="M12 4 21.2 20H2.8Z"/><path d="M12 10v4.2"/><path d="M12 17.4h.01"/></svg>Discontinue use and consult a healthcare professional if any adverse reaction occurs.</li>
           </ul>
         </div>
       </div>
@@ -1117,7 +1128,7 @@
             </div>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
-            <textarea name="message" placeholder="Please describe your inquiry or the product information you'd like to know... *" required></textarea>
+            <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
             <button type="submit" class="btn-gold">Send Inquiry</button>
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
@@ -1136,12 +1147,12 @@
 </footer>
 
 <script>
-  // The five small circles are positioned by JS, equidistant from the large circle's centre
+  // The five small circles are positioned by JS, equidistant from the large circle's center
   function positionOrbs() {
     const circle = document.querySelector('.hero-circle');
     if (!circle) return;
     const r = circle.offsetWidth / 2;   // Large circle radius
-    const gap = 20;                      // Distance of small-circle centres beyond the large circle's edge
+    const gap = 20;                      // Distance of small-circle centers beyond the large circle's edge
 
     const allOrbs = [
       { el: document.querySelector('.hero-orb-1'), deg: 210 }, // D
@@ -1154,7 +1165,7 @@
     allOrbs.forEach(({ el, deg }) => {
       if (!el) return;
       const orbR = el.offsetWidth / 2;
-      const dist = r + orbR + gap;           // Large-circle centre -> small-circle centre
+      const dist = r + orbR + gap;           // Large-circle center -> small-circle center
       const rad = (deg - 90) * Math.PI / 180;
       const cx = r + Math.cos(rad) * dist;
       const cy = r + Math.sin(rad) * dist;
@@ -1174,7 +1185,7 @@
     },
     {
       title: 'Indications<br>by <em>Condition</em>',
-      subtitle: 'Infected diabetic foot ulcers: reduces bacterial bioburden including MRSA, supports limb-preserving care strategies. Infected pressure injuries (Stage III–IV): controls deep colonisation while protecting fragile peri-wound skin. Critically colonised venous and arterial leg ulcers: addresses biofilm-related stalling that resists antibiotics alone. Surgical site infections: post-operative infection management without systemic antibiotic escalation. Partial-thickness burns: prevents infection in high-risk burn surfaces during early healing. Biofilm-affected chronic wounds: penetrates and disrupts protective polysaccharide matrices that shield bacteria from host immunity and systemic antimicrobials.'
+      subtitle: 'Infected diabetic foot ulcers: reduces bacterial bioburden including MRSA, supports limb-preserving care strategies. Infected pressure injuries (Stage III–IV): controls deep colonization while protecting fragile peri-wound skin. Critically colonized venous and arterial leg ulcers: addresses biofilm-related stalling that resists antibiotics alone. Surgical site infections: post-operative infection management without systemic antibiotic escalation. Partial-thickness burns: prevents infection in high-risk burn surfaces during early healing. Biofilm-affected chronic wounds: penetrates and disrupts protective polysaccharide matrices that shield bacteria from host immunity and systemic antimicrobials.'
     },
     {
       title: 'Application<br>by <em>Condition</em>',
