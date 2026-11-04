@@ -833,6 +833,19 @@
     .nav-links .has-dropdown .dropdown-trigger { font-size:0.85rem !important; }
   }
 </style>
+<style>
+  /* ===== Related products (cross-links between product pages) ===== */
+  .rp-section { background:#f8f9fc; border-top:1px solid #eceef5; padding:3.2rem 0 3.6rem; }
+  .rp-wrap { max-width:1200px; margin:0 auto; padding:0 3rem; }
+  .rp-title { font-family:'Playfair Display',serif; font-style:italic; font-weight:400; font-size:clamp(1.6rem,2.6vw,2.1rem); color:#1e293b; margin:0 0 1.6rem; }
+  .rp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+  .rp-card { display:flex; flex-direction:column; gap:0.5rem; padding:1.3rem 1.4rem; background:#fff; border:1px solid #e3e6ef; border-radius:6px; text-decoration:none; transition:border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+  .rp-card:hover { border-color:#545395; box-shadow:0 8px 24px rgba(84,83,149,0.10); transform:translateY(-2px); }
+  .rp-name { font-family:'DM Sans',sans-serif; font-weight:600; font-size:1rem; line-height:1.4; color:#1e293b; }
+  .rp-desc { font-family:'DM Sans',sans-serif; font-size:0.9rem; line-height:1.55; color:#64748b; flex:1; }
+  .rp-more { font-family:'DM Sans',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#545395; }
+  @media (max-width:900px) { .rp-wrap { padding:0 1.5rem; } .rp-grid { grid-template-columns:1fr; gap:0.9rem; } .rp-section { padding:2.4rem 0 2.8rem; } }
+</style>
 </head>
 <body>
 
@@ -843,55 +856,55 @@
     <li class="has-dropdown">
         <a href="#" class="dropdown-trigger">Advanced<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
-          <a href="silicone-foam-border-AD44.html" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
-          <a href="calcium-alginate-AD006.html" class="fp-item">Calcium Alginate Dressing</a>
-          <a href="silicone-foam-dressing.html" class="fp-item">Silicone Foam Dressing</a>
-          <a href="nano-silver-antibacterial-AD47.html" class="fp-item">Nano-Silver Medical Antibacterial Dressing</a>
-          <a href="hydrocolloid-super-thin-AD-HD01.html" class="fp-item">Hydrocolloid Dressing (Super Thin)</a>
-          <a href="hydrocolloid-dressing-with-border.html" class="fp-item">Hydrocolloid Dressing (With Border)</a>
-          <a href="hydrocolloid-dressing-sacrum.html" class="fp-item">Hydrocolloid Dressing (Sacrum)</a>
-          <a href="silver-alginate-dressing-AD14.html" class="fp-item">Silver Alginate Dressing</a>
-          <a href="foam-silicone-border-sacrum.html" class="fp-item">Foam Dressing Silicone Adhesive Border (Sacrum)</a>
-          <a href="foam-silicone-border-heel.html" class="fp-item">Foam Dressing Silicone Adhesive Border (Heel)</a>
+          <a href="silicone-foam-border-AD44" class="fp-item">Foam Dressing Silicone Adhesive Border</a>
+          <a href="calcium-alginate-AD006" class="fp-item">Calcium Alginate Dressing</a>
+          <a href="silicone-foam-dressing" class="fp-item">Silicone Foam Dressing</a>
+          <a href="nano-silver-antibacterial-AD47" class="fp-item">Nano-Silver Medical Antibacterial Dressing</a>
+          <a href="hydrocolloid-super-thin-AD-HD01" class="fp-item">Hydrocolloid Dressing (Super Thin)</a>
+          <a href="hydrocolloid-dressing-with-border" class="fp-item">Hydrocolloid Dressing (With Border)</a>
+          <a href="hydrocolloid-dressing-sacrum" class="fp-item">Hydrocolloid Dressing (Sacrum)</a>
+          <a href="silver-alginate-dressing-AD14" class="fp-item">Silver Alginate Dressing</a>
+          <a href="foam-silicone-border-sacrum" class="fp-item">Foam Dressing Silicone Adhesive Border (Sacrum)</a>
+          <a href="foam-silicone-border-heel" class="fp-item">Foam Dressing Silicone Adhesive Border (Heel)</a>
           <span class="fp-item fp-item-current">Foam Dressing Non-Adhesive</span>
-          <a href="foam-non-adhesive-elbow.html" class="fp-item">Foam Dressing Non-Adhesive (Elbow)</a>
-          <a href="foam-non-adhesive-tracheostomy.html" class="fp-item">Foam Dressing Non-Adhesive (Tracheostomy Tubes)</a>
-          <a href="silver-foam-non-adhesive.html" class="fp-item">Silver Foam Dressing Non-Adhesive</a>
-          <a href="silver-hydrophilic-fiber-dressing.html" class="fp-item">Silver Hydrophilic Fiber Dressing</a>
-          <a href="silver-activated-charcoal.html" class="fp-item">Silver Activated Charcoal Dressing</a>
-          <a href="activated-charcoal-non-adhesive-AD24.html" class="fp-item">Activated Charcoal Dressing Non-Adhesive</a>
-          <a href="silicone-contact-layer.html" class="fp-item">Silicone Contact Layer</a>
-          <a href="vaseline-gauze.html" class="fp-item">Vaseline Gauze</a>
-        <a href="hydrogel-dressing.html" class="fp-item">Hydrogel Dressing</a>
-        <a href="super-absorbent-dressing.html" class="fp-item">Super Absorbent Dressing</a>
-        <a href="npwt-foam-dressing.html" class="fp-item">NPWT Foam Dressing</a>
-        <a href="collagen-wound-dressing.html" class="fp-item">Collagen Wound Dressing</a>
-        <a href="biocellulose-dressing.html" class="fp-item">Biocellulose Dressing</a>
+          <a href="foam-non-adhesive-elbow" class="fp-item">Foam Dressing Non-Adhesive (Elbow)</a>
+          <a href="foam-non-adhesive-tracheostomy" class="fp-item">Foam Dressing Non-Adhesive (Tracheostomy Tubes)</a>
+          <a href="silver-foam-non-adhesive" class="fp-item">Silver Foam Dressing Non-Adhesive</a>
+          <a href="silver-hydrophilic-fiber-dressing" class="fp-item">Silver Hydrophilic Fiber Dressing</a>
+          <a href="silver-activated-charcoal" class="fp-item">Silver Activated Charcoal Dressing</a>
+          <a href="activated-charcoal-non-adhesive-AD24" class="fp-item">Activated Charcoal Dressing Non-Adhesive</a>
+          <a href="silicone-contact-layer" class="fp-item">Silicone Contact Layer</a>
+          <a href="vaseline-gauze" class="fp-item">Vaseline Gauze</a>
+        <a href="hydrogel-dressing" class="fp-item">Hydrogel Dressing</a>
+        <a href="super-absorbent-dressing" class="fp-item">Super Absorbent Dressing</a>
+        <a href="npwt-foam-dressing" class="fp-item">NPWT Foam Dressing</a>
+        <a href="collagen-wound-dressing" class="fp-item">Collagen Wound Dressing</a>
+        <a href="biocellulose-dressing" class="fp-item">Biocellulose Dressing</a>
         </div>
       </li>
     <li class="has-dropdown">
         <a href="#" class="dropdown-trigger">Traditional<span class="nav-long"> Dressings</span> ▾</a>
         <div class="fp-menu">
-          <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
-          <a href="transparent-film-iv.html" class="fp-item">Transparent Film I.V. Dressing</a>
-          <a href="transparent-film-iv-notch.html" class="fp-item">Transparent Film I.V. Dressing with Notch</a>
-          <a href="non-woven-surgical-tape.html" class="fp-item">Non-woven Surgical Tape</a>
-          <a href="paper-tape.html" class="fp-item">Paper Tape</a>
-          <a href="film-island-dressing.html" class="fp-item">Film Island Dressing</a>
-          <a href="non-woven-adhesive-with-pad.html" class="fp-item">Non-woven Adhesive Wound Dressing with Pad</a>
-          <a href="non-woven-adhesive-strip.html" class="fp-item">Non-woven Adhesive Wound Dressing Strip</a>
-          <a href="wound-cleanser.html" class="fp-item">Wound Cleanser</a>
-          <a href="medical-gauze-traditional.html" class="fp-item">Medical Gauze</a>
+          <a href="wound-closure-strips" class="fp-item">Wound Closure Strips</a>
+          <a href="transparent-film-iv" class="fp-item">Transparent Film I.V. Dressing</a>
+          <a href="transparent-film-iv-notch" class="fp-item">Transparent Film I.V. Dressing with Notch</a>
+          <a href="non-woven-surgical-tape" class="fp-item">Non-woven Surgical Tape</a>
+          <a href="paper-tape" class="fp-item">Paper Tape</a>
+          <a href="film-island-dressing" class="fp-item">Film Island Dressing</a>
+          <a href="non-woven-adhesive-with-pad" class="fp-item">Non-woven Adhesive Wound Dressing with Pad</a>
+          <a href="non-woven-adhesive-strip" class="fp-item">Non-woven Adhesive Wound Dressing Strip</a>
+          <a href="wound-cleanser" class="fp-item">Wound Cleanser</a>
+          <a href="medical-gauze-traditional" class="fp-item">Medical Gauze</a>
         </div>
       </li>
     <li class="has-dropdown">
         <a href="#" class="dropdown-trigger">Surgical<span class="nav-long"> Care</span> ▾</a>
         <div class="fp-menu">
-          <a href="incise-drape.html" class="fp-item">Incise Drape</a>
-          <a href="iodine-incise-drape.html" class="fp-item">Iodine Incise Drape</a>
-          <a href="wound-closure-strips.html" class="fp-item">Wound Closure Strips</a>
-          <a href="skin-closure-strip.html" class="fp-item">Skin Closure Strip</a>
-          <a href="picc-securement-dressing.html" class="fp-item">PICC Securement Dressing</a>
+          <a href="incise-drape" class="fp-item">Incise Drape</a>
+          <a href="iodine-incise-drape" class="fp-item">Iodine Incise Drape</a>
+          <a href="wound-closure-strips" class="fp-item">Wound Closure Strips</a>
+          <a href="skin-closure-strip" class="fp-item">Skin Closure Strip</a>
+          <a href="picc-securement-dressing" class="fp-item">PICC Securement Dressing</a>
         </div>
       </li>
 
@@ -1088,6 +1101,18 @@
   <img src="https://img.velcura.net/top1-2.webp" alt="Velcura Foam Dressing Non-Adhesive" width="1500" height="265" loading="lazy" decoding="async">
 </div>
 
+<!-- RELATED PRODUCTS -->
+<section class="rp-section" aria-labelledby="rp-title">
+  <div class="rp-wrap">
+    <h2 class="rp-title" id="rp-title">Related Products</h2>
+    <div class="rp-grid">
+      <a class="rp-card" href="silver-foam-non-adhesive"><span class="rp-name">Silver Foam Dressing Non-Adhesive</span><span class="rp-desc">Adhesive-free absorbent foam with sustained antimicrobial silver.</span><span class="rp-more">View product →</span></a>
+      <a class="rp-card" href="foam-non-adhesive-elbow"><span class="rp-name">Foam Dressing Non-Adhesive (Elbow)</span><span class="rp-desc">Shaped adhesive-free foam that flexes with the elbow joint.</span><span class="rp-more">View product →</span></a>
+      <a class="rp-card" href="silicone-contact-layer"><span class="rp-name">Silicone Contact Layer</span><span class="rp-desc">Perforated soft-silicone layer; exudate passes to a secondary dressing.</span><span class="rp-more">View product →</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="container">
@@ -1144,7 +1169,7 @@
 <footer>
   <div class="footer-logo">Velcura <span>Medical</span></div>
   <div class="footer-copy" id="footer-copy"></div>
-  <div><a class="footer-link" href="privacy-policy.html">Privacy Policy</a><a class="footer-link" href="https://velcura.net">velcura.net ↗</a></div>
+  <div><a class="footer-link" href="privacy-policy">Privacy Policy</a><a class="footer-link" href="https://velcura.net">velcura.net ↗</a></div>
 </footer>
 
 <script>

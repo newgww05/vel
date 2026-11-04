@@ -683,16 +683,16 @@
 
   <div class="l2-topnav">
     <div class="l2-tn-left">
-      <div class="l2-tn-mark" onclick="location.href='index.html'" style="overflow:hidden;padding:0;"><img src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" width="40" height="40" decoding="async" fetchpriority="high" style="width:40px;height:40px;object-fit:contain;display:block;"></div>
+      <div class="l2-tn-mark" onclick="location.href='/'" style="overflow:hidden;padding:0;"><img src="https://img.velcura.net/logogpt.png" alt="Velcura Medical" width="40" height="40" decoding="async" fetchpriority="high" style="width:40px;height:40px;object-fit:contain;display:block;"></div>
       <div>
         <h1 class="l2-tn-title">Advanced Wound Dressings</h1>
       </div>
     </div>
     <div style="display:flex; align-items:center; gap:18px;">
       <div class="l2-tn-breadcrumb" style="transform-origin:right center; transform:translateX(-10ch) scale(1.35);">
-        <a onclick="location.href='index.html'">Home</a>
+        <a onclick="location.href='/'">Home</a>
         <span class="bcsep">›</span>
-        <a onclick="location.href='index.html'">Wound Care</a>
+        <a onclick="location.href='/'">Wound Care</a>
         <span class="bcsep">›</span>
         <span id="l2BcCur" style="color:#0c2044;">Advanced Wound Dressings</span>
       </div>
@@ -706,7 +706,7 @@
       <div class="l2-sb-head">
         <div class="l2-sb-lbl">Wound Care</div>
         <div class="l2-sb-ttl">Product Categories</div>
-        <a href="wound-care-quickread.html?from=wound-care.html" class="l2-sb-quickread">
+        <a href="wound-care-quickread?from=wound-care.html" class="l2-sb-quickread">
           <span class="l2-sb-quickread-dot"></span>Quick-Read Catalog
         </a>
       </div>
@@ -828,9 +828,9 @@
 <!-- ===== Phone layout: shell only, filled by the phone renderer ===== -->
 <div id="wcPhone">
 <div class="topbar">
-  <a href="index.html"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical"></a>
+  <a href="/"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical"></a>
   <div class="topbar-title">Wound Care Products</div>
-  <a class="topbar-back" href="index.html">Home</a>
+  <a class="topbar-back" href="/">Home</a>
 </div>
 
 <div class="search-wrap">
@@ -907,7 +907,7 @@ var PHONE_MQ = window.matchMedia('(max-width: 780px)');
 
 
 /* ── Go back to Home ── */
-function goHome() { window.location.href = "index.html"; }
+function goHome() { window.location.href = "/"; }
 
 /* ── L2 sidebar ── */
 var activeL2 = 'advanced';

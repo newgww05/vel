@@ -337,11 +337,24 @@
     .compare-table { display: block; overflow-x: auto; white-space: nowrap; }
   }
 </style>
+<style>
+  /* ===== Related products (cross-links between product pages) ===== */
+  .rp-section { background:#f8f9fc; border-top:1px solid #eceef5; padding:3.2rem 0 3.6rem; }
+  .rp-wrap { max-width:1200px; margin:0 auto; padding:0 3rem; }
+  .rp-title { font-family:'Playfair Display',serif; font-style:italic; font-weight:400; font-size:clamp(1.6rem,2.6vw,2.1rem); color:#1e293b; margin:0 0 1.6rem; }
+  .rp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+  .rp-card { display:flex; flex-direction:column; gap:0.5rem; padding:1.3rem 1.4rem; background:#fff; border:1px solid #e3e6ef; border-radius:6px; text-decoration:none; transition:border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+  .rp-card:hover { border-color:#545395; box-shadow:0 8px 24px rgba(84,83,149,0.10); transform:translateY(-2px); }
+  .rp-name { font-family:'DM Sans',sans-serif; font-weight:600; font-size:1rem; line-height:1.4; color:#1e293b; }
+  .rp-desc { font-family:'DM Sans',sans-serif; font-size:0.9rem; line-height:1.55; color:#64748b; flex:1; }
+  .rp-more { font-family:'DM Sans',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#545395; }
+  @media (max-width:900px) { .rp-wrap { padding:0 1.5rem; } .rp-grid { grid-template-columns:1fr; gap:0.9rem; } .rp-section { padding:2.4rem 0 2.8rem; } }
+</style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
+  <a class="nav-logo" href="/"><img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical" style="height:36px;width:auto;display:block;">Velcura <span>Medical</span></a>
   <ul class="nav-links">
     <li><a href="#science">How It Works</a></li>
     <li><a href="#family">Three Formats</a></li>
@@ -350,7 +363,7 @@
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-actions">
-    <a class="nav-cta" href="wound-care.html">All Products</a>
+    <a class="nav-cta" href="wound-care">All Products</a>
     <a class="nav-cta" href="#contact">Contact</a>
   </div>
 </nav>
@@ -588,21 +601,33 @@
     <div class="section-tag">Continue Exploring</div>
     <h2 class="section-title">Related Wound Care Guides</h2>
     <div class="related-grid">
-      <a class="related-card" href="wound-care.html">
+      <a class="related-card" href="wound-care">
         <div class="related-cat">Products</div>
         <h4>Full Wound Care Range</h4>
         <p>Browse Velcura's advanced, traditional and surgical wound care dressings by category.</p>
       </a>
-      <a class="related-card" href="calcium-alginate-AD006.html">
+      <a class="related-card" href="calcium-alginate-AD006">
         <div class="related-cat">Contrast</div>
         <h4>Calcium Alginate Dressing</h4>
         <p>The opposite job to hydrogel — built to absorb moderate-to-heavy exudate, not donate moisture.</p>
       </a>
-      <a class="related-card" href="pressure-injury-care.html">
+      <a class="related-card" href="pressure-injury-care">
         <div class="related-cat">Understand</div>
         <h4>Pressure Injury Care</h4>
         <p>NPIAP-aligned dressing strategy from Stage I redness to Stage IV bone exposure.</p>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="rp-section" aria-labelledby="rp-title">
+  <div class="rp-wrap">
+    <h2 class="rp-title" id="rp-title">Related Products</h2>
+    <div class="rp-grid">
+      <a class="rp-card" href="hydrocolloid-super-thin-AD-HD01"><span class="rp-name">Hydrocolloid Dressing (Super Thin)</span><span class="rp-desc">Ultra-thin, semi-translucent hydrocolloid for superficial, low-exudate wounds.</span><span class="rp-more">View product →</span></a>
+      <a class="rp-card" href="collagen-wound-dressing"><span class="rp-name">Collagen Wound Dressing</span><span class="rp-desc">Bioactive collagen scaffold for chronic, non-healing wounds.</span><span class="rp-more">View product →</span></a>
+      <a class="rp-card" href="biocellulose-dressing"><span class="rp-name">Biocellulose Dressing</span><span class="rp-desc">Transparent nanocellulose with over 90% water content for delicate wounds.</span><span class="rp-more">View product →</span></a>
     </div>
   </div>
 </section>
@@ -666,7 +691,7 @@
 <footer>
   <div class="footer-logo">Velcura <span style="color:#fff;">Medical</span></div>
   <div class="footer-copy" id="footer-copy"></div>
-  <div><a class="footer-link" href="privacy-policy.html">Privacy Policy</a><a class="footer-link" href="https://velcura.net">velcura.net ↗</a></div>
+  <div><a class="footer-link" href="privacy-policy">Privacy Policy</a><a class="footer-link" href="https://velcura.net">velcura.net ↗</a></div>
 </footer>
 
 <script>

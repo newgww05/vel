@@ -3,7 +3,7 @@
 <head>
 <script>
 if (window.innerWidth <= 780) {
-  window.location.replace('wound-care.html' + window.location.search);
+  window.location.replace('wound-care' + window.location.search);
 }
 </script>
 <!-- Google tag (gtag.js) -->
@@ -161,18 +161,18 @@ if (window.innerWidth <= 780) {
 <body>
 
 <div class="topbar">
-  <a href="index.html" style="display:flex;align-items:center;gap:10px;">
+  <a href="/" style="display:flex;align-items:center;gap:10px;">
     <img src="https://img.velcura.net/logogpt40.png" alt="Velcura Medical">
     <span class="topbar-brand">VELCURA MEDICAL</span>
   </a>
   <nav class="topbar-nav">
-    <a href="index.html">Home</a>
-    <a href="velcura-3y.html">About</a>
-    <a href="faq.html">FAQ</a>
-    <a href="blog.html">Knowledge Center</a>
+    <a href="/">Home</a>
+    <a href="velcura-3y">About</a>
+    <a href="faq">FAQ</a>
+    <a href="blog">Knowledge Center</a>
   </nav>
   <button class="topbar-back" onclick="goBackToEntry()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back</button>
-  <a class="topbar-switch" href="wound-care.html">Detailed Catalog View</a>
+  <a class="topbar-switch" href="wound-care">Detailed Catalog View</a>
 </div>
 
 <div class="search-wrap">
@@ -212,7 +212,7 @@ if (window.innerWidth <= 780) {
     </div>
     <div class="detail-contact">
       <a class="wa" href="https://wa.me/85298567973" target="_blank">WhatsApp</a>
-      <a class="inquiry" href="faq.html#contact">Send inquiry</a>
+      <a class="inquiry" href="faq#contact">Send inquiry</a>
     </div>
   </div>
 </div>
@@ -736,7 +736,7 @@ function closeDetailUI(){
 function goToDetail(name){
   var cat = PROD_TO_CAT[name] || activeCat;
   if (cat !== activeCat){ activeCat = cat; renderCatRail(); renderList(); }
-  history.pushState({view:'detail', prod:name, cat:cat}, '', 'wound-care-quickread.html?cat=' + cat + '&prod=' + encodeURIComponent(name));
+  history.pushState({view:'detail', prod:name, cat:cat}, '', 'wound-care-quickread?cat=' + cat + '&prod=' + encodeURIComponent(name));
   openDetailUI(name);
   scrollToProductCard(name);
 }
@@ -778,7 +778,7 @@ window.addEventListener('popstate', function(e){
 var qrReturnTo = new URLSearchParams(window.location.search).get('from') || null;
 function goBackToEntry(){
   if (qrReturnTo) { window.location.href = qrReturnTo; }
-  else { history.length > 1 ? history.back() : (window.location.href = 'wound-care.html'); }
+  else { history.length > 1 ? history.back() : (window.location.href = 'wound-care'); }
 }
 
 /* Deep-link support: wound-care-quickread.html?cat=advanced or ?prod=Product+Name */
@@ -799,8 +799,8 @@ renderCatRail();
 renderList();
 
 if (deepLinkProd) {
-  history.replaceState({view:'list', cat:activeCat}, '', 'wound-care-quickread.html?cat=' + activeCat);
-  history.pushState({view:'detail', prod:deepLinkProd, cat:activeCat}, '', 'wound-care-quickread.html?cat=' + activeCat + '&prod=' + encodeURIComponent(deepLinkProd));
+  history.replaceState({view:'list', cat:activeCat}, '', 'wound-care-quickread?cat=' + activeCat);
+  history.pushState({view:'detail', prod:deepLinkProd, cat:activeCat}, '', 'wound-care-quickread?cat=' + activeCat + '&prod=' + encodeURIComponent(deepLinkProd));
   openDetailUI(deepLinkProd);
   scrollToProductCard(deepLinkProd);
 }
