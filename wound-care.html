@@ -674,6 +674,32 @@
   .inquiry-form-msg.error { color:#ef4444; }
   .inquiry-form-msg.success { color:#16a34a; }
 
+  /* ---------- Bottom inquiry section (desktop and phone) ---------- */
+  .wc-inquiry { background:linear-gradient(180deg,#f0f9ff 0%,#fff 100%); border-top:1px solid #e0f2fe; padding:64px 24px 72px; scroll-margin-top:80px; }
+  .wc-inquiry-inner { max-width:1040px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:48px; align-items:start; }
+  .wc-inquiry-lbl { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#0284c7; font-weight:600; margin-bottom:10px; }
+  .wc-inquiry h2 { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:36px; line-height:1.15; color:#0c2044; margin:0 0 14px; }
+  .wc-inquiry-text { font-size:14.5px; line-height:1.7; color:#475569; margin:0 0 22px; }
+  .wc-inquiry-points { list-style:none; padding:0; margin:0 0 24px; }
+  .wc-inquiry-points li { display:flex; gap:10px; font-size:13.5px; color:#334155; margin-bottom:10px; line-height:1.5; }
+  .wc-inquiry-points li::before { content:"\2713"; color:#0284c7; font-weight:700; }
+  .wc-inquiry-contact { display:flex; flex-wrap:wrap; gap:10px; }
+  .wc-inquiry-contact a { display:inline-flex; align-items:center; gap:6px; padding:9px 16px; border-radius:999px; font-size:13px; font-weight:600; text-decoration:none; }
+  .wc-inquiry-contact .wa { border:1px solid #25D366; color:#128C4A; background:#f0fdf4; }
+  .wc-inquiry-contact .em { border:1px solid #bae6fd; color:#0369a1; background:#fff; }
+  .wc-inquiry-card { background:#fff; border:1px solid #e0f2fe; border-radius:20px; padding:28px; box-shadow:0 12px 32px rgba(2,132,199,0.08); position:relative; }
+  .wc-inquiry-about { font-size:12.5px; color:#0369a1; background:#f0f9ff; border:1px solid #bae6fd; border-radius:10px; padding:8px 12px; margin-bottom:14px; display:none; }
+  .wc-inquiry-about.on { display:block; }
+  .wc-inquiry .inquiry-form-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .wc-inquiry .inquiry-form textarea { min-height:120px; }
+  @media (max-width:780px) {
+    .wc-inquiry { padding:40px 16px 48px; }
+    .wc-inquiry-inner { grid-template-columns:1fr; gap:24px; }
+    .wc-inquiry h2 { font-size:28px; }
+    .wc-inquiry-card { padding:20px 16px; }
+    .wc-inquiry .inquiry-form-row { grid-template-columns:1fr; gap:0; }
+  }
+
   .empty-state { padding:40px 20px; text-align:center; color:#94a3b8; font-size:13px; }
 </style>
 </head>
@@ -795,8 +821,8 @@
               <div class="l2-pd-name" id="l2PdName"></div>
               <div class="l2-pd-tagline" id="l2PdTagline"></div>
               <div class="l2-pd-btns">
-                <button class="l2-btn-p">Inquire Now</button>
-                <button class="l2-btn-s">Download Brochure</button>
+                <button class="l2-btn-p" type="button" onclick="wcInquire()">Inquire Now</button>
+                <button class="l2-btn-s" type="button" onclick="wcInquire('brochure')">Download Brochure</button>
               </div>
             </div>
           </div>
@@ -2122,6 +2148,83 @@ function closeInquiryModal(){
   });
 })();
 
+/* ===== Bottom inquiry form ===== */
+// The product shown in the desktop detail pane, if any
+function wcCurrentProduct(){
+  var el = document.getElementById('l2PdName');
+  return (el && el.offsetParent !== null && el.textContent.trim()) ? el.textContent.trim() : '';
+}
+// "Inquire Now" and "Download Brochure" bring the visitor to the form, with the product (and catalog request) filled in
+function wcInquire(kind){
+  var form = document.getElementById('wcInquiryForm'), about = document.getElementById('wcInquiryAbout');
+  var product = wcCurrentProduct(), msg = form.querySelector('[name="message"]');
+  form.dataset.product = product;
+  if (product) { about.textContent = 'Regarding: ' + product; about.classList.add('on'); }
+  if (kind === 'brochure' && !msg.value.trim()) msg.value = 'Please send me your product catalog' + (product ? ' and the brochure for ' + product : '') + '.';
+  else if (product && !msg.value.trim()) msg.placeholder = 'Please describe your inquiry about ' + product + ' — quantities and your target market *';
+  document.getElementById('wcInquiry').scrollIntoView({ behavior:'smooth', block:'start' });
+  setTimeout(function(){ form.querySelector('[name="name"]').focus({ preventScroll:true }); }, 500);
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var CONTACT_ENDPOINT = "https://velcura-contact-relay.newgww05.workers.dev";
+  var form = document.getElementById('wcInquiryForm');
+  if (!form) return;
+  var msg = document.getElementById('wcInquiryMsg');
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var submitBtnDefaultText = submitBtn.textContent;
+  var required = form.querySelectorAll('[required]');
+  var emailField = form.querySelector('input[type="email"]');
+  required.forEach(function(el){ el.addEventListener('input', function(){ el.classList.remove('invalid'); }); });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var firstInvalid = null;
+    required.forEach(function(el){
+      var empty = !el.value.trim();
+      var badEmail = el === emailField && el.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+      if (empty || badEmail){ el.classList.add('invalid'); if(!firstInvalid) firstInvalid = el; }
+      else { el.classList.remove('invalid'); }
+    });
+    if (firstInvalid){
+      msg.className = 'inquiry-form-msg error';
+      msg.textContent = (firstInvalid === emailField && emailField.value.trim())
+        ? 'Please enter a valid email address.'
+        : 'Please complete all required fields (*) before submitting.';
+      firstInvalid.focus();
+      return;
+    }
+    var payload = {
+      name: form.querySelector('[name="name"]').value.trim(),
+      company: form.querySelector('[name="company"]').value.trim(),
+      email: emailField.value.trim(),
+      phone: form.querySelector('[name="phone"]').value.trim(),
+      message: form.querySelector('[name="message"]').value.trim(),
+      website: form.querySelector('[name="website"]').value,
+      product: form.dataset.product || '',
+      sourcePage: location.href,
+    };
+    submitBtn.disabled = true; submitBtn.textContent = 'Sending...';
+    msg.className = 'inquiry-form-msg'; msg.textContent = '';
+    fetch(CONTACT_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+      .then(function(result){
+        if (result.ok && result.data && result.data.ok){
+          msg.className = 'inquiry-form-msg success';
+          msg.textContent = 'Thank you. Your inquiry has been submitted. We will reply within one business day.';
+          form.reset(); form.dataset.product = '';
+          document.getElementById('wcInquiryAbout').classList.remove('on');
+        } else {
+          msg.className = 'inquiry-form-msg error';
+          msg.textContent = 'Something went wrong. Please try again or email us directly.';
+        }
+      })
+      .catch(function(){
+        msg.className = 'inquiry-form-msg error';
+        msg.textContent = 'Network error. Please try again or email us directly.';
+      })
+      .finally(function(){ submitBtn.disabled = false; submitBtn.textContent = submitBtnDefaultText; });
+  });
+});
+
 /* ===== Start-up: render only the layout that is on screen ===== */
 var desktopReady = false;
 function initDesktop(){
@@ -2138,6 +2241,43 @@ function _onModeChange(){
 if (PHONE_MQ.addEventListener) PHONE_MQ.addEventListener('change', _onModeChange);
 else if (PHONE_MQ.addListener) PHONE_MQ.addListener(_onModeChange);
 </script>
+<!-- ===== Inquiry form at the bottom of the page (desktop and phone) ===== -->
+<section class="wc-inquiry" id="wcInquiry">
+  <div class="wc-inquiry-inner">
+    <div>
+      <div class="wc-inquiry-lbl">Request a Quote</div>
+      <h2>Tell Us What You Need</h2>
+      <p class="wc-inquiry-text">Products, quantities and destination market — we reply within one business day with pricing, MOQ and the documents for your market.</p>
+      <ul class="wc-inquiry-points">
+        <li>ISO 13485 quality system, CE-marked products, FDA-registered manufacturing facility</li>
+        <li>OEM / ODM and private-label packaging in your brand and language</li>
+        <li>Product catalog and technical documents on request</li>
+      </ul>
+      <div class="wc-inquiry-contact">
+        <a class="wa" href="https://wa.me/85298567973" target="_blank" rel="noopener">WhatsApp +852 9856 7973</a>
+        <a class="em" href="mailto:info@velcura.net">info@velcura.net</a>
+      </div>
+    </div>
+    <div class="wc-inquiry-card">
+      <div class="wc-inquiry-about" id="wcInquiryAbout"></div>
+      <form class="inquiry-form" id="wcInquiryForm" novalidate>
+        <div class="inquiry-form-row">
+          <input type="text" name="name" placeholder="Name *" required>
+          <input type="text" name="company" placeholder="Company">
+        </div>
+        <div class="inquiry-form-row">
+          <input type="email" name="email" placeholder="Email *" required>
+          <input type="tel" name="phone" placeholder="Phone *" required>
+        </div>
+        <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
+        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="inquiry-submit-btn">Send Inquiry</button>
+        <div class="inquiry-form-msg" id="wcInquiryMsg" role="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <script>
   // ===== GA4 lead tracking: inquiry form success + WhatsApp / email / phone clicks =====
   (function () {
