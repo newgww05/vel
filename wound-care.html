@@ -911,7 +911,7 @@
     <div class="inquiry-modal-sub" id="inquiryModalSub">We usually reply within one business day.</div>
     <form class="inquiry-form" id="mobileInquiryForm" novalidate>
       <input type="text" name="name" placeholder="Name *" required>
-      <input type="text" name="company" placeholder="Company">
+      <input type="text" name="company" placeholder="Company *" required>
       <input type="email" name="email" placeholder="Email *" required>
       <input type="tel" name="phone" placeholder="Phone *" required>
       <textarea name="message" placeholder="Tell us which products you need, estimated quantities and your target market *" required></textarea>
@@ -2263,7 +2263,7 @@ else if (PHONE_MQ.addListener) PHONE_MQ.addListener(_onModeChange);
       <form class="inquiry-form" id="wcInquiryForm" novalidate>
         <div class="inquiry-form-row">
           <input type="text" name="name" placeholder="Name *" required>
-          <input type="text" name="company" placeholder="Company">
+          <input type="text" name="company" placeholder="Company *" required>
         </div>
         <div class="inquiry-form-row">
           <input type="email" name="email" placeholder="Email *" required>
