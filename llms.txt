@@ -85,9 +85,22 @@ Key facts:
 ## Knowledge Center
 
 - [Knowledge Center](https://velcura.net/blog): Articles on wound care, skin protection and infection control.
+- [Medical Spray Dressings: Market Outlook & Technology](https://velcura.net/blog-medical-spray-dressing-market-outlook): How film-forming, adhesive, bioactive and sprayable-nanofiber sprays work, their limits, market growth estimates and selection guidance.
 - [How to Choose a Wound Dressing Manufacturer: 2026 Buyer's Guide](https://velcura.net/blog-wound-dressing-supplier-buyers-guide): Verifying certifications, evaluating samples, OEM/private-label orders, MOQ and quality control.
 - [The Wound Dressing Revolution 2026](https://velcura.net/blog-wound-dressing-revolution): From gauze to data-driven wound management.
 - [IAD vs Pressure Injury](https://velcura.net/blog-iad-vs-pressure-injury): Telling incontinence-associated dermatitis from pressure injury.
+- [Gentle, No-Rinse Cleansing for IAD-Prone Skin](https://velcura.net/blog-no-rinse-cleansing-iad-skin): Why soap and water harms incontinent skin, how pH-balanced no-rinse cleansers work and a faster cleanse-and-protect routine.
+- [Pre-Surgical Skin Antisepsis — The Modern Protocol](https://velcura.net/blog-pre-surgical-skin-antisepsis-protocol): Chlorhexidine vs povidone-iodine, alcohol-based skin prep, drying time and fire safety, and the evidence on iodine incise drapes.
+- [Choosing the Right Dressing for Stage III–IV Pressure Injuries](https://velcura.net/blog-stage-3-4-pressure-injury-dressing-selection): A wound-bed-first matrix for alginate, silver, charcoal, hydrogel and foam, NPWT per the 2026 International Guideline, and cost per day of care.
+- [MRSA in Pressure Ulcers — A Practical Containment Protocol](https://velcura.net/blog-mrsa-pressure-ulcer-containment-protocol): Colonization vs infection, when to start precautions, bedside containment steps and the role and limits of silver and charcoal dressings.
+- [Prophylactic Silicone Foam on the Sacrum — When to Apply](https://velcura.net/blog-prophylactic-sacral-silicone-foam-dressing): The 2026 guideline recommendation for multilayer soft silicone foam on sacrum and heels, risk triggers, wear, inspection and repositioning.
+- [Washable Underpads · Why Reusable Beats Disposable](https://velcura.net/blog-washable-vs-disposable-underpads): Cost per bed per day with a calculator, five-layer TPU construction rated for 300+ washes, laundering rules and waste reduction.
+- [Re-Epithelialization · When Is the Wound Truly Closed?](https://velcura.net/blog-re-epithelialization-wound-closure): What tissue does at 7, 14 and 28 days after closure, scar strength, chronic-wound recurrence and aftercare dressing choices.
+- [Hypertrophic Scar Control After Surgical Closure](https://velcura.net/blog-hypertrophic-scar-prevention-after-surgery): Tension-free closure, when to start silicone gel sheets, wear time, paper-tape offloading, keloid distinction and when to escalate.
+- [The Cost of Prevention vs the Cost of Cure](https://velcura.net/blog-pressure-injury-prevention-cost): Published pressure-injury cost estimates, why prevention is underfunded and a five-input business case for prophylactic dressings.
+- [The Five-Step IAD Prevention Bundle](https://velcura.net/blog-iad-prevention-bundle): Cleanse, moisturize, protect, manage moisture and reposition — product choices, GLOBIAD categories and a shift checklist.
+- [Velcura's New PICC Securement Dressing — Now Available](https://velcura.net/blog-picc-securement-dressing-chg-launch): Transparent film with an integrated CHG gel pad: up to 7 days antimicrobial activity, keyhole securement, specifications and evidence.
+- [NPIAP / EPUAP Guideline Update — What Changed](https://velcura.net/blog-pressure-injury-guideline-2026-update): The 4th edition International Pressure Injury Guideline: GRADE methodology, prophylactic dressings, repositioning, support surfaces, nutrition, treatment and unchanged staging.
 
 ## Optional
 

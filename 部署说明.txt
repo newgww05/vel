@@ -1,0 +1,34 @@
+Velcura 知识中心 · 12 篇新博客（2026-11-21）
+================================================
+
+本文件夹内容（均未改动线上 website 文件夹）：
+
+1. 12 篇新文章（直接复制到 website 文件夹）
+   blog-no-rinse-cleansing-iad-skin.html                 Clean   免冲洗清洁与 IAD
+   blog-pre-surgical-skin-antisepsis-protocol.html       Clean   术前皮肤消毒
+   blog-stage-3-4-pressure-injury-dressing-selection.html Treat  III–IV 期压力性损伤敷料选择
+   blog-mrsa-pressure-ulcer-containment-protocol.html    Treat   压疮 MRSA 防控
+   blog-prophylactic-sacral-silicone-foam-dressing.html  Protect 骶尾部预防性硅胶泡沫
+   blog-washable-vs-disposable-underpads.html            Protect 可水洗 vs 一次性护理垫（含成本计算器）
+   blog-re-epithelialization-wound-closure.html          Repair  再上皮化
+   blog-hypertrophic-scar-prevention-after-surgery.html  Repair  术后增生性瘢痕
+   blog-pressure-injury-prevention-cost.html             Prevent 预防成本 vs 治疗成本
+   blog-iad-prevention-bundle.html                       Prevent IAD 五步预防集束
+   blog-picc-securement-dressing-chg-launch.html         News    PICC 敷料新品
+   blog-pressure-injury-guideline-2026-update.html       News    国际指南第 4 版更新
+
+2. 替换文件（覆盖 website 里的同名文件）
+   blog.html    12 张 "Coming Soon" 卡片改为可点击；Blog 结构化数据新增 blogPost 列表
+   sitemap.xml  新增 12 条，blog 的 lastmod 更新为 2026-11-21
+   llms.txt     Knowledge Center 下新增 12 条
+
+3. _build/  生成器（不要上传）
+   修改文章：编辑 _build/articles/aNN_*.py，然后运行  py -3 _build/build.py
+   模板取自 website/blog-medical-spray-dressing-market-outlook.html（只读）
+
+上线前请留意：
+- 第 11 篇（PICC）原卡片写的是 "Q2 2026 Launched"，因无法核实发布日期，改为 "Now Available"；
+  注册状态只写了产品页上的 NMPA Class II，其他市场写的是"请咨询"。
+- 第 12 篇按 2026 年 9 月版指南快速参考原文撰写；原卡片中"分期细化"的说法与原文不符，已改写。
+- 第 9 篇原卡片 "$70,000+ / $4" 改为有出处的 AHRQ 区间 $20,900–$151,700。
+- 第 2 篇如实写明：碘伏切口膜本身未被证明能降低 SSI（WHO 有条件不推荐用于该目的）。
